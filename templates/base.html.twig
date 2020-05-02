@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}ICUhelp{% endblock %}</title>
 
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
@@ -13,15 +13,9 @@
     <body>
         {% include('components/navbar.html.twig') %}
 
-        {% block body %}
-            <main role="main" class="container">
-                <div class="jumbotron">
-                    <h1>Navbar example</h1>
-                    <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>
-                    <a class="btn btn-lg btn-primary" href="#" role="button">View navbar docs &raquo;</a>
-                </div>
-            </main>
-        {% endblock %}
+        {% block body %}{% endblock %}
+
+        {% include('components/footer.html.twig') %}
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
