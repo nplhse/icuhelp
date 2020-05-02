@@ -21,8 +21,6 @@ class UserFixtures extends Fixture
 
     /**
      * Create and store User fixtures in the database.
-     *
-     * @param ObjectManager $manager
      */
     public function load(ObjectManager $manager)
     {

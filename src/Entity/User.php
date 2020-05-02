@@ -5,7 +5,6 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
@@ -118,8 +117,6 @@ class User implements UserInterface
     }
 
     /**
-     * @param string $plainPassword
-     *
      * @return $this
      */
     public function setPlainPassword(string $plainPassword): self
@@ -139,8 +136,6 @@ class User implements UserInterface
     }
 
     /**
-     * @param string $email
-     *
      * @return $this
      */
     public function setEmail(string $email): self

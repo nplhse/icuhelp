@@ -13,15 +13,11 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  */
 class SecurityLoginType extends AbstractType
 {
-    /**
-     * @param FormBuilderInterface $builder
-     * @param array                $options
-     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('username', TextType::class, array('label' => 'label.username'))
-            ->add('password', PasswordType::class, array('label' => 'label.password'));
+            ->add('username', TextType::class, ['label' => 'label.username'])
+            ->add('password', PasswordType::class, ['label' => 'label.password']);
     }
 
     public function configureOptions(OptionsResolver $resolver)
