@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+  <file source-language="de" target-language="en" datatype="plaintext" original="file.ext">
     <header>
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
@@ -13,11 +13,11 @@
         <source>button.login</source>
         <target>Login</target>
       </trans-unit>
-      <trans-unit id="label.username">
+      <trans-unit id="LDhDPrF" resname="label.username">
         <source>label.username</source>
         <target>Username</target>
       </trans-unit>
-      <trans-unit id="label.password">
+      <trans-unit id="9pvowqn" resname="label.password">
         <source>label.password</source>
         <target>Password</target>
       </trans-unit>

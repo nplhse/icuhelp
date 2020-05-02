@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+  <file source-language="de" target-language="en" datatype="plaintext" original="file.ext">
     <header>
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
@@ -29,7 +29,7 @@
         <source>link.letter</source>
         <target>Letter</target>
       </trans-unit>
-      <trans-unit id="UACOizK" resname="label.logged_in_as">
+      <trans-unit id="vdNKtJ." resname="label.logged_in_as">
         <source>label.logged_in_as</source>
         <target>Logged in as</target>
       </trans-unit>
@@ -40,6 +40,10 @@
       <trans-unit id="Q5ha4LM" resname="link.login">
         <source>link.login</source>
         <target>Login</target>
+      </trans-unit>
+      <trans-unit id="ArfrD6N" resname="link.backend">
+        <source>link.backend</source>
+        <target>Admin backend</target>
       </trans-unit>
     </body>
   </file>
