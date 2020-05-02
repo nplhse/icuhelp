@@ -11,6 +11,8 @@ import '../css/main.scss';
 // Add jQuery
 import $ from 'jquery';
 
+require('bootstrap');
+
 // Activate jQuery popover
 $(document).ready(function() {
     $('[data-toggle="popover"]').popover();

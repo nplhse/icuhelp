@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="0azKJvE" resname="title.homepage">
+        <source>title.homepage</source>
+        <target>Homepage</target>
+      </trans-unit>
+      <trans-unit id="acVpEs4" resname="You are logged in as">
+        <source>You are logged in as</source>
+        <target>You are logged in as</target>
+      </trans-unit>
+      <trans-unit id="0FJ_Sz1" resname="Logout">
+        <source>Logout</source>
+        <target>Logout</target>
+      </trans-unit>
+      <trans-unit id="4TlvZQK" resname="action.toggle_navigation">
+        <source>action.toggle_navigation</source>
+        <target>Toggle navigation</target>
+      </trans-unit>
+      <trans-unit id="L46t3My" resname="link.homepage">
+        <source>link.homepage</source>
+        <target>Homepage</target>
+      </trans-unit>
+      <trans-unit id="y5mF6xM" resname="link.letter">
+        <source>link.letter</source>
+        <target>Letter</target>
+      </trans-unit>
+      <trans-unit id="UACOizK" resname="label.logged_in_as">
+        <source>label.logged_in_as</source>
+        <target>Logged in as</target>
+      </trans-unit>
+      <trans-unit id="FSyD6SO" resname="link.logout">
+        <source>link.logout</source>
+        <target>Logout</target>
+      </trans-unit>
+      <trans-unit id="Q5ha4LM" resname="link.login">
+        <source>link.login</source>
+        <target>Login</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

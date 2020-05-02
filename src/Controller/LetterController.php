@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class LetterController extends AbstractController
 {
     /**
-     * @Route("/letter", name="letter")
+     * @Route({"de": "/arztbriefe", "en": "/letter"}, name="letter")
      */
     public function index()
     {
