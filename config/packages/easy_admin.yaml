@@ -1,5 +1,10 @@
 easy_admin:
-    site_name: 'ICUhelp backend'
+    site_name: 'ICUhelp'
+
+    design:
+        menu:
+            - { entity: 'User', label: 'link.users', icon: 'users' }
+            - { label: 'link.frontend', icon: 'power-off', route: 'homepage' }
 
     user:
         display_name: true
@@ -9,3 +14,24 @@ easy_admin:
     entities:
         User:
             class: App\Entity\User
+            label: label.user
+            list:
+                title: link.users
+                fields:
+                    - { property: 'id', label: 'label.id' }
+                    - { property: 'username', label: 'label.username' }
+                    - { property: 'email', type: 'email', label: 'label.email' }
+            form:
+                form_options: { validation_groups: ['Default'] }
+                fields:
+                    - { type: 'group', css_class: 'col-sm-7', label: 'title.user_basics' }
+                    - { property: 'username', label: 'label.username' }
+                    - { property: 'email', type: 'email', label: 'label.email' }
+                    - { property: 'plainPassword', type: 'password', label: 'label.password', type_options: { required: false } }
+                    - { type: 'group', css_class: 'col-sm-5', label: 'title.user_properties' }
+                    - { property: 'roles', type: 'choice', label: 'label.roles', type_options: { multiple: true, choices: { 'ROLE_USER': 'ROLE_USER', 'ROLE_ADMIN': 'ROLE_ADMIN' } } }
+                new:
+                    title: 'title.user_new'
+                    form_options: { validation_groups: ['Default', 'registration'] }
+                edit:
+                    title:  'title.user_edit'

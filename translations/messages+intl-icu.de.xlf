@@ -45,6 +45,66 @@
         <source>link.backend</source>
         <target>Administration</target>
       </trans-unit>
+      <trans-unit id="link.frontend">
+        <source>link.frontend</source>
+        <target>Zurück zur Seite</target>
+      </trans-unit>
+      <trans-unit id="link.users">
+        <source>link.users</source>
+        <target>Benutzer</target>
+      </trans-unit>
+      <trans-unit id="label.username">
+        <source>label.username</source>
+        <target>Benutzername</target>
+      </trans-unit>
+      <trans-unit id="label.password">
+        <source>label.password</source>
+        <target>Passwort</target>
+      </trans-unit>
+      <trans-unit id="label.email">
+        <source>label.email</source>
+        <target>E-Mail</target>
+      </trans-unit>
+      <trans-unit id="label.id">
+        <source>label.id</source>
+        <target>ID</target>
+      </trans-unit>
+      <trans-unit id="label.user">
+        <source>label.user</source>
+        <target>Benutzer</target>
+      </trans-unit>
+      <trans-unit id="title.user_basics">
+        <source>title.user_basics</source>
+        <target>Daten</target>
+      </trans-unit>
+      <trans-unit id="title.user_properties">
+        <source>title.user_properties</source>
+        <target>Eigenschaften</target>
+      </trans-unit>
+      <trans-unit id="label.roles">
+        <source>label.roles</source>
+        <target>Benutzerrollen</target>
+      </trans-unit>
+      <trans-unit id="ROLE_ADMIN">
+        <source>ROLE_ADMIN</source>
+        <target>Administrator</target>
+      </trans-unit>
+      <trans-unit id="ROLE_USER">
+        <source>ROLE_USER</source>
+        <target>Benutzer</target>
+      </trans-unit>
+      <trans-unit id="homepage_teaser_h1">
+        <source>homepage_teaser_h1</source>
+        <target>Arztbriefe</target>
+      </trans-unit>
+      <trans-unit id="homepage_teaser_text">
+        <source>homepage_teaser_text</source>
+        <target>Mit Hilfe von durch das System vorgegebenen Textbausteinen und ein paar Angaben können schnell und einfach individualisierte Arztbriefe erstellt werden.</target>
+      </trans-unit>
+      <trans-unit id="homepage_teaser_link">
+        <source>homepage_teaser_link</source>
+        <target>Zum Arztbrief Tool</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

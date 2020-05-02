@@ -27,7 +27,7 @@
       </trans-unit>
       <trans-unit id="y5mF6xM" resname="link.letter">
         <source>link.letter</source>
-        <target>Letter</target>
+        <target>Medical letters</target>
       </trans-unit>
       <trans-unit id="vdNKtJ." resname="label.logged_in_as">
         <source>label.logged_in_as</source>
@@ -44,6 +44,62 @@
       <trans-unit id="ArfrD6N" resname="link.backend">
         <source>link.backend</source>
         <target>Admin backend</target>
+      </trans-unit>
+      <trans-unit id="link.frontend">
+        <source>link.frontend</source>
+        <target>Back to frontend</target>
+      </trans-unit>
+      <trans-unit id="link.users">
+        <source>link.users</source>
+        <target>Users</target>
+      </trans-unit>
+      <trans-unit id="label.username">
+        <source>label.username</source>
+        <target>Username</target>
+      </trans-unit>
+      <trans-unit id="label.password">
+        <source>label.password</source>
+        <target>Password</target>
+      </trans-unit>
+      <trans-unit id="label.email">
+        <source>label.email</source>
+        <target>E-Mail</target>
+      </trans-unit>
+      <trans-unit id="label.id">
+        <source>label.id</source>
+        <target>ID</target>
+      </trans-unit>
+      <trans-unit id="title.user_basics">
+        <source>title.user_basics</source>
+        <target>Basics</target>
+      </trans-unit>
+      <trans-unit id="title.user_properties">
+        <source>title.user_properties</source>
+        <target>Properties</target>
+      </trans-unit>
+      <trans-unit id="label.roles">
+        <source>label.roles</source>
+        <target>Roles</target>
+      </trans-unit>
+      <trans-unit id="ROLE_ADMIN">
+        <source>ROLE_ADMIN</source>
+        <target>Administrator</target>
+      </trans-unit>
+      <trans-unit id="ROLE_USER">
+        <source>ROLE_USER</source>
+        <target>User</target>
+      </trans-unit>
+      <trans-unit id="homepage_teaser_h1">
+        <source>homepage_teaser_h1</source>
+        <target>Medical letters</target>
+      </trans-unit>
+      <trans-unit id="homepage_teaser_text">
+        <source>homepage_teaser_text</source>
+        <target>With this special tool it is possible to create individual medical letters with the help of some modular text snippets.</target>
+      </trans-unit>
+      <trans-unit id="homepage_teaser_link">
+        <source>homepage_teaser_link</source>
+        <target>Go to medical letter tool</target>
       </trans-unit>
     </body>
   </file>
