@@ -1,15 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello LetterController!{% endblock %}
+{% block title %}{{ parent() }} - {{ "title.letter_create"|trans }}{% endblock %}
 
 {% block body %}
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <main role="main" class="container">
+        <div class="jumbotron">
+            <h1>{{ "title.letter_create"|trans }}</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/nplhse/Projekte/icuhelp/src/Controller/LetterController.php'|file_link(0) }}">src/Controller/LetterController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/nplhse/Projekte/icuhelp/templates/letter/homepage.html.twig'|file_link(0) }}">templates/letter/index.html.twig</a></code></li>
-    </ul>
-</div>
+            {% for error in errors %}
+                <div class="alert alert-danger">
+                    {{ error.messageKey|trans(error.messageData, 'security') }}
+                </div>
+            {% endfor %}
+
+            {{ form_start(form) }}
+
+            {{ form_row(form.name) }}
+            {{ form_row(form.gender) }}
+            {{ form_row(form.snippets) }}
+
+            <button type="submit" class="btn btn-success">{{ "button.createletter"|trans({}, "forms") }} <span class="fa fa-lock"></span></button>
+            {{ form_end(form) }}
+        </div>
+    </main>
 {% endblock %}

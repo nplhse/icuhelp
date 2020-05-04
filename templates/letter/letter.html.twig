@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - {{ "title.letter_view"|trans }}{% endblock %}
+
+{% block body %}
+    <main role="main" class="container">
+        <h1>{{ "title.letter_view"|trans }}</h1>
+
+        {{ name }} {{ gender }}
+    </main>
+{% endblock %}
