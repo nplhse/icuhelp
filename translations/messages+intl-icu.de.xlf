@@ -105,6 +105,14 @@
         <source>homepage_teaser_link</source>
         <target>Zum Arztbrief Tool</target>
       </trans-unit>
+      <trans-unit id="link.snippets">
+        <source>link.snippets</source>
+        <target>Textbausteine</target>
+      </trans-unit>
+      <trans-unit id="Snippet">
+        <source>Snippet</source>
+        <target>Textbaustein</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

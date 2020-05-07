@@ -6,6 +6,15 @@
     <main role="main" class="container">
         <h1>{{ "title.letter_view"|trans }}</h1>
 
-        {{ name }} {{ gender }}
+        {% for snippet in snippets %}
+            {# you don't have to import the macro before using it #}
+            {{ _self.render_snippet(snippet) }}
+        {% endfor %}
     </main>
 {% endblock %}
+
+{% macro render_snippet(snippet, name, gender) %}
+    <p>
+        {{ snippet }}
+    </p>
+{% endmacro %}

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Form\LetterType;
+use App\Service\LetterBuilder;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,7 +15,7 @@ class LetterController extends AbstractController
      * @Route({"de": "/arztbriefe", "en": "/letter"}, name="letter")
      * @IsGranted("ROLE_USER")
      */
-    public function index(Request $request)
+    public function index(Request $request, LetterBuilder $letterBuilder)
     {
         $form = $this->createForm(LetterType::class);
         $form->handleRequest($request);
@@ -22,12 +23,12 @@ class LetterController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $data = dump($form->getData());
 
-            $name = $data['name'];
-            $gender = $data['gender'];
+            //$snippets = $this->fetchSnippets($data->getSnippets());
+
+            $letter = $letterBuilder->build($data);
 
             return $this->render('letter/letter.html.twig', [
-                'name' => $name,
-                'gender' => $gender
+                'snippets' => $letter,
             ]);
         }
 
@@ -35,5 +36,9 @@ class LetterController extends AbstractController
             'form' => $form->createView(),
             'errors' => $form->getErrors(true, false),
         ]);
+    }
+
+    private function fetchSnippets($snippets)
+    {
     }
 }

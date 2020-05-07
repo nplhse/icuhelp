@@ -2,6 +2,10 @@
 
 namespace App\Form;
 
+use App\Entity\Snippet;
+use App\Form\Model\LetterTypeModel;
+use Doctrine\ORM\EntityRepository;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -19,12 +23,12 @@ class LetterType extends AbstractType
                     'female' => 'label.choice.female',
                     ],
                 ])
-            ->add('snippets', ChoiceType::class, [
-                'choices' => [
-                    'anamnese' => [
-                        'Aus Op nach ACB' => 'an_op-acb',
-                    ],
-                ],
+            ->add('snippets', EntityType::class, [
+                'class' => Snippet::class,
+                'query_builder' => function (EntityRepository $er) {
+                    return $er->createQueryBuilder('u')
+                        ->orderBy('u.category', 'ASC');
+                },
                 'expanded' => true,
                 'multiple' => true,
             ]);
@@ -33,7 +37,7 @@ class LetterType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            // Configure your form options here
+            'data_class' => LetterTypeModel::class,
         ]);
     }
 }

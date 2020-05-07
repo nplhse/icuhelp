@@ -4,6 +4,7 @@ easy_admin:
     design:
         menu:
             - { entity: 'User', label: 'link.users', icon: 'users' }
+            - { entity: 'Snippet', label: 'link.snippets', icon: 'clipboard' }
             - { label: 'link.frontend', icon: 'power-off', route: 'homepage' }
 
     user:
@@ -35,3 +36,5 @@ easy_admin:
                     form_options: { validation_groups: ['Default', 'registration'] }
                 edit:
                     title:  'title.user_edit'
+        Snippet:
+            class: App\Entity\Snippet
