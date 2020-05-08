@@ -45,61 +45,69 @@
         <source>link.backend</source>
         <target>Admin backend</target>
       </trans-unit>
-      <trans-unit id="link.frontend">
+      <trans-unit id="IoyE0St" resname="link.frontend">
         <source>link.frontend</source>
         <target>Back to frontend</target>
       </trans-unit>
-      <trans-unit id="link.users">
+      <trans-unit id="aXlQE1P" resname="link.users">
         <source>link.users</source>
         <target>Users</target>
       </trans-unit>
-      <trans-unit id="label.username">
+      <trans-unit id="LDhDPrF" resname="label.username">
         <source>label.username</source>
         <target>Username</target>
       </trans-unit>
-      <trans-unit id="label.password">
+      <trans-unit id="9pvowqn" resname="label.password">
         <source>label.password</source>
         <target>Password</target>
       </trans-unit>
-      <trans-unit id="label.email">
+      <trans-unit id="D2N6_cP" resname="label.email">
         <source>label.email</source>
         <target>E-Mail</target>
       </trans-unit>
-      <trans-unit id="label.id">
+      <trans-unit id="txRonia" resname="label.id">
         <source>label.id</source>
         <target>ID</target>
       </trans-unit>
-      <trans-unit id="title.user_basics">
+      <trans-unit id="b2T8qPt" resname="title.user_basics">
         <source>title.user_basics</source>
         <target>Basics</target>
       </trans-unit>
-      <trans-unit id="title.user_properties">
+      <trans-unit id="1b47zpx" resname="title.user_properties">
         <source>title.user_properties</source>
         <target>Properties</target>
       </trans-unit>
-      <trans-unit id="label.roles">
+      <trans-unit id="iD6CNOO" resname="label.roles">
         <source>label.roles</source>
         <target>Roles</target>
       </trans-unit>
-      <trans-unit id="ROLE_ADMIN">
+      <trans-unit id="718iPw6" resname="ROLE_ADMIN">
         <source>ROLE_ADMIN</source>
         <target>Administrator</target>
       </trans-unit>
-      <trans-unit id="ROLE_USER">
+      <trans-unit id="rvO5ZXf" resname="ROLE_USER">
         <source>ROLE_USER</source>
         <target>User</target>
       </trans-unit>
-      <trans-unit id="homepage_teaser_h1">
+      <trans-unit id="jgnXgPh" resname="homepage_teaser_h1">
         <source>homepage_teaser_h1</source>
         <target>Medical letters</target>
       </trans-unit>
-      <trans-unit id="homepage_teaser_text">
+      <trans-unit id="qyK0pid" resname="homepage_teaser_text">
         <source>homepage_teaser_text</source>
         <target>With this special tool it is possible to create individual medical letters with the help of some modular text snippets.</target>
       </trans-unit>
-      <trans-unit id="homepage_teaser_link">
+      <trans-unit id=".zQWhJe" resname="homepage_teaser_link">
         <source>homepage_teaser_link</source>
         <target>Go to medical letter tool</target>
+      </trans-unit>
+      <trans-unit id="FGP9pNh" resname="title.letter_view">
+        <source>title.letter_view</source>
+        <target>View letter</target>
+      </trans-unit>
+      <trans-unit id="DMxk9SJ" resname="title.letter_create">
+        <source>title.letter_create</source>
+        <target>Create letter</target>
       </trans-unit>
     </body>
   </file>

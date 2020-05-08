@@ -1,0 +1,45 @@
+{%- block choice_widget_expanded -%}
+    {% for name, choices in form.vars.choices %}
+        {% if choices is iterable  %}
+            <label class="choice_category">
+                <strong>
+                    {{ choice_translation_domain is same as(false) ? name : name|trans({}, choice_translation_domain) }}
+                </strong>
+            </label>
+            <div>
+                {% for key, choice in choices %}
+                    <div class="form-control">
+                        <div class="custom-control custom-checkbox">
+                            {{- form_label(form[key], null, {
+                                'label_attr':{
+                                    'class':'custom-control-label'
+                                }
+                            }) -}}
+                            {{- form_widget(form[key]) -}}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <label class="choice_category">
+                <strong>
+                    {{ choice_translation_domain is same as(false) ? form[name].vars.label : form[name].vars.label|trans({}, choice_translation_domain) }}
+                </strong>
+            </label>
+            <div class="form-control">
+                <div class="custom-control custom-checkbox">
+                    {{- form_widget(form[name], {
+                        'attr':{
+                            'class':'custom-control-input',
+                            'checked':true
+                        }}) -}}
+                    {{- form_label(form[name], null, {
+                        'label_attr':{
+                            'class':'custom-control-label'
+                        }
+                    }) -}}
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+{%- endblock choice_widget_expanded -%}

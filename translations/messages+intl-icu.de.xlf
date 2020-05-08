@@ -45,73 +45,81 @@
         <source>link.backend</source>
         <target>Administration</target>
       </trans-unit>
-      <trans-unit id="link.frontend">
+      <trans-unit id="IoyE0St" resname="link.frontend">
         <source>link.frontend</source>
         <target>Zurück zur Seite</target>
       </trans-unit>
-      <trans-unit id="link.users">
+      <trans-unit id="aXlQE1P" resname="link.users">
         <source>link.users</source>
         <target>Benutzer</target>
       </trans-unit>
-      <trans-unit id="label.username">
+      <trans-unit id="LDhDPrF" resname="label.username">
         <source>label.username</source>
         <target>Benutzername</target>
       </trans-unit>
-      <trans-unit id="label.password">
+      <trans-unit id="9pvowqn" resname="label.password">
         <source>label.password</source>
         <target>Passwort</target>
       </trans-unit>
-      <trans-unit id="label.email">
+      <trans-unit id="D2N6_cP" resname="label.email">
         <source>label.email</source>
         <target>E-Mail</target>
       </trans-unit>
-      <trans-unit id="label.id">
+      <trans-unit id="txRonia" resname="label.id">
         <source>label.id</source>
         <target>ID</target>
       </trans-unit>
-      <trans-unit id="label.user">
+      <trans-unit id="O2X4xZH" resname="label.user">
         <source>label.user</source>
         <target>Benutzer</target>
       </trans-unit>
-      <trans-unit id="title.user_basics">
+      <trans-unit id="b2T8qPt" resname="title.user_basics">
         <source>title.user_basics</source>
         <target>Daten</target>
       </trans-unit>
-      <trans-unit id="title.user_properties">
+      <trans-unit id="1b47zpx" resname="title.user_properties">
         <source>title.user_properties</source>
         <target>Eigenschaften</target>
       </trans-unit>
-      <trans-unit id="label.roles">
+      <trans-unit id="iD6CNOO" resname="label.roles">
         <source>label.roles</source>
         <target>Benutzerrollen</target>
       </trans-unit>
-      <trans-unit id="ROLE_ADMIN">
+      <trans-unit id="718iPw6" resname="ROLE_ADMIN">
         <source>ROLE_ADMIN</source>
         <target>Administrator</target>
       </trans-unit>
-      <trans-unit id="ROLE_USER">
+      <trans-unit id="rvO5ZXf" resname="ROLE_USER">
         <source>ROLE_USER</source>
         <target>Benutzer</target>
       </trans-unit>
-      <trans-unit id="homepage_teaser_h1">
+      <trans-unit id="jgnXgPh" resname="homepage_teaser_h1">
         <source>homepage_teaser_h1</source>
         <target>Arztbriefe</target>
       </trans-unit>
-      <trans-unit id="homepage_teaser_text">
+      <trans-unit id="qyK0pid" resname="homepage_teaser_text">
         <source>homepage_teaser_text</source>
         <target>Mit Hilfe von durch das System vorgegebenen Textbausteinen und ein paar Angaben können schnell und einfach individualisierte Arztbriefe erstellt werden.</target>
       </trans-unit>
-      <trans-unit id="homepage_teaser_link">
+      <trans-unit id=".zQWhJe" resname="homepage_teaser_link">
         <source>homepage_teaser_link</source>
         <target>Zum Arztbrief Tool</target>
       </trans-unit>
-      <trans-unit id="link.snippets">
+      <trans-unit id="3Y4_z.2" resname="link.snippets">
         <source>link.snippets</source>
         <target>Textbausteine</target>
       </trans-unit>
-      <trans-unit id="Snippet">
+      <trans-unit id="SPVcuJX" resname="Snippet">
         <source>Snippet</source>
         <target>Textbaustein</target>
+      </trans-unit>
+      <trans-unit id="FGP9pNh" resname="title.letter_view">
+        <source>title.letter_view</source>
+        <target>Arztbrief ansehen</target>
+      </trans-unit>
+      <trans-unit id="DMxk9SJ" resname="title.letter_create">
+        <source>title.letter_create</source>
+        <target>Arztbrief erstellen</target>
       </trans-unit>
     </body>
   </file>

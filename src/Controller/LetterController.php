@@ -21,14 +21,10 @@ class LetterController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $data = dump($form->getData());
-
-            //$snippets = $this->fetchSnippets($data->getSnippets());
-
-            $letter = $letterBuilder->build($data);
+            $data = $form->getData();
 
             return $this->render('letter/letter.html.twig', [
-                'snippets' => $letter,
+                'snippets' => $letter = $letterBuilder->build($data),
             ]);
         }
 

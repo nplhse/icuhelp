@@ -21,6 +21,10 @@
         <source>label.password</source>
         <target>Password</target>
       </trans-unit>
+      <trans-unit id="UtxUxgS" resname="button.createletter">
+        <source>button.createletter</source>
+        <target>Create letter</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
