@@ -35,6 +35,23 @@ easy_admin:
                     title: 'title.user_new'
                     form_options: { validation_groups: ['Default', 'registration'] }
                 edit:
-                    title:  'title.user_edit'
+                    title: 'title.user_edit'
         Snippet:
             class: App\Entity\Snippet
+            label: label.snippet
+            list:
+                title: link.snippets
+                fields:
+                    - { property: 'id', label: 'label.id' }
+                    - { property: 'name', label: 'label.snippet.name' }
+                    - { property: 'category', label: 'label.snippet.category' }
+            form:
+                fields:
+                    - { property: 'id', label: 'label.id' }
+                    - { property: 'name', label: 'label.snippet.name' }
+                    - { property: 'category', label: 'label.snippet.category' }
+                    - { property: 'text', label: 'label.snippet.text' }
+                new:
+                    title: 'title.snippet.new'
+                edit:
+                    title: 'title.snippet.edit'

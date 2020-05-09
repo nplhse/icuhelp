@@ -121,6 +121,42 @@
         <source>title.letter_create</source>
         <target>Arztbrief erstellen</target>
       </trans-unit>
+      <trans-unit id="JwfhkSs" resname="label.snippet">
+        <source>label.snippet</source>
+        <target>Textbaustein</target>
+      </trans-unit>
+      <trans-unit id="bYX7VHH" resname="label.snippet.name">
+        <source>label.snippet.name</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="Nc1OuHd" resname="label.snippets">
+        <source>label.snippets</source>
+        <target>Textbausteine</target>
+      </trans-unit>
+      <trans-unit id="Pbi97cQ" resname="label.snippet.category">
+        <source>label.snippet.category</source>
+        <target>Kategorie</target>
+      </trans-unit>
+      <trans-unit id="4BAhvtK" resname="label.snippet.text">
+        <source>label.snippet.text</source>
+        <target>Übernahmetext</target>
+      </trans-unit>
+      <trans-unit id="7.rZg8n" resname="label.gender">
+        <source>label.gender</source>
+        <target>Geschlecht</target>
+      </trans-unit>
+      <trans-unit id="rS3PB8_" resname="label.choice.male">
+        <source>label.choice.male</source>
+        <target>Männlich</target>
+      </trans-unit>
+      <trans-unit id="osNASCu" resname="label.choice.female">
+        <source>label.choice.female</source>
+        <target>Weiblich</target>
+      </trans-unit>
+      <trans-unit id="js0WzqP" resname="label.letter.name">
+        <source>label.letter.name</source>
+        <target>Patientenname</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

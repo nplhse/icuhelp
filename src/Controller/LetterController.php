@@ -15,26 +15,22 @@ class LetterController extends AbstractController
      * @Route({"de": "/arztbriefe", "en": "/letter"}, name="letter")
      * @IsGranted("ROLE_USER")
      */
-    public function index(Request $request, LetterBuilder $letterBuilder)
+    public function letter(Request $request, LetterBuilder $letterBuilder)
     {
         $form = $this->createForm(LetterType::class);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $data = $form->getData();
+            $letterDTO = $form->getData();
 
             return $this->render('letter/letter.html.twig', [
-                'snippets' => $letter = $letterBuilder->build($data),
+                'snippets' => $letter = $letterBuilder->build($letterDTO),
             ]);
         }
 
-        return $this->render('letter/index.html.twig', [
+        return $this->render('letter/form.html.twig', [
             'form' => $form->createView(),
             'errors' => $form->getErrors(true, false),
         ]);
-    }
-
-    private function fetchSnippets($snippets)
-    {
     }
 }
