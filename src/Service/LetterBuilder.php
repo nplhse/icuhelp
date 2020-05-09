@@ -6,7 +6,7 @@ use App\Form\Model\LetterTypeModel;
 
 class LetterBuilder
 {
-   public function build(LetterTypeModel $letterTypeModel)
+    public function build(LetterTypeModel $letterTypeModel)
     {
         $i = 0;
 

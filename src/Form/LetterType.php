@@ -31,9 +31,9 @@ class LetterType extends AbstractType
                 },
                 'expanded' => true,
                 'multiple' => true,
-                'group_by' => function(Snippet $snippet) {
+                'group_by' => function (Snippet $snippet) {
                     return $snippet->getCategory();
-                }
+                },
             ]);
     }
 
