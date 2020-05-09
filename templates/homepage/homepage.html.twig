@@ -4,6 +4,12 @@
 
 {% block body %}
     <main role="main" class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active" aria-current="page"><a href="{{ path('homepage') }}">{{ "link.homepage"|trans }}</a></li>
+            </ol>
+        </nav>
+
         <div class="jumbotron">
             <h1>{{ "homepage_teaser_h1"|trans }}</h1>
             <p class="lead">{{ "homepage_teaser_text"|trans }}</p>

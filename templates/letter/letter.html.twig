@@ -4,12 +4,35 @@
 
 {% block body %}
     <main role="main" class="container">
-        <h1>{{ "title.letter_view"|trans }}</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ path('homepage') }}">{{ "link.homepage"|trans }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ path('letter') }}">{{ "link.letter"|trans }}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ "title.letter_view"|trans }}</li>
+            </ol>
+        </nav>
 
-        {% for snippet in snippets %}
-            {# you don't have to import the macro before using it #}
-            {{ _self.render_snippet(snippet) }}
-        {% endfor %}
+
+        <div>
+            <h1>{{ "title.letter_view"|trans }}</h1>
+
+            <div class="jumbotron">
+                {% if snippets is empty %}
+                    <div class="alert alert-danger">
+                        {{ "msg.no_snippets_provied"|trans }}
+                    </div>
+                {% endif %}
+
+                {% for snippet in snippets %}
+                    {# you don't have to import the macro before using it #}
+                    {{ _self.render_snippet(snippet) }}
+                {% endfor %}
+            </div>
+
+            <div class="clearfix">
+                <a class="btn btn-primary float-right" href="{{ path('letter') }}" role="button">{{ "link.letter_create.back"|trans }}</a>
+            </div>
+        </div>
     </main>
 {% endblock %}
 

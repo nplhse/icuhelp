@@ -157,6 +157,22 @@
         <source>label.letter.name</source>
         <target>Patientenname</target>
       </trans-unit>
+      <trans-unit id="UzOPlYW" resname="link.letter_create.back">
+        <source>link.letter_create.back</source>
+        <target>Zurück zu Arztbrief erstellen</target>
+      </trans-unit>
+      <trans-unit id="q559wkA" resname="msg.no_snippets_provied">
+        <source>msg.no_snippets_provied</source>
+        <target>Es wurden keine Textbausteine ausgewählt.</target>
+      </trans-unit>
+      <trans-unit id="j1NccuH" resname="button.letter.reset">
+        <source>button.letter.reset</source>
+        <target>Daten löschen</target>
+      </trans-unit>
+      <trans-unit id="irWVvoL" resname="button.letter.submit">
+        <source>button.letter.submit</source>
+        <target>Arztbrief erstellen</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

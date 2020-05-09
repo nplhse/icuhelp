@@ -8,6 +8,7 @@ class LetterBuilder
 {
     public function build(LetterTypeModel $letterTypeModel)
     {
+        $result = [];
         $i = 0;
 
         foreach ($letterTypeModel->getSnippets() as $snippet) {

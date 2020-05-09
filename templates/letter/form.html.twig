@@ -6,7 +6,14 @@
 
 {% block body %}
     <main role="main" class="container">
-        <div class="jumbotron">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ path('homepage') }}">{{ "link.homepage"|trans }}</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="{{ path('letter') }}">{{ "link.letter"|trans }}</a></li>
+            </ol>
+        </nav>
+
+        <div class="clearfix">
             <h1>{{ "title.letter_create"|trans }}</h1>
 
             {% for error in errors %}
@@ -22,7 +29,10 @@
 
             {{ form_row(form.snippets) }}
 
-            <button type="submit" class="btn btn-success">{{ "button.createletter"|trans({}, "forms") }} <span class="fa fa-lock"></span></button>
+            <div class="btn-group float-right" role="group" aria-label="Basic example">
+                {{ form_widget(form.reset) }}
+                {{ form_widget(form.submit) }}
+            </div>
             {{ form_end(form) }}
         </div>
     </main>

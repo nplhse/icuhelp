@@ -145,6 +145,22 @@
         <source>label.letter.name</source>
         <target>Patient name</target>
       </trans-unit>
+      <trans-unit id="UzOPlYW" resname="link.letter_create.back">
+        <source>link.letter_create.back</source>
+        <target>Back to form</target>
+      </trans-unit>
+      <trans-unit id="q559wkA" resname="msg.no_snippets_provied">
+        <source>msg.no_snippets_provied</source>
+        <target>No snippets were choosen.</target>
+      </trans-unit>
+      <trans-unit id="j1NccuH" resname="button.letter.reset">
+        <source>button.letter.reset</source>
+        <target>Reset</target>
+      </trans-unit>
+      <trans-unit id="irWVvoL" resname="button.letter.submit">
+        <source>button.letter.submit</source>
+        <target>Create letter</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
