@@ -39,7 +39,7 @@ class SnippetFixtures extends Fixture
                 [
                     'name' => 'Demo snippet',
                     'category' => 'Demo',
-                    'text' => 'This is just a demo snippet for ^Mr^~Mrs~ @name@. And it works. Yay!',
+                    'text' => 'This is just a demo snippet for ^Mr^~Mrs~ #Name#. And it works. Yay!',
                 ],
             ];
     }

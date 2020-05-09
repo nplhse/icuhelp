@@ -25,7 +25,7 @@ class LetterBuilder
 
     private function renderName($text, $name)
     {
-        return preg_replace('#\@(.*)\@#', $name, $text);
+        return preg_replace('#\#(.*)\##', $name, $text);
     }
 
     private function renderGender($text, $gender)
