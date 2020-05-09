@@ -96,9 +96,6 @@
     "doctrine/reflection": {
         "version": "1.2.1"
     },
-    "easycorp/easy-deploy-bundle": {
-        "version": "v1.0.6"
-    },
     "easycorp/easyadmin-bundle": {
         "version": "2.0",
         "recipe": {
