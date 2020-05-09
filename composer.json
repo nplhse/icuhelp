@@ -25,7 +25,6 @@
     },
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^3.3",
-        "easycorp/easy-deploy-bundle": "^1.0",
         "friendsofphp/php-cs-fixer": "^2.16"
     },
     "config": {
