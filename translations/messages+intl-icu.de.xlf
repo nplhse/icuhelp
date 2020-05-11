@@ -173,6 +173,10 @@
         <source>button.letter.submit</source>
         <target>Arztbrief erstellen</target>
       </trans-unit>
+      <trans-unit id="sDKWKXH" resname="button.remember_me">
+        <source>button.remember_me</source>
+        <target>Angemeldet bleiben</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

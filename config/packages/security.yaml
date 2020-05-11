@@ -25,9 +25,10 @@ security:
                 target: homepage
 
             remember_me:
-                secret:   '%kernel.secret%'
+                secret: '%kernel.secret%'
                 lifetime: 604800 # 1 week in seconds
-                path:     /
+                path: /
+                token_provider: 'Symfony\Bridge\Doctrine\Security\RememberMe\DoctrineTokenProvider'
 
     role_hierarchy:
         ROLE_ADMIN: ROLE_USER

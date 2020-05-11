@@ -161,6 +161,10 @@
         <source>button.letter.submit</source>
         <target>Create letter</target>
       </trans-unit>
+      <trans-unit id="sDKWKXH" resname="button.remember_me">
+        <source>button.remember_me</source>
+        <target>Remember me</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
