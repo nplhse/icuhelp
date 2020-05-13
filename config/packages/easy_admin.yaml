@@ -28,7 +28,7 @@ easy_admin:
                     - { type: 'group', css_class: 'col-sm-7', label: 'title.user_basics' }
                     - { property: 'username', label: 'label.username' }
                     - { property: 'email', type: 'email', label: 'label.email' }
-                    - { property: 'plainPassword', type: 'password', label: 'label.password', type_options: { required: false } }
+                    - { property: 'plainPassword', type: 'password', label: 'label.password', type_options: { required: false, empty_data: '' } }
                     - { type: 'group', css_class: 'col-sm-5', label: 'title.user_properties' }
                     - { property: 'roles', type: 'choice', label: 'label.roles', type_options: { multiple: true, choices: { 'ROLE_USER': 'ROLE_USER', 'ROLE_ADMIN': 'ROLE_ADMIN' } } }
                 new:
@@ -47,7 +47,6 @@ easy_admin:
                     - { property: 'category', label: 'label.snippet.category' }
             form:
                 fields:
-                    - { property: 'id', label: 'label.id' }
                     - { property: 'name', label: 'label.snippet.name' }
                     - { property: 'category', label: 'label.snippet.category' }
                     - { property: 'text', label: 'label.snippet.text' }
