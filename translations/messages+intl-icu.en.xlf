@@ -205,9 +205,17 @@
         <source>link.snippet.list</source>
         <target>List snippets</target>
       </trans-unit>
-      <trans-unit id="" resname="button.snippet.save">
+      <trans-unit id="mQTgUa5" resname="button.snippet.save">
         <source>button.snippet.save</source>
         <target>Save snippet</target>
+      </trans-unit>
+      <trans-unit id="dEjYy59" resname="msg.snippet.added">
+        <source>msg.snippet.added</source>
+        <target>Successfully added snippet!</target>
+      </trans-unit>
+      <trans-unit id="D5GUG4n" resname="msg.snippet.edited">
+        <source>msg.snippet.edited</source>
+        <target>Snippet edited.</target>
       </trans-unit>
     </body>
   </file>

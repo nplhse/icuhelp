@@ -221,9 +221,17 @@
         <source>button.snippet.create</source>
         <target>Textbaustein erstellen</target>
       </trans-unit>
-      <trans-unit id="" resname="button.snippet.save">
+      <trans-unit id="mQTgUa5" resname="button.snippet.save">
         <source>button.snippet.save</source>
         <target>Textbaustein speichern</target>
+      </trans-unit>
+      <trans-unit id="dEjYy59" resname="msg.snippet.added">
+        <source>msg.snippet.added</source>
+        <target>Textbaustein erfolgreich erstellt!</target>
+      </trans-unit>
+      <trans-unit id="D5GUG4n" resname="msg.snippet.edited">
+        <source>msg.snippet.edited</source>
+        <target>Textbaustein bearbeitet.</target>
       </trans-unit>
     </body>
   </file>
