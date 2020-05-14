@@ -16,21 +16,27 @@
         <div>
             <h1>{{ "title.letter_view"|trans }}</h1>
 
-            <div class="jumbotron">
-                {% if snippets is empty %}
-                    <div class="alert alert-danger">
-                        {{ "msg.no_snippets_provied"|trans }}
+            <div class="card">
+                <div class="card-header">
+                    <h4>{{ "title.letter_card"|trans }}<button class="btn btn-dark btn-sm float-right" data-clipboard-target="#copy-target"><i class="fa fa-clipboard"></i> {{ "button.letter.copy"|trans }}</button></h4>
+                </div>
+                <div class="card-body" id="copy-target">
+                    {% if snippets is empty %}
+                        <div class="alert alert-danger">
+                            {{ "msg.no_snippets_provied"|trans }}
+                        </div>
+                    {% endif %}
+
+                    {% for snippet in snippets %}
+                        {# you don't have to import the macro before using it #}
+                        {{ _self.render_snippet(snippet) }}
+                    {% endfor %}
+                </div>
+                <div class="card-footer">
+                    <div class="clearfix">
+                        <a class="btn btn-primary float-right" href="{{ path('letter') }}" role="button">{{ "link.letter_create.back"|trans }}</a>
                     </div>
-                {% endif %}
-
-                {% for snippet in snippets %}
-                    {# you don't have to import the macro before using it #}
-                    {{ _self.render_snippet(snippet) }}
-                {% endfor %}
-            </div>
-
-            <div class="clearfix">
-                <a class="btn btn-primary float-right" href="{{ path('letter') }}" role="button">{{ "link.letter_create.back"|trans }}</a>
+                </div>
             </div>
         </div>
     </main>

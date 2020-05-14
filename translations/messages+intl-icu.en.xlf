@@ -217,6 +217,14 @@
         <source>msg.snippet.edited</source>
         <target>Snippet edited.</target>
       </trans-unit>
+      <trans-unit id="vCk2OQU" resname="title.letter_card">
+        <source>title.letter_card</source>
+        <target>Letter</target>
+      </trans-unit>
+      <trans-unit id="oX5AGZY" resname="button.letter.copy">
+        <source>button.letter.copy</source>
+        <target>Copy letter</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

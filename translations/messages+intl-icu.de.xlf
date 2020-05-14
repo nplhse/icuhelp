@@ -167,7 +167,7 @@
       </trans-unit>
       <trans-unit id="j1NccuH" resname="button.letter.reset">
         <source>button.letter.reset</source>
-        <target>Daten löschen</target>
+        <target>Zurücksetzen</target>
       </trans-unit>
       <trans-unit id="irWVvoL" resname="button.letter.submit">
         <source>button.letter.submit</source>
@@ -215,7 +215,7 @@
       </trans-unit>
       <trans-unit id="c7uDVm3" resname="link.snippet.list">
         <source>link.snippet.list</source>
-        <target>Textbausteine</target>
+        <target>Textbausteine ansehen</target>
       </trans-unit>
       <trans-unit id="dRiMbJ6" resname="button.snippet.create">
         <source>button.snippet.create</source>
@@ -232,6 +232,14 @@
       <trans-unit id="D5GUG4n" resname="msg.snippet.edited">
         <source>msg.snippet.edited</source>
         <target>Textbaustein bearbeitet.</target>
+      </trans-unit>
+      <trans-unit id="vCk2OQU" resname="title.letter_card">
+        <source>title.letter_card</source>
+        <target>Arztbrief</target>
+      </trans-unit>
+      <trans-unit id="oX5AGZY" resname="button.letter.copy">
+        <source>button.letter.copy</source>
+        <target>Arztbrief kopieren</target>
       </trans-unit>
     </body>
   </file>
