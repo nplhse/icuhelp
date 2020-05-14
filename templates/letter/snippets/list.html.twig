@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - {{ "title.snippets_list"|trans }}{% endblock %}
+
+{% block body %}
+    <main role="main" class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ path('homepage') }}">{{ "link.homepage"|trans }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ path('letter') }}">{{ "link.letter"|trans }}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ "title.snippet.list"|trans }}</li>
+            </ol>
+        </nav>
+
+
+        <div>
+            <h1>{{ "title.snippets_list"|trans }}</h1>
+
+            {% for label, messages in app.flashes %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ label }}" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">{{ "label.snippet.name"|trans }}</th>
+                        <th scope="col">{{ "label.snippet.category"|trans }}</th>
+                        <th scope="col">{{ "label.snippet.options"|trans }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for snippet in snippets %}
+                    <tr>
+                        <th scope="row">{{ snippet.id }}</th>
+                        <td>{{ snippet.name }}</td>
+                        <td>{{ snippet.category }}</td>
+                        <td>
+                            <a href="{{ path('snippet_edit', {id: snippet.id}) }}"><button type="button" class="btn btn-primary">{{ "button.snippet.edit"|trans }}</button></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="clearfix">
+                <div class="btn-group float-right" role="group" aria-label="">
+                    <a class="btn btn-secondary" href="{{ path('letter') }}" role="button">{{ "link.snippet.back_letter"|trans }}</a>
+                    <a class="btn btn-primary" href="{{ path('snippet_new') }}" role="button">{{ "button.snippet.new"|trans }}</a>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

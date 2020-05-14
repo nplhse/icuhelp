@@ -177,6 +177,54 @@
         <source>button.remember_me</source>
         <target>Angemeldet bleiben</target>
       </trans-unit>
+      <trans-unit id="ufhQgtF" resname="title.snippet.edit">
+        <source>title.snippet.edit</source>
+        <target>Textbaustein bearbeiten</target>
+      </trans-unit>
+      <trans-unit id="kRyO7mg" resname="title.snippet.list">
+        <source>title.snippet.list</source>
+        <target>Textbausteine</target>
+      </trans-unit>
+      <trans-unit id="jPVD24b" resname="title.snippet.new">
+        <source>title.snippet.new</source>
+        <target>Neuen Textbaustein erstellen</target>
+      </trans-unit>
+      <trans-unit id="R1ZcQaC" resname="link.snippet.back_list">
+        <source>link.snippet.back_list</source>
+        <target>Zurück zu Textbausteinen</target>
+      </trans-unit>
+      <trans-unit id="75vMzLw" resname="title.snippets_list">
+        <source>title.snippets_list</source>
+        <target>Textbausteine</target>
+      </trans-unit>
+      <trans-unit id="V05hg8N" resname="label.snippet.options">
+        <source>label.snippet.options</source>
+        <target>Optionen</target>
+      </trans-unit>
+      <trans-unit id="5xSstjt" resname="button.snippet.edit">
+        <source>button.snippet.edit</source>
+        <target>Bearbeiten</target>
+      </trans-unit>
+      <trans-unit id="xcpF.0h" resname="link.snippet.back_letter">
+        <source>link.snippet.back_letter</source>
+        <target>Zurück zu Arztbrief erstellen</target>
+      </trans-unit>
+      <trans-unit id="Np58EYl" resname="button.snippet.new">
+        <source>button.snippet.new</source>
+        <target>Neuen Textbaustein erstellen</target>
+      </trans-unit>
+      <trans-unit id="c7uDVm3" resname="link.snippet.list">
+        <source>link.snippet.list</source>
+        <target>Textbausteine</target>
+      </trans-unit>
+      <trans-unit id="dRiMbJ6" resname="button.snippet.create">
+        <source>button.snippet.create</source>
+        <target>Textbaustein erstellen</target>
+      </trans-unit>
+      <trans-unit id="" resname="button.snippet.save">
+        <source>button.snippet.save</source>
+        <target>Textbaustein speichern</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

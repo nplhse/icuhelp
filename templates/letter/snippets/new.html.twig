@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - {{ "title.snippet.new"|trans }}{% endblock %}
+
+{% block body %}
+    <main role="main" class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ path('homepage') }}">{{ "link.homepage"|trans }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ path('letter') }}">{{ "link.letter"|trans }}</a></li>
+                <li class="breadcrumb-item active"><a href="{{ path('snippet_list') }}">{{ "title.snippet.list"|trans }}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ "title.snippet.new"|trans }}</li>
+            </ol>
+        </nav>
+
+        <div class="clearfix">
+            <h1>{{ "title.snippet.new"|trans }}</h1>
+
+            {% for error in errors %}
+                <div class="alert alert-danger">
+                    {{ error.messageKey|trans(error.messageData, 'security') }}
+                </div>
+            {% endfor %}
+
+            {{ include('letter/snippets/_form.html.twig', {
+                button_text: 'button.snippet.create'
+            }) }}
+        </div>
+    </main>
+{% endblock %}
