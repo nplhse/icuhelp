@@ -16,6 +16,12 @@
         <div class="clearfix">
             <h1>{{ "title.letter_create"|trans }}</h1>
 
+            <div class="clearfix">
+                <div class="btn-group float-right" role="group" aria-label="">
+                    <a class="btn btn-secondary float-right" href="{{ path('snippet_list') }}" role="button"><i class="fa fa-list"></i> {{ "link.snippet.list"|trans }}</a>
+                </div>
+            </div>
+
             {% for error in errors %}
                 <div class="alert alert-danger">
                     {{ error.messageKey|trans(error.messageData, 'security') }}
@@ -31,7 +37,6 @@
 
             <div class="btn-group float-right" role="group" aria-label="">
                 {{ form_widget(form.reset) }}
-                <a class="btn btn-secondary float-right" href="{{ path('snippet_list') }}" role="button">{{ "link.snippet.list"|trans }}</a>
                 {{ form_widget(form.submit) }}
             </div>
             {{ form_end(form) }}

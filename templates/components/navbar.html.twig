@@ -21,10 +21,10 @@
                         <a class="nav-link dropdown-toggle" id="dropdown01" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ "label.logged_in_as"|trans }}: {{ app.user.username }}</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown01">
                             {% if is_granted("ROLE_ADMIN") %}
-                                <a class="dropdown-item" href="{{ path('easyadmin') }}">{{ "link.backend"|trans }}</a>
+                                <a class="dropdown-item" href="{{ path('easyadmin') }}"><i class="fa fa-cogs"></i> {{ "link.backend"|trans }}</a>
                                 <div class="dropdown-divider"></div>
                             {% endif %}
-                            <a class="dropdown-item" href="{{ path('security_logout') }}">{{ "link.logout"|trans }}</a>
+                            <a class="dropdown-item" href="{{ path('security_logout') }}"><i class="fa fa-power-off"></i> {{ "link.logout"|trans }}</a>
                         </div>
                     </li>
                 {% else %}

@@ -241,6 +241,14 @@
         <source>button.letter.copy</source>
         <target>Arztbrief kopieren</target>
       </trans-unit>
+      <trans-unit id="H0qb9zB" resname="button.snippet.delete">
+        <source>button.snippet.delete</source>
+        <target>Löschen</target>
+      </trans-unit>
+      <trans-unit id="" resname="msg.snippet.deleted">
+        <source>msg.snippet.deleted</source>
+        <target>Textbaustein wurde entfernt.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

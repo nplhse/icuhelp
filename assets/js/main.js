@@ -19,23 +19,40 @@ require('@fortawesome/fontawesome-free/js/all.js');
 // Add ClipboardJS
 import ClipboardJS from 'clipboard';
 
-// Activate jQuery popover
+// Activate jQuery popover and tooltips
 $(document).ready(function() {
     $('[data-toggle="popover"]').popover();
+    $('[data-toggle="tooltip"]').tooltip();
 });
 
-var clipboard = new ClipboardJS('.btn');
+var clipboard = new ClipboardJS('[data-clipboard-target]');
 
-// Add some debugging for the clipboard
+// Tooltip
+$('[data-clipboard-target]').tooltip({
+    trigger: 'click',
+    placement: 'top'
+});
+
+function setTooltip(message) {
+    $('[data-clipboard-target]').tooltip('hide')
+        .attr('data-original-title', message)
+        .tooltip('show');
+}
+
+function hideTooltip() {
+    setTimeout(function() {
+        $('[data-clipboard-target]').tooltip('hide');
+    }, 1000);
+}
+
 clipboard.on('success', function(e) {
-    console.info('Action:', e.action);
-    console.info('Text:', e.text);
-    console.info('Trigger:', e.trigger);
-
-    e.clearSelection();
+    console.log('It worked!');
+    setTooltip('Copied!');
+    hideTooltip();
 });
 
 clipboard.on('error', function(e) {
-    console.error('Action:', e.action);
-    console.error('Trigger:', e.trigger);
+    console.log('It did not work...');
+    setTooltip('Failed!');
+    hideTooltip();
 });

@@ -98,4 +98,18 @@ class LetterController extends AbstractController
             'errors' => $form->getErrors(true, false),
         ]);
     }
+
+    /**
+     * @Route({"de": "/arztbriefe/textbausteine/{id}/delete", "en": "/letter/snippets/{id}/delete"}, name="snippet_delete")
+     * @IsGranted("ROLE_USER")
+     */
+    public function deleteSnippet(Snippet $snippet, Request $request, EntityManagerInterface $em)
+    {
+        $em->remove($snippet);
+        $em->flush();
+
+        $this->addFlash('danger', 'msg.snippet.deleted');
+
+        return $this->redirectToRoute('snippet_list');
+    }
 }
