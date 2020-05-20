@@ -5,6 +5,7 @@ easy_admin:
         menu:
             - { entity: 'User', label: 'link.users', icon: 'users' }
             - { entity: 'Snippet', label: 'link.snippets', icon: 'clipboard' }
+            - { entity: 'SnippetCategory', label: 'link.snippet.category' }
             - { label: 'link.frontend', icon: 'power-off', route: 'homepage' }
 
     user:
@@ -54,3 +55,5 @@ easy_admin:
                     title: 'title.snippet.new'
                 edit:
                     title: 'title.snippet.edit'
+        SnippetCategory:
+            class: App\Entity\SnippetCategory

@@ -22,6 +22,11 @@ class SnippetCategory
      */
     private $name;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $priority;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,6 +40,18 @@ class SnippetCategory
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getPriority(): ?int
+    {
+        return $this->priority;
+    }
+
+    public function setPriority(int $priority): self
+    {
+        $this->priority = $priority;
 
         return $this;
     }

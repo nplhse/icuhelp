@@ -14,6 +14,7 @@ class SnippetCategoryFixtures extends Fixture
     {
         $snippet = new SnippetCategory();
         $snippet->setName('Demo category');
+        $snippet->setPriority(0);
 
         $manager->persist($snippet);
         $manager->flush();
