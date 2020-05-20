@@ -18,7 +18,7 @@ class SnippetFixtures extends Fixture
         foreach ($this->getData() as $data) {
             $snippet = new Snippet();
             $snippet->setName($data['name']);
-            $snippet->setCategory($data['category']);
+            $snippet->setCategory($this->getReference(SnippetCategoryFixtures::SNIPPET_CATEGORY_REFERENCE));
             $snippet->setText($data['text']);
 
             $manager->persist($snippet);
@@ -38,7 +38,6 @@ class SnippetFixtures extends Fixture
             [
                 [
                     'name' => 'Demo snippet',
-                    'category' => 'Demo',
                     'text' => 'This is just a demo snippet for ^Mr^~Mrs~ #Name#. And it works. Yay!',
                 ],
             ];

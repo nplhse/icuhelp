@@ -22,7 +22,8 @@ class Snippet
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\ManyToOne(targetEntity=SnippetCategory::class)
+     * @ORM\JoinColumn()
      */
     private $category;
 
@@ -48,12 +49,12 @@ class Snippet
         return $this;
     }
 
-    public function getCategory(): ?string
+    public function getCategory(): ?SnippetCategory
     {
         return $this->category;
     }
 
-    public function setCategory(string $category): self
+    public function setCategory(?SnippetCategory $category): self
     {
         $this->category = $category;
 
