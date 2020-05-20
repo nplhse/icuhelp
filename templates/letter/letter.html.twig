@@ -1,5 +1,11 @@
 {% extends 'base.html.twig' %}
 
+{% macro render_snippet(snippet, name, gender) %}
+    <p>
+        {{ snippet }}
+    </p>
+{% endmacro %}
+
 {% block title %}{{ parent() }} - {{ "title.letter_view"|trans }}{% endblock %}
 
 {% block body %}
@@ -41,8 +47,8 @@
     </main>
 {% endblock %}
 
-{% macro render_snippet(snippet, name, gender) %}
-    <p>
-        {{ snippet }}
-    </p>
-{% endmacro %}
+{% block javascripts %}
+    {{ parent() }}
+
+    {{ encore_entry_script_tags('letter') }}
+{% endblock %}
