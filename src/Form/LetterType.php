@@ -30,8 +30,10 @@ class LetterType extends AbstractType
             ->add('snippets', EntityType::class, [
                 'class' => Snippet::class,
                 'query_builder' => function (EntityRepository $er) {
-                    return $er->createQueryBuilder('u')
-                        ->orderBy('u.category', 'ASC');
+                    return $er->createQueryBuilder('s')
+                        ->leftJoin('s.category', 'c')
+                        ->addSelect('c')
+                        ->orderBy('c.priority', 'ASC');
                 },
                 'expanded' => true,
                 'multiple' => true,
