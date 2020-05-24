@@ -7,7 +7,6 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ path('homepage') }}">{{ "link.homepage"|trans }}</a></li>
-                <li class="breadcrumb-item"><a href="{{ path('letter') }}">{{ "link.letter"|trans }}</a></li>
                 <li class="breadcrumb-item active"><a href="{{ path('snippet_list') }}">{{ "title.snippet.list"|trans }}</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{{ "title.snippet.new"|trans }}</li>
             </ol>
@@ -22,7 +21,7 @@
                 </div>
             {% endfor %}
 
-            {{ include('letter/snippets/_form.html.twig', {
+            {{ include('snippets/_form.html.twig', {
                 button_text: 'button.snippet.create'
             }) }}
         </div>

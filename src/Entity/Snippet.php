@@ -77,4 +77,16 @@ class Snippet
     {
         return $this->getName();
     }
+
+    public static function compare($a, $b)
+    {
+        $al = strtolower($a->getCategory());
+        $bl = strtolower($b->getCategory());
+
+        if ($al == $bl) {
+            return 0;
+        }
+
+        return ($al > $bl) ? +1 : -1;
+    }
 }

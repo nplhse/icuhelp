@@ -18,7 +18,7 @@
 
             <div class="clearfix">
                 <div class="btn-group float-right" role="group" aria-label="">
-                    <a class="btn btn-secondary float-right" href="{{ path('snippet_list') }}" role="button"><i class="fa fa-list"></i> {{ "link.snippet.list"|trans }}</a>
+                    <a class="btn btn-secondary float-right" href="{{ path('snippets') }}" role="button"><i class="fa fa-list"></i> {{ "link.snippet.list"|trans }}</a>
                 </div>
             </div>
 
@@ -42,4 +42,15 @@
             {{ form_end(form) }}
         </div>
     </main>
+{% endblock %}
+
+{% block navbar_links %}
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="{{ path('letter') }}">{{ "link.letter"|trans }}</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('snippets') }}">{{ "link.snippets"|trans }}</a>
+        </li>
+    </ul>
 {% endblock %}

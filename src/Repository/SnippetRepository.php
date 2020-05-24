@@ -22,7 +22,9 @@ class SnippetRepository extends ServiceEntityRepository
     public function findOrderedByPriority()
     {
         return $this->createQueryBuilder('s')
-            ->orderBy('s.category', 'DESC')
+            ->leftJoin('s.category', 'c')
+            ->addSelect('c')
+            ->orderBy('s.name', 'ASC')
             ->getQuery()
             ->getResult()
         ;

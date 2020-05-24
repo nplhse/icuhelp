@@ -1,18 +1,18 @@
 {% block navbar %}
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
     <div class="container">
-        <a class="navbar-brand" href="#">ICUhelp</a>
+        <a class="navbar-brand" href="{{ path('homepage') }}">ICUhelp</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="{{ "action.toggle_navigation"|trans }}">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ path('homepage') }}">{{ "link.homepage"|trans }}</a>
+                <li{% if app.request.attributes.get( '_route' ) starts with 'letter' %} class="active"{% endif %}>
+                <a class="nav-link" href="{{ path('letter') }}">{{ "link.letter"|trans }}</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('letter') }}">{{ "link.letter"|trans }}</a>
+                <li{% if app.request.attributes.get( '_route' ) starts with 'snippet' %} class="active"{% endif %}>
+                    <a class="nav-link" href="{{ path('snippets') }}">{{ "link.snippets"|trans }}</a>
                 </li>
             </ul>
             <ul class="navbar-nav">
