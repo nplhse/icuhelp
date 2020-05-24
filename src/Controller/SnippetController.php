@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Snippet;
 use App\Form\SnippetFormType;
 use App\Repository\SnippetRepository;
+use App\Service\SnippetHelper;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -17,10 +18,10 @@ class SnippetController extends AbstractController
      * @Route({"de": "/textbausteine", "en": "/snippets"}, name="snippets")
      * @IsGranted("ROLE_USER")
      */
-    public function listSnippets(Request $request, SnippetRepository $snippetRepository)
+    public function listSnippets(Request $request, SnippetRepository $snippetRepository, SnippetHelper $snippetHelper)
     {
         $snippets = $snippetRepository->findOrderedByPriority();
-        usort($snippets, ["App\Entity\Snippet", 'compare']);
+        $snippets = $snippetHelper->sortSnippets($snippets);
 
         return $this->render('snippets/list.html.twig', [
             'snippets' => $snippets,

@@ -6,12 +6,15 @@ use App\Form\Model\LetterTypeModel;
 
 class LetterBuilder
 {
-    public function build(LetterTypeModel $letterTypeModel)
+    public function build(LetterTypeModel $letterTypeModel, SnippetHelper $snippetHelper)
     {
         $result = [];
         $i = 0;
 
-        foreach ($letterTypeModel->getSnippets() as $snippet) {
+        $snippets = $letterTypeModel->getSnippets();
+        $snippets = $snippetHelper->sortSnippets($snippets);
+
+        foreach ($snippets as $snippet) {
             $text = $snippet->getText();
 
             $text = $this->renderName($text, $letterTypeModel->getName());
