@@ -1,40 +1,52 @@
 {%- block choice_widget_expanded -%}
     {% for name, choices in form.vars.choices %}
         {% if choices is iterable  %}
-            <h3>
-                <a class="" data-toggle="collapse" href="#collapseExample{{ loop.index }}" role="button" aria-expanded="false" aria-controls="collapseExample">{{ choice_translation_domain is same as(false) ? name : name|trans({}, choice_translation_domain) }}</a>
-            </h3>
-            <div class="collapse" id="collapseExample{{ loop.index }}">
-                {% for key, choice in choices %}
-                    <div class="form-control">
-                        <div class="custom-control custom-checkbox">
-                            {{- form_label(form[key], null, {
-                                'label_attr':{
-                                    'class':'custom-control-label'
-                                }
-                            }) -}}
-                            {{- form_widget(form[key]) -}}
+            <div class="accordion" id="letterAccordion">
+                <div class="card">
+                    <div class="card-header" id="heading{{ loop.index }}">
+                        <a class="" data-toggle="collapse" href="#collapseExample{{ loop.index }}" role="button" aria-expanded="false" aria-controls="collapseExample">{{ choice_translation_domain is same as(false) ? name : name|trans({}, choice_translation_domain) }}</a>
+                    </div>
+                    <div class="collapse" id="collapseExample{{ loop.index }}" aria-labelledby="heading{{ loop.index }}" data-parent="#letterAccordion">
+                        <div class="card-body">
+                        {% for key, choice in choices %}
+                            <div class="form-control">
+                                <div class="custom-control custom-checkbox">
+                                    {{- form_label(form[key], null, {
+                                        'label_attr':{
+                                            'class':'custom-control-label'
+                                        }
+                                    }) -}}
+                                    {{- form_widget(form[key]) -}}
+                                </div>
+                            </div>
+                        {% endfor %}
                         </div>
                     </div>
-                {% endfor %}
+                </div>
             </div>
         {% else %}
-            <h3>
-                <a class="" data-toggle="collapse" href="#collapseExample{{ loop.index }}" role="button" aria-expanded="false" aria-controls="collapseExample">{{ choice_translation_domain is same as(false) ? form[name].vars.label : form[name].vars.label|trans({}, choice_translation_domain) }}</a>
-            </h3>
-            <div class="collapse" id="collapseExample{{ loop.index }}">
-                <div class="form-control">
-                    <div class="custom-control custom-checkbox">
-                        {{- form_widget(form[name], {
-                            'attr':{
-                                'class':'custom-control-input',
-                                'checked':true
-                            }}) -}}
-                        {{- form_label(form[name], null, {
-                            'label_attr':{
-                                'class':'custom-control-label'
-                            }
-                        }) -}}s
+            <div class="accordion" id="letterAccordion">
+                <div class="card">
+                    <div class="card-header" id="heading{{ loop.index }}">
+                        <a class="" data-toggle="collapse" href="#collapseExample{{ loop.index }}" role="button" aria-expanded="false" aria-controls="collapseExample">{{ choice_translation_domain is same as(false) ? name : name|trans({}, choice_translation_domain) }}</a>
+                    </div>
+                    <div class="collapse" id="collapseExample{{ loop.index }}" aria-labelledby="heading{{ loop.index }}" data-parent="#letterAccordion">
+                        <div class="card-body">
+                            <div class="form-control">
+                                <div class="custom-control custom-checkbox">
+                                    {{- form_widget(form[name], {
+                                        'attr':{
+                                            'class':'custom-control-input',
+                                            'checked':true
+                                        }}) -}}
+                                    {{- form_label(form[name], null, {
+                                        'label_attr':{
+                                            'class':'custom-control-label'
+                                        }
+                                    }) -}}s
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
