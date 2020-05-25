@@ -12,8 +12,8 @@ class SnippetHelper
             $iterator = $snippets->getIterator();
 
             $iterator->uasort(function ($a, $b) {
-                $al = strtolower($a->getCategory());
-                $bl = strtolower($b->getCategory());
+                $al = strtolower($a->getCategory()->getPriority());
+                $bl = strtolower($b->getCategory()->getPriority());
 
                 if ($al == $bl) {
                     return 0;
@@ -27,8 +27,8 @@ class SnippetHelper
             return $snippets;
         } elseif (is_array($snippets)) {
             uasort($snippets, function ($a, $b) {
-                $al = strtolower($a->getCategory());
-                $bl = strtolower($b->getCategory());
+                $al = strtolower($a->getCategory()->getPriority());
+                $bl = strtolower($b->getCategory()->getPriority());
 
                 if ($al == $bl) {
                     return 0;
