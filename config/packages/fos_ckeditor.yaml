@@ -5,9 +5,13 @@ twig:
         - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
 
 fos_ck_editor:
+    base_path: "build/ckeditor"
+    js_path:   "build/ckeditor/ckeditor.js"
+
     configs:
         snippets:
             toolbar: 'snippets'
+
     toolbars:
         configs:
             snippets: [ "@standard.basic_styles", "@basic.paragraph", "@tables", "@undo", "@standard.tools", "/", '@full.styles' ]
