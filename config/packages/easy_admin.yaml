@@ -2,6 +2,9 @@ easy_admin:
     site_name: 'ICUhelp'
 
     design:
+        form_theme:
+            - '@EasyAdmin/form/bootstrap_4.html.twig'
+            - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
         menu:
             - { entity: 'User', label: 'link.users', icon: 'users' }
             - { entity: 'Snippet', label: 'link.snippets', icon: 'clipboard' }
@@ -50,10 +53,26 @@ easy_admin:
                 fields:
                     - { property: 'name', label: 'label.snippet.name' }
                     - { property: 'category', label: 'label.snippet.category' }
-                    - { property: 'text', label: 'label.snippet.text' }
+                    - { property: 'text', label: 'label.snippet.text', type: 'fos_ckeditor', type_options: { config_name: 'snippets' } }
                 new:
                     title: 'title.snippet.new'
                 edit:
                     title: 'title.snippet.edit'
         SnippetCategory:
             class: App\Entity\SnippetCategory
+            label: label.snippet.category
+            list:
+                title: link.snippet.category
+                fields:
+                    - { property: 'id', label: 'label.id' }
+                    - { property: 'name', label: 'label.snippet.category.name' }
+                    - { property: 'priority', label: 'label.snippet.category.priority' }
+            form:
+                fields:
+                    - { property: 'id', label: 'label.id' }
+                    - { property: 'name', label: 'label.snippet.category.name' }
+                    - { property: 'priority', label: 'label.snippet.category.priority' }
+                new:
+                    title: 'title.snippet.category.new'
+                edit:
+                    title: 'title.snippet.category.edit'

@@ -53,6 +53,10 @@
         <source>link.users</source>
         <target>Users</target>
       </trans-unit>
+      <trans-unit id="_vz4AXX" resname="link.snippet.category">
+        <source>link.snippet.category</source>
+        <target>Snippet categories</target>
+      </trans-unit>
       <trans-unit id="LDhDPrF" resname="label.username">
         <source>label.username</source>
         <target>Username</target>
@@ -229,9 +233,29 @@
         <source>button.snippet.delete</source>
         <target>Delete</target>
       </trans-unit>
-      <trans-unit id="" resname="msg.snippet.deleted">
+      <trans-unit id="6gGbo_Z" resname="msg.snippet.deleted">
         <source>msg.snippet.deleted</source>
         <target>Successfully deleted snippet.</target>
+      </trans-unit>
+      <trans-unit id="RW9Q844" resname="msg.snippet.confirm_delete">
+        <source>msg.snippet.confirm_delete</source>
+        <target>Delete snippet?</target>
+      </trans-unit>
+      <trans-unit id="XNalnZ_" resname="msg.no_snippets">
+        <source>msg.no_snippets</source>
+        <target>No snippets found.</target>
+      </trans-unit>
+      <trans-unit id="3Y4_z.2" resname="link.snippets">
+        <source>link.snippets</source>
+        <target>Snippets</target>
+      </trans-unit>
+      <trans-unit id="WVsLPdp" resname="label.snippet.category.name">
+        <source>label.snippet.category.name</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="uF3Ioo9" resname="label.snippet.category.priority">
+        <source>label.snippet.category.priority</source>
+        <target>Priority</target>
       </trans-unit>
     </body>
   </file>

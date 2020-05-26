@@ -53,6 +53,10 @@
         <source>link.users</source>
         <target>Benutzer</target>
       </trans-unit>
+      <trans-unit id="_vz4AXX" resname="link.snippet.category">
+        <source>link.snippet.category</source>
+        <target>Textbaustein Kategorien</target>
+      </trans-unit>
       <trans-unit id="LDhDPrF" resname="label.username">
         <source>label.username</source>
         <target>Benutzername</target>
@@ -207,7 +211,7 @@
       </trans-unit>
       <trans-unit id="xcpF.0h" resname="link.snippet.back_letter">
         <source>link.snippet.back_letter</source>
-        <target>Zurück zu Arztbrief erstellen</target>
+        <target>Zum Arztbrief Generator</target>
       </trans-unit>
       <trans-unit id="Np58EYl" resname="button.snippet.new">
         <source>button.snippet.new</source>
@@ -245,9 +249,25 @@
         <source>button.snippet.delete</source>
         <target>Löschen</target>
       </trans-unit>
-      <trans-unit id="" resname="msg.snippet.deleted">
+      <trans-unit id="6gGbo_Z" resname="msg.snippet.deleted">
         <source>msg.snippet.deleted</source>
         <target>Textbaustein wurde entfernt.</target>
+      </trans-unit>
+      <trans-unit id="RW9Q844" resname="msg.snippet.confirm_delete">
+        <source>msg.snippet.confirm_delete</source>
+        <target>Textbaustein wirklich löschen?</target>
+      </trans-unit>
+      <trans-unit id="XNalnZ_" resname="msg.no_snippets">
+        <source>msg.no_snippets</source>
+        <target>Keine Textbausteine vorhanden.</target>
+      </trans-unit>
+      <trans-unit id="WVsLPdp" resname="label.snippet.category.name">
+        <source>label.snippet.category.name</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="uF3Ioo9" resname="label.snippet.category.priority">
+        <source>label.snippet.category.priority</source>
+        <target>Priorität</target>
       </trans-unit>
     </body>
   </file>

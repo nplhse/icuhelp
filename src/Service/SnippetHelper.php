@@ -12,14 +12,7 @@ class SnippetHelper
             $iterator = $snippets->getIterator();
 
             $iterator->uasort(function ($a, $b) {
-                $al = strtolower($a->getCategory()->getPriority());
-                $bl = strtolower($b->getCategory()->getPriority());
-
-                if ($al == $bl) {
-                    return 0;
-                }
-
-                return ($al > $bl) ? +1 : -1;
+                return $this->compareSnippets($a, $b);
             });
 
             $snippets = new ArrayCollection(iterator_to_array($iterator));
@@ -27,19 +20,24 @@ class SnippetHelper
             return $snippets;
         } elseif (is_array($snippets)) {
             uasort($snippets, function ($a, $b) {
-                $al = strtolower($a->getCategory()->getPriority());
-                $bl = strtolower($b->getCategory()->getPriority());
-
-                if ($al == $bl) {
-                    return 0;
-                }
-
-                return ($al > $bl) ? +1 : -1;
+                return $this->compareSnippets($a, $b);
             });
 
             return $snippets;
         }
 
         return null;
+    }
+
+    public function compareSnippets($a, $b)
+    {
+        $al = strtolower($a->getCategory()->getPriority());
+        $bl = strtolower($b->getCategory()->getPriority());
+
+        if ($al == $bl) {
+            return 0;
+        }
+
+        return ($al > $bl) ? +1 : -1;
     }
 }

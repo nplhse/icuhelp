@@ -2,7 +2,7 @@
 
 {% macro render_snippet(snippet, name, gender) %}
     <p>
-        {{ snippet }}
+        {{ snippet|raw }}
     </p>
 {% endmacro %}
 
