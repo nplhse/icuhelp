@@ -43,6 +43,10 @@
                             <a href="{{ path('snippet_delete', {id: snippet.id}) }}"><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i> {{ "button.snippet.delete"|trans }}</button></a>
                         </td>
                     </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="4">No records found</td>
+                    </tr>
                 {% endfor %}
                 </tbody>
             </table>
