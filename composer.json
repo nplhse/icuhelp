@@ -8,7 +8,7 @@
         "doctrine/doctrine-bundle": "*",
         "doctrine/doctrine-migrations-bundle": "2.*",
         "doctrine/orm": "*",
-        "easycorp/easyadmin-bundle": "^2.0",
+        "easycorp/easyadmin-bundle": "^3.0",
         "friendsofsymfony/ckeditor-bundle": "^2.2",
         "sensio/framework-extra-bundle": "^5.5",
         "sensiolabs/security-checker": "^6.0",

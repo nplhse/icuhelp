@@ -157,9 +157,6 @@
     "ocramius/proxy-manager": {
         "version": "2.8.0"
     },
-    "pagerfanta/pagerfanta": {
-        "version": "v2.3.0"
-    },
     "php": {
         "version": "7.4"
     },
@@ -319,9 +316,6 @@
     "symfony/http-kernel": {
         "version": "v5.0.8"
     },
-    "symfony/inflector": {
-        "version": "v5.0.8"
-    },
     "symfony/intl": {
         "version": "v5.0.8"
     },
@@ -380,6 +374,9 @@
     },
     "symfony/polyfill-php80": {
         "version": "v1.17.0"
+    },
+    "symfony/polyfill-uuid": {
+        "version": "v1.17.1"
     },
     "symfony/process": {
         "version": "v5.0.8"
@@ -475,6 +472,9 @@
     },
     "symfony/twig-pack": {
         "version": "v1.0.0"
+    },
+    "symfony/uid": {
+        "version": "v5.1.2"
     },
     "symfony/validator": {
         "version": "4.3",

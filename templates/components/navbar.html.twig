@@ -8,12 +8,14 @@
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
-                <li{% if app.request.attributes.get( '_route' ) starts with 'letter' %} class="active"{% endif %}>
-                <a class="nav-link" href="{{ path('letter') }}">{{ "link.letter"|trans }}</a>
-                </li>
-                <li{% if app.request.attributes.get( '_route' ) starts with 'snippet' %} class="active"{% endif %}>
-                    <a class="nav-link" href="{{ path('snippet_index') }}">{{ "link.snippets"|trans }}</a>
-                </li>
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <li{% if app.request.attributes.get( '_route' ) starts with 'letter' %} class="active"{% endif %}>
+                        <a class="nav-link" href="{{ path('letter') }}">{{ "link.letter"|trans }}</a>
+                    </li>
+                    <li{% if app.request.attributes.get( '_route' ) starts with 'snippet' %} class="active"{% endif %}>
+                        <a class="nav-link" href="{{ path('snippet_index') }}">{{ "link.snippets"|trans }}</a>
+                    </li>
+                {% endif %}
             </ul>
             <ul class="navbar-nav">
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
@@ -21,7 +23,7 @@
                         <a class="nav-link dropdown-toggle" id="dropdown01" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ "label.logged_in_as"|trans }}: {{ app.user.username }}</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown01">
                             {% if is_granted("ROLE_ADMIN") %}
-                                <a class="dropdown-item" href="{{ path('easyadmin') }}"><i class="fa fa-cogs"></i> {{ "link.backend"|trans }}</a>
+                                <a class="dropdown-item" href="{{ path('app_admin_dashboard_index') }}"><i class="fa fa-cogs"></i> {{ "link.backend"|trans }}</a>
                                 <div class="dropdown-divider"></div>
                             {% endif %}
                             <a class="dropdown-item" href="{{ path('security_logout') }}"><i class="fa fa-power-off"></i> {{ "link.logout"|trans }}</a>
