@@ -6,6 +6,7 @@ use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
@@ -34,18 +35,19 @@ class UserCrudController extends AbstractCrudController
         $email = EmailField::new('email', 'label.email');
         $plainPassword = TextField::new('plainPassword', 'label.password');
         $panel2 = FormField::addPanel('title.user_properties');
+        $isVerified = BooleanField::new('isVerified', 'label.isVerified');
         $roles = ArrayField::new('roles');
         $id = IntegerField::new('id', 'label.id');
         $password = TextField::new('password');
 
         if (Crud::PAGE_INDEX === $pageName) {
-            return [$id, $username, $email];
+            return [$id, $username, $email, $isVerified];
         } elseif (Crud::PAGE_DETAIL === $pageName) {
-            return [$id, $username, $roles, $password, $email];
+            return [$id, $username, $roles, $isVerified, $password, $email];
         } elseif (Crud::PAGE_NEW === $pageName) {
-            return [$panel1, $username, $email, $plainPassword, $panel2, $roles];
+            return [$panel1, $username, $email, $plainPassword, $panel2, $roles, $isVerified];
         } elseif (Crud::PAGE_EDIT === $pageName) {
-            return [$panel1, $username, $email, $plainPassword, $panel2, $roles];
+            return [$panel1, $username, $email, $plainPassword, $panel2, $roles, $isVerified];
         }
     }
 }

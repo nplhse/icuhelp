@@ -3,7 +3,7 @@
 {% block title %}{{ parent() }} - {{ "title.login"|trans({}, "forms") }}{% endblock %}
 
 {% block body %}
-<form method="post">
+    <form method="post">
     <main role="main" class="container">
         {% if app.user %}
             <div class="mb-3">
@@ -24,7 +24,7 @@
         {{ form_row(form.username) }}
         {{ form_row(form.password) }}
 
-        <input type="hidden" name="csrf_token" value="{{ csrf_token('authenticate') }}">
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
         <div class="form-group">
             <button type="submit" class="btn btn-success">{{ "button.login"|trans({}, "forms") }} <span class="fa fa-lock"></span></button>
