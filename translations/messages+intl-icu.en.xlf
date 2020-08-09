@@ -257,6 +257,10 @@
         <source>label.snippet.category.priority</source>
         <target>Priority</target>
       </trans-unit>
+      <trans-unit id="sToQk7i" resname="link.register">
+        <source>link.register</source>
+        <target>Register</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
