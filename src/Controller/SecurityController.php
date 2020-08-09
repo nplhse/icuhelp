@@ -24,6 +24,7 @@ class SecurityController extends AbstractController
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
+        // create login form
         $form = $this->createForm(
             SecurityLoginType::class,
             [
@@ -31,7 +32,12 @@ class SecurityController extends AbstractController
             ]
         );
 
-        return $this->render('security/login.html.twig', ['form' => $form->createView(), 'error' => $error]);
+        return $this->render(
+            'security/login.html.twig',
+            [
+            'form' => $form->createView(),
+            'error' => $error, ]
+        );
     }
 
     /**
