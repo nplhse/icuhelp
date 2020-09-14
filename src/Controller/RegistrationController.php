@@ -49,9 +49,11 @@ class RegistrationController extends AbstractController
 
             if (!$this->getParameter('kernel.debug')) {
                 // generate a signed url and email it to the user
-                $this->emailVerifier->sendEmailConfirmation('security_verify_email', $user,
+                $this->emailVerifier->sendEmailConfirmation(
+                    'security_verify_email',
+                    $user,
                     (new TemplatedEmail())
-                        ->from(new Address('mailer@icu-help.com', 'ICUhelp Mail Bot'))
+                        ->from(new Address('noreply@nplhse.com', 'ICUhelp Mail Bot'))
                         ->to($user->getEmail())
                         ->subject('Please Confirm your Email')
                         ->htmlTemplate('security/confirmation_email.html.twig')
