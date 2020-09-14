@@ -9,6 +9,7 @@ runtime:
         - sodium
         - iconv
         - ctype
+        - xsl
 
 relationships:
     database: "db:mysql"

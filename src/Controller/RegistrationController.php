@@ -28,7 +28,7 @@ class RegistrationController extends AbstractController
     /**
      * @Route("/register", name="security_register")
      */
-    public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder, GuardAuthenticatorHandler $guardHandler, LoginFormAuthenticator $authenticator): Response
+    public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder, GuardAuthenticatorHandler $guardHandler, LoginFormAuthenticator $authenticator, string $adminEmail): Response
     {
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
@@ -53,7 +53,7 @@ class RegistrationController extends AbstractController
                     'security_verify_email',
                     $user,
                     (new TemplatedEmail())
-                        ->from(new Address('noreply@nplhse.com', 'ICUhelp Mail Bot'))
+                        ->from(new Address($adminEmail, 'ICUhelp Mail Bot'))
                         ->to($user->getEmail())
                         ->subject('Please Confirm your Email')
                         ->htmlTemplate('security/confirmation_email.html.twig')

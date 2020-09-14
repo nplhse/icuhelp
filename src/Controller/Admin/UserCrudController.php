@@ -33,7 +33,7 @@ class UserCrudController extends AbstractCrudController
         $panel1 = FormField::addPanel('title.user_basics');
         $username = TextField::new('username', 'label.username');
         $email = EmailField::new('email', 'label.email');
-        $plainPassword = TextField::new('plainPassword', 'label.password');
+        $plainPassword = TextField::new('plainPassword', 'label.password')->setFormTypeOptions(['empty_data' => '']);
         $panel2 = FormField::addPanel('title.user_properties');
         $isVerified = BooleanField::new('isVerified', 'label.isVerified');
         $roles = ArrayField::new('roles');
