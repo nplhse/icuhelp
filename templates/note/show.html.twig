@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Note{% endblock %}
+
+{% block body %}
+<main role="main" class="container">
+    {{ include('components/project_tabs.html.twig') }}
+
+    <div>
+        <h1 class="mt-2">Note</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <td>{{ note.name }}</td>
+            </tr>
+            <tr>
+                <th>Category</th>
+                <td>{{ note.category }}</td>
+            </tr>
+            <tr>
+                <th>Text</th>
+                <td>{{ note.text|raw }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <div class="clearfix">
+            <div class="btn-group float-right" role="group" aria-label="">
+                <a class="btn btn-secondary" href="{{ path('note_index') }}" role="button">{{ "link.note.back_list"|trans }}</a>
+                <a class="btn btn-primary" href="{{ path('note_edit', {'id': note.id}) }}" role="button">{{ "button.note.edit"|trans }}</a>
+            </div>
+
+            {{ include('note/_delete_form.html.twig') }}
+        </div>
+
+    </div>
+</main>
+{% endblock %}

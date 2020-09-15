@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Note{% endblock %}
+
+{% block body %}
+<main role="main" class="container">
+    {{ include('components/project_tabs.html.twig') }}
+
+    <div>
+        <h1 class="mt-2">Create new Note</h1>
+
+        {% for error in errors %}
+            <div class="alert alert-danger">
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+            </div>
+        {% endfor %}
+
+        {{ include('note/_form.html.twig', {
+            button_text: 'button.note.create'
+        }) }}
+
+    </div>
+</main>
+{% endblock %}

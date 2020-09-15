@@ -261,6 +261,26 @@
         <source>link.register</source>
         <target>Register</target>
       </trans-unit>
+      <trans-unit id="lBEw.B7" resname="button.note.delete">
+        <source>button.note.delete</source>
+        <target>Delete note</target>
+      </trans-unit>
+      <trans-unit id="MlVKogC" resname="button.note.new">
+        <source>button.note.new</source>
+        <target>Create note</target>
+      </trans-unit>
+      <trans-unit id="sXUOVTY" resname="link.note.back_list">
+        <source>link.note.back_list</source>
+        <target>Back to list of all notes</target>
+      </trans-unit>
+      <trans-unit id="Q7YWyJ7" resname="button.note.edit">
+        <source>button.note.edit</source>
+        <target>Edit notes</target>
+      </trans-unit>
+      <trans-unit id="g0fBTt8" resname="link.notes">
+        <source>link.notes</source>
+        <target>Notes</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
