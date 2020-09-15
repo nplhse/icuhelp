@@ -1,0 +1,13 @@
+{% block projecttabs %}
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link{% if app.request.attributes.get( '_route' ) starts with 'homepage' %} active{% endif %}" href="{{ path('homepage') }}"><i class="fa fa-home"></i> {{ "link.homepage"|trans }}</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link{% if app.request.attributes.get( '_route' ) starts with 'letter' %} active{% endif %}" href="{{ path('letter') }}"><i class="fa fa-file-alt"></i> {{ "link.letter"|trans }}</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link{% if app.request.attributes.get( '_route' ) starts with 'snippet' %} active{% endif %}" href="{{ path('snippet_index') }}"><i class="fa fa-clipboard-list"></i> {{ "link.snippets"|trans }}</a>
+        </li>
+    </ul>
+{% endblock %}

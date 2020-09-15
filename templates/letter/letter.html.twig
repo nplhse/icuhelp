@@ -10,16 +10,10 @@
 
 {% block body %}
     <main role="main" class="container">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ path('homepage') }}">{{ "link.homepage"|trans }}</a></li>
-                <li class="breadcrumb-item"><a href="{{ path('letter') }}">{{ "link.letter"|trans }}</a></li>
-                <li class="breadcrumb-item active" aria-current="page">{{ "title.letter_view"|trans }}</li>
-            </ol>
-        </nav>
+        {{ include('components/project_tabs.html.twig') }}
 
         <div>
-            <h1>{{ "title.letter_view"|trans }}</h1>
+            <h1 class="mt-2">{{ "title.letter_view"|trans }}</h1>
 
             <div class="card">
                 <div class="card-header">

@@ -4,16 +4,10 @@
 
 {% block body %}
     <main role="main" class="container">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ path('homepage') }}">{{ "link.homepage"|trans }}</a></li>
-                <li class="breadcrumb-item active" aria-current="page">{{ "title.snippet.list"|trans }}</li>
-            </ol>
-        </nav>
-
+        {{ include('components/project_tabs.html.twig') }}
 
         <div>
-            <h1>{{ "title.snippets_list"|trans }}</h1>
+            <h1 class="mt-2">{{ "title.snippets_list"|trans }}</h1>
 
             {% for label, messages in app.flashes %}
                 {% for message in messages %}
