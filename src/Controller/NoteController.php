@@ -28,7 +28,7 @@ class NoteController extends AbstractController
      * @Route({"de": "/notizen/erstellen", "en": "/notes/new"}, name="note_new", methods={"GET","POST"})
      * @IsGranted("ROLE_USER")
      */
-    public function new(Request $request): Response
+    public function new(Request $request, NoteRepository $noteRepository): Response
     {
         $note = new Note();
         $form = $this->createForm(NoteType::class, $note);
@@ -44,6 +44,7 @@ class NoteController extends AbstractController
 
         return $this->render('note/new.html.twig', [
             'note' => $note,
+            'notes' => $noteRepository->findAll(),
             'form' => $form->createView(),
             'errors' => $form->getErrors(true, false),
         ]);
@@ -53,10 +54,11 @@ class NoteController extends AbstractController
      * @Route({"de": "/notizen/{id}", "en": "/notes/{id}"}, name="note_show", methods={"GET"})
      * @IsGranted("ROLE_USER")
      */
-    public function show(Note $note): Response
+    public function show(Note $note, NoteRepository $noteRepository): Response
     {
         return $this->render('note/show.html.twig', [
             'note' => $note,
+            'notes' => $noteRepository->findAll(),
         ]);
     }
 
@@ -64,7 +66,7 @@ class NoteController extends AbstractController
      * @Route({"de": "/notizen/{id}/bearbeiten", "en": "/notes/{id}/edit"}, name="note_edit", methods={"GET","POST"})
      * @IsGranted("ROLE_USER")
      */
-    public function edit(Request $request, Note $note): Response
+    public function edit(Request $request, Note $note, NoteRepository $noteRepository): Response
     {
         $form = $this->createForm(NoteType::class, $note);
         $form->handleRequest($request);
@@ -77,6 +79,7 @@ class NoteController extends AbstractController
 
         return $this->render('note/edit.html.twig', [
             'note' => $note,
+            'notes' => $noteRepository->findAll(),
             'form' => $form->createView(),
             'errors' => $form->getErrors(true, false),
         ]);

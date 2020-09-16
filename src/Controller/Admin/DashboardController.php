@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Note;
 use App\Entity\Snippet;
 use App\Entity\SnippetCategory;
 use App\Entity\User;
@@ -41,5 +42,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::section('Textbausteine');
         yield MenuItem::linkToCrud('link.snippets', 'far fa-clipboard', Snippet::class);
         yield MenuItem::linkToCrud('link.snippet.category', 'fas fa-folder-open', SnippetCategory::class);
+        yield MenuItem::section('Notzien');
+        yield MenuItem::linkToCrud('link.notes', 'far fa-sticky-note', Note::class);
     }
 }
