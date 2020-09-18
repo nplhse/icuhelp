@@ -281,6 +281,94 @@
         <source>link.notes</source>
         <target>Notes</target>
       </trans-unit>
+      <trans-unit id="ZtAqL7p" resname="title.note.edit">
+        <source>title.note.edit</source>
+        <target>__title.note.edit</target>
+      </trans-unit>
+      <trans-unit id="0bSMHYY" resname="title.note.new">
+        <source>title.note.new</source>
+        <target>__title.note.new</target>
+      </trans-unit>
+      <trans-unit id="sR58XWb" resname="title.note">
+        <source>title.note</source>
+        <target>__title.note</target>
+      </trans-unit>
+      <trans-unit id="zOYBvej" resname="title.note.show">
+        <source>title.note.show</source>
+        <target>__title.note.show</target>
+      </trans-unit>
+      <trans-unit id="x4sOI5X" resname="title.info.edit">
+        <source>title.info.edit</source>
+        <target>__title.info.edit</target>
+      </trans-unit>
+      <trans-unit id="DwA3BWw" resname="title.info.new">
+        <source>title.info.new</source>
+        <target>__title.info.new</target>
+      </trans-unit>
+      <trans-unit id="O8Cw4hF" resname="title.info">
+        <source>title.info</source>
+        <target>__title.info</target>
+      </trans-unit>
+      <trans-unit id="mcwNZ5E" resname="button.info.new">
+        <source>button.info.new</source>
+        <target>__button.info.new</target>
+      </trans-unit>
+      <trans-unit id="32916cs" resname="link.info.back_list">
+        <source>link.info.back_list</source>
+        <target>__link.info.back_list</target>
+      </trans-unit>
+      <trans-unit id="u8.gxxE" resname="title.info.show">
+        <source>title.info.show</source>
+        <target>__title.info.show</target>
+      </trans-unit>
+      <trans-unit id="1nMKdma" resname="button.info.edit">
+        <source>button.info.edit</source>
+        <target>__button.info.edit</target>
+      </trans-unit>
+      <trans-unit id="Y0w0dao" resname="link.info">
+        <source>link.info</source>
+        <target>__link.info</target>
+      </trans-unit>
+      <trans-unit id="5Cd6ToY" resname="link.onboarding">
+        <source>link.onboarding</source>
+        <target>__link.onboarding</target>
+      </trans-unit>
+      <trans-unit id="fcYTBHW" resname="title.onboarding.edit">
+        <source>title.onboarding.edit</source>
+        <target>__title.onboarding.edit</target>
+      </trans-unit>
+      <trans-unit id="pv.eu6q" resname="title.onboarding.new">
+        <source>title.onboarding.new</source>
+        <target>__title.onboarding.new</target>
+      </trans-unit>
+      <trans-unit id="tLcfIjK" resname="title.onboarding">
+        <source>title.onboarding</source>
+        <target>__title.onboarding</target>
+      </trans-unit>
+      <trans-unit id="zV6FN9h" resname="button.onboarding.new">
+        <source>button.onboarding.new</source>
+        <target>__button.onboarding.new</target>
+      </trans-unit>
+      <trans-unit id="shiC9Ng" resname="link.onboarding.back_list">
+        <source>link.onboarding.back_list</source>
+        <target>__link.onboarding.back_list</target>
+      </trans-unit>
+      <trans-unit id="g7Wz9x_" resname="button.onboarding.edit">
+        <source>button.onboarding.edit</source>
+        <target>__button.onboarding.edit</target>
+      </trans-unit>
+      <trans-unit id="THBRmde" resname="label.note.category.onboarding">
+        <source>label.note.category.onboarding</source>
+        <target>Onboarding</target>
+      </trans-unit>
+      <trans-unit id="mOmncFH" resname="label.note.category.note">
+        <source>label.note.category.note</source>
+        <target>Notes</target>
+      </trans-unit>
+      <trans-unit id="mBCLxR0" resname="label.note.category.info">
+        <source>label.note.category.info</source>
+        <target>Information</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

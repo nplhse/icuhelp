@@ -19,7 +19,7 @@ class OnboardingController extends AbstractController
      */
     public function index(NoteRepository $noteRepository): Response
     {
-        return $this->render('note/index.html.twig', [
+        return $this->render('onboarding/index.html.twig', [
             'notes' => $noteRepository->findByCategory('onboarding'),
         ]);
     }
@@ -42,7 +42,7 @@ class OnboardingController extends AbstractController
             return $this->redirectToRoute('onboarding_index');
         }
 
-        return $this->render('note/new.html.twig', [
+        return $this->render('onboarding/new.html.twig', [
             'note' => $note,
             'notes' => $noteRepository->findByCategory('onboarding'),
             'form' => $form->createView(),
@@ -56,7 +56,7 @@ class OnboardingController extends AbstractController
      */
     public function show(Note $note, NoteRepository $noteRepository): Response
     {
-        return $this->render('note/show.html.twig', [
+        return $this->render('onboarding/show.html.twig', [
             'note' => $note,
             'notes' => $noteRepository->findByCategory('onboarding'),
         ]);
@@ -74,10 +74,10 @@ class OnboardingController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('note_index');
+            return $this->redirectToRoute('onboarding_index');
         }
 
-        return $this->render('note/edit.html.twig', [
+        return $this->render('onboarding/edit.html.twig', [
             'note' => $note,
             'notes' => $noteRepository->findByCategory('onboarding'),
             'form' => $form->createView(),
@@ -97,6 +97,6 @@ class OnboardingController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('note_index');
+        return $this->redirectToRoute('onboarding_index');
     }
 }

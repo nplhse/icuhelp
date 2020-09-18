@@ -99,11 +99,11 @@
       </trans-unit>
       <trans-unit id="jgnXgPh" resname="homepage_teaser_h1">
         <source>homepage_teaser_h1</source>
-        <target>Arztbriefe</target>
+        <target>Willkommen bei ICUhelp</target>
       </trans-unit>
       <trans-unit id="qyK0pid" resname="homepage_teaser_text">
         <source>homepage_teaser_text</source>
-        <target>Mit Hilfe von durch das System vorgegebenen Textbausteinen und ein paar Angaben können schnell und einfach individualisierte Arztbriefe erstellt werden.</target>
+        <target>Dieses Projekt soll den Arbeitsalltag auf der Intensivstation vereinfachen und als Informationsquelle für allgemeine Mitteilungen, sowie die Einarbeitung neuer Mitarbeiter sein. Außerdem können mit Hilfe von durch das System vorgegebenen Textbausteinen und ein paar Angaben schnell und einfach individualisierte Arztbriefe erstellt werden.</target>
       </trans-unit>
       <trans-unit id=".zQWhJe" resname="homepage_teaser_link">
         <source>homepage_teaser_link</source>
@@ -292,6 +292,106 @@
       <trans-unit id="g0fBTt8" resname="link.notes">
         <source>link.notes</source>
         <target>Notizen</target>
+      </trans-unit>
+      <trans-unit id="ZtAqL7p" resname="title.note.edit">
+        <source>title.note.edit</source>
+        <target>Notzi bearbeiten</target>
+      </trans-unit>
+      <trans-unit id="0bSMHYY" resname="title.note.new">
+        <source>title.note.new</source>
+        <target>Neue Notiz erstellen</target>
+      </trans-unit>
+      <trans-unit id="sR58XWb" resname="title.note">
+        <source>title.note</source>
+        <target>Notizen</target>
+      </trans-unit>
+      <trans-unit id="zOYBvej" resname="title.note.show">
+        <source>title.note.show</source>
+        <target>Notiz anzeigen</target>
+      </trans-unit>
+      <trans-unit id="x4sOI5X" resname="title.info.edit">
+        <source>title.info.edit</source>
+        <target>Mitteilung bearbeiten</target>
+      </trans-unit>
+      <trans-unit id="DwA3BWw" resname="title.info.new">
+        <source>title.info.new</source>
+        <target>Mitteilung erstellen</target>
+      </trans-unit>
+      <trans-unit id="O8Cw4hF" resname="title.info">
+        <source>title.info</source>
+        <target>Mitteilungen</target>
+      </trans-unit>
+      <trans-unit id="mcwNZ5E" resname="button.info.new">
+        <source>button.info.new</source>
+        <target>Neue Mitteilung erstellen</target>
+      </trans-unit>
+      <trans-unit id="32916cs" resname="link.info.back_list">
+        <source>link.info.back_list</source>
+        <target>Zurück zu allen Mitteilungen</target>
+      </trans-unit>
+      <trans-unit id="u8.gxxE" resname="title.info.show">
+        <source>title.info.show</source>
+        <target>Mitteilung anzeigen</target>
+      </trans-unit>
+      <trans-unit id="1nMKdma" resname="button.info.edit">
+        <source>button.info.edit</source>
+        <target>Mitteilung bearbeiten</target>
+      </trans-unit>
+      <trans-unit id="Y0w0dao" resname="link.info">
+        <source>link.info</source>
+        <target>Mitteilungen</target>
+      </trans-unit>
+      <trans-unit id="5Cd6ToY" resname="link.onboarding">
+        <source>link.onboarding</source>
+        <target>Einarbeitung</target>
+      </trans-unit>
+      <trans-unit id="fcYTBHW" resname="title.onboarding.edit">
+        <source>title.onboarding.edit</source>
+        <target>Beitrag bearbeiten</target>
+      </trans-unit>
+      <trans-unit id="pv.eu6q" resname="title.onboarding.new">
+        <source>title.onboarding.new</source>
+        <target>Beitrag erstellen</target>
+      </trans-unit>
+      <trans-unit id="tLcfIjK" resname="title.onboarding">
+        <source>title.onboarding</source>
+        <target>Einarbeitung</target>
+      </trans-unit>
+      <trans-unit id="zV6FN9h" resname="button.onboarding.new">
+        <source>button.onboarding.new</source>
+        <target>Beitrag erstellen</target>
+      </trans-unit>
+      <trans-unit id="shiC9Ng" resname="link.onboarding.back_list">
+        <source>link.onboarding.back_list</source>
+        <target>Zurück zur Liste der Beiträge</target>
+      </trans-unit>
+      <trans-unit id="g7Wz9x_" resname="button.onboarding.edit">
+        <source>button.onboarding.edit</source>
+        <target>Beitrag bearbeiten</target>
+      </trans-unit>
+      <trans-unit id="THBRmde" resname="label.note.category.onboarding">
+        <source>label.note.category.onboarding</source>
+        <target>Einarbeitung</target>
+      </trans-unit>
+      <trans-unit id="mOmncFH" resname="label.note.category.note">
+        <source>label.note.category.note</source>
+        <target>Notizen</target>
+      </trans-unit>
+      <trans-unit id="mBCLxR0" resname="label.note.category.info">
+        <source>label.note.category.info</source>
+        <target>Mitteilungen</target>
+      </trans-unit>
+      <trans-unit id="UcqttPs" resname="button.note.create">
+        <source>button.note.create</source>
+        <target>Notiz erstellen</target>
+      </trans-unit>
+      <trans-unit id="mEQLyMq" resname="button.onboarding.create">
+        <source>button.onboarding.create</source>
+        <target>Beitrag erstellen</target>
+      </trans-unit>
+      <trans-unit id="zJpoq2L" resname="button.info.create">
+        <source>button.info.create</source>
+        <target>Mitteilung erstellen</target>
       </trans-unit>
     </body>
   </file>
