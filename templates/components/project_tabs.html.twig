@@ -7,10 +7,13 @@
             <a class="nav-link{% if app.request.attributes.get( '_route' ) starts with 'info' %} active{% endif %}" href="{{ path('info_index') }}"><i class="fa fa-info-circle"></i> {{ "link.info"|trans }}</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link{% if app.request.attributes.get( '_route' ) starts with 'letter' %} active{% endif %}" href="{{ path('letter') }}"><i class="fa fa-file-alt"></i> {{ "link.letter"|trans }}</a>
+            <a class="nav-link disabled" href="#"><i class="fa fa-clinic-medical"></i> SOP</a>
         </li>
         <li class="nav-item">
             <a class="nav-link{% if app.request.attributes.get( '_route' ) starts with 'onboarding' %} active{% endif %}" href="{{ path('onboarding_index') }}"><i class="fa fa-egg"></i> {{ "link.onboarding"|trans }}</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link{% if app.request.attributes.get( '_route' ) starts with 'letter' %} active{% endif %}" href="{{ path('letter') }}"><i class="fa fa-file-alt"></i> {{ "link.letter"|trans }}</a>
         </li>
         <li class="nav-item">
             <a class="nav-link{% if app.request.attributes.get( '_route' ) starts with 'note' %} active{% endif %}" href="{{ path('note_index') }}"><i class="fa fa-sticky-note"></i> {{ "link.notes"|trans }}</a>
