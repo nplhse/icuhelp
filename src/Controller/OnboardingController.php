@@ -11,21 +11,21 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class NoteController extends AbstractController
+class OnboardingController extends AbstractController
 {
     /**
-     * @Route({"de": "/notizen", "en": "/notes"}, name="note_index", methods={"GET"})
+     * @Route({"de": "/einarbeitung", "en": "/onboarding"}, name="onboarding_index", methods={"GET"})
      * @IsGranted("ROLE_USER")
      */
     public function index(NoteRepository $noteRepository): Response
     {
         return $this->render('note/index.html.twig', [
-            'notes' => $noteRepository->findByCategory('note'),
+            'notes' => $noteRepository->findByCategory('onboarding'),
         ]);
     }
 
     /**
-     * @Route({"de": "/notizen/erstellen", "en": "/notes/new"}, name="note_new", methods={"GET","POST"})
+     * @Route({"de": "/einarbeitung/erstellen", "en": "/onboarding/new"}, name="onboarding_new", methods={"GET","POST"})
      * @IsGranted("ROLE_USER")
      */
     public function new(Request $request, NoteRepository $noteRepository): Response
@@ -39,31 +39,31 @@ class NoteController extends AbstractController
             $entityManager->persist($note);
             $entityManager->flush();
 
-            return $this->redirectToRoute('note_index');
+            return $this->redirectToRoute('onboarding_index');
         }
 
         return $this->render('note/new.html.twig', [
             'note' => $note,
-            'notes' => $noteRepository->findByCategory('note'),
+            'notes' => $noteRepository->findByCategory('onboarding'),
             'form' => $form->createView(),
             'errors' => $form->getErrors(true, false),
         ]);
     }
 
     /**
-     * @Route({"de": "/notizen/{id}", "en": "/notes/{id}"}, name="note_show", methods={"GET"})
+     * @Route({"de": "/einarbeitung/{id}", "en": "/onboarding/{id}"}, name="onboarding_show", methods={"GET"})
      * @IsGranted("ROLE_USER")
      */
     public function show(Note $note, NoteRepository $noteRepository): Response
     {
         return $this->render('note/show.html.twig', [
             'note' => $note,
-            'notes' => $noteRepository->findByCategory('note'),
+            'notes' => $noteRepository->findByCategory('onboarding'),
         ]);
     }
 
     /**
-     * @Route({"de": "/notizen/{id}/bearbeiten", "en": "/notes/{id}/edit"}, name="note_edit", methods={"GET","POST"})
+     * @Route({"de": "/einarbeitung/{id}/bearbeiten", "en": "/onboarding/{id}/edit"}, name="onboarding_edit", methods={"GET","POST"})
      * @IsGranted("ROLE_USER")
      */
     public function edit(Request $request, Note $note, NoteRepository $noteRepository): Response
@@ -79,14 +79,14 @@ class NoteController extends AbstractController
 
         return $this->render('note/edit.html.twig', [
             'note' => $note,
-            'notes' => $noteRepository->findByCategory('note'),
+            'notes' => $noteRepository->findByCategory('onboarding'),
             'form' => $form->createView(),
             'errors' => $form->getErrors(true, false),
         ]);
     }
 
     /**
-     * @Route({"de": "/notizen/{id}", "en": "/notes/{id}"}, name="note_delete", methods={"DELETE"})
+     * @Route({"de": "/einarbeitung/{id}", "en": "/onboarding/{id}"}, name="onboarding_delete", methods={"DELETE"})
      * @IsGranted("ROLE_USER")
      */
     public function delete(Request $request, Note $note): Response

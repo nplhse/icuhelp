@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Note;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -14,7 +15,12 @@ class NoteType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('category')
+            ->add('category', ChoiceType::class, [
+                'choices'  => [
+                    'label.note.category.onboarding' => 'onboarding',
+                    'label.note.category.note' => 'note',
+                    'label.note.category.info' => 'info',
+                ]])
             ->add('text', CKEditorType::class, [
                 'config_name' => 'snippets',
             ]);

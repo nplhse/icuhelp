@@ -1,23 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ "title.note"|trans }}{% endblock %}
+{% block title %}{{ "title.onboarding"|trans }}{% endblock %}
 
 {% block body %}
 <main role="main" class="container">
     {{ include('components/project_tabs.html.twig') }}
 
     <div>
-        <h1 class="mt-2">{{ "title.note"|trans }}</h1>
+        <h1 class="mt-2">{{ "title.onboarding"|trans }}</h1>
 
         <div class="row">
             <div class="col-3">
                 <ul class="list-group">
                     {% for note in notes %}
-                        <li class="list-group-item"><a href="{{ path('note_show', {'id': note.id}) }}">{{ note.name }}</a></li>
+                        <li class="list-group-item"><a href="{{ path('onboarding_show', {'id': note.id}) }}">{{ note.name }}</a></li>
                     {% else %}
-                        <li class="list-group-item disabled">No notes found</li>
+                        <li class="list-group-item disabled">No entries found</li>
                     {% endfor %}
-                    <li class="list-group-item"><a class="btn btn-primary" href="{{ path('note_new') }}" role="button">{{ "button.note.new"|trans }}</a></li>
+                    <li class="list-group-item"><a class="btn btn-primary" href="{{ path('onboarding_new') }}" role="button">{{ "button.onboarding.new"|trans }}</a></li>
                 </ul>
             </div>
             <div class="col-9">

@@ -11,21 +11,21 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class NoteController extends AbstractController
+class InfoController extends AbstractController
 {
     /**
-     * @Route({"de": "/notizen", "en": "/notes"}, name="note_index", methods={"GET"})
+     * @Route({"de": "/info", "en": "/info"}, name="info_index", methods={"GET"})
      * @IsGranted("ROLE_USER")
      */
     public function index(NoteRepository $noteRepository): Response
     {
-        return $this->render('note/index.html.twig', [
-            'notes' => $noteRepository->findByCategory('note'),
+        return $this->render('info/index.html.twig', [
+            'notes' => $noteRepository->findByCategory('info'),
         ]);
     }
 
     /**
-     * @Route({"de": "/notizen/erstellen", "en": "/notes/new"}, name="note_new", methods={"GET","POST"})
+     * @Route({"de": "/info/erstellen", "en": "/info/new"}, name="info_new", methods={"GET","POST"})
      * @IsGranted("ROLE_USER")
      */
     public function new(Request $request, NoteRepository $noteRepository): Response
@@ -39,31 +39,31 @@ class NoteController extends AbstractController
             $entityManager->persist($note);
             $entityManager->flush();
 
-            return $this->redirectToRoute('note_index');
+            return $this->redirectToRoute('info');
         }
 
-        return $this->render('note/new.html.twig', [
+        return $this->render('info/new.html.twig', [
             'note' => $note,
-            'notes' => $noteRepository->findByCategory('note'),
+            'notes' => $noteRepository->findByCategory('info'),
             'form' => $form->createView(),
             'errors' => $form->getErrors(true, false),
         ]);
     }
 
     /**
-     * @Route({"de": "/notizen/{id}", "en": "/notes/{id}"}, name="note_show", methods={"GET"})
+     * @Route({"de": "/info/{id}", "en": "/info/{id}"}, name="info_show", methods={"GET"})
      * @IsGranted("ROLE_USER")
      */
     public function show(Note $note, NoteRepository $noteRepository): Response
     {
-        return $this->render('note/show.html.twig', [
+        return $this->render('info/show.html.twig', [
             'note' => $note,
-            'notes' => $noteRepository->findByCategory('note'),
+            'notes' => $noteRepository->findByCategory('info'),
         ]);
     }
 
     /**
-     * @Route({"de": "/notizen/{id}/bearbeiten", "en": "/notes/{id}/edit"}, name="note_edit", methods={"GET","POST"})
+     * @Route({"de": "/info/{id}/bearbeiten", "en": "/info/{id}/edit"}, name="info_edit", methods={"GET","POST"})
      * @IsGranted("ROLE_USER")
      */
     public function edit(Request $request, Note $note, NoteRepository $noteRepository): Response
@@ -74,19 +74,19 @@ class NoteController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('note_index');
+            return $this->redirectToRoute('info_index');
         }
 
-        return $this->render('note/edit.html.twig', [
+        return $this->render('info/edit.html.twig', [
             'note' => $note,
-            'notes' => $noteRepository->findByCategory('note'),
+            'notes' => $noteRepository->findByCategory('info'),
             'form' => $form->createView(),
             'errors' => $form->getErrors(true, false),
         ]);
     }
 
     /**
-     * @Route({"de": "/notizen/{id}", "en": "/notes/{id}"}, name="note_delete", methods={"DELETE"})
+     * @Route({"de": "/info/{id}", "en": "/info/{id}"}, name="info_delete", methods={"DELETE"})
      * @IsGranted("ROLE_USER")
      */
     public function delete(Request $request, Note $note): Response
@@ -97,6 +97,6 @@ class NoteController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('note_index');
+        return $this->redirectToRoute('info_index');
     }
 }
