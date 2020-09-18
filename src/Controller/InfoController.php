@@ -39,7 +39,7 @@ class InfoController extends AbstractController
             $entityManager->persist($note);
             $entityManager->flush();
 
-            return $this->redirectToRoute('info');
+            return $this->redirectToRoute('info_index');
         }
 
         return $this->render('info/new.html.twig', [
