@@ -345,9 +345,13 @@
         <source>link.onboarding</source>
         <target>Einarbeitung</target>
       </trans-unit>
-      <trans-unit id="fcYTBHW" resname="title.onboarding.edit">
+      <trans-unit id="fcYTBgW" resname="title.onboarding.edit">
         <source>title.onboarding.edit</source>
         <target>Beitrag bearbeiten</target>
+      </trans-unit>
+      <trans-unit id="fcYTBHW" resname="title.onboarding.show">
+        <source>title.onboarding.show</source>
+        <target>Beitrag anzeigen</target>
       </trans-unit>
       <trans-unit id="pv.eu6q" resname="title.onboarding.new">
         <source>title.onboarding.new</source>
@@ -365,7 +369,7 @@
         <source>link.onboarding.back_list</source>
         <target>Zurück zur Liste der Beiträge</target>
       </trans-unit>
-      <trans-unit id="g7Wz9x_" resname="button.onboarding.edit">
+      <trans-unit id="143" resname="button.onboarding.edit">
         <source>button.onboarding.edit</source>
         <target>Beitrag bearbeiten</target>
       </trans-unit>
@@ -392,6 +396,18 @@
       <trans-unit id="zJpoq2L" resname="button.info.create">
         <source>button.info.create</source>
         <target>Mitteilung erstellen</target>
+      </trans-unit>
+      <trans-unit id="123" resname="button.note.save">
+        <source>button.note.save</source>
+        <target>Notiz speichern</target>
+      </trans-unit>
+      <trans-unit id="124" resname="button.onboarding.save">
+        <source>button.onboarding.save</source>
+        <target>Beitrag speichern</target>
+      </trans-unit>
+      <trans-unit id="125" resname="button.info.save">
+        <source>button.info.save</source>
+        <target>Mitteilung speichern</target>
       </trans-unit>
     </body>
   </file>
