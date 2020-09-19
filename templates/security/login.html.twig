@@ -13,7 +13,7 @@
 
         <h1>{{ "title.login"|trans({}, "forms") }}</h1>
 
-        {% for label, messages in app.flashes(['warning', 'error', 'notice', 'success']) %}
+        {% for label, messages in app.flashes() %}
             {% for message in messages %}
                 <div class="alert alert-{{ label }}">
                     {{ message }}
