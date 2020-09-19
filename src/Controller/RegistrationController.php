@@ -63,16 +63,6 @@ class RegistrationController extends AbstractController
             $this->addFlash('success', 'Account created, check your E-Mails to verify your account.');
 
             return $this->redirectToRoute('security_login');
-
-            // do anything else you need here, like send an email
-            /**
-            return $guardHandler->authenticateUserAndHandleSuccess(
-                $user,
-                $request,
-                $authenticator,
-                'main' // firewall name in security.yaml
-            );
-             */
         }
 
         return $this->render('security/register.html.twig', [

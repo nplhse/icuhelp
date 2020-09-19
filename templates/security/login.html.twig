@@ -13,11 +13,13 @@
 
         <h1>{{ "title.login"|trans({}, "forms") }}</h1>
 
-        {% if error %}
-            <div class="alert alert-danger">
-                {{ error.messageKey|trans(error.messageData, 'security') }}
-            </div>
-        {% endif %}
+        {% for label, messages in app.flashes(['warning', 'error', 'notice', 'success']) %}
+            {% for message in messages %}
+                <div class="alert alert-{{ label }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
 
         {{ form_start(form) }}
 
