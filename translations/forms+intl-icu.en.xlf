@@ -25,6 +25,10 @@
         <source>button.createletter</source>
         <target>Create letter</target>
       </trans-unit>
+      <trans-unit id="EkJLjTi" resname="link.forgotpassword">
+        <source>link.forgotpassword</source>
+        <target>__link.forgotpassword</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

@@ -25,6 +25,10 @@
         <source>button.createletter</source>
         <target>Arztbrief erstellen</target>
       </trans-unit>
+      <trans-unit id="EkJLjTi" resname="link.forgotpassword">
+        <source>link.forgotpassword</source>
+        <target>Passwort vergessen?</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

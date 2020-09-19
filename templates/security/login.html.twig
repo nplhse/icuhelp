@@ -33,6 +33,8 @@
             <label for="remember_me">{{ "button.remember_me"|trans() }}</label>
         </div>
 
+        <a href="{{ path('app_forgot_password_request') }}">{{ "link.forgotpassword"|trans({}, "forms") }}</a>
+
         {{ form_end(form) }}
     </main>
 {% endblock %}

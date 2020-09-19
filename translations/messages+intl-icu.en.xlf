@@ -369,6 +369,10 @@
         <source>label.note.category.info</source>
         <target>Information</target>
       </trans-unit>
+      <trans-unit id="4pG2o5B" resname="title.onboarding.show">
+        <source>title.onboarding.show</source>
+        <target>__title.onboarding.show</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
