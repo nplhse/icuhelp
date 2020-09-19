@@ -49,20 +49,10 @@ class SecurityController extends AbstractController
     }
 
     /**
-     * @Route("/awaiting_activation", name="security_logout")
+     * @Route("/security/inactive_user", name="security_inactive_user")
      */
-    public function inactiveAccount()
+    public function inactiveUser()
     {
-        $this->addFlash('info', 'Your account is inactive, please contact the administrator.');
-        $this->redirectToRoute('homepage');
-    }
-
-    /**
-     * @Route("/credentials_expired", name="security_logout")
-     */
-    public function credentialsExpired ()
-    {
-        $this->addFlash('warning', 'Your credentials have expired, please set a new password.');
-        $this->redirectToRoute('homepage');
+        return $this->render('security/inactive_user.html.twig');
     }
 }

@@ -35,4 +35,8 @@ services:
         tags:
             - { name: 'doctrine.event_subscriber' }
 
+    App\EventListener\UserActivationListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.request }
+
     Symfony\Bridge\Doctrine\Security\RememberMe\DoctrineTokenProvider: ~
