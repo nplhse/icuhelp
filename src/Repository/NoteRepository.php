@@ -33,15 +33,18 @@ class NoteRepository extends ServiceEntityRepository
         ;
     }
 
-    /*
-    public function findOneBySomeField($value): ?Note
+    /**
+     * @return Note[] Returns an array of Note objects
+     */
+    public function findWithoutCategory($category)
     {
         return $this->createQueryBuilder('n')
-            ->andWhere('n.exampleField = :val')
-            ->setParameter('val', $value)
+            ->andWhere('n.category != :category')
+            ->setParameter('category', $category)
+            ->orderBy('n.name', 'ASC')
+            ->groupBy('n.category')
             ->getQuery()
-            ->getOneOrNullResult()
-        ;
+            ->getResult()
+            ;
     }
-    */
 }

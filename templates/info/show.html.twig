@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ "title.info.show"|trans }} - {{ note.name }}{% endblock %}
+{% block title %}{{ "title.info.show"|trans }} - {{ info.name }}{% endblock %}
 
 {% block body %}
 <main role="main" class="container">
@@ -9,32 +9,22 @@
     <div>
         <h1 class="mt-2">{{ "title.info.show"|trans }}</h1>
 
-        <div class="row">
-            <div class="col-3">
-                <ul class="list-group">
-                    {% for note in notes %}
-                        <li class="list-group-item"><a href="{{ path('info_show', {'id': note.id}) }}">{{ note.name }}</a></li>
-                    {% else %}
-                        <li class="list-group-item disabled">No entries found</li>
-                    {% endfor %}
-                    <li class="list-group-item"><a class="btn btn-primary" href="{{ path('info_new') }}" role="button">{{ "button.info.new"|trans }}</a></li>
-                </ul>
-            </div>
-            <div class="col-9">
-                <h2>{{ note.name }}</h2>
+        <h2>{{ info.name }}</h2>
 
-                <div>{{ note.text|raw }}</div>
+        <div class="mb-2">
+            {{ info.text|raw }}
 
-                <div class="clearfix">
-                    <div class="btn-group float-right" role="group" aria-label="">
-                        <a class="btn btn-secondary" href="{{ path('info_edit', {'id': note.id}) }}" role="button">{{ "button.info.edit"|trans }}</a>
-                    </div>
-
-                    {{ include('info/_delete_form.html.twig') }}
-                </div>
-            </div>
+            <small>Created at {{ info.createdAt|date("Y.m.d H:i") }}, last updated at {{ info.updatedAt|date("Y.m.d H:i") }}</small>
         </div>
 
+        <div class="clearfix">
+            <div class="btn-group float-right" role="group" aria-label="">
+                <a class="btn btn-secondary" href="{{ path('info_index') }}" role="button">{{ "link.info.back_list"|trans }}</a>
+                <a class="btn btn-primary" href="{{ path('info_edit', {'id': info.id}) }}" role="button">{{ "button.info.edit"|trans }}</a>
+            </div>
+
+            {{ include('info/_delete_form.html.twig') }}
+        </div>
     </div>
 </main>
 {% endblock %}

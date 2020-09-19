@@ -3,14 +3,14 @@
 namespace App\Entity;
 
 use App\Entity\Traits\TimestampableTrait;
-use App\Repository\NoteRepository;
+use App\Repository\InfoRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=NoteRepository::class)
+ * @ORM\Entity(repositoryClass=InfoRepository::class)
  * @ORM\HasLifecycleCallbacks()
  */
-class Note
+class Info
 {
     use TimestampableTrait;
 
@@ -27,12 +27,7 @@ class Note
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $category;
-
-    /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $text;
 
@@ -53,24 +48,12 @@ class Note
         return $this;
     }
 
-    public function getCategory(): ?string
-    {
-        return $this->category;
-    }
-
-    public function setCategory(string $category): self
-    {
-        $this->category = $category;
-
-        return $this;
-    }
-
     public function getText(): ?string
     {
         return $this->text;
     }
 
-    public function setText(string $text): self
+    public function setText(?string $text): self
     {
         $this->text = $text;
 

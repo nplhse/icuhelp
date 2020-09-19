@@ -23,7 +23,11 @@
             <div class="col-9">
                 <h2>{{ note.name }}</h2>
 
-                <div>{{ note.text|raw }}</div>
+                <div class="mb-2">
+                    {{ note.text|raw }}
+
+                    <small>Created at {{ note.createdAt|date("Y.m.d H:i") }}, last updated at {{ note.updatedAt|date("Y.m.d H:i") }}</small>
+                </div>
 
                 <div class="clearfix">
                     <div class="btn-group float-right" role="group" aria-label="">

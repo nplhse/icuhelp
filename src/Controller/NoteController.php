@@ -20,7 +20,7 @@ class NoteController extends AbstractController
     public function index(NoteRepository $noteRepository): Response
     {
         return $this->render('note/index.html.twig', [
-            'notes' => $noteRepository->findByCategory('note'),
+            'notes' => $noteRepository->findWithoutCategory('onboarding'),
         ]);
     }
 
@@ -35,6 +35,8 @@ class NoteController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $note->setCategory('note');
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($note);
             $entityManager->flush();
@@ -44,7 +46,7 @@ class NoteController extends AbstractController
 
         return $this->render('note/new.html.twig', [
             'note' => $note,
-            'notes' => $noteRepository->findByCategory('note'),
+            'notes' => $noteRepository->findWithoutCategory('onboarding'),
             'form' => $form->createView(),
             'errors' => $form->getErrors(true, false),
         ]);
@@ -58,7 +60,7 @@ class NoteController extends AbstractController
     {
         return $this->render('note/show.html.twig', [
             'note' => $note,
-            'notes' => $noteRepository->findByCategory('note'),
+            'notes' => $noteRepository->findWithoutCategory('onboarding'),
         ]);
     }
 
@@ -79,7 +81,7 @@ class NoteController extends AbstractController
 
         return $this->render('note/edit.html.twig', [
             'note' => $note,
-            'notes' => $noteRepository->findByCategory('note'),
+            'notes' => $noteRepository->findWithoutCategory('onboarding'),
             'form' => $form->createView(),
             'errors' => $form->getErrors(true, false),
         ]);

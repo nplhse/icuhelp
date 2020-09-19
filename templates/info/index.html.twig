@@ -9,23 +9,24 @@
     <div>
         <h1 class="mt-2">{{ "title.info"|trans }}</h1>
 
-        <div class="row">
-            <div class="col-3">
-                <ul class="list-group">
-                    {% for note in notes %}
-                        <li class="list-group-item"><a href="{{ path('info_show', {'id': note.id}) }}">{{ note.name }}</a></li>
-                    {% else %}
-                        <li class="list-group-item disabled">No entries found</li>
-                    {% endfor %}
-                    <li class="list-group-item"><a class="btn btn-primary" href="{{ path('info_new') }}" role="button">{{ "button.info.new"|trans }}</a></li>
-                </ul>
+        {% for info in infos %}
+            <div class="row mb-2">
+                <div class="card" style="width: 100%;">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="{{ path('info_show', {'id': info.id}) }}">{{ info.name }}</a></h5>
+                        <div class="card-text">{{ info.text|raw }}</div>
+                        <small>Created at {{ info.createdAt|date("Y.m.d H:i") }}, last updated at {{ info.updatedAt|date("Y.m.d H:i") }}</small>
+                    </div>
+                </div>
             </div>
-            <div class="col-9 my-auto">
-                <p class="text-center" style="color:darkgrey">
-                    <i class="fa fa-tasks fa-10x"></i>
-                    <br />Mitteilung auswählen
-                </p>
+        {% else %}
+            <div class="row">
+                No entries found.
             </div>
+        {% endfor %}
+
+        <div>
+            <a class="btn btn-primary" href="{{ path('info_new') }}" role="button">{{ "button.info.new"|trans }}</a>
         </div>
     </div>
 </main>
