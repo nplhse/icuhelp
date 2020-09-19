@@ -59,6 +59,16 @@ class User implements UserInterface
      */
     private $isVerified = false;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isActive = false;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isCredentialsNonExpired = false;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -176,6 +186,30 @@ class User implements UserInterface
     public function setIsVerified(bool $isVerified): self
     {
         $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    public function getIsActive(): ?bool
+    {
+        return $this->isActive;
+    }
+
+    public function setIsActive(bool $isActive): self
+    {
+        $this->isActive = $isActive;
+
+        return $this;
+    }
+
+    public function getIsCredentialsNonExpired(): ?bool
+    {
+        return $this->isCredentialsNonExpired;
+    }
+
+    public function setIsCredentialsNonExpired(bool $isCredentialsNonExpired): self
+    {
+        $this->isCredentialsNonExpired = $isCredentialsNonExpired;
 
         return $this;
     }

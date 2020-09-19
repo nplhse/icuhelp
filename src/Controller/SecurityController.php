@@ -47,4 +47,22 @@ class SecurityController extends AbstractController
     {
         throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
     }
+
+    /**
+     * @Route("/awaiting_activation", name="security_logout")
+     */
+    public function inactiveAccount()
+    {
+        $this->addFlash('info', 'Your account is inactive, please contact the administrator.');
+        $this->redirectToRoute('homepage');
+    }
+
+    /**
+     * @Route("/credentials_expired", name="security_logout")
+     */
+    public function credentialsExpired ()
+    {
+        $this->addFlash('warning', 'Your credentials have expired, please set a new password.');
+        $this->redirectToRoute('homepage');
+    }
 }

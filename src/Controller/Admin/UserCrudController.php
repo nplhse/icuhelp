@@ -36,18 +36,20 @@ class UserCrudController extends AbstractCrudController
         $plainPassword = TextField::new('plainPassword', 'label.password')->setFormTypeOptions(['empty_data' => '']);
         $panel2 = FormField::addPanel('title.user_properties');
         $isVerified = BooleanField::new('isVerified', 'label.isVerified');
+        $isActive = BooleanField::new('isActive', 'label.isActive');
+        $isCredentialsNonExpired = BooleanField::new('isCredentialsNonExpired', 'label.isCredentialsNonExpired');
         $roles = ArrayField::new('roles');
         $id = IntegerField::new('id', 'label.id');
         $password = TextField::new('password');
 
         if (Crud::PAGE_INDEX === $pageName) {
-            return [$id, $username, $email, $isVerified];
+            return [$id, $username, $email, $isVerified, $isActive];
         } elseif (Crud::PAGE_DETAIL === $pageName) {
-            return [$id, $username, $roles, $isVerified, $password, $email];
+            return [$id, $username, $roles, $isVerified, $isActive, $isVerified, $isCredentialsNonExpired, $password, $email];
         } elseif (Crud::PAGE_NEW === $pageName) {
-            return [$panel1, $username, $email, $plainPassword, $panel2, $roles, $isVerified];
+            return [$panel1, $username, $email, $plainPassword, $panel2, $roles, $isVerified, $isActive, $isCredentialsNonExpired];
         } elseif (Crud::PAGE_EDIT === $pageName) {
-            return [$panel1, $username, $email, $plainPassword, $panel2, $roles, $isVerified];
+            return [$panel1, $username, $email, $plainPassword, $panel2, $roles, $isVerified, $isActive, $isCredentialsNonExpired];
         }
     }
 }
