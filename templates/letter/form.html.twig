@@ -2,11 +2,11 @@
 
 {% block title %}{{ parent() }} - {{ "title.letter_create"|trans }}{% endblock %}
 
-{% form_theme form.snippets 'forms/choicetype_widget.html.twig' %}
+{% form_theme form.snippets '_forms/choicetype_widget.html.twig' %}
 
 {% block body %}
     <main role="main" class="container">
-        {{ include('components/project_tabs.html.twig') }}
+        {{ include('_components/project_tabs.html.twig') }}
 
         <div class="clearfix">
             <h1 class="mt-2">{{ "title.letter_create"|trans }}</h1>

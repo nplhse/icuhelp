@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ parent() }} - {{ "title.login"|trans({}, "forms") }}{% endblock %}
+{% block title %}{{ parent() }} - {{ "title.login"|trans({}, "_forms") }}{% endblock %}
 
 {% block body %}
     <main role="main" class="container">
@@ -18,7 +18,7 @@
             {% endfor %}
         {% else %}
             <form method="post">
-                <h1>{{ "title.login"|trans({}, "forms") }}</h1>
+                <h1>{{ "title.login"|trans({}, "_forms") }}</h1>
 
 
                 {% if error %}
@@ -35,13 +35,13 @@
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-success">{{ "button.login"|trans({}, "forms") }} <span class="fa fa-lock"></span></button>
+                    <button type="submit" class="btn btn-success">{{ "button.login"|trans({}, "_forms") }} <span class="fa fa-lock"></span></button>
 
                     <input type="checkbox" id="remember_me" name="_remember_me"/>
                     <label for="remember_me">{{ "button.remember_me"|trans() }}</label>
                 </div>
 
-                <a href="{{ path('app_forgot_password_request') }}">{{ "link.forgotpassword"|trans({}, "forms") }}</a>
+                <a href="{{ path('app_forgot_password_request') }}">{{ "link.forgotpassword"|trans({}, "_forms") }}</a>
                 {{ form_end(form) }}
         {% endif %}
     </main>
