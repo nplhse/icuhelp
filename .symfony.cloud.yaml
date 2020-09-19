@@ -23,11 +23,16 @@ web:
             root: "public"
             expires: 1h
             passthru: "/index.php"
+        '/uploads':
+            root: 'public/uploads'
+            scripts: false
+            allow: true
 
 disk: 512
 
 mounts:
     "/var": { source: local, source_path: var }
+    '/public/uploads': { source: local, source_path: uploads }
 
 hooks:
     build: |
