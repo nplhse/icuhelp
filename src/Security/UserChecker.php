@@ -32,7 +32,7 @@ class UserChecker implements UserCheckerInterface
 
         // user account is expired, the user may be notified
         if (!$user->getIsCredentialsNonExpired()) {
-            throw new UserCredentialsExpiredException('Your credentials are expired.');
+            throw new UserCredentialsExpiredException('Your credentials are expired. Click on Forgot password to change them.');
         }
     }
 }
