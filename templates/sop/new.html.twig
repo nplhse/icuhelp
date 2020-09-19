@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New SOP{% endblock %}
+
+{% block body %}
+    <main role="main" class="container">
+        {{ include('components/project_tabs.html.twig') }}
+
+        <h1>Create new SOP</h1>
+
+        {{ include('sop/_form.html.twig') }}
+
+        <a href="{{ path('sop_index') }}">back to list</a>
+    </main>
+{% endblock %}

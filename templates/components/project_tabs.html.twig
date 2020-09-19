@@ -7,7 +7,7 @@
             <a class="nav-link{% if app.request.attributes.get( '_route' ) starts with 'info' %} active{% endif %}" href="{{ path('info_index') }}"><i class="fa fa-info-circle"></i> {{ "link.info"|trans }}</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link disabled" href="#"><i class="fa fa-clinic-medical"></i> SOP</a>
+            <a class="nav-link{% if app.request.attributes.get( '_route' ) starts with 'sop' %} active{% endif %}" href="{{ path('sop_index') }}"><i class="fa fa-clinic-medical"></i> {{ "link.sop"|trans }}</a>
         </li>
         <li class="nav-item">
             <a class="nav-link{% if app.request.attributes.get( '_route' ) starts with 'onboarding' %} active{% endif %}" href="{{ path('onboarding_index') }}"><i class="fa fa-egg"></i> {{ "link.onboarding"|trans }}</a>

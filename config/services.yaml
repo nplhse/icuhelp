@@ -6,6 +6,7 @@
 parameters:
     default_admin_email: noreply@icuhelp.com
     default_admin_email_name: 'ICUhelp Mail Bot'
+    upload_directory: '%kernel.project_dir%/public/uploads/'
 
 services:
     # default configuration for services in *this* file
@@ -38,5 +39,9 @@ services:
     App\EventListener\UserActivationListener:
         tags:
             - { name: kernel.event_listener, event: kernel.request }
+
+    App\Service\FileUploader:
+        arguments:
+            $targetDirectory: '%upload_directory%'
 
     Symfony\Bridge\Doctrine\Security\RememberMe\DoctrineTokenProvider: ~

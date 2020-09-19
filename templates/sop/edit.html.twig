@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit SOP{% endblock %}
+
+{% block body %}
+    <main role="main" class="container">
+        {{ include('components/project_tabs.html.twig') }}
+
+        <h1>Edit SOP</h1>
+
+        {{ include('sop/_form.html.twig', {'button_label': 'Update'}) }}
+
+        <a href="{{ path('sop_index') }}">back to list</a>
+
+        {{ include('sop/_delete_form.html.twig') }}
+    </main>
+{% endblock %}

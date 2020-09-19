@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SOP index{% endblock %}
+
+{% block body %}
+    <main role="main" class="container">
+        {{ include('components/project_tabs.html.twig') }}
+
+        <h1>SOP index</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for sop in sops %}
+                <tr>
+                    <td>{{ sop.id }}</td>
+                    <td>{{ sop.name }}</td>
+                    <td>{{ sop.description }}</td>
+                    <td>
+                        <a href="{{ path('sop_show', {'id': sop.id}) }}">show</a>
+                        <a href="{{ path('sop_edit', {'id': sop.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="7">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('sop_new') }}">Create new</a>
+    </main>
+{% endblock %}
