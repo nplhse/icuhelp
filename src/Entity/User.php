@@ -43,6 +43,11 @@ class User implements UserInterface
      * @var string The plain password
      *
      * @Assert\NotBlank(groups={"registration"})
+     * @Assert\Length(
+     *      min = 6,
+     *      max = 4096,
+     *      minMessage = "Your password should be at least {{ limit }} characters"
+     * )
      */
     private $plainPassword = null;
 
