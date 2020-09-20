@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ "title.info.new"|trans }}{% endblock %}
+{% block title %}{{ parent() }} - {{ "title.info.new"|trans }}{% endblock %}
 
 {% block body %}
 <main role="main" class="container">
