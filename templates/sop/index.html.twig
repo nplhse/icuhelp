@@ -17,7 +17,7 @@
                             <div class="card-body">
                                 <h5 class="card-title"><a href="{{ path('sop_show', {'id': sop.id}) }}">{{ sop.name }}</a></h5>
                                 <p class="card-text">{{ sop.description }}</p>
-                                <a class="btn btn-outline-primary" href="{{ asset('uploads/' ~ sop.SOPFilename) }}" target="_blank">View Attachment</a>
+                                <a class="btn btn-outline-primary" href="{{ asset('uploads/' ~ sop.SOPFilename) }}" target="_blank">{{ "button.sop.view_attachment"|trans }}</a>
                             </div>
                         </div>
                     </div>

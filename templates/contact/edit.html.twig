@@ -1,19 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Contact{% endblock %}
+{% block title %}{{ parent() }} - {{ "title.contact.edit"|trans }}: {{ contact.name }}{% endblock %}
 
 {% block body %}
 <main role="main" class="container">
     {{ include('_components/project_tabs.html.twig') }}
 
     <div>
-        <h1 class="mt-2">Edit Contact</h1>
+        <h1 class="mt-2">{{ "title.contact.edit"|trans }}</h1>
 
-    {{ include('contact/_form.html.twig', {'button_label': 'Update'}) }}
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
 
-    <a href="{{ path('contact_index') }}">back to list</a>
+            <div class="clearfix">
+                <div class="btn-group float-right" role="group" aria-label="">
+                    <a class="btn btn-secondary" href="{{ path('contact_show', {'id': contact.id}) }}" role="button">{{ "link.contact.back"|trans }}</a>
+                    <button type="submit" class="btn btn-success">{{ "button.contact.save"|trans }}</button>
+                </div>
 
-    {{ include('contact/_delete_form.html.twig') }}
+                {{ include('contact/_delete_form.html.twig') }}
+            </div>
+
+        {{ form_end(form) }}
     </div>
 </main>
 {% endblock %}

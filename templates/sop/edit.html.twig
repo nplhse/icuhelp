@@ -16,7 +16,7 @@
 
             <div class="clearfix">
                 <div class="btn-group float-right" role="group" aria-label="">
-                    <a class="btn btn-secondary" href="{{ path('sop_index') }}" role="button">{{ "link.sop.back_list"|trans }}</a>
+                    <a class="btn btn-secondary" href="{{ path('sop_show', {'id': sop.id}) }}" role="button">{{ "link.sop.back"|trans }}</a>
                     <button type="submit" class="btn btn-success">{{ "button.sop.save"|trans }}</button>
                 </div>
 

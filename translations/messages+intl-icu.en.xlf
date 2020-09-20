@@ -549,6 +549,90 @@
         <source>msg.onboarding.delete</source>
         <target>__msg.onboarding.delete</target>
       </trans-unit>
+      <trans-unit id="X8QS_wb" resname="msg.contact.delete">
+        <source>msg.contact.delete</source>
+        <target>__msg.contact.delete</target>
+      </trans-unit>
+      <trans-unit id="yLWZ8Rg" resname="button.contact.delete">
+        <source>button.contact.delete</source>
+        <target>__button.contact.delete</target>
+      </trans-unit>
+      <trans-unit id="tB8Mtr8" resname="title.contact.edit">
+        <source>title.contact.edit</source>
+        <target>__title.contact.edit</target>
+      </trans-unit>
+      <trans-unit id="LML9gl1" resname="link.contact.back">
+        <source>link.contact.back</source>
+        <target>__link.contact.back</target>
+      </trans-unit>
+      <trans-unit id="iNDcdAc" resname="button.contact.save">
+        <source>button.contact.save</source>
+        <target>__button.contact.save</target>
+      </trans-unit>
+      <trans-unit id="7WRPR7_" resname="title.contact.new">
+        <source>title.contact.new</source>
+        <target>__title.contact.new</target>
+      </trans-unit>
+      <trans-unit id="_UxjmN3" resname="link.contact.back_list">
+        <source>link.contact.back_list</source>
+        <target>__link.contact.back_list</target>
+      </trans-unit>
+      <trans-unit id="0NOJDzv" resname="button.contact.create">
+        <source>button.contact.create</source>
+        <target>__button.contact.create</target>
+      </trans-unit>
+      <trans-unit id="arcJxuP" resname="title.contacts">
+        <source>title.contacts</source>
+        <target>__title.contacts</target>
+      </trans-unit>
+      <trans-unit id="vTVquXI" resname="button.contact.view">
+        <source>button.contact.view</source>
+        <target>__button.contact.view</target>
+      </trans-unit>
+      <trans-unit id="OPYGz3y" resname="msg.no.contacts.found">
+        <source>msg.no.contacts.found</source>
+        <target>__msg.no.contacts.found</target>
+      </trans-unit>
+      <trans-unit id="bt2okbH" resname="button.contact.new">
+        <source>button.contact.new</source>
+        <target>__button.contact.new</target>
+      </trans-unit>
+      <trans-unit id="huf_uuT" resname="title.contact.show">
+        <source>title.contact.show</source>
+        <target>__title.contact.show</target>
+      </trans-unit>
+      <trans-unit id="elRRAQs" resname="label.contact.name">
+        <source>label.contact.name</source>
+        <target>__label.contact.name</target>
+      </trans-unit>
+      <trans-unit id="pzPy5YE" resname="label.contact.phone">
+        <source>label.contact.phone</source>
+        <target>__label.contact.phone</target>
+      </trans-unit>
+      <trans-unit id="X_8s3CI" resname="label.contact.fax">
+        <source>label.contact.fax</source>
+        <target>__label.contact.fax</target>
+      </trans-unit>
+      <trans-unit id="O7uM90E" resname="label.contact.email">
+        <source>label.contact.email</source>
+        <target>__label.contact.email</target>
+      </trans-unit>
+      <trans-unit id="1QHTWMM" resname="label.contact.address">
+        <source>label.contact.address</source>
+        <target>__label.contact.address</target>
+      </trans-unit>
+      <trans-unit id="desR8wU" resname="button.contact.edit">
+        <source>button.contact.edit</source>
+        <target>__button.contact.edit</target>
+      </trans-unit>
+      <trans-unit id="MuSUMuE" resname="link.sop.back">
+        <source>link.sop.back</source>
+        <target>__link.sop.back</target>
+      </trans-unit>
+      <trans-unit id="n5nsvwk" resname="button.sop.view_attachment">
+        <source>button.sop.view_attachment</source>
+        <target>__button.sop.view_attachment</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

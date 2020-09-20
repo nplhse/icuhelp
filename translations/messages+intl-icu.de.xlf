@@ -581,6 +581,90 @@
         <source>msg.onboarding.delete</source>
         <target>Soll dieser Beitrag wirklich gelöscht werden?</target>
       </trans-unit>
+      <trans-unit id="X8QS_wb" resname="msg.contact.delete">
+        <source>msg.contact.delete</source>
+        <target>Soll dieser Kontakt wirklich gelöscht werden?</target>
+      </trans-unit>
+      <trans-unit id="yLWZ8Rg" resname="button.contact.delete">
+        <source>button.contact.delete</source>
+        <target>Kontakt löschen</target>
+      </trans-unit>
+      <trans-unit id="tB8Mtr8" resname="title.contact.edit">
+        <source>title.contact.edit</source>
+        <target>Kontakt bearbeiten</target>
+      </trans-unit>
+      <trans-unit id="LML9gl1" resname="link.contact.back">
+        <source>link.contact.back</source>
+        <target>Zurück zum Kontakt</target>
+      </trans-unit>
+      <trans-unit id="iNDcdAc" resname="button.contact.save">
+        <source>button.contact.save</source>
+        <target>Kontakt speichern</target>
+      </trans-unit>
+      <trans-unit id="7WRPR7_" resname="title.contact.new">
+        <source>title.contact.new</source>
+        <target>Neuen Kontakt erstellen</target>
+      </trans-unit>
+      <trans-unit id="_UxjmN3" resname="link.contact.back_list">
+        <source>link.contact.back_list</source>
+        <target>Zurück zu allen Kontakten</target>
+      </trans-unit>
+      <trans-unit id="0NOJDzv" resname="button.contact.create">
+        <source>button.contact.create</source>
+        <target>Kontakt erstellen</target>
+      </trans-unit>
+      <trans-unit id="arcJxuP" resname="title.contacts">
+        <source>title.contacts</source>
+        <target>Kontakte</target>
+      </trans-unit>
+      <trans-unit id="vTVquXI" resname="button.contact.view">
+        <source>button.contact.view</source>
+        <target>Details ansehen</target>
+      </trans-unit>
+      <trans-unit id="OPYGz3y" resname="msg.no.contacts.found">
+        <source>msg.no.contacts.found</source>
+        <target>Keine Kontakte gefunden</target>
+      </trans-unit>
+      <trans-unit id="bt2okbH" resname="button.contact.new">
+        <source>button.contact.new</source>
+        <target>Neuen Kontakt erstellen</target>
+      </trans-unit>
+      <trans-unit id="huf_uuT" resname="title.contact.show">
+        <source>title.contact.show</source>
+        <target>Kontakt anzeigen</target>
+      </trans-unit>
+      <trans-unit id="elRRAQs" resname="label.contact.name">
+        <source>label.contact.name</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="pzPy5YE" resname="label.contact.phone">
+        <source>label.contact.phone</source>
+        <target>Telefon</target>
+      </trans-unit>
+      <trans-unit id="X_8s3CI" resname="label.contact.fax">
+        <source>label.contact.fax</source>
+        <target>Fax</target>
+      </trans-unit>
+      <trans-unit id="O7uM90E" resname="label.contact.email">
+        <source>label.contact.email</source>
+        <target>E-Mail</target>
+      </trans-unit>
+      <trans-unit id="1QHTWMM" resname="label.contact.address">
+        <source>label.contact.address</source>
+        <target>Adresse</target>
+      </trans-unit>
+      <trans-unit id="desR8wU" resname="button.contact.edit">
+        <source>button.contact.edit</source>
+        <target>Kontakt bearbeiten</target>
+      </trans-unit>
+      <trans-unit id="MuSUMuE" resname="link.sop.back">
+        <source>link.sop.back</source>
+        <target>Zurück zur SOP</target>
+      </trans-unit>
+      <trans-unit id="n5nsvwk" resname="button.sop.view_attachment">
+        <source>button.sop.view_attachment</source>
+        <target>Anhang ansehen</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
