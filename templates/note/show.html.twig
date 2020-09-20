@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ "title.note.show"|trans }} - {{ note.name }}{% endblock %}
+{% block title %}{{ parent() }} - {{ "title.note.show"|trans }}: {{ note.name }}{% endblock %}
 
 {% block body %}
 <main role="main" class="container">
@@ -15,7 +15,7 @@
                     {% for note in notes %}
                         <li class="list-group-item"><a href="{{ path('note_show', {'id': note.id}) }}">{{ note.name }}</a></li>
                     {% else %}
-                        <li class="list-group-item disabled">No notes found</li>
+                        <li class="list-group-item disabled">{{ "msg.no.notes"|trans }}</li>
                     {% endfor %}
                     <li class="list-group-item"><a class="btn btn-primary" href="{{ path('note_new') }}" role="button">{{ "button.note.new"|trans }}</a></li>
                 </ul>
@@ -26,7 +26,7 @@
                 <div class="mb-2">
                     {{ note.text|raw }}
 
-                    <small>Created at {{ note.createdAt|date("Y.m.d H:i") }}, last updated at {{ note.updatedAt|date("Y.m.d H:i") }}</small>
+                    <small style="color:dimgrey">{{ "updatedAt"|trans }} {{ note.updatedAt|timeago }}</small>
                 </div>
 
                 <div class="clearfix">

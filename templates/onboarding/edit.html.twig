@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ "title.onboarding.edit"|trans }} - {{ note.name }}{% endblock %}
+{% block title %}{{ parent() }} - {{ "title.onboarding.edit"|trans }} - {{ note.name }}{% endblock %}
 
 {% block body %}
 <main role="main" class="container">

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ "title.note"|trans }}{% endblock %}
+{% block title %}{{ parent() }} - {{ "title.note"|trans }}{% endblock %}
 
 {% block body %}
 <main role="main" class="container">
@@ -15,15 +15,15 @@
                     {% for note in notes %}
                         <li class="list-group-item"><a href="{{ path('note_show', {'id': note.id}) }}">{{ note.name }}</a></li>
                     {% else %}
-                        <li class="list-group-item disabled">No notes found</li>
+                        <li class="list-group-item disabled">{{ "msg.no.notes"|trans }}</li>
                     {% endfor %}
                     <li class="list-group-item"><a class="btn btn-primary" href="{{ path('note_new') }}" role="button">{{ "button.note.new"|trans }}</a></li>
                 </ul>
             </div>
             <div class="col-9 my-auto">
                 <p class="text-center" style="color:darkgrey">
-                    <i class="fa fa-tasks fa-10x"></i>
-                    <br />Notiz auswählen
+                    <i class="fa fa-tasks fa-10x"></i><br />
+                    {{ "msg.choose.note"|trans }}
                 </p>
             </div>
         </div>
