@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="de" target-language="de" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="1234" resname="title.confirm.email">
+        <source>title.confirm.email</source>
+        <target>Willkommen bei ICUhelp - Bitte bestätigen Sie ihre E-Mail Adresse</target>
+      </trans-unit>
+      <trans-unit id="1235" resname="msg.confirm.email">
+        <source>msg.confirm.email</source>
+        <target>Um dieses Angebot vollständig nutzen zu können, bitten wir Sie zur Identifikation Ihre E-Mail Adresse durch einen Klick auf den untenstehenden Link zu bestätigen:</target>
+      </trans-unit>
+      <trans-unit id="1236" resname="msg.confirm.link">
+        <source>msg.confirm.link</source>
+        <target>Hier klicken um die E-Mail Adresse zu bestätigen</target>
+      </trans-unit>
+      <trans-unit id="1237" resname="msg.confirm.expiration">
+        <source>msg.confirm.expiration</source>
+        <target>Dieser Link ist für %expiration% Stunden gültig.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

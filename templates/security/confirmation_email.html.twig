@@ -6,5 +6,5 @@
 
 <p>
     <a href="{{ signedUrl|raw }}">{{ "msg.confirm.link"|trans({}, 'email') }}</a><br />
-    {{ "msg.confirm.email"|trans({'%expiration%': {{ expiresAt|date('g') }}}, 'email') }}
+    {{ "msg.confirm.expiration"|trans({'%expiration%': {{ expiresAt|date('g') }}}, 'email') }}
 </p>
