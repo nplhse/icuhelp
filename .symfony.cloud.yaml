@@ -27,10 +27,10 @@ web:
             root: 'public/uploads'
             scripts: false
             allow: false
-                rules:
-                    # Only allow some static files.
-                    '\.(jpe?g|png|gif|svgz?|pdf|doc|docx|ppt|pptx)$':
-                        allow: true
+            rules:
+                # Only allow some static files.
+                '\.(jpe?g|png|gif|svgz?|pdf|doc|docx|ppt|pptx)$':
+                    allow: true
 
 disk: 512
 
