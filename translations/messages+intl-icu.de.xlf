@@ -437,6 +437,58 @@
         <source>button.onboarding.delete</source>
         <target>Beitrag löschen</target>
       </trans-unit>
+      <trans-unit id="ex_56fb" resname="card.updatedAt">
+        <source>card.updatedAt</source>
+        <target>Zuletzt aktualisiert</target>
+      </trans-unit>
+      <trans-unit id="GSEy8.G" resname="msg.no.infos.found">
+        <source>msg.no.infos.found</source>
+        <target>Keine Mitteilungen gefunden.</target>
+      </trans-unit>
+      <trans-unit id="KN9EC2M" resname="date.hour">
+        <source>date.hour</source>
+        <target>Stunden</target>
+      </trans-unit>
+      <trans-unit id="XD4Nckf" resname="card.createdAt">
+        <source>card.createdAt</source>
+        <target>Erstellt am</target>
+      </trans-unit>
+      <trans-unit id="Rk8HZvb" resname="date.year">
+        <source>date.year</source>
+        <target>Jahre</target>
+      </trans-unit>
+      <trans-unit id="y0nvRuk" resname="date.month">
+        <source>date.month</source>
+        <target>Monate</target>
+      </trans-unit>
+      <trans-unit id="P9GHwsS" resname="date.week">
+        <source>date.week</source>
+        <target>Wochen</target>
+      </trans-unit>
+      <trans-unit id="7LBEVye" resname="date.day">
+        <source>date.day</source>
+        <target>Tage</target>
+      </trans-unit>
+      <trans-unit id="BbXh_Hw" resname="date.minute">
+        <source>date.minute</source>
+        <target>Minuten</target>
+      </trans-unit>
+      <trans-unit id="a53fRM7" resname="date.second">
+        <source>date.second</source>
+        <target>Sekunden</target>
+      </trans-unit>
+      <trans-unit id="ysr6tXE" resname="date.seconds.ago">
+        <source>date.seconds.ago</source>
+        <target>Vor ein paar Sekunden</target>
+      </trans-unit>
+      <trans-unit id="6VAh8NV" resname="updatedAt">
+        <source>updatedAt</source>
+        <target>Zuletzt aktualisiert vor</target>
+      </trans-unit>
+      <trans-unit id="aC7eezV" resname="link.info.back">
+        <source>link.info.back</source>
+        <target>Zurück zur Mitteilung</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

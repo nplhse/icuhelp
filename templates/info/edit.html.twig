@@ -15,10 +15,20 @@
             </div>
         {% endfor %}
 
-        {{ include('info/_form.html.twig', {
-            button_text: 'button.info.save'
-        }) }}
-        {{ include('info/_delete_form.html.twig') }}
+        {{ form_start(form) }}
+
+            {{ form_row(form.name) }}
+            {{ form_row(form.text) }}
+
+            <div class="clearfix">
+                <div class="btn-group float-right" role="group" aria-label="">
+                    <a class="btn btn-secondary" href="{{ path('info_show', {'id': info.id}) }}" role="button">{{ "link.info.back"|trans }}</a>
+                    <button type="submit" class="btn btn-success">{{ "button.info.save"|trans }}</button>
+                </div>
+        {{ form_end(form) }}
+
+            {{ include('info/_delete_form.html.twig') }}
+        </div>
     </div>
 </main>
 {% endblock %}

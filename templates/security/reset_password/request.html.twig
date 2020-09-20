@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ parent() }} - {{ "title.password.reset"|trans({}, "_forms") }}{% endblock %}
+{% block title %}{{ parent() }} - {{ "title.password.reset"|trans }}{% endblock %}
 
 {% block body %}
     <main role="main" class="container">
-        <h1>{{ "title.password.reset"|trans({}, "_forms") }}</h1>
+        <h1>{{ "title.password.reset"|trans }}</h1>
 
         {% for flashError in app.flashes('reset_password_error') %}
             <div class="alert alert-danger" role="alert">{{ flashError }}</div>

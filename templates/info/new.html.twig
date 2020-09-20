@@ -15,9 +15,17 @@
             </div>
         {% endfor %}
 
-        {{ include('info/_form.html.twig', {
-            button_text: 'button.info.create'
-        }) }}
+        {{ form_start(form) }}
+
+            {{ form_row(form.name) }}
+            {{ form_row(form.text) }}
+
+            <div class="clearfix">
+                <div class="btn-group float-right" role="group" aria-label="">
+                    <a class="btn btn-secondary" href="{{ path('info_index') }}" role="button">{{ "link.info.back_list"|trans }}</a>
+                    <button type="submit" class="btn btn-success">{{ "button.info.create"|trans }}</button>
+                </div>
+        {{ form_end(form) }}
     </div>
 </main>
 {% endblock %}

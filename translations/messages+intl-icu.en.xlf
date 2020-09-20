@@ -401,6 +401,54 @@
         <source>button.onboarding.delete</source>
         <target>__button.onboarding.delete</target>
       </trans-unit>
+      <trans-unit id="ex_56fb" resname="card.updatedAt">
+        <source>card.updatedAt</source>
+        <target>__card.updatedAt</target>
+      </trans-unit>
+      <trans-unit id="GSEy8.G" resname="msg.no.infos.found">
+        <source>msg.no.infos.found</source>
+        <target>__msg.no.infos.found</target>
+      </trans-unit>
+      <trans-unit id="Rk8HZvb" resname="date.year">
+        <source>date.year</source>
+        <target>__date.year</target>
+      </trans-unit>
+      <trans-unit id="y0nvRuk" resname="date.month">
+        <source>date.month</source>
+        <target>__date.month</target>
+      </trans-unit>
+      <trans-unit id="P9GHwsS" resname="date.week">
+        <source>date.week</source>
+        <target>__date.week</target>
+      </trans-unit>
+      <trans-unit id="7LBEVye" resname="date.day">
+        <source>date.day</source>
+        <target>__date.day</target>
+      </trans-unit>
+      <trans-unit id="KN9EC2M" resname="date.hour">
+        <source>date.hour</source>
+        <target>__date.hour</target>
+      </trans-unit>
+      <trans-unit id="BbXh_Hw" resname="date.minute">
+        <source>date.minute</source>
+        <target>__date.minute</target>
+      </trans-unit>
+      <trans-unit id="a53fRM7" resname="date.second">
+        <source>date.second</source>
+        <target>__date.second</target>
+      </trans-unit>
+      <trans-unit id="ysr6tXE" resname="date.seconds.ago">
+        <source>date.seconds.ago</source>
+        <target>__date.seconds.ago</target>
+      </trans-unit>
+      <trans-unit id="6VAh8NV" resname="updatedAt">
+        <source>updatedAt</source>
+        <target>__updatedAt</target>
+      </trans-unit>
+      <trans-unit id="aC7eezV" resname="link.info.back">
+        <source>link.info.back</source>
+        <target>__link.info.back</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
