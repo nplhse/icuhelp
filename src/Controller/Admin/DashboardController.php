@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Contact;
 use App\Entity\Info;
 use App\Entity\Note;
 use App\Entity\Snippet;
@@ -45,6 +46,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('link.snippets', 'far fa-clipboard', Snippet::class);
         yield MenuItem::linkToCrud('link.snippet.category', 'fas fa-folder-open', SnippetCategory::class);
         yield MenuItem::section('Inhalte');
+        yield MenuItem::linkToCrud('link.contacts', 'fa fa-address-book', Contact::class);
         yield MenuItem::linkToCrud('link.info', 'fa fa-info-circle', Info::class);
         yield MenuItem::linkToCrud('link.notes', 'fa fa-sticky-note', Note::class);
         yield MenuItem::linkToCrud('link.sop', 'fa fa-clinic-medical', SOP::class);
