@@ -21,7 +21,7 @@ class SOPController extends AbstractController
     public function index(SOPRepository $SOPRepository): Response
     {
         return $this->render('sop/index.html.twig', [
-            'sops' => $SOPRepository->findAll(),
+            'sops' => $SOPRepository->findAllByName(),
         ]);
     }
 

@@ -19,32 +19,15 @@ class SOPRepository extends ServiceEntityRepository
         parent::__construct($registry, SOP::class);
     }
 
-    // /**
-    //  * @return SOP[] Returns an array of SOP objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return SOP[] Returns an array of Note objects
+     */
+    public function findAllByName()
     {
         return $this->createQueryBuilder('s')
-            ->andWhere('s.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('s.id', 'ASC')
-            ->setMaxResults(10)
+            ->orderBy('s.name', 'ASC')
             ->getQuery()
             ->getResult()
-        ;
+            ;
     }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?SOP
-    {
-        return $this->createQueryBuilder('s')
-            ->andWhere('s.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }
