@@ -1,41 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}SOP index{% endblock %}
+{% block title %}{{ parent() }} - {{ "title.sop"|trans }}{% endblock %}
 
 {% block body %}
     <main role="main" class="container">
         {{ include('_components/project_tabs.html.twig') }}
 
-        <h1>SOP index</h1>
+        <h1 class="mt-2">{{ "title.sop"|trans }}</h1>
 
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>actions</th>
-                </tr>
-            </thead>
-            <tbody>
-            {% for sop in sops %}
-                <tr>
-                    <td>{{ sop.id }}</td>
-                    <td>{{ sop.name }}</td>
-                    <td>{{ sop.description }}</td>
-                    <td>
-                        <a href="{{ path('sop_show', {'id': sop.id}) }}">show</a>
-                        <a href="{{ path('sop_edit', {'id': sop.id}) }}">edit</a>
-                    </td>
-                </tr>
-            {% else %}
-                <tr>
-                    <td colspan="7">no records found</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+        {% for row in sops|batch(3) %}
+            <div class="row mb-2">
+                {% for sop in row %}
+                    <div class="col-4">
+                        <div class="card mx-auto" style="width: 22rem;">
+                            <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180" style="height: 200px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_174ad927ca4%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_174ad927ca4%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1875%22%20y%3D%2296.6%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="{{ path('sop_show', {'id': sop.id}) }}">{{ sop.name }}</a></h5>
+                                <p class="card-text">{{ sop.description }}</p>
+                                <a class="btn btn-outline-primary" href="{{ asset('uploads/' ~ sop.SOPFilename) }}" target="_blank">View Attachment</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="row">
+                {{ "msg.no.sop.found"|trans }}
+            </div>
+        {% endfor %}
 
-        <a href="{{ path('sop_new') }}">Create new</a>
+        <div class="clearfix mt-3">
+            <div class="btn-group float-right" role="group" aria-label="">
+                <a class="btn btn-primary" href="{{ path('sop_new') }}" role="button">{{ "button.sop.new"|trans }}</a>
+            </div>
+        </div>
     </main>
 {% endblock %}

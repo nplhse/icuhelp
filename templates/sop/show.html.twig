@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}SOP{% endblock %}
+{% block title %}{{ parent() }} - {{ "title.sop.show"|trans }}: {{ sop.name }}{% endblock %}
 
 {% block body %}
     <main role="main" class="container">
         {{ include('_components/project_tabs.html.twig') }}
 
-        <h1>SOP</h1>
+        <h1 class="mt-2">{{ "title.sop.show"|trans }}</h1>
 
         <table class="table">
             <tbody>
@@ -15,15 +15,15 @@
                     <td>{{ sop.id }}</td>
                 </tr>
                 <tr>
-                    <th>Name</th>
+                    <th>{{ "label.sop.name"|trans }}</th>
                     <td>{{ sop.name }}</td>
                 </tr>
                 <tr>
-                    <th>Description</th>
+                    <th>{{ "label.sop.description"|trans }}</th>
                     <td>{{ sop.description }}</td>
                 </tr>
                 <tr>
-                    <th>Attachment</th>
+                    <th>{{ "label.sop.attachment"|trans }}</th>
                     <td>
                         <a href="{{ asset('uploads/' ~ sop.SOPFilename) }}" target="_blank">View Attachment (Opens in new window or tab)</a>
                     </td>
@@ -31,11 +31,13 @@
             </tbody>
         </table>
 
-        <a href="{{ path('sop_index') }}">back to list</a>
+        <div class="clearfix">
+            <div class="btn-group float-right" role="group" aria-label="">
+                <a class="btn btn-secondary" href="{{ path('sop_index') }}" role="button">{{ "link.sop.back_list"|trans }}</a>
+                <a class="btn btn-primary" href="{{ path('sop_edit', {'id': sop.id}) }}">{{ "button.sop.edit"|trans }}</a>
+            </div>
 
-        <a href="{{ path('sop_edit', {'id': sop.id}) }}">edit</a>
-
-        {{ include('sop/_delete_form.html.twig') }}
-
+            {{ include('sop/_delete_form.html.twig') }}
+        </div>
     </main>
 {% endblock %}

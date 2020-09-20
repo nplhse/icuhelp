@@ -15,7 +15,7 @@
                     {% for note in notes %}
                         <li class="list-group-item"><a href="{{ path('onboarding_show', {'id': note.id}) }}">{{ note.name }}</a></li>
                     {% else %}
-                        <li class="list-group-item disabled">No entries found</li>
+                        <li class="list-group-item disabled">{{ "msg.no.onboarding"|trans }}</li>
                     {% endfor %}
                     <li class="list-group-item"><a class="btn btn-primary" href="{{ path('onboarding_new') }}" role="button">{{ "button.onboarding.new"|trans }}</a></li>
                 </ul>

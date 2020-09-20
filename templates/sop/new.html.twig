@@ -1,15 +1,25 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New SOP{% endblock %}
+{% block title %}{{ parent() }} - {{ "title.sop.new"|trans }}{% endblock %}
 
 {% block body %}
     <main role="main" class="container">
         {{ include('_components/project_tabs.html.twig') }}
 
-        <h1>Create new SOP</h1>
+        <h1 class="mt-2">{{ "title.sop.new"|trans }}</h1>
 
-        {{ include('sop/_form.html.twig') }}
+        {{ form_start(form) }}
 
-        <a href="{{ path('sop_index') }}">back to list</a>
+            {{ form_row(form.name) }}
+            {{ form_row(form.description) }}
+            {{ form_row(form.sopFile) }}
+
+            <div class="clearfix">
+                <div class="btn-group float-right" role="group" aria-label="">
+                    <a class="btn btn-secondary" href="{{ path('sop_index') }}" role="button">{{ "link.sop.back_list"|trans }}</a>
+                    <button type="submit" class="btn btn-success">{{ "button.sop.create"|trans }}</button>
+                </div>
+            </div>
+        {{ form_end(form) }}
     </main>
 {% endblock %}

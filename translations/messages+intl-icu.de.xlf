@@ -489,6 +489,98 @@
         <source>link.info.back</source>
         <target>Zurück zur Mitteilung</target>
       </trans-unit>
+      <trans-unit id="qVM6MWL" resname="msg.no.notes">
+        <source>msg.no.notes</source>
+        <target>Keine Notizen vorhanden.</target>
+      </trans-unit>
+      <trans-unit id="HKwzhti" resname="msg.choose.note">
+        <source>msg.choose.note</source>
+        <target>Bitte eine Notiz auswählen</target>
+      </trans-unit>
+      <trans-unit id="RPAuidh" resname="title.password.reset">
+        <source>title.password.reset</source>
+        <target>Passwort zurücksetzen</target>
+      </trans-unit>
+      <trans-unit id="0K5VMtH" resname="msg.no.onboarding">
+        <source>msg.no.onboarding</source>
+        <target>Keine Beiträge vorhanden</target>
+      </trans-unit>
+      <trans-unit id="i4CM7.y" resname="msg.choose.onboarding">
+        <source>msg.choose.onboarding</source>
+        <target>Bitte einen Beitrag auswählen</target>
+      </trans-unit>
+      <trans-unit id="SWMa5uf" resname="msg.note.delete">
+        <source>msg.note.delete</source>
+        <target>Soll diese Notiz wirklich gelöscht werden?</target>
+      </trans-unit>
+      <trans-unit id="4x_8flf" resname="msg.sop.delete">
+        <source>msg.sop.delete</source>
+        <target>Soll diese SOP wirklich gelöscht werden?</target>
+      </trans-unit>
+      <trans-unit id="OamOyGO" resname="button.sop.delete">
+        <source>button.sop.delete</source>
+        <target>SOP löschen</target>
+      </trans-unit>
+      <trans-unit id="f8xBLQX" resname="title.sop.edit">
+        <source>title.sop.edit</source>
+        <target>SOP bearbeiten</target>
+      </trans-unit>
+      <trans-unit id="ohrCfj4" resname="link.sop.back_list">
+        <source>link.sop.back_list</source>
+        <target>Zurück zu allen SOPs</target>
+      </trans-unit>
+      <trans-unit id="4xIVJss" resname="button.sop.save">
+        <source>button.sop.save</source>
+        <target>SOP speichern</target>
+      </trans-unit>
+      <trans-unit id="FzkDCao" resname="title.sop.new">
+        <source>title.sop.new</source>
+        <target>Neue SOP erstellen</target>
+      </trans-unit>
+      <trans-unit id="paLYnp4" resname="button.sop.create">
+        <source>button.sop.create</source>
+        <target>SOP erstellen</target>
+      </trans-unit>
+      <trans-unit id="Xiu44gh" resname="title.sop">
+        <source>title.sop</source>
+        <target>SOP</target>
+      </trans-unit>
+      <trans-unit id="3WewCvr" resname="msg.no.sop.found">
+        <source>msg.no.sop.found</source>
+        <target>Keine SOPs gefunden.</target>
+      </trans-unit>
+      <trans-unit id="6pg8CPZ" resname="button.sop.new">
+        <source>button.sop.new</source>
+        <target>Neue SOP erstellen</target>
+      </trans-unit>
+      <trans-unit id="V7GkQhV" resname="title.sop.show">
+        <source>title.sop.show</source>
+        <target>SOP anzeigen</target>
+      </trans-unit>
+      <trans-unit id="oMpMUxo" resname="label.sop.name">
+        <source>label.sop.name</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="9qOqVc." resname="label.sop.description">
+        <source>label.sop.description</source>
+        <target>Beschreibung</target>
+      </trans-unit>
+      <trans-unit id="VFsfIaD" resname="label.sop.attachment">
+        <source>label.sop.attachment</source>
+        <target>Angehängte Datei</target>
+      </trans-unit>
+      <trans-unit id="O2n_H4p" resname="button.sop.edit">
+        <source>button.sop.edit</source>
+        <target>SOP bearbeiten</target>
+      </trans-unit>
+      <trans-unit id="9CN7T8d" resname="msg.info.delete">
+        <source>msg.info.delete</source>
+        <target>Soll diese Mitteilung wirklich gelöscht werden?</target>
+      </trans-unit>
+      <trans-unit id="55J78ut" resname="msg.onboarding.delete">
+        <source>msg.onboarding.delete</source>
+        <target>Soll dieser Beitrag wirklich gelöscht werden?</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

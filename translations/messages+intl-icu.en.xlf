@@ -449,6 +449,106 @@
         <source>link.info.back</source>
         <target>__link.info.back</target>
       </trans-unit>
+      <trans-unit id="qVM6MWL" resname="msg.no.notes">
+        <source>msg.no.notes</source>
+        <target>__msg.no.notes</target>
+      </trans-unit>
+      <trans-unit id="HKwzhti" resname="msg.choose.note">
+        <source>msg.choose.note</source>
+        <target>__msg.choose.note</target>
+      </trans-unit>
+      <trans-unit id="RPAuidh" resname="title.password.reset">
+        <source>title.password.reset</source>
+        <target>__title.password.reset</target>
+      </trans-unit>
+      <trans-unit id="kPyEjdP" resname="button.info.save">
+        <source>button.info.save</source>
+        <target>__button.info.save</target>
+      </trans-unit>
+      <trans-unit id="zJpoq2L" resname="button.info.create">
+        <source>button.info.create</source>
+        <target>__button.info.create</target>
+      </trans-unit>
+      <trans-unit id="0K5VMtH" resname="msg.no.onboarding">
+        <source>msg.no.onboarding</source>
+        <target>__msg.no.onboarding</target>
+      </trans-unit>
+      <trans-unit id="i4CM7.y" resname="msg.choose.onboarding">
+        <source>msg.choose.onboarding</source>
+        <target>__msg.choose.onboarding</target>
+      </trans-unit>
+      <trans-unit id="SWMa5uf" resname="msg.note.delete">
+        <source>msg.note.delete</source>
+        <target>__msg.note.delete</target>
+      </trans-unit>
+      <trans-unit id="4x_8flf" resname="msg.sop.delete">
+        <source>msg.sop.delete</source>
+        <target>__msg.sop.delete</target>
+      </trans-unit>
+      <trans-unit id="OamOyGO" resname="button.sop.delete">
+        <source>button.sop.delete</source>
+        <target>__button.sop.delete</target>
+      </trans-unit>
+      <trans-unit id="f8xBLQX" resname="title.sop.edit">
+        <source>title.sop.edit</source>
+        <target>__title.sop.edit</target>
+      </trans-unit>
+      <trans-unit id="ohrCfj4" resname="link.sop.back_list">
+        <source>link.sop.back_list</source>
+        <target>__link.sop.back_list</target>
+      </trans-unit>
+      <trans-unit id="4xIVJss" resname="button.sop.save">
+        <source>button.sop.save</source>
+        <target>__button.sop.save</target>
+      </trans-unit>
+      <trans-unit id="FzkDCao" resname="title.sop.new">
+        <source>title.sop.new</source>
+        <target>__title.sop.new</target>
+      </trans-unit>
+      <trans-unit id="paLYnp4" resname="button.sop.create">
+        <source>button.sop.create</source>
+        <target>__button.sop.create</target>
+      </trans-unit>
+      <trans-unit id="Xiu44gh" resname="title.sop">
+        <source>title.sop</source>
+        <target>__title.sop</target>
+      </trans-unit>
+      <trans-unit id="3WewCvr" resname="msg.no.sop.found">
+        <source>msg.no.sop.found</source>
+        <target>__msg.no.sop.found</target>
+      </trans-unit>
+      <trans-unit id="6pg8CPZ" resname="button.sop.new">
+        <source>button.sop.new</source>
+        <target>__button.sop.new</target>
+      </trans-unit>
+      <trans-unit id="V7GkQhV" resname="title.sop.show">
+        <source>title.sop.show</source>
+        <target>__title.sop.show</target>
+      </trans-unit>
+      <trans-unit id="oMpMUxo" resname="label.sop.name">
+        <source>label.sop.name</source>
+        <target>__label.sop.name</target>
+      </trans-unit>
+      <trans-unit id="9qOqVc." resname="label.sop.description">
+        <source>label.sop.description</source>
+        <target>__label.sop.description</target>
+      </trans-unit>
+      <trans-unit id="VFsfIaD" resname="label.sop.attachment">
+        <source>label.sop.attachment</source>
+        <target>__label.sop.attachment</target>
+      </trans-unit>
+      <trans-unit id="O2n_H4p" resname="button.sop.edit">
+        <source>button.sop.edit</source>
+        <target>__button.sop.edit</target>
+      </trans-unit>
+      <trans-unit id="9CN7T8d" resname="msg.info.delete">
+        <source>msg.info.delete</source>
+        <target>__msg.info.delete</target>
+      </trans-unit>
+      <trans-unit id="55J78ut" resname="msg.onboarding.delete">
+        <source>msg.onboarding.delete</source>
+        <target>__msg.onboarding.delete</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
