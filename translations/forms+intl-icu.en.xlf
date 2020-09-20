@@ -29,6 +29,22 @@
         <source>link.forgotpassword</source>
         <target>__link.forgotpassword</target>
       </trans-unit>
+      <trans-unit id="FHhgESp" resname="title.register">
+        <source>title.register</source>
+        <target>__title.register</target>
+      </trans-unit>
+      <trans-unit id="yKuTQ_i" resname="button.register">
+        <source>button.register</source>
+        <target>__button.register</target>
+      </trans-unit>
+      <trans-unit id="Q5ha4LM" resname="link.login">
+        <source>link.login</source>
+        <target>__link.login</target>
+      </trans-unit>
+      <trans-unit id="sToQk7i" resname="link.register">
+        <source>link.register</source>
+        <target>__link.register</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

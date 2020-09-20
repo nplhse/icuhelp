@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Your account is not active{% endblock %}
+{% block title %}{{ parent() }} - {{ "title.inactive_user"|trans({}) }}{% endblock %}
 
 {% block body %}
     <main role="main" class="container">
         <div class="text-center">
-            <h1 class="mt-5">Your account is not active</h1>
+            <h1 class="mt-5">{{ "title.inactive_user"|trans({}) }}</h1>
 
             <p class="mt-5">
                 <i class="fa fa-sad-tear fa-10x" style="color:indianred"></i>
             </p>
-            <p class="mt-2 mb-5">We're very Sorry!<br/>
-                Full access to this site is only available after the administrator has activated your account.
+            <p class="mt-2 mb-5">
+                {{ "msg.inactive_user"|trans({}) }}
             </p>
         </div>
     </main>

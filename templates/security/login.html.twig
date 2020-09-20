@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ parent() }} - {{ "title.login"|trans({}, "_forms") }}{% endblock %}
+{% block title %}{{ parent() }} - {{ "title.login"|trans({}, "forms") }}{% endblock %}
 
 {% block body %}
     <main role="main" class="container">
         {% if app.user %}
             <div class="mb-3">
-                {{ "You are logged in as "|trans }}{{ app.user.username }}, <a href="{{ path('security_logout') }}">{{ "Logout"|trans }}</a>
+                {{ "msg.logged.in.as"|trans }} {{ app.user.username }}, <a href="{{ path('security_logout') }}">{{ "Logout"|trans }}</a>
             </div>
 
             {% for label, messages in app.flashes(['warning', 'error', 'success', 'notice']) %}
@@ -17,32 +17,32 @@
                 {% endfor %}
             {% endfor %}
         {% else %}
-            <form method="post">
-                <h1>{{ "title.login"|trans({}, "_forms") }}</h1>
+            <h1>{{ "title.login"|trans({}, "forms") }}</h1>
 
+            {% if error %}
+                <div class="alert alert-danger">
+                    {{ error.messageKey|trans(error.messageData, 'security') }}
+                </div>
+            {% endif %}
 
-                {% if error %}
-                    <div class="alert alert-danger">
-                        {{ error.messageKey|trans(error.messageData, 'security') }}
-                    </div>
-                {% endif %}
-
-                {{ form_start(form) }}
-
+            {{ form_start(form) }}
                 {{ form_row(form.username) }}
                 {{ form_row(form.password) }}
 
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-success">{{ "button.login"|trans({}, "_forms") }} <span class="fa fa-lock"></span></button>
+                    <button type="submit" class="btn btn-success">{{ "button.login"|trans({}, "forms") }} <span class="fa fa-lock"></span></button>
 
-                    <input type="checkbox" id="remember_me" name="_remember_me"/>
+                    &nbsp;<input type="checkbox" id="remember_me" name="_remember_me"/>
                     <label for="remember_me">{{ "button.remember_me"|trans() }}</label>
                 </div>
+            {{ form_end(form) }}
 
-                <a href="{{ path('app_forgot_password_request') }}">{{ "link.forgotpassword"|trans({}, "_forms") }}</a>
-                {{ form_end(form) }}
+            <p>
+                <a href="{{ path('security_register') }}">{{ "link.register"|trans({}, "forms") }}</a><br />
+                <a href="{{ path('app_forgot_password_request') }}">{{ "link.forgotpassword"|trans({}, "forms") }}</a>
+            </p>
         {% endif %}
     </main>
 {% endblock %}

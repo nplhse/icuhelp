@@ -409,6 +409,34 @@
         <source>button.info.save</source>
         <target>Mitteilung speichern</target>
       </trans-unit>
+      <trans-unit id="w26WIIQ" resname="link.sop">
+        <source>link.sop</source>
+        <target>SOP</target>
+      </trans-unit>
+      <trans-unit id="P6saegD" resname="link.contacts">
+        <source>link.contacts</source>
+        <target>Kontakte</target>
+      </trans-unit>
+      <trans-unit id="EUv5Bi5" resname="msg.logged.in.as">
+        <source>msg.logged.in.as</source>
+        <target>Angemeldet als:</target>
+      </trans-unit>
+      <trans-unit id="AvGfYXr" resname="title.inactive_user">
+        <source>title.inactive_user</source>
+        <target>Benutzerkonto ist inaktiv.</target>
+      </trans-unit>
+      <trans-unit id="9FCEvCD" resname="msg.inactive_user">
+        <source>msg.inactive_user</source>
+        <target>Bevor diese Seite genutzt werden kann, muss das Benutzerkonto vom Administrator aktiviert werden.</target>
+      </trans-unit>
+      <trans-unit id="SxJUe7S" resname="button.info.delete">
+        <source>button.info.delete</source>
+        <target>Mitteilung löschen</target>
+      </trans-unit>
+      <trans-unit id="ugPKthy" resname="button.onboarding.delete">
+        <source>button.onboarding.delete</source>
+        <target>Beitrag löschen</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

@@ -373,6 +373,34 @@
         <source>title.onboarding.show</source>
         <target>__title.onboarding.show</target>
       </trans-unit>
+      <trans-unit id="w26WIIQ" resname="link.sop">
+        <source>link.sop</source>
+        <target>__link.sop</target>
+      </trans-unit>
+      <trans-unit id="P6saegD" resname="link.contacts">
+        <source>link.contacts</source>
+        <target>__link.contacts</target>
+      </trans-unit>
+      <trans-unit id="EUv5Bi5" resname="msg.logged.in.as">
+        <source>msg.logged.in.as</source>
+        <target>__msg.logged.in.as</target>
+      </trans-unit>
+      <trans-unit id="AvGfYXr" resname="title.inactive_user">
+        <source>title.inactive_user</source>
+        <target>__title.inactive_user</target>
+      </trans-unit>
+      <trans-unit id="9FCEvCD" resname="msg.inactive_user">
+        <source>msg.inactive_user</source>
+        <target>__msg.inactive_user</target>
+      </trans-unit>
+      <trans-unit id="SxJUe7S" resname="button.info.delete">
+        <source>button.info.delete</source>
+        <target>__button.info.delete</target>
+      </trans-unit>
+      <trans-unit id="ugPKthy" resname="button.onboarding.delete">
+        <source>button.onboarding.delete</source>
+        <target>__button.onboarding.delete</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
