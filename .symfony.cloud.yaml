@@ -26,7 +26,11 @@ web:
         '/uploads':
             root: 'public/uploads'
             scripts: false
-            allow: true
+            allow: false
+                rules:
+                    # Only allow some static files.
+                    '\.(jpe?g|png|gif|svgz?|pdf|doc|docx)$':
+                        allow: true
 
 disk: 512
 
@@ -44,4 +48,5 @@ hooks:
     deploy: |
         set -x -e
 
+        mkdir -p public/uploads
         (>&2 symfony-deploy)
