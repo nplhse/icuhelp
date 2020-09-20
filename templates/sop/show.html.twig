@@ -23,9 +23,9 @@
                     <td>{{ sop.description }}</td>
                 </tr>
                 <tr>
-                    <th>ImageName</th>
+                    <th>Attachment</th>
                     <td>
-                        <a href="{{ asset('uploads/' ~ sop.SOPFilename) }}">View SOP (PDF)</a>
+                        <a href="{{ asset('uploads/' ~ sop.SOPFilename) }}" target="_blank">View Attachment (Opens in new window or tab)</a>
                     </td>
                 </tr>
             </tbody>

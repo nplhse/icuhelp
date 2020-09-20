@@ -17,27 +17,28 @@ class SOPType extends AbstractType
             ->add('name')
             ->add('description')
             ->add('sopFile', FileType::class, [
-                'label' => 'Brochure (PDF file)',
-
-                // unmapped means that this field is not associated to any entity property
+                'label' => 'Attachment',
                 'mapped' => false,
-
-                // make it optional so you don't have to re-upload the PDF file
-                // every time you edit the Product details
                 'required' => false,
-
-                // unmapped fields can't define their validation using annotations
-                // in the associated entity, so you can use the PHP constraint classes
                 'constraints' => [
                     new File([
                         'maxSize' => '1024k',
                         'mimeTypes' => [
                             'application/pdf',
                             'application/x-pdf',
+                            'application/msword',
+                            'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                            'application/mspowerpoint',
+                            'image/jpeg',
+                            'image/gif',
+                            'image/png',
+                            'image/svg+xml',
                         ],
-                        'mimeTypesMessage' => 'Please upload a valid PDF document',
+                        'mimeTypesMessage' => 'Please only upload a supported file format',
                     ]),
                 ],
+
+                'help' => 'Supported file formats are PDF, MS-Word, MS-Powerpoint, JPEG, GIF, PNG& SVG',
             ])
         ;
     }
