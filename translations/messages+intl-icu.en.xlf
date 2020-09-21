@@ -283,79 +283,79 @@
       </trans-unit>
       <trans-unit id="ZtAqL7p" resname="title.note.edit">
         <source>title.note.edit</source>
-        <target>__title.note.edit</target>
+        <target>Edit note</target>
       </trans-unit>
       <trans-unit id="0bSMHYY" resname="title.note.new">
         <source>title.note.new</source>
-        <target>__title.note.new</target>
+        <target>Create new note</target>
       </trans-unit>
       <trans-unit id="sR58XWb" resname="title.note">
         <source>title.note</source>
-        <target>__title.note</target>
+        <target>Notes</target>
       </trans-unit>
       <trans-unit id="zOYBvej" resname="title.note.show">
         <source>title.note.show</source>
-        <target>__title.note.show</target>
+        <target>Show note</target>
       </trans-unit>
       <trans-unit id="x4sOI5X" resname="title.info.edit">
         <source>title.info.edit</source>
-        <target>__title.info.edit</target>
+        <target>Edit info</target>
       </trans-unit>
       <trans-unit id="DwA3BWw" resname="title.info.new">
         <source>title.info.new</source>
-        <target>__title.info.new</target>
+        <target>Create new info</target>
       </trans-unit>
       <trans-unit id="O8Cw4hF" resname="title.info">
         <source>title.info</source>
-        <target>__title.info</target>
+        <target>Infos</target>
       </trans-unit>
       <trans-unit id="mcwNZ5E" resname="button.info.new">
         <source>button.info.new</source>
-        <target>__button.info.new</target>
+        <target>Create new info</target>
       </trans-unit>
       <trans-unit id="32916cs" resname="link.info.back_list">
         <source>link.info.back_list</source>
-        <target>__link.info.back_list</target>
+        <target>Back to list</target>
       </trans-unit>
       <trans-unit id="u8.gxxE" resname="title.info.show">
         <source>title.info.show</source>
-        <target>__title.info.show</target>
+        <target>Show info</target>
       </trans-unit>
       <trans-unit id="1nMKdma" resname="button.info.edit">
         <source>button.info.edit</source>
-        <target>__button.info.edit</target>
+        <target>Edit info</target>
       </trans-unit>
       <trans-unit id="Y0w0dao" resname="link.info">
         <source>link.info</source>
-        <target>__link.info</target>
+        <target>Infos</target>
       </trans-unit>
       <trans-unit id="5Cd6ToY" resname="link.onboarding">
         <source>link.onboarding</source>
-        <target>__link.onboarding</target>
+        <target>Onboarding</target>
       </trans-unit>
       <trans-unit id="fcYTBHW" resname="title.onboarding.edit">
         <source>title.onboarding.edit</source>
-        <target>__title.onboarding.edit</target>
+        <target>Edit entry</target>
       </trans-unit>
       <trans-unit id="pv.eu6q" resname="title.onboarding.new">
         <source>title.onboarding.new</source>
-        <target>__title.onboarding.new</target>
+        <target>Create new</target>
       </trans-unit>
       <trans-unit id="tLcfIjK" resname="title.onboarding">
         <source>title.onboarding</source>
-        <target>__title.onboarding</target>
+        <target>Onboarding</target>
       </trans-unit>
       <trans-unit id="zV6FN9h" resname="button.onboarding.new">
         <source>button.onboarding.new</source>
-        <target>__button.onboarding.new</target>
+        <target>Create new entry</target>
       </trans-unit>
       <trans-unit id="shiC9Ng" resname="link.onboarding.back_list">
         <source>link.onboarding.back_list</source>
-        <target>__link.onboarding.back_list</target>
+        <target>Back to list</target>
       </trans-unit>
       <trans-unit id="g7Wz9x_" resname="button.onboarding.edit">
         <source>button.onboarding.edit</source>
-        <target>__button.onboarding.edit</target>
+        <target>Edit entry</target>
       </trans-unit>
       <trans-unit id="THBRmde" resname="label.note.category.onboarding">
         <source>label.note.category.onboarding</source>
@@ -371,287 +371,287 @@
       </trans-unit>
       <trans-unit id="4pG2o5B" resname="title.onboarding.show">
         <source>title.onboarding.show</source>
-        <target>__title.onboarding.show</target>
+        <target>Show entry</target>
       </trans-unit>
       <trans-unit id="w26WIIQ" resname="link.sop">
         <source>link.sop</source>
-        <target>__link.sop</target>
+        <target>SOPs</target>
       </trans-unit>
       <trans-unit id="P6saegD" resname="link.contacts">
         <source>link.contacts</source>
-        <target>__link.contacts</target>
+        <target>Contacts</target>
       </trans-unit>
       <trans-unit id="EUv5Bi5" resname="msg.logged.in.as">
         <source>msg.logged.in.as</source>
-        <target>__msg.logged.in.as</target>
+        <target>Logged in as</target>
       </trans-unit>
       <trans-unit id="AvGfYXr" resname="title.inactive_user">
         <source>title.inactive_user</source>
-        <target>__title.inactive_user</target>
+        <target>Your account is inactive</target>
       </trans-unit>
       <trans-unit id="9FCEvCD" resname="msg.inactive_user">
         <source>msg.inactive_user</source>
-        <target>__msg.inactive_user</target>
+        <target>To gain full access to this site, your account needs to be activated by an administrator.</target>
       </trans-unit>
       <trans-unit id="SxJUe7S" resname="button.info.delete">
         <source>button.info.delete</source>
-        <target>__button.info.delete</target>
+        <target>Delete info</target>
       </trans-unit>
       <trans-unit id="ugPKthy" resname="button.onboarding.delete">
         <source>button.onboarding.delete</source>
-        <target>__button.onboarding.delete</target>
+        <target>Delete entry</target>
       </trans-unit>
       <trans-unit id="ex_56fb" resname="card.updatedAt">
         <source>card.updatedAt</source>
-        <target>__card.updatedAt</target>
+        <target>Updated at</target>
       </trans-unit>
       <trans-unit id="GSEy8.G" resname="msg.no.infos.found">
         <source>msg.no.infos.found</source>
-        <target>__msg.no.infos.found</target>
+        <target>No infos found.</target>
       </trans-unit>
       <trans-unit id="Rk8HZvb" resname="date.year">
         <source>date.year</source>
-        <target>__date.year</target>
+        <target>year</target>
       </trans-unit>
       <trans-unit id="y0nvRuk" resname="date.month">
         <source>date.month</source>
-        <target>__date.month</target>
+        <target>month</target>
       </trans-unit>
       <trans-unit id="P9GHwsS" resname="date.week">
         <source>date.week</source>
-        <target>__date.week</target>
+        <target>week</target>
       </trans-unit>
       <trans-unit id="7LBEVye" resname="date.day">
         <source>date.day</source>
-        <target>__date.day</target>
+        <target>day</target>
       </trans-unit>
       <trans-unit id="KN9EC2M" resname="date.hour">
         <source>date.hour</source>
-        <target>__date.hour</target>
+        <target>hour</target>
       </trans-unit>
       <trans-unit id="BbXh_Hw" resname="date.minute">
         <source>date.minute</source>
-        <target>__date.minute</target>
+        <target>minute</target>
       </trans-unit>
       <trans-unit id="a53fRM7" resname="date.second">
         <source>date.second</source>
-        <target>__date.second</target>
+        <target>second</target>
       </trans-unit>
       <trans-unit id="ysr6tXE" resname="date.seconds.ago">
         <source>date.seconds.ago</source>
-        <target>__date.seconds.ago</target>
+        <target>a few seconds ago</target>
       </trans-unit>
       <trans-unit id="6VAh8NV" resname="updatedAt">
         <source>updatedAt</source>
-        <target>__updatedAt</target>
+        <target>Updated at</target>
       </trans-unit>
       <trans-unit id="aC7eezV" resname="link.info.back">
         <source>link.info.back</source>
-        <target>__link.info.back</target>
+        <target>Back to info</target>
       </trans-unit>
       <trans-unit id="qVM6MWL" resname="msg.no.notes">
         <source>msg.no.notes</source>
-        <target>__msg.no.notes</target>
+        <target>No notes found.</target>
       </trans-unit>
       <trans-unit id="HKwzhti" resname="msg.choose.note">
         <source>msg.choose.note</source>
-        <target>__msg.choose.note</target>
+        <target>Please choose a note, or create new one.</target>
       </trans-unit>
       <trans-unit id="RPAuidh" resname="title.password.reset">
         <source>title.password.reset</source>
-        <target>__title.password.reset</target>
+        <target>Reset your password</target>
       </trans-unit>
       <trans-unit id="kPyEjdP" resname="button.info.save">
         <source>button.info.save</source>
-        <target>__button.info.save</target>
+        <target>Save info</target>
       </trans-unit>
       <trans-unit id="zJpoq2L" resname="button.info.create">
         <source>button.info.create</source>
-        <target>__button.info.create</target>
+        <target>Create info</target>
       </trans-unit>
       <trans-unit id="0K5VMtH" resname="msg.no.onboarding">
         <source>msg.no.onboarding</source>
-        <target>__msg.no.onboarding</target>
+        <target>No entries found.</target>
       </trans-unit>
       <trans-unit id="i4CM7.y" resname="msg.choose.onboarding">
         <source>msg.choose.onboarding</source>
-        <target>__msg.choose.onboarding</target>
+        <target>Please choose an entry, or create a new one.</target>
       </trans-unit>
       <trans-unit id="SWMa5uf" resname="msg.note.delete">
         <source>msg.note.delete</source>
-        <target>__msg.note.delete</target>
+        <target>Are you sure about deleting this note?</target>
       </trans-unit>
       <trans-unit id="4x_8flf" resname="msg.sop.delete">
         <source>msg.sop.delete</source>
-        <target>__msg.sop.delete</target>
+        <target>Are you sure about deleting this note?</target>
       </trans-unit>
       <trans-unit id="OamOyGO" resname="button.sop.delete">
         <source>button.sop.delete</source>
-        <target>__button.sop.delete</target>
+        <target>Delete SOP</target>
       </trans-unit>
       <trans-unit id="f8xBLQX" resname="title.sop.edit">
         <source>title.sop.edit</source>
-        <target>__title.sop.edit</target>
+        <target>Edit SOP</target>
       </trans-unit>
       <trans-unit id="ohrCfj4" resname="link.sop.back_list">
         <source>link.sop.back_list</source>
-        <target>__link.sop.back_list</target>
+        <target>Back to list</target>
       </trans-unit>
       <trans-unit id="4xIVJss" resname="button.sop.save">
         <source>button.sop.save</source>
-        <target>__button.sop.save</target>
+        <target>Save SOP</target>
       </trans-unit>
       <trans-unit id="FzkDCao" resname="title.sop.new">
         <source>title.sop.new</source>
-        <target>__title.sop.new</target>
+        <target>Create new SOP</target>
       </trans-unit>
       <trans-unit id="paLYnp4" resname="button.sop.create">
         <source>button.sop.create</source>
-        <target>__button.sop.create</target>
+        <target>Create SOP</target>
       </trans-unit>
       <trans-unit id="Xiu44gh" resname="title.sop">
         <source>title.sop</source>
-        <target>__title.sop</target>
+        <target>Standard Operation Procedures (SOP)</target>
       </trans-unit>
       <trans-unit id="3WewCvr" resname="msg.no.sop.found">
         <source>msg.no.sop.found</source>
-        <target>__msg.no.sop.found</target>
+        <target>No SOPs found.</target>
       </trans-unit>
       <trans-unit id="6pg8CPZ" resname="button.sop.new">
         <source>button.sop.new</source>
-        <target>__button.sop.new</target>
+        <target>Create new SOP</target>
       </trans-unit>
       <trans-unit id="V7GkQhV" resname="title.sop.show">
         <source>title.sop.show</source>
-        <target>__title.sop.show</target>
+        <target>Show SOP</target>
       </trans-unit>
       <trans-unit id="oMpMUxo" resname="label.sop.name">
         <source>label.sop.name</source>
-        <target>__label.sop.name</target>
+        <target>Name</target>
       </trans-unit>
       <trans-unit id="9qOqVc." resname="label.sop.description">
         <source>label.sop.description</source>
-        <target>__label.sop.description</target>
+        <target>Description</target>
       </trans-unit>
       <trans-unit id="VFsfIaD" resname="label.sop.attachment">
         <source>label.sop.attachment</source>
-        <target>__label.sop.attachment</target>
+        <target>Attachment</target>
       </trans-unit>
       <trans-unit id="O2n_H4p" resname="button.sop.edit">
         <source>button.sop.edit</source>
-        <target>__button.sop.edit</target>
+        <target>Edit SOP</target>
       </trans-unit>
       <trans-unit id="9CN7T8d" resname="msg.info.delete">
         <source>msg.info.delete</source>
-        <target>__msg.info.delete</target>
+        <target>Are you sure about deleting this info?</target>
       </trans-unit>
       <trans-unit id="55J78ut" resname="msg.onboarding.delete">
         <source>msg.onboarding.delete</source>
-        <target>__msg.onboarding.delete</target>
+        <target>Are you sure about deleting this entry?</target>
       </trans-unit>
       <trans-unit id="X8QS_wb" resname="msg.contact.delete">
         <source>msg.contact.delete</source>
-        <target>__msg.contact.delete</target>
+        <target>Are you sure about deleting this contact?</target>
       </trans-unit>
       <trans-unit id="yLWZ8Rg" resname="button.contact.delete">
         <source>button.contact.delete</source>
-        <target>__button.contact.delete</target>
+        <target>Delete contact</target>
       </trans-unit>
       <trans-unit id="tB8Mtr8" resname="title.contact.edit">
         <source>title.contact.edit</source>
-        <target>__title.contact.edit</target>
+        <target>Edit contact</target>
       </trans-unit>
       <trans-unit id="LML9gl1" resname="link.contact.back">
         <source>link.contact.back</source>
-        <target>__link.contact.back</target>
+        <target>Back to contact</target>
       </trans-unit>
       <trans-unit id="iNDcdAc" resname="button.contact.save">
         <source>button.contact.save</source>
-        <target>__button.contact.save</target>
+        <target>Save contact</target>
       </trans-unit>
       <trans-unit id="7WRPR7_" resname="title.contact.new">
         <source>title.contact.new</source>
-        <target>__title.contact.new</target>
+        <target>Create new contact</target>
       </trans-unit>
       <trans-unit id="_UxjmN3" resname="link.contact.back_list">
         <source>link.contact.back_list</source>
-        <target>__link.contact.back_list</target>
+        <target>Back to contact list</target>
       </trans-unit>
       <trans-unit id="0NOJDzv" resname="button.contact.create">
         <source>button.contact.create</source>
-        <target>__button.contact.create</target>
+        <target>Create contact</target>
       </trans-unit>
       <trans-unit id="arcJxuP" resname="title.contacts">
         <source>title.contacts</source>
-        <target>__title.contacts</target>
+        <target>Contacts</target>
       </trans-unit>
       <trans-unit id="vTVquXI" resname="button.contact.view">
         <source>button.contact.view</source>
-        <target>__button.contact.view</target>
+        <target>View contact</target>
       </trans-unit>
       <trans-unit id="OPYGz3y" resname="msg.no.contacts.found">
         <source>msg.no.contacts.found</source>
-        <target>__msg.no.contacts.found</target>
+        <target>No contacts found.</target>
       </trans-unit>
       <trans-unit id="bt2okbH" resname="button.contact.new">
         <source>button.contact.new</source>
-        <target>__button.contact.new</target>
+        <target>Create Contact</target>
       </trans-unit>
       <trans-unit id="huf_uuT" resname="title.contact.show">
         <source>title.contact.show</source>
-        <target>__title.contact.show</target>
+        <target>Show contact</target>
       </trans-unit>
       <trans-unit id="elRRAQs" resname="label.contact.name">
         <source>label.contact.name</source>
-        <target>__label.contact.name</target>
+        <target>Name</target>
       </trans-unit>
       <trans-unit id="pzPy5YE" resname="label.contact.phone">
         <source>label.contact.phone</source>
-        <target>__label.contact.phone</target>
+        <target>Phone</target>
       </trans-unit>
       <trans-unit id="X_8s3CI" resname="label.contact.fax">
         <source>label.contact.fax</source>
-        <target>__label.contact.fax</target>
+        <target>Fax</target>
       </trans-unit>
       <trans-unit id="O7uM90E" resname="label.contact.email">
         <source>label.contact.email</source>
-        <target>__label.contact.email</target>
+        <target>Email</target>
       </trans-unit>
       <trans-unit id="1QHTWMM" resname="label.contact.address">
         <source>label.contact.address</source>
-        <target>__label.contact.address</target>
+        <target>Address</target>
       </trans-unit>
       <trans-unit id="desR8wU" resname="button.contact.edit">
         <source>button.contact.edit</source>
-        <target>__button.contact.edit</target>
+        <target>Edit contact</target>
       </trans-unit>
       <trans-unit id="MuSUMuE" resname="link.sop.back">
         <source>link.sop.back</source>
-        <target>__link.sop.back</target>
+        <target>Back to SOP</target>
       </trans-unit>
       <trans-unit id="n5nsvwk" resname="button.sop.view_attachment">
         <source>button.sop.view_attachment</source>
-        <target>__button.sop.view_attachment</target>
+        <target>View attachment</target>
       </trans-unit>
       <trans-unit id="kO3mbA9" resname="link.note.back">
         <source>link.note.back</source>
-        <target>__link.note.back</target>
+        <target>Back to note</target>
       </trans-unit>
       <trans-unit id="iZY3OKT" resname="button.note.save">
         <source>button.note.save</source>
-        <target>__button.note.save</target>
+        <target>Save note</target>
       </trans-unit>
       <trans-unit id="mlzBw.X" resname="link.onboarding.back">
         <source>link.onboarding.back</source>
-        <target>__link.onboarding.back</target>
+        <target>Back to entry</target>
       </trans-unit>
       <trans-unit id="vefAmRY" resname="button.onboarding.save">
         <source>button.onboarding.save</source>
-        <target>__button.onboarding.save</target>
+        <target>Save entry</target>
       </trans-unit>
       <trans-unit id="mEQLyMq" resname="button.onboarding.create">
         <source>button.onboarding.create</source>
-        <target>__button.onboarding.create</target>
+        <target>Create entry</target>
       </trans-unit>
     </body>
   </file>

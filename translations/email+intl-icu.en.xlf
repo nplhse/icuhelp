@@ -11,7 +11,7 @@
       </trans-unit>
       <trans-unit id="53tjzTq" resname="msg.confirm.email">
         <source>msg.confirm.email</source>
-        <target>Plase confirm your email address by clicking the link below:</target>
+        <target>Please confirm your email address by clicking the link below:</target>
       </trans-unit>
       <trans-unit id="ENHFbYC" resname="msg.confirm.link">
         <source>msg.confirm.link</source>

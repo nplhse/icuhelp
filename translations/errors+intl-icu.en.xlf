@@ -49,7 +49,11 @@
       </trans-unit>
       <trans-unit id="ig_GfmI" resname="link.to.homepage">
         <source>link.to.homepage</source>
-        <target>__link.to.homepage</target>
+        <target>Back to homepage</target>
+      </trans-unit>
+      <trans-unit id="VHSF3BW" resname="link.to.lastpage">
+        <source>link.to.lastpage</source>
+        <target>__link.to.lastpage</target>
       </trans-unit>
     </body>
   </file>

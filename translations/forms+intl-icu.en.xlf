@@ -27,23 +27,23 @@
       </trans-unit>
       <trans-unit id="EkJLjTi" resname="link.forgotpassword">
         <source>link.forgotpassword</source>
-        <target>__link.forgotpassword</target>
+        <target>Forgot your password?</target>
       </trans-unit>
       <trans-unit id="FHhgESp" resname="title.register">
         <source>title.register</source>
-        <target>__title.register</target>
+        <target>Register an account</target>
       </trans-unit>
       <trans-unit id="yKuTQ_i" resname="button.register">
         <source>button.register</source>
-        <target>__button.register</target>
+        <target>Register</target>
       </trans-unit>
       <trans-unit id="Q5ha4LM" resname="link.login">
         <source>link.login</source>
-        <target>__link.login</target>
+        <target>Click here if you already have got an account.</target>
       </trans-unit>
       <trans-unit id="sToQk7i" resname="link.register">
         <source>link.register</source>
-        <target>__link.register</target>
+        <target>Click here if you'd like to create an account.</target>
       </trans-unit>
     </body>
   </file>
