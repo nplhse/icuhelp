@@ -3,7 +3,7 @@
 {% block title %}{{ parent() }} - {{ "title.homepage"|trans }}{% endblock %}
 
 {% block body %}
-    <main role="main" class="container">
+    <main role="main" class="content container">
         {% for label, messages in app.flashes(['warning', 'error', 'success', 'notice']) %}
             {% for message in messages %}
                 <div class="alert alert-{{ label }}">

@@ -3,7 +3,7 @@
 {% block title %}{{ parent() }} - {{ "title.register"|trans({}, "forms") }}{% endblock %}
 
 {% block body %}
-    <main role="main" class="container">
+    <main role="main" class="content container">
         {% if app.user %}
             <div class="mb-3">
                 {{ "msg.logged.in.as"|trans }} {{ app.user.username }}, <a href="{{ path('security_logout') }}">{{ "Logout"|trans }}</a>
