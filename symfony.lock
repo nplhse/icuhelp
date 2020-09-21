@@ -139,6 +139,9 @@
             "config/packages/fos_ckeditor.yaml"
         ]
     },
+    "fzaninotto/faker": {
+        "version": "v1.9.1"
+    },
     "jms/metadata": {
         "version": "2.3.0"
     },
@@ -587,5 +590,8 @@
     },
     "webimpress/safe-writer": {
         "version": "2.0.1"
+    },
+    "zenstruck/foundry": {
+        "version": "v1.1.2"
     }
 }

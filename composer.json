@@ -33,7 +33,8 @@
     },
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^3.3",
-        "friendsofphp/php-cs-fixer": "^2.16"
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "zenstruck/foundry": "^1.1"
     },
     "config": {
         "preferred-install": {
