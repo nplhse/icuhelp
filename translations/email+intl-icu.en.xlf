@@ -7,19 +7,19 @@
     <body>
       <trans-unit id="_i4XSCS" resname="title.confirm.email">
         <source>title.confirm.email</source>
-        <target>Willkommen bei ICUhelp - Bitte bestätigen Sie ihre E-Mail Adresse</target>
+        <target>Welcome to ICUhelp - Please confirm your email address</target>
       </trans-unit>
       <trans-unit id="53tjzTq" resname="msg.confirm.email">
         <source>msg.confirm.email</source>
-        <target>Um dieses Angebot vollständig nutzen zu können, bitten wir Sie zur Identifikation Ihre E-Mail Adresse durch einen Klick auf den untenstehenden Link zu bestätigen:</target>
+        <target>Plase confirm your email address by clicking the link below:</target>
       </trans-unit>
       <trans-unit id="ENHFbYC" resname="msg.confirm.link">
         <source>msg.confirm.link</source>
-        <target>Hier klicken um die E-Mail Adresse zu bestätigen</target>
+        <target>Click here to confirm your email address</target>
       </trans-unit>
       <trans-unit id="UYodlC5" resname="msg.confirm.expiration">
         <source>msg.confirm.expiration</source>
-        <target>Dieser Link ist für %expiration% Stunden gültig.</target>
+        <target>This link will be valid for %expiration% hours.</target>
       </trans-unit>
     </body>
   </file>
