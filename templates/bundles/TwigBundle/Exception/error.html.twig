@@ -9,7 +9,7 @@
                 <div class="col-md-12 text-center">
                     <span class="display-1 d-block">{{ ("messages." ~ exception.getStatusCode ~ ".title")|trans({}) }} ({{ exception.getStatusCode }})</span>
                     <div class="mb-4 lead">{{ ("messages." ~ exception.getStatusCode ~ ".description")|trans({})|nl2br }}</div>
-                    <a href="{{ path("homepage") }}" class="btn btn-link">{{ "link.to.homepage"|trans }}</a>
+                    <a href="javascript:history.back()">{{ "link.to.lastpage"|trans }}</a>, <a href="{{ path("homepage") }}" class="btn btn-link">{{ "link.to.homepage"|trans }}</a>
                 </div>
             </div>
         </div>
