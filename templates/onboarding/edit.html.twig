@@ -15,10 +15,21 @@
             </div>
         {% endfor %}
 
-        {{ include('onboarding/_form.html.twig', {
-            button_text: 'button.onboarding.save'
-        }) }}
-        {{ include('onboarding/_delete_form.html.twig') }}
+        {{ form_start(form) }}
+
+            {{ form_row(form.name) }}
+            {{ form_row(form.category) }}
+            {{ form_row(form.text) }}
+
+            <div class="clearfix">
+                <div class="btn-group float-right" role="group" aria-label="">
+                    <a class="btn btn-secondary" href="{{ path('onboarding_show', {'id':note.id}) }}" role="button">{{ "link.onboarding.back"|trans }}</a>
+                    <button type="submit" class="btn btn-success">{{ "button.onboarding.save"|trans }}</button>
+                </div>
+        {{ form_end(form) }}
+
+                {{ include('onboarding/_delete_form.html.twig') }}
+            </div>
     </div>
 </main>
 {% endblock %}

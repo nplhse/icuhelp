@@ -633,6 +633,26 @@
         <source>button.sop.view_attachment</source>
         <target>__button.sop.view_attachment</target>
       </trans-unit>
+      <trans-unit id="kO3mbA9" resname="link.note.back">
+        <source>link.note.back</source>
+        <target>__link.note.back</target>
+      </trans-unit>
+      <trans-unit id="iZY3OKT" resname="button.note.save">
+        <source>button.note.save</source>
+        <target>__button.note.save</target>
+      </trans-unit>
+      <trans-unit id="mlzBw.X" resname="link.onboarding.back">
+        <source>link.onboarding.back</source>
+        <target>__link.onboarding.back</target>
+      </trans-unit>
+      <trans-unit id="vefAmRY" resname="button.onboarding.save">
+        <source>button.onboarding.save</source>
+        <target>__button.onboarding.save</target>
+      </trans-unit>
+      <trans-unit id="mEQLyMq" resname="button.onboarding.create">
+        <source>button.onboarding.create</source>
+        <target>__button.onboarding.create</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

@@ -15,9 +15,19 @@
             </div>
         {% endfor %}
 
-        {{ include('onboarding/_form.html.twig', {
-            button_text: 'button.onboarding.create'
-        }) }}
+        {{ form_start(form) }}
+
+        {{ form_row(form.name) }}
+        {{ form_row(form.category) }}
+        {{ form_row(form.text) }}
+
+        <div class="clearfix">
+            <div class="btn-group float-right" role="group" aria-label="">
+                <a class="btn btn-secondary" href="{{ path('onboarding_index') }}" role="button">{{ "link.onboarding.back_list"|trans }}</a>
+                <button type="submit" class="btn btn-success">{{ "button.onboarding.create"|trans }}</button>
+            </div>
+            {{ form_end(form) }}
+        </div>
     </div>
 </main>
 {% endblock %}

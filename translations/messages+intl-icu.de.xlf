@@ -479,7 +479,7 @@
       </trans-unit>
       <trans-unit id="ysr6tXE" resname="date.seconds.ago">
         <source>date.seconds.ago</source>
-        <target>Vor ein paar Sekunden</target>
+        <target>ein paar Sekunden</target>
       </trans-unit>
       <trans-unit id="6VAh8NV" resname="updatedAt">
         <source>updatedAt</source>
@@ -664,6 +664,14 @@
       <trans-unit id="n5nsvwk" resname="button.sop.view_attachment">
         <source>button.sop.view_attachment</source>
         <target>Anhang ansehen</target>
+      </trans-unit>
+      <trans-unit id="kO3mbA9" resname="link.note.back">
+        <source>link.note.back</source>
+        <target>Zurück zur Notiz</target>
+      </trans-unit>
+      <trans-unit id="mlzBw.X" resname="link.onboarding.back">
+        <source>link.onboarding.back</source>
+        <target>Zurück zum Beitrag</target>
       </trans-unit>
     </body>
   </file>
