@@ -4487,11 +4487,6 @@ nice-try@^1.0.4:
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
   integrity sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==
 
-node-ass@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/node-ass/-/node-ass-1.0.4.tgz#69a814f304124b9d43fb8fab85c798a6785a9045"
-  integrity sha512-yRZ/Tne/Ot7Qq6cLIFHVxxNQVj8rkcHHfYSwrdE0eTPfokhbt73yF1NtVNw6HgyICUvf4vcu63V60kB7XPdgGQ==
-
 node-forge@0.9.0:
   version "0.9.0"
   resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.9.0.tgz#d624050edbb44874adca12bb9a52ec63cb782579"
