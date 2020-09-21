@@ -28,7 +28,6 @@ class DashboardController extends AbstractDashboardController
     {
         return Crud::new();
     }
-    
 
     public function configureUserMenu(UserInterface $user): UserMenu
     {
