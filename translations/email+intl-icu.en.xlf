@@ -21,6 +21,18 @@
         <source>msg.confirm.expiration</source>
         <target>This link will be valid for %expiration% hours.</target>
       </trans-unit>
+      <trans-unit id="GHftLh3" resname="title.reset.password">
+        <source>title.reset.password</source>
+        <target>ICUhelp - Reset your password</target>
+      </trans-unit>
+      <trans-unit id="g9vmbcw" resname="msg.reset.password">
+        <source>msg.reset.password</source>
+        <target>To reset your password, please visit the following link:</target>
+      </trans-unit>
+      <trans-unit id="8g9G6q2" resname="msg.reset.password.link">
+        <source>msg.reset.password.link</source>
+        <target>Click here to reset your password</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

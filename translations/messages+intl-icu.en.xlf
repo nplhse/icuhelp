@@ -653,6 +653,30 @@
         <source>button.onboarding.create</source>
         <target>Create entry</target>
       </trans-unit>
+      <trans-unit id="VyjGhW8" resname="msg.password.reset">
+        <source>msg.password.reset</source>
+        <target>Enter your email address and we we will send you a link to reset your password.</target>
+      </trans-unit>
+      <trans-unit id="bvQGNkH" resname="button.password.reset">
+        <source>button.password.reset</source>
+        <target>Request password reset</target>
+      </trans-unit>
+      <trans-unit id="_7RnGYX" resname="title.password.link_send">
+        <source>title.password.link_send</source>
+        <target>Password request email is sent</target>
+      </trans-unit>
+      <trans-unit id="cEFW_4M" resname="msg.password.link_send">
+        <source>msg.password.link_send</source>
+        <target>An email has been sent that contains a link that you can click to reset your password. This link will expire in a %expiration% hours. If you don't receive an email please check your spam folder or try again.</target>
+      </trans-unit>
+      <trans-unit id="xlJmMan" resname="title.password.set.new">
+        <source>title.password.set.new</source>
+        <target>Set new password</target>
+      </trans-unit>
+      <trans-unit id="N5xncJJ" resname="button.password.set.new">
+        <source>button.password.set.new</source>
+        <target>Set new password</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

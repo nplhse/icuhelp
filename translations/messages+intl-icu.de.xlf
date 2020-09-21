@@ -673,6 +673,30 @@
         <source>link.onboarding.back</source>
         <target>Zurück zum Beitrag</target>
       </trans-unit>
+      <trans-unit id="VyjGhW8" resname="msg.password.reset">
+        <source>msg.password.reset</source>
+        <target>Tragen Sie Ihre E-Mail Adresse ein und wir werden Ihnen einen Link zum zurücksetzen des Passwortes zusenden.</target>
+      </trans-unit>
+      <trans-unit id="bvQGNkH" resname="button.password.reset">
+        <source>button.password.reset</source>
+        <target>Passwort zurücksetzen</target>
+      </trans-unit>
+      <trans-unit id="_7RnGYX" resname="title.password.link_send">
+        <source>title.password.link_send</source>
+        <target>E-Mail zum zurücksetzen des Passwortes versendet</target>
+      </trans-unit>
+      <trans-unit id="cEFW_4M" resname="msg.password.link_send">
+        <source>msg.password.link_send</source>
+        <target>Eine E-Mail mit einem Link zum zurücksetzen Ihres Passwortes wurde versendet. Dieser Link ist für %expiration% Stunden gültig. Falls Sie keinen Link erhalten, prüfen Sie Ihren Spam-Ordner, oder versuchen Sie es nochmal.</target>
+      </trans-unit>
+      <trans-unit id="xlJmMan" resname="title.password.set.new">
+        <source>title.password.set.new</source>
+        <target>Neues Passwort erstellen</target>
+      </trans-unit>
+      <trans-unit id="N5xncJJ" resname="button.password.set.new">
+        <source>button.password.set.new</source>
+        <target>Passwort speichern</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
