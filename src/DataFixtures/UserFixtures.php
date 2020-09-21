@@ -34,6 +34,9 @@ class UserFixtures extends Fixture
 
             $user->setEmail($data['email']);
             $user->setRoles($data['roles']);
+            $user->setIsVerified($data['isVerified']);
+            $user->setIsActive($data['isActive']);
+            $user->setIsCredentialsNonExpired($data['isCredentialsNonExpired']);
 
             $manager->persist($user);
         }
@@ -55,12 +58,18 @@ class UserFixtures extends Fixture
                     'plainPassword' => 'admin',
                     'email' => 'admin@admin.test',
                     'roles' => ['ROLE_ADMIN'],
+                    'isVerified' => true,
+                    'isActive' => true,
+                    'isCredentialsNonExpired' => true
                 ],
                 [
                     'username' => 'foo',
                     'plainPassword' => 'bar',
                     'email' => 'foo@bar.com',
                     'roles' => ['ROLE_USER'],
+                    'isVerified' => true,
+                    'isActive' => true,
+                    'isCredentialsNonExpired' => true
                 ],
             ];
     }
