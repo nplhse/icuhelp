@@ -3,11 +3,19 @@
 {% trans_default_domain "errors" %}
 
 {% block body %}
-    <div class="container">
-        <h1>{{ ("messages." ~ exception.getStatusCode ~ ".title")|trans({}) }} ({{ exception.getStatusCode }})</h1>
-        <h3 class="h3">{{ ("title")|trans({}) }}</h3>
-        <p> {{ ("messages." ~ exception.getStatusCode ~ ".description")|trans({})|nl2br }}</p>
-
-        <strong>{{ ("description")|trans({})|nl2br }}</strong>
+    <div class="page-wrap d-flex flex-row align-items-center h-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12 text-center">
+                    <span class="display-1 d-block">{{ ("messages." ~ exception.getStatusCode ~ ".title")|trans({}) }} ({{ exception.getStatusCode }})</span>
+                    <div class="mb-4 lead">{{ ("messages." ~ exception.getStatusCode ~ ".description")|trans({})|nl2br }}</div>
+                    <a href="{{ path("homepage") }}" class="btn btn-link">{{ "link.to.homepage"|trans }}</a>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
+
+
+
+
