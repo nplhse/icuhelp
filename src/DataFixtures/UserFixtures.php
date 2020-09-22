@@ -60,7 +60,7 @@ class UserFixtures extends Fixture
                     'roles' => ['ROLE_ADMIN'],
                     'isVerified' => true,
                     'isActive' => true,
-                    'isCredentialsNonExpired' => true
+                    'isCredentialsNonExpired' => true,
                 ],
                 [
                     'username' => 'foo',
@@ -69,7 +69,7 @@ class UserFixtures extends Fixture
                     'roles' => ['ROLE_USER'],
                     'isVerified' => true,
                     'isActive' => true,
-                    'isCredentialsNonExpired' => true
+                    'isCredentialsNonExpired' => true,
                 ],
             ];
     }

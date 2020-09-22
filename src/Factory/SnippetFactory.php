@@ -4,17 +4,17 @@ namespace App\Factory;
 
 use App\Entity\Snippet;
 use App\Repository\SnippetRepository;
-use Zenstruck\Foundry\RepositoryProxy;
 use Zenstruck\Foundry\ModelFactory;
 use Zenstruck\Foundry\Proxy;
+use Zenstruck\Foundry\RepositoryProxy;
 
 /**
- * @method static Snippet|Proxy findOrCreate(array $attributes)
- * @method static Snippet|Proxy random()
- * @method static Snippet[]|Proxy[] randomSet(int $number)
- * @method static Snippet[]|Proxy[] randomRange(int $min, int $max)
- * @method static SnippetRepository|RepositoryProxy repository()
- * @method Snippet|Proxy create($attributes = [])
+ * @method static            Snippet|Proxy findOrCreate(array $attributes)
+ * @method static            Snippet|Proxy random()
+ * @method static            Snippet[]|Proxy[] randomSet(int $number)
+ * @method static            Snippet[]|Proxy[] randomRange(int $min, int $max)
+ * @method static            SnippetRepository|RepositoryProxy repository()
+ * @method Snippet|Proxy     create($attributes = [])
  * @method Snippet[]|Proxy[] createMany(int $number, $attributes = [])
  */
 final class SnippetFactory extends ModelFactory

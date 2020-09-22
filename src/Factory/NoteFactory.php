@@ -4,17 +4,17 @@ namespace App\Factory;
 
 use App\Entity\Note;
 use App\Repository\NoteRepository;
-use Zenstruck\Foundry\RepositoryProxy;
 use Zenstruck\Foundry\ModelFactory;
 use Zenstruck\Foundry\Proxy;
+use Zenstruck\Foundry\RepositoryProxy;
 
 /**
- * @method static Note|Proxy findOrCreate(array $attributes)
- * @method static Note|Proxy random()
- * @method static Note[]|Proxy[] randomSet(int $number)
- * @method static Note[]|Proxy[] randomRange(int $min, int $max)
- * @method static NoteRepository|RepositoryProxy repository()
- * @method Note|Proxy create($attributes = [])
+ * @method static         Note|Proxy findOrCreate(array $attributes)
+ * @method static         Note|Proxy random()
+ * @method static         Note[]|Proxy[] randomSet(int $number)
+ * @method static         Note[]|Proxy[] randomRange(int $min, int $max)
+ * @method static         NoteRepository|RepositoryProxy repository()
+ * @method Note|Proxy     create($attributes = [])
  * @method Note[]|Proxy[] createMany(int $number, $attributes = [])
  */
 final class NoteFactory extends ModelFactory

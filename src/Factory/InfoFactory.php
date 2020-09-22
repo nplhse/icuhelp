@@ -4,17 +4,17 @@ namespace App\Factory;
 
 use App\Entity\Info;
 use App\Repository\InfoRepository;
-use Zenstruck\Foundry\RepositoryProxy;
 use Zenstruck\Foundry\ModelFactory;
 use Zenstruck\Foundry\Proxy;
+use Zenstruck\Foundry\RepositoryProxy;
 
 /**
- * @method static Info|Proxy findOrCreate(array $attributes)
- * @method static Info|Proxy random()
- * @method static Info[]|Proxy[] randomSet(int $number)
- * @method static Info[]|Proxy[] randomRange(int $min, int $max)
- * @method static InfoRepository|RepositoryProxy repository()
- * @method Info|Proxy create($attributes = [])
+ * @method static         Info|Proxy findOrCreate(array $attributes)
+ * @method static         Info|Proxy random()
+ * @method static         Info[]|Proxy[] randomSet(int $number)
+ * @method static         Info[]|Proxy[] randomRange(int $min, int $max)
+ * @method static         InfoRepository|RepositoryProxy repository()
+ * @method Info|Proxy     create($attributes = [])
  * @method Info[]|Proxy[] createMany(int $number, $attributes = [])
  */
 final class InfoFactory extends ModelFactory

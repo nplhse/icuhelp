@@ -10,11 +10,28 @@ use App\Factory\SnippetFactory;
 use App\Factory\SOPFactory;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
+use Symfony\Component\Filesystem\Filesystem;
 
 class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
+        // Before adding any content clear up the /public/uploads directory
+        $filesystem = new Filesystem();
+        $dir = getcwd().'/public/uploads';
+
+        try {
+            if ($filesystem->exists($dir)) {
+                $filesystem->remove($dir);
+            }
+
+            $filesystem->mkdir($dir, 0775);
+        } catch (IOExceptionInterface $exception) {
+            echo 'Warning: Could not clean up the uploads directory';
+        }
+
+        // Adding new contents for the whole app
         ContactFactory::new()->createMany(rand(10, 20));
         InfoFactory::new()->createMany(rand(1, 5));
         SOPFactory::new()->createMany(rand(1, 10));
