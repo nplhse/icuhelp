@@ -22,7 +22,7 @@ This project is intended to provide some useful things to the daily work of phys
     $ cd ~/webroot/icuhelp
     $ composer install
     ```
-3. Setup ICUhelp by using our custom **composer** script (including some demo fixtures for the database):
+3. Setup ICUhelp by using our custom **composer** script. This always includes some dummy data that populates the database for demonstration and testing purposes.
 
     ```
     $ composer setup
