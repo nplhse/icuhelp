@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Contact;
 use App\Form\ContactType;
 use App\Repository\ContactRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -27,6 +28,7 @@ class ContactController extends AbstractController
 
     /**
      * @Route("/new", name="contact_new", methods={"GET","POST"})
+     * @IsGranted("ROLE_EDITOR")
      */
     public function new(Request $request): Response
     {
@@ -39,7 +41,9 @@ class ContactController extends AbstractController
             $entityManager->persist($contact);
             $entityManager->flush();
 
-            return $this->redirectToRoute('contact_index');
+            $this->addFlash('success', 'msg.contact.added');
+
+            return $this->redirectToRoute('contact_show', ['id' => $contact->getId()]);
         }
 
         return $this->render('contact/new.html.twig', [
@@ -60,6 +64,7 @@ class ContactController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="contact_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_EDITOR")
      */
     public function edit(Request $request, Contact $contact): Response
     {
@@ -69,7 +74,9 @@ class ContactController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('contact_index');
+            $this->addFlash('success', 'msg.contact.edited');
+
+            return $this->redirectToRoute('contact_show', ['id' => $contact->getId()]);
         }
 
         return $this->render('contact/edit.html.twig', [
@@ -80,6 +87,7 @@ class ContactController extends AbstractController
 
     /**
      * @Route("/{id}", name="contact_delete", methods={"DELETE"})
+     * @IsGranted("ROLE_EDITOR")
      */
     public function delete(Request $request, Contact $contact): Response
     {
@@ -88,6 +96,8 @@ class ContactController extends AbstractController
             $entityManager->remove($contact);
             $entityManager->flush();
         }
+
+        $this->addFlash('success', 'msg.contact.deleted');
 
         return $this->redirectToRoute('contact_index');
     }

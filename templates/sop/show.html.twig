@@ -8,6 +8,14 @@
 
         <h1 class="mt-2">{{ "title.sop.show"|trans }}</h1>
 
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ label }}" role="alert">
+                    {{ message|trans }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
         <table class="table table-hover">
             <tbody>
                 <tr>
@@ -34,10 +42,14 @@
         <div class="clearfix">
             <div class="btn-group float-right" role="group" aria-label="">
                 <a class="btn btn-secondary" href="{{ path('sop_index') }}" role="button">{{ "link.sop.back_list"|trans }}</a>
-                <a class="btn btn-primary" href="{{ path('sop_edit', {'id': sop.id}) }}">{{ "button.sop.edit"|trans }}</a>
+                {% if is_granted('ROLE_EDITOR') %}
+                    <a class="btn btn-primary" href="{{ path('sop_edit', {'id': sop.id}) }}">{{ "button.sop.edit"|trans }}</a>
+                {% endif %}
             </div>
 
-            {{ include('sop/_delete_form.html.twig') }}
+            {% if is_granted('ROLE_EDITOR') %}
+                {{ include('sop/_delete_form.html.twig') }}
+            {% endif %}
         </div>
     </main>
 {% endblock %}

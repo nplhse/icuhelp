@@ -6,30 +6,28 @@
 <main role="main" class="content container">
     {{ include('_components/project_tabs.html.twig') }}
 
-    <div>
-        <h1 class="mt-2">{{ "title.note.edit"|trans }}</h1>
+    <h1 class="mt-2">{{ "title.note.edit"|trans }}</h1>
 
-        {% for error in errors %}
-            <div class="alert alert-danger">
-                {{ error.messageKey|trans(error.messageData, 'security') }}
-            </div>
-        {% endfor %}
-
-        {{ form_start(form) }}
-
-        {{ form_row(form.name) }}
-        {{ form_row(form.category) }}
-        {{ form_row(form.text) }}
-
-        <div class="clearfix">
-            <div class="btn-group float-right" role="group" aria-label="">
-                <a class="btn btn-secondary" href="{{ path('note_show', {'id':note.id}) }}" role="button">{{ "link.note.back"|trans }}</a>
-                <button type="submit" class="btn btn-success">{{ "button.note.save"|trans }}</button>
-            </div>
-            {{ form_end(form) }}
-
-            {{ include('note/_delete_form.html.twig') }}
+    {% for error in errors %}
+        <div class="alert alert-danger">
+            {{ error.messageKey|trans(error.messageData, 'security') }}
         </div>
+    {% endfor %}
+
+    {{ form_start(form) }}
+
+    {{ form_row(form.name) }}
+    {{ form_row(form.category) }}
+    {{ form_row(form.text) }}
+
+    <div class="clearfix">
+        <div class="btn-group float-right" role="group" aria-label="">
+            <a class="btn btn-secondary" href="{{ path('note_show', {'id':note.id}) }}" role="button">{{ "link.note.back"|trans }}</a>
+            <button type="submit" class="btn btn-success">{{ "button.note.save"|trans }}</button>
+        </div>
+        {{ form_end(form) }}
+
+        {{ include('note/_delete_form.html.twig') }}
     </div>
 </main>
 {% endblock %}

@@ -677,6 +677,74 @@
         <source>button.password.set.new</source>
         <target>Set new password</target>
       </trans-unit>
+      <trans-unit id="dzI94_q" resname="title.snippet.show">
+        <source>title.snippet.show</source>
+        <target>Show snippet</target>
+      </trans-unit>
+      <trans-unit id="7gVeOih" resname="msg.letter_warning">
+        <source>msg.letter_warning</source>
+        <target>Please be aware that this tool is only creating a very basic medical letter, and that it always needs to be adapted manually by the physician in charge to the actual patients needs.</target>
+      </trans-unit>
+      <trans-unit id="sG6mgOb" resname="msg.sop.added">
+        <source>msg.sop.added</source>
+        <target>Successfully created new SOP.</target>
+      </trans-unit>
+      <trans-unit id="vLFm2aW" resname="msg.sop.edited">
+        <source>msg.sop.edited</source>
+        <target>Successfully edited the SOP.</target>
+      </trans-unit>
+      <trans-unit id="pB9hVUt" resname="msg.sop.deleted">
+        <source>msg.sop.deleted</source>
+        <target>Successfully deleted the SOP.</target>
+      </trans-unit>
+      <trans-unit id="sEre53E" resname="msg.note.added">
+        <source>msg.note.added</source>
+        <target>Successfully created new note.</target>
+      </trans-unit>
+      <trans-unit id="R_BTf.t" resname="msg.note.edited">
+        <source>msg.note.edited</source>
+        <target>Successfully edited the note.</target>
+      </trans-unit>
+      <trans-unit id="0pA65VQ" resname="msg.note.deleted">
+        <source>msg.note.deleted</source>
+        <target>Successfully deleted the note.</target>
+      </trans-unit>
+      <trans-unit id="x60OcHq" resname="msg.onboarding.added">
+        <source>msg.onboarding.added</source>
+        <target>Successfully created new entry.</target>
+      </trans-unit>
+      <trans-unit id="mnrT.JL" resname="msg.onboarding.edited">
+        <source>msg.onboarding.edited</source>
+        <target>Successfully edited the entry.</target>
+      </trans-unit>
+      <trans-unit id="QYNuZ1g" resname="msg.onboarding.deleted">
+        <source>msg.onboarding.deleted</source>
+        <target>Successfully deleted the entry.</target>
+      </trans-unit>
+      <trans-unit id="3M_5hyk" resname="msg.info.added">
+        <source>msg.info.added</source>
+        <target>Successfully created new info.</target>
+      </trans-unit>
+      <trans-unit id="aquF0H9" resname="msg.info.edited">
+        <source>msg.info.edited</source>
+        <target>Successfully edited the info.</target>
+      </trans-unit>
+      <trans-unit id="NG.c2HJ" resname="msg.info.deleted">
+        <source>msg.info.deleted</source>
+        <target>Successfully deleted the info.</target>
+      </trans-unit>
+      <trans-unit id="GVvw6UD" resname="msg.contact.added">
+        <source>msg.contact.added</source>
+        <target>Successfully added new contact.</target>
+      </trans-unit>
+      <trans-unit id="86P1X54" resname="msg.contact.edited">
+        <source>msg.contact.edited</source>
+        <target>Successfully edited the contact.</target>
+      </trans-unit>
+      <trans-unit id="tKyuJmW" resname="msg.contact.deleted">
+        <source>msg.contact.deleted</source>
+        <target>Successfully deleted the contact.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

@@ -6,6 +6,7 @@ use App\Entity\SOP;
 use App\Form\SOPType;
 use App\Repository\SOPRepository;
 use App\Service\FileUploader;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
@@ -26,6 +27,7 @@ class SOPController extends AbstractController
 
     /**
      * @Route("/sop/new", name="sop_new", methods={"GET","POST"})
+     * @IsGranted("ROLE_EDITOR")
      */
     public function new(Request $request, FileUploader $fileUploader): Response
     {
@@ -46,7 +48,9 @@ class SOPController extends AbstractController
             $entityManager->persist($SOP);
             $entityManager->flush();
 
-            return $this->redirectToRoute('sop_index');
+            $this->addFlash('success', 'msg.sop.added');
+
+            return $this->redirectToRoute('sop_show', ['id' => $SOP->getId()]);
         }
 
         return $this->render('sop/new.html.twig', [
@@ -67,6 +71,7 @@ class SOPController extends AbstractController
 
     /**
      * @Route("/sop/{id}/edit", name="sop_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_EDITOR")
      */
     public function edit(Request $request, SOP $SOP): Response
     {
@@ -76,7 +81,9 @@ class SOPController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('sop_index');
+            $this->addFlash('success', 'msg.sop.edited');
+
+            return $this->redirectToRoute('sop_show', ['id' => $SOP->getId()]);
         }
 
         return $this->render('sop/edit.html.twig', [
@@ -87,6 +94,7 @@ class SOPController extends AbstractController
 
     /**
      * @Route("/sop/{id}", name="sop_delete", methods={"DELETE"})
+     * @IsGranted("ROLE_EDITOR")
      */
     public function delete(Request $request, SOP $SOP): Response
     {
@@ -95,6 +103,8 @@ class SOPController extends AbstractController
             $entityManager->remove($SOP);
             $entityManager->flush();
         }
+
+        $this->addFlash('danger', 'msg.sop.deleted');
 
         return $this->redirectToRoute('sop_index');
     }

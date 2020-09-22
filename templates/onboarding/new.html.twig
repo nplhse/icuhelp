@@ -6,28 +6,26 @@
 <main role="main" class="content container">
     {{ include('_components/project_tabs.html.twig') }}
 
-    <div>
-        <h1 class="mt-2">{{ "title.onboarding.new"|trans }}</h1>
+    <h1 class="mt-2">{{ "title.onboarding.new"|trans }}</h1>
 
-        {% for error in errors %}
-            <div class="alert alert-danger">
-                {{ error.messageKey|trans(error.messageData) }}
-            </div>
-        {% endfor %}
-
-        {{ form_start(form) }}
-
-        {{ form_row(form.name) }}
-        {{ form_row(form.category) }}
-        {{ form_row(form.text) }}
-
-        <div class="clearfix">
-            <div class="btn-group float-right" role="group" aria-label="">
-                <a class="btn btn-secondary" href="{{ path('onboarding_index') }}" role="button">{{ "link.onboarding.back_list"|trans }}</a>
-                <button type="submit" class="btn btn-success">{{ "button.onboarding.create"|trans }}</button>
-            </div>
-            {{ form_end(form) }}
+    {% for error in errors %}
+        <div class="alert alert-danger">
+            {{ error.messageKey|trans(error.messageData) }}
         </div>
+    {% endfor %}
+
+    {{ form_start(form) }}
+
+    {{ form_row(form.name) }}
+    {{ form_row(form.category) }}
+    {{ form_row(form.text) }}
+
+    <div class="clearfix">
+        <div class="btn-group float-right" role="group" aria-label="">
+            <a class="btn btn-secondary" href="{{ path('onboarding_index') }}" role="button">{{ "link.onboarding.back_list"|trans }}</a>
+            <button type="submit" class="btn btn-success">{{ "button.onboarding.create"|trans }}</button>
+        </div>
+        {{ form_end(form) }}
     </div>
 </main>
 {% endblock %}

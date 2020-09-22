@@ -231,11 +231,11 @@
       </trans-unit>
       <trans-unit id="dEjYy59" resname="msg.snippet.added">
         <source>msg.snippet.added</source>
-        <target>Textbaustein erfolgreich erstellt!</target>
+        <target>Der Textbaustein wurde erfolgreich erstellt.</target>
       </trans-unit>
       <trans-unit id="D5GUG4n" resname="msg.snippet.edited">
         <source>msg.snippet.edited</source>
-        <target>Textbaustein bearbeitet.</target>
+        <target>Der Textbaustein wurde erfolgreich bearbeitet.</target>
       </trans-unit>
       <trans-unit id="vCk2OQU" resname="title.letter_card">
         <source>title.letter_card</source>
@@ -251,7 +251,7 @@
       </trans-unit>
       <trans-unit id="6gGbo_Z" resname="msg.snippet.deleted">
         <source>msg.snippet.deleted</source>
-        <target>Textbaustein wurde entfernt.</target>
+        <target>Der Textbaustein wurde erfolgreich gelöscht.</target>
       </trans-unit>
       <trans-unit id="RW9Q844" resname="msg.snippet.confirm_delete">
         <source>msg.snippet.confirm_delete</source>
@@ -696,6 +696,75 @@
       <trans-unit id="N5xncJJ" resname="button.password.set.new">
         <source>button.password.set.new</source>
         <target>Passwort speichern</target>
+      </trans-unit>
+      <trans-unit id="dzI94_q" resname="title.snippet.show">
+        <source>title.snippet.show</source>
+        <target>Textbaustein anzeigen</target>
+      </trans-unit>
+      <trans-unit id="7gVeOih" resname="msg.letter_warning">
+        <source>msg.letter_warning</source>
+        <target>Bei diesem Programm handelt es sich um eine Hilfeleistung für das Erstellen von Arztbriefen. Es soll hier noch einmal klar daran erinnert werden, dass es sich lediglich um Textbausteine handelt, die individuell Anpassungen benötigen und keinesfalls blind übernommen werden dürfen.
+          Für das abschließende Korrekturlesen sowie für den abschließenden Inhalt ist der unterschreibende Arzt selbst verantwortlich!</target>
+      </trans-unit>
+      <trans-unit id="sG6mgOb" resname="msg.sop.added">
+        <source>msg.sop.added</source>
+        <target>Die SOP wurde erfolgreich erstellt.</target>
+      </trans-unit>
+      <trans-unit id="vLFm2aW" resname="msg.sop.edited">
+        <source>msg.sop.edited</source>
+        <target>Die SOP wurde erfolgreich bearbeitet.</target>
+      </trans-unit>
+      <trans-unit id="pB9hVUt" resname="msg.sop.deleted">
+        <source>msg.sop.deleted</source>
+        <target>Die SOP wurde erfolgreich gelöscht.</target>
+      </trans-unit>
+      <trans-unit id="sEre53E" resname="msg.note.added">
+        <source>msg.note.added</source>
+        <target>Die Notiz wurde erfolgreich erstellt.</target>
+      </trans-unit>
+      <trans-unit id="R_BTf.t" resname="msg.note.edited">
+        <source>msg.note.edited</source>
+        <target>Die Notiz wurde erfolgreich bearbeitet.</target>
+      </trans-unit>
+      <trans-unit id="0pA65VQ" resname="msg.note.deleted">
+        <source>msg.note.deleted</source>
+        <target>Die Notiz wurde erfolgreich gelöscht.</target>
+      </trans-unit>
+      <trans-unit id="x60OcHq" resname="msg.onboarding.added">
+        <source>msg.onboarding.added</source>
+        <target>Der Beitrag wurde erfolgreich erstellt.</target>
+      </trans-unit>
+      <trans-unit id="mnrT.JL" resname="msg.onboarding.edited">
+        <source>msg.onboarding.edited</source>
+        <target>Der Beitrag wurde erfolgreich bearbeitet.</target>
+      </trans-unit>
+      <trans-unit id="QYNuZ1g" resname="msg.onboarding.deleted">
+        <source>msg.onboarding.deleted</source>
+        <target>Der Beitrag wurde erfolgreich gelöscht.</target>
+      </trans-unit>
+      <trans-unit id="3M_5hyk" resname="msg.info.added">
+        <source>msg.info.added</source>
+        <target>Die Mitteilung wurde erfolgreich erstellt.</target>
+      </trans-unit>
+      <trans-unit id="aquF0H9" resname="msg.info.edited">
+        <source>msg.info.edited</source>
+        <target>Die Mitteilung wurde erfolgreich bearbeitet.</target>
+      </trans-unit>
+      <trans-unit id="NG.c2HJ" resname="msg.info.deleted">
+        <source>msg.info.deleted</source>
+        <target>Die Mitteilung wurde erfolgreich gelöscht.</target>
+      </trans-unit>
+      <trans-unit id="GVvw6UD" resname="msg.contact.added">
+        <source>msg.contact.added</source>
+        <target>Der Kontakt wurde erfolgreich erstellt.</target>
+      </trans-unit>
+      <trans-unit id="86P1X54" resname="msg.contact.edited">
+        <source>msg.contact.edited</source>
+        <target>Der Kontakt wurde erfolgreich bearbeitet.</target>
+      </trans-unit>
+      <trans-unit id="tKyuJmW" resname="msg.contact.deleted">
+        <source>msg.contact.deleted</source>
+        <target>Der Kontakt wurde erfolgreich gelöscht.</target>
       </trans-unit>
     </body>
   </file>
