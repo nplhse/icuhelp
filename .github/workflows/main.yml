@@ -42,7 +42,7 @@ jobs:
       - name: Set Node version to 12
         uses: actions/setup-node@v1
         with:
-          version: 12
+          node-version: 12
 
       - name: Run yarn install
         run: yarn install
