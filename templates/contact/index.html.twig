@@ -18,14 +18,12 @@
         {% endfor %}
 
         {% for row in contacts|batch(3) %}
-            <div class="row mb-2">
+            <div class="card-columns card-columns-1 card-columns-md-2 card-columns-lg-3">
                 {% for contact in row %}
-                    <div class="col-4">
-                        <div class="card mx-auto" style="width: 22rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ contact.name }}</h5>
-                                <a class="btn btn-outline-primary" href="{{ path('contact_show', {'id': contact.id}) }}">{{ "button.contact.view"|trans }}</a>
-                            </div>
+                    <div class="card mx-auto w-100">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ contact.name }}</h5>
+                            <a class="btn btn-outline-primary" href="{{ path('contact_show', {'id': contact.id}) }}">{{ "button.contact.view"|trans }}</a>
                         </div>
                     </div>
                 {% endfor %}
