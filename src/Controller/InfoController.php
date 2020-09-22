@@ -15,7 +15,6 @@ class InfoController extends AbstractController
 {
     /**
      * @Route({"de": "/info", "en": "/info"}, name="info_index", methods={"GET"})
-     * @IsGranted("ROLE_USER")
      */
     public function index(InfoRepository $infoRepository): Response
     {
@@ -26,7 +25,7 @@ class InfoController extends AbstractController
 
     /**
      * @Route({"de": "/info/erstellen", "en": "/info/new"}, name="info_new", methods={"GET","POST"})
-     * @IsGranted("ROLE_USER")
+     * @IsGranted("ROLE_EDITOR")
      */
     public function new(Request $request, InfoRepository $infoRepository): Response
     {
@@ -38,6 +37,8 @@ class InfoController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($info);
             $entityManager->flush();
+
+            $this->addFlash('success', 'msg.info.added');
 
             return $this->redirectToRoute('info_index');
         }
@@ -51,7 +52,6 @@ class InfoController extends AbstractController
 
     /**
      * @Route({"de": "/info/{id}", "en": "/info/{id}"}, name="info_show", methods={"GET"})
-     * @IsGranted("ROLE_USER")
      */
     public function show(Info $info, InfoRepository $infoRepository): Response
     {
@@ -62,7 +62,7 @@ class InfoController extends AbstractController
 
     /**
      * @Route({"de": "/info/{id}/bearbeiten", "en": "/info/{id}/edit"}, name="info_edit", methods={"GET","POST"})
-     * @IsGranted("ROLE_USER")
+     * @IsGranted("ROLE_EDITOR")
      */
     public function edit(Request $request, Info $info, InfoRepository $infoRepository): Response
     {
@@ -71,6 +71,8 @@ class InfoController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+
+            $this->addFlash('success', 'msg.info.added');
 
             return $this->redirectToRoute('info_index');
         }
@@ -84,7 +86,7 @@ class InfoController extends AbstractController
 
     /**
      * @Route({"de": "/info/{id}", "en": "/info/{id}"}, name="info_delete", methods={"DELETE"})
-     * @IsGranted("ROLE_USER")
+     * @IsGranted("ROLE_EDITOR")
      */
     public function delete(Request $request, Info $info): Response
     {
@@ -93,6 +95,8 @@ class InfoController extends AbstractController
             $entityManager->remove($info);
             $entityManager->flush();
         }
+
+        $this->addFlash('warning', 'msg.info.deleted');
 
         return $this->redirectToRoute('info_index');
     }

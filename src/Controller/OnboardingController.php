@@ -15,7 +15,6 @@ class OnboardingController extends AbstractController
 {
     /**
      * @Route({"de": "/einarbeitung", "en": "/onboarding"}, name="onboarding_index", methods={"GET"})
-     * @IsGranted("ROLE_USER")
      */
     public function index(NoteRepository $noteRepository): Response
     {
@@ -26,7 +25,7 @@ class OnboardingController extends AbstractController
 
     /**
      * @Route({"de": "/einarbeitung/erstellen", "en": "/onboarding/new"}, name="onboarding_new", methods={"GET","POST"})
-     * @IsGranted("ROLE_USER")
+     * @IsGranted("ROLE_EDITOR")
      */
     public function new(Request $request, NoteRepository $noteRepository): Response
     {
@@ -41,7 +40,9 @@ class OnboardingController extends AbstractController
             $entityManager->persist($note);
             $entityManager->flush();
 
-            return $this->redirectToRoute('onboarding_index');
+            $this->addFlash('success', 'msg.onboarding.added');
+
+            return $this->redirectToRoute('onboarding_show', ['id' => $note->getId()]);
         }
 
         return $this->render('onboarding/new.html.twig', [
@@ -54,7 +55,7 @@ class OnboardingController extends AbstractController
 
     /**
      * @Route({"de": "/einarbeitung/{id}", "en": "/onboarding/{id}"}, name="onboarding_show", methods={"GET"})
-     * @IsGranted("ROLE_USER")
+     * @IsGranted("ROLE_EDITOR")
      */
     public function show(Note $note, NoteRepository $noteRepository): Response
     {
@@ -66,7 +67,7 @@ class OnboardingController extends AbstractController
 
     /**
      * @Route({"de": "/einarbeitung/{id}/bearbeiten", "en": "/onboarding/{id}/edit"}, name="onboarding_edit", methods={"GET","POST"})
-     * @IsGranted("ROLE_USER")
+     * @IsGranted("ROLE_EDITOR")
      */
     public function edit(Request $request, Note $note, NoteRepository $noteRepository): Response
     {
@@ -76,7 +77,9 @@ class OnboardingController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('onboarding_index');
+            $this->addFlash('success', 'msg.onboarding.edited');
+
+            return $this->redirectToRoute('onboarding_show', ['id' => $note->getId()]);
         }
 
         return $this->render('onboarding/edit.html.twig', [
@@ -89,7 +92,7 @@ class OnboardingController extends AbstractController
 
     /**
      * @Route({"de": "/einarbeitung/{id}", "en": "/onboarding/{id}"}, name="onboarding_delete", methods={"DELETE"})
-     * @IsGranted("ROLE_USER")
+     * @IsGranted("ROLE_EDITOR")
      */
     public function delete(Request $request, Note $note): Response
     {
@@ -98,6 +101,8 @@ class OnboardingController extends AbstractController
             $entityManager->remove($note);
             $entityManager->flush();
         }
+
+        $this->addFlash('danger', 'msg.onboarding.deleted');
 
         return $this->redirectToRoute('onboarding_index');
     }

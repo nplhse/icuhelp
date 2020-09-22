@@ -17,11 +17,12 @@
                     <a class="btn btn-secondary" href="{{ path('contact_show', {'id': contact.id}) }}" role="button">{{ "link.contact.back"|trans }}</a>
                     <button type="submit" class="btn btn-success">{{ "button.contact.save"|trans }}</button>
                 </div>
-
-                {{ include('contact/_delete_form.html.twig') }}
-            </div>
-
         {{ form_end(form) }}
+
+                {% if is_granted('ROLE_EDITOR') %}
+                    {{ include('contact/_delete_form.html.twig') }}
+                {% endif %}
+            </div>
     </div>
 </main>
 {% endblock %}

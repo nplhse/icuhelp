@@ -20,8 +20,11 @@
                     <button type="submit" class="btn btn-success">{{ "button.sop.save"|trans }}</button>
                 </div>
 
-                {{ include('sop/_delete_form.html.twig') }}
-            </div>
         {{ form_end(form) }}
+
+                {% if is_granted('ROLE_EDITOR') %}
+                    {{ include('sop/_delete_form.html.twig') }}
+                {% endif %}
+            </div>
     </main>
 {% endblock %}

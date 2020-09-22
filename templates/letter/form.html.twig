@@ -17,6 +17,10 @@
                 </div>
             </div>
 
+            <div class="alert alert-warning mt-2">
+                {{ "msg.letter_warning"|trans|nl2br }}
+            </div>
+
             {% for error in errors %}
                 <div class="alert alert-danger">
                     {{ error.messageKey|trans(error.messageData, 'security') }}

@@ -6,19 +6,16 @@
 <main role="main" class="content container">
     {{ include('_components/project_tabs.html.twig') }}
 
-    <div>
-        <h1 class="mt-2">{{ "title.note.new"|trans }}</h1>
+    <h1 class="mt-2">{{ "title.note.new"|trans }}</h1>
 
-        {% for error in errors %}
-            <div class="alert alert-danger">
-                {{ error.messageKey|trans(error.messageData, 'security') }}
-            </div>
-        {% endfor %}
+    {% for error in errors %}
+        <div class="alert alert-danger">
+            {{ error.messageKey|trans(error.messageData, 'security') }}
+        </div>
+    {% endfor %}
 
-        {{ include('note/_form.html.twig', {
-            button_text: 'button.note.create'
-        }) }}
-
-    </div>
+    {{ include('note/_form.html.twig', {
+        button_text: 'button.note.create'
+    }) }}
 </main>
 {% endblock %}

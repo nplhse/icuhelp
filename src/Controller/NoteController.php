@@ -15,7 +15,6 @@ class NoteController extends AbstractController
 {
     /**
      * @Route({"de": "/notizen", "en": "/notes"}, name="note_index", methods={"GET"})
-     * @IsGranted("ROLE_USER")
      */
     public function index(NoteRepository $noteRepository): Response
     {
@@ -26,7 +25,7 @@ class NoteController extends AbstractController
 
     /**
      * @Route({"de": "/notizen/erstellen", "en": "/notes/new"}, name="note_new", methods={"GET","POST"})
-     * @IsGranted("ROLE_USER")
+     * @IsGranted("ROLE_EDITOR")
      */
     public function new(Request $request, NoteRepository $noteRepository): Response
     {
@@ -41,7 +40,9 @@ class NoteController extends AbstractController
             $entityManager->persist($note);
             $entityManager->flush();
 
-            return $this->redirectToRoute('note_index');
+            $this->addFlash('success', 'msg.note.added');
+
+            return $this->redirectToRoute('note_show', ['id' => $note->getId()]);
         }
 
         return $this->render('note/new.html.twig', [
@@ -54,7 +55,6 @@ class NoteController extends AbstractController
 
     /**
      * @Route({"de": "/notizen/{id}", "en": "/notes/{id}"}, name="note_show", methods={"GET"})
-     * @IsGranted("ROLE_USER")
      */
     public function show(Note $note, NoteRepository $noteRepository): Response
     {
@@ -66,7 +66,7 @@ class NoteController extends AbstractController
 
     /**
      * @Route({"de": "/notizen/{id}/bearbeiten", "en": "/notes/{id}/edit"}, name="note_edit", methods={"GET","POST"})
-     * @IsGranted("ROLE_USER")
+     * @IsGranted("ROLE_EDITOR")
      */
     public function edit(Request $request, Note $note, NoteRepository $noteRepository): Response
     {
@@ -76,7 +76,9 @@ class NoteController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('note_index');
+            $this->addFlash('success', 'msg.note.edited');
+
+            return $this->redirectToRoute('note_show', ['id' => $note->getId()]);
         }
 
         return $this->render('note/edit.html.twig', [
@@ -89,7 +91,7 @@ class NoteController extends AbstractController
 
     /**
      * @Route({"de": "/notizen/{id}", "en": "/notes/{id}"}, name="note_delete", methods={"DELETE"})
-     * @IsGranted("ROLE_USER")
+     * @IsGranted("ROLE_EDITOR")
      */
     public function delete(Request $request, Note $note): Response
     {
@@ -98,6 +100,8 @@ class NoteController extends AbstractController
             $entityManager->remove($note);
             $entityManager->flush();
         }
+
+        $this->addFlash('danger', 'msg.note.deleted');
 
         return $this->redirectToRoute('note_index');
     }

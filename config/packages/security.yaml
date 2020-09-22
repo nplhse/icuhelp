@@ -32,7 +32,7 @@ security:
                 token_provider: 'Symfony\Bridge\Doctrine\Security\RememberMe\DoctrineTokenProvider'
 
     role_hierarchy:
-        ROLE_ADMIN: ROLE_USER
+        ROLE_ADMIN: [ROLE_USER, ROLE_EDITOR]
 
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
