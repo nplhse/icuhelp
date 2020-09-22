@@ -1,0 +1,20 @@
+$card-column-counts: 1, 2, 3, 4, 5;
+
+.card-columns {
+  @each $column-count in $card-column-counts {
+    &.card-columns-#{$column-count} {
+      column-count: $column-count;
+    }
+  }
+
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+      @each $column-count in $card-column-counts {
+        &.card-columns#{$infix}-#{$column-count} {
+          column-count: $column-count;
+        }
+      }
+    }
+  }
+}

@@ -41,13 +41,12 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linktoRoute('link.frontend', 'fas fa-power-off', 'homepage');
         yield MenuItem::section('Benutzer');
         yield MenuItem::linkToCrud('link.users', 'fas fa-users', User::class);
-        yield MenuItem::section('Textbausteine');
-        yield MenuItem::linkToCrud('link.snippets', 'far fa-clipboard', Snippet::class);
-        yield MenuItem::linkToCrud('link.snippet.category', 'fas fa-folder-open', SnippetCategory::class);
         yield MenuItem::section('Inhalte');
         yield MenuItem::linkToCrud('link.contacts', 'fa fa-address-book', Contact::class);
         yield MenuItem::linkToCrud('link.info', 'fa fa-info-circle', Info::class);
         yield MenuItem::linkToCrud('link.notes', 'fa fa-sticky-note', Note::class);
         yield MenuItem::linkToCrud('link.sop', 'fa fa-clinic-medical', SOP::class);
+        yield MenuItem::linkToCrud('link.snippets', 'far fa-clipboard', Snippet::class);
+        yield MenuItem::linkToCrud('link.snippet.category', 'fas fa-folder-open', SnippetCategory::class);
     }
 }
