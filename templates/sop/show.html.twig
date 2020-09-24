@@ -3,53 +3,51 @@
 {% block title %}{{ parent() }} - {{ "title.sop.show"|trans }}: {{ sop.name }}{% endblock %}
 
 {% block body %}
-    <main role="main" class="content container">
-        {{ include('_components/project_tabs.html.twig') }}
+    {{ include('_components/project_tabs.html.twig') }}
 
-        <h1 class="mt-2">{{ "title.sop.show"|trans }}</h1>
+    <h1 class="mt-2">{{ "title.sop.show"|trans }}</h1>
 
-        {% for label, messages in app.flashes %}
-            {% for message in messages %}
-                <div class="alert alert-{{ label }}" role="alert">
-                    {{ message|trans }}
-                </div>
-            {% endfor %}
-        {% endfor %}
-
-        <table class="table table-hover">
-            <tbody>
-                <tr>
-                    <th>Id</th>
-                    <td>{{ sop.id }}</td>
-                </tr>
-                <tr>
-                    <th>{{ "label.sop.name"|trans }}</th>
-                    <td>{{ sop.name }}</td>
-                </tr>
-                <tr>
-                    <th>{{ "label.sop.description"|trans }}</th>
-                    <td>{{ sop.description }}</td>
-                </tr>
-                <tr>
-                    <th>{{ "label.sop.attachment"|trans }}</th>
-                    <td>
-                        <a href="{{ asset('uploads/' ~ sop.SOPFilename) }}" target="_blank">View Attachment (Opens in new window or tab)</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div class="clearfix">
-            <div class="btn-group float-right" role="group" aria-label="">
-                <a class="btn btn-secondary" href="{{ path('sop_index') }}" role="button">{{ "link.sop.back_list"|trans }}</a>
-                {% if is_granted('ROLE_EDITOR') %}
-                    <a class="btn btn-primary" href="{{ path('sop_edit', {'id': sop.id}) }}">{{ "button.sop.edit"|trans }}</a>
-                {% endif %}
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }}" role="alert">
+                {{ message|trans }}
             </div>
+        {% endfor %}
+    {% endfor %}
 
+    <table class="table table-hover">
+        <tbody>
+        <tr>
+            <th class="w-25">Id</th>
+            <td class="w-75">{{ sop.id }}</td>
+        </tr>
+        <tr>
+            <th>{{ "label.sop.name"|trans }}</th>
+            <td>{{ sop.name }}</td>
+        </tr>
+        <tr>
+            <th>{{ "label.sop.description"|trans }}</th>
+            <td>{{ sop.description }}</td>
+        </tr>
+        <tr>
+            <th>{{ "label.sop.attachment"|trans }}</th>
+            <td>
+                <a href="{{ asset('uploads/' ~ sop.SOPFilename) }}" target="_blank">View Attachment (Opens in new window or tab)</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="clearfix">
+        <div class="btn-group float-right" role="group" aria-label="">
+            <a class="btn btn-secondary" href="{{ path('sop_index') }}" role="button">{{ "link.sop.back_list"|trans }}</a>
             {% if is_granted('ROLE_EDITOR') %}
-                {{ include('sop/_delete_form.html.twig') }}
+                <a class="btn btn-primary" href="{{ path('sop_edit', {'id': sop.id}) }}">{{ "button.sop.edit"|trans }}</a>
             {% endif %}
         </div>
-    </main>
+
+        {% if is_granted('ROLE_EDITOR') %}
+            {{ include('sop/_delete_form.html.twig') }}
+        {% endif %}
+    </div>
 {% endblock %}

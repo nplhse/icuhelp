@@ -3,7 +3,6 @@
 {% block title %}{{ parent() }} - {{ "title.note"|trans }}{% endblock %}
 
 {% block body %}
-<main role="main" class="content container">
     {{ include('_components/project_tabs.html.twig') }}
 
     <h1 class="mt-2">{{ "title.note"|trans }}</h1>
@@ -36,5 +35,4 @@
             </p>
         </div>
     </div>
-</main>
 {% endblock %}

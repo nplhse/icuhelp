@@ -3,26 +3,22 @@
 {% block title %}{{ parent() }} - {{ "title.contact.edit"|trans }}: {{ contact.name }}{% endblock %}
 
 {% block body %}
-<main role="main" class="content container">
     {{ include('_components/project_tabs.html.twig') }}
 
-    <div>
-        <h1 class="mt-2">{{ "title.contact.edit"|trans }}</h1>
+    <h1 class="mt-2">{{ "title.contact.edit"|trans }}</h1>
 
-        {{ form_start(form) }}
-            {{ form_widget(form) }}
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
 
-            <div class="clearfix">
-                <div class="btn-group float-right" role="group" aria-label="">
-                    <a class="btn btn-secondary" href="{{ path('contact_show', {'id': contact.id}) }}" role="button">{{ "link.contact.back"|trans }}</a>
-                    <button type="submit" class="btn btn-success">{{ "button.contact.save"|trans }}</button>
-                </div>
-        {{ form_end(form) }}
+    <div class="clearfix">
+        <div class="btn-group float-right" role="group" aria-label="">
+            <a class="btn btn-secondary" href="{{ path('contact_show', {'id': contact.id}) }}" role="button">{{ "link.contact.back"|trans }}</a>
+            <button type="submit" class="btn btn-success">{{ "button.contact.save"|trans }}</button>
+        </div>
+    {{ form_end(form) }}
 
-                {% if is_granted('ROLE_EDITOR') %}
-                    {{ include('contact/_delete_form.html.twig') }}
-                {% endif %}
-            </div>
+        {% if is_granted('ROLE_EDITOR') %}
+            {{ include('contact/_delete_form.html.twig') }}
+        {% endif %}
     </div>
-</main>
 {% endblock %}

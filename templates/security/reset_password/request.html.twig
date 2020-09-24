@@ -3,20 +3,18 @@
 {% block title %}{{ parent() }} - {{ "title.password.reset"|trans }}{% endblock %}
 
 {% block body %}
-    <main role="main" class="content container">
-        <h1>{{ "title.password.reset"|trans }}</h1>
+    <h1>{{ "title.password.reset"|trans }}</h1>
 
-        {% for flashError in app.flashes('reset_password_error') %}
-            <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-        {% endfor %}
+    {% for flashError in app.flashes('reset_password_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
 
-        {{ form_start(requestForm) }}
-            {{ form_row(requestForm.email) }}
-            <div>
-                <small>{{ "msg.password.reset"|trans }}</small>
-            </div>
+    {{ form_start(requestForm) }}
+    {{ form_row(requestForm.email) }}
+    <div>
+        <small>{{ "msg.password.reset"|trans }}</small>
+    </div>
 
-            <button class="btn btn-primary">{{ "button.password.reset"|trans }}</button>
-        {{ form_end(requestForm) }}
-    </main>
+    <button class="btn btn-primary">{{ "button.password.reset"|trans }}</button>
+    {{ form_end(requestForm) }}
 {% endblock %}

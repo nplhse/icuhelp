@@ -3,7 +3,6 @@
 {% block title %}{{ parent() }} - {{ "title.onboarding.new"|trans }}{% endblock %}
 
 {% block body %}
-<main role="main" class="content container">
     {{ include('_components/project_tabs.html.twig') }}
 
     <h1 class="mt-2">{{ "title.onboarding.new"|trans }}</h1>
@@ -25,7 +24,6 @@
             <a class="btn btn-secondary" href="{{ path('onboarding_index') }}" role="button">{{ "link.onboarding.back_list"|trans }}</a>
             <button type="submit" class="btn btn-success">{{ "button.onboarding.create"|trans }}</button>
         </div>
-        {{ form_end(form) }}
+    {{ form_end(form) }}
     </div>
-</main>
 {% endblock %}

@@ -3,12 +3,10 @@
 {% block title %}{{ parent() }} - {{ "title.password.set.new"|trans }}{% endblock %}
 
 {% block body %}
-    <main role="main" class="content container">
-        <h1>{{ "title.password.set.new"|trans }}</h1>
+    <h1>{{ "title.password.set.new"|trans }}</h1>
 
-        {{ form_start(resetForm) }}
-            {{ form_row(resetForm.plainPassword) }}
-            <button class="btn btn-primary">{{ "button.password.set.new"|trans }}</button>
-        {{ form_end(resetForm) }}
-    </main>
+    {{ form_start(resetForm) }}
+    {{ form_row(resetForm.plainPassword) }}
+    <button class="btn btn-primary">{{ "button.password.set.new"|trans }}</button>
+    {{ form_end(resetForm) }}
 {% endblock %}

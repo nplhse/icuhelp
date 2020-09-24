@@ -5,40 +5,38 @@
 {% form_theme form.snippets '_forms/choicetype_widget.html.twig' %}
 
 {% block body %}
-    <main role="main" class="content container">
-        {{ include('_components/project_tabs.html.twig') }}
+    {{ include('_components/project_tabs.html.twig') }}
+
+    <div class="clearfix">
+        <h1 class="mt-2">{{ "title.letter_create"|trans }}</h1>
 
         <div class="clearfix">
-            <h1 class="mt-2">{{ "title.letter_create"|trans }}</h1>
-
-            <div class="clearfix">
-                <div class="btn-group float-right" role="group" aria-label="">
-                    <a class="btn btn-secondary float-right" href="{{ path('snippet_index') }}" role="button"><i class="fa fa-list"></i> {{ "link.snippet.list"|trans }}</a>
-                </div>
-            </div>
-
-            <div class="alert alert-warning mt-2">
-                {{ "msg.letter_warning"|trans|nl2br }}
-            </div>
-
-            {% for error in errors %}
-                <div class="alert alert-danger">
-                    {{ error.messageKey|trans(error.messageData, 'security') }}
-                </div>
-            {% endfor %}
-
-            {{ form_start(form) }}
-
-            {{ form_row(form.name) }}
-            {{ form_row(form.gender) }}
-
-            {{ form_row(form.snippets) }}
-
             <div class="btn-group float-right" role="group" aria-label="">
-                {{ form_widget(form.reset) }}
-                {{ form_widget(form.submit) }}
+                <a class="btn btn-secondary float-right" href="{{ path('snippet_index') }}" role="button"><i class="fa fa-list"></i> {{ "link.snippet.list"|trans }}</a>
             </div>
-            {{ form_end(form) }}
         </div>
-    </main>
+
+        <div class="alert alert-warning mt-2">
+            {{ "msg.letter_warning"|trans|nl2br }}
+        </div>
+
+        {% for error in errors %}
+            <div class="alert alert-danger">
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+            </div>
+        {% endfor %}
+
+        {{ form_start(form) }}
+
+        {{ form_row(form.name) }}
+        {{ form_row(form.gender) }}
+
+        {{ form_row(form.snippets) }}
+
+        <div class="btn-group float-right" role="group" aria-label="">
+            {{ form_widget(form.reset) }}
+            {{ form_widget(form.submit) }}
+        </div>
+        {{ form_end(form) }}
+    </div>
 {% endblock %}

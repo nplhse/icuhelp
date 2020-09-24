@@ -3,29 +3,26 @@
 {% block title %}{{ parent() }} - {{ "title.info.new"|trans }}{% endblock %}
 
 {% block body %}
-<main role="main" class="content container">
     {{ include('_components/project_tabs.html.twig') }}
 
-    <div>
-        <h1 class="mt-2">{{ "title.info.new"|trans }}</h1>
+    <h1 class="mt-2">{{ "title.info.new"|trans }}</h1>
 
-        {% for error in errors %}
-            <div class="alert alert-danger">
-                {{ error.messageKey|trans(error.messageData) }}
-            </div>
-        {% endfor %}
+    {% for error in errors %}
+        <div class="alert alert-danger">
+            {{ error.messageKey|trans(error.messageData) }}
+        </div>
+    {% endfor %}
 
-        {{ form_start(form) }}
+    {{ form_start(form) }}
 
-            {{ form_row(form.name) }}
-            {{ form_row(form.text) }}
+    {{ form_row(form.name) }}
+    {{ form_row(form.text) }}
 
-            <div class="clearfix">
-                <div class="btn-group float-right" role="group" aria-label="">
-                    <a class="btn btn-secondary" href="{{ path('info_index') }}" role="button">{{ "link.info.back_list"|trans }}</a>
-                    <button type="submit" class="btn btn-success">{{ "button.info.create"|trans }}</button>
-                </div>
-        {{ form_end(form) }}
+    <div class="clearfix">
+        <div class="btn-group float-right" role="group" aria-label="">
+            <a class="btn btn-secondary" href="{{ path('info_index') }}" role="button">{{ "link.info.back_list"|trans }}</a>
+            <button type="submit" class="btn btn-success">{{ "button.info.create"|trans }}</button>
+        </div>
+    {{ form_end(form) }}
     </div>
-</main>
 {% endblock %}

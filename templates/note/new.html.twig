@@ -3,7 +3,6 @@
 {% block title %}{{ parent() }} - {{ "title.note.new"|trans }}{% endblock %}
 
 {% block body %}
-<main role="main" class="content container">
     {{ include('_components/project_tabs.html.twig') }}
 
     <h1 class="mt-2">{{ "title.note.new"|trans }}</h1>
@@ -17,5 +16,4 @@
     {{ include('note/_form.html.twig', {
         button_text: 'button.note.create'
     }) }}
-</main>
 {% endblock %}

@@ -3,7 +3,6 @@
 {% block title %}{{ parent() }} - {{ "title.onboarding.show"|trans }}: {{ note.name }}{% endblock %}
 
 {% block body %}
-<main role="main" class="content container">
     {{ include('_components/project_tabs.html.twig') }}
 
     <h1 class="mt-2">{{ "title.onboarding.show"|trans }}</h1>
@@ -49,5 +48,4 @@
             {% endif %}
         </div>
     </div>
-</main>
 {% endblock %}

@@ -295,7 +295,7 @@
       </trans-unit>
       <trans-unit id="ZtAqL7p" resname="title.note.edit">
         <source>title.note.edit</source>
-        <target>Notzi bearbeiten</target>
+        <target>Notiz bearbeiten</target>
       </trans-unit>
       <trans-unit id="0bSMHYY" resname="title.note.new">
         <source>title.note.new</source>

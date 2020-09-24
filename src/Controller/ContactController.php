@@ -13,6 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * @Route("/contact")
+ * @IsGranted("ROLE_USER")
  */
 class ContactController extends AbstractController
 {

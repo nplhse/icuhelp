@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Entity\Traits\TimestampableTrait;
 use App\Repository\NoteRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=NoteRepository::class)
@@ -23,6 +24,7 @@ class Note
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
      */
     private $name;
 
@@ -34,7 +36,7 @@ class Note
     /**
      * @ORM\Column(type="text")
      */
-    private $text;
+    private $text = '';
 
     public function getId(): ?int
     {

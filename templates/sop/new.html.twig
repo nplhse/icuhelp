@@ -3,23 +3,21 @@
 {% block title %}{{ parent() }} - {{ "title.sop.new"|trans }}{% endblock %}
 
 {% block body %}
-    <main role="main" class="content container">
-        {{ include('_components/project_tabs.html.twig') }}
+    {{ include('_components/project_tabs.html.twig') }}
 
-        <h1 class="mt-2">{{ "title.sop.new"|trans }}</h1>
+    <h1 class="mt-2">{{ "title.sop.new"|trans }}</h1>
 
-        {{ form_start(form) }}
+    {{ form_start(form) }}
 
-            {{ form_row(form.name) }}
-            {{ form_row(form.description) }}
-            {{ form_row(form.sopFile) }}
+    {{ form_row(form.name) }}
+    {{ form_row(form.description) }}
+    {{ form_row(form.sopFile) }}
 
-            <div class="clearfix">
-                <div class="btn-group float-right" role="group" aria-label="">
-                    <a class="btn btn-secondary" href="{{ path('sop_index') }}" role="button">{{ "link.sop.back_list"|trans }}</a>
-                    <button type="submit" class="btn btn-success">{{ "button.sop.create"|trans }}</button>
-                </div>
-            </div>
-        {{ form_end(form) }}
-    </main>
+    <div class="clearfix">
+        <div class="btn-group float-right" role="group" aria-label="">
+            <a class="btn btn-secondary" href="{{ path('sop_index') }}" role="button">{{ "link.sop.back_list"|trans }}</a>
+            <button type="submit" class="btn btn-success">{{ "button.sop.create"|trans }}</button>
+        </div>
+    </div>
+    {{ form_end(form) }}
 {% endblock %}

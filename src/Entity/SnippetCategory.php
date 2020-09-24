@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\SnippetCategoryRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=SnippetCategoryRepository::class)
@@ -19,11 +20,13 @@ class SnippetCategory
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Assert\NotBlank
      */
     private $name;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank
      */
     private $priority;
 

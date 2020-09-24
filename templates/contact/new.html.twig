@@ -3,23 +3,18 @@
 {% block title %}{{ parent() }} - {{ "title.contact.new"|trans }}{% endblock %}
 
 {% block body %}
-<main role="main" class="content container">
     {{ include('_components/project_tabs.html.twig') }}
 
-    <div>
-        <h1 class="mt-2">{{ "title.contact.new"|trans }}</h1>
+    <h1 class="mt-2">{{ "title.contact.new"|trans }}</h1>
 
-        {{ form_start(form) }}
-            {{ form_widget(form) }}
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
 
-            <div class="clearfix">
-                <div class="btn-group float-right" role="group" aria-label="">
-                    <a class="btn btn-secondary" href="{{ path('contact_index') }}" role="button">{{ "link.contact.back_list"|trans }}</a>
-                    <button type="submit" class="btn btn-success">{{ "button.contact.create"|trans }}</button>
-                </div>
+        <div class="clearfix">
+            <div class="btn-group float-right" role="group" aria-label="">
+                <a class="btn btn-secondary" href="{{ path('contact_index') }}" role="button">{{ "link.contact.back_list"|trans }}</a>
+                <button type="submit" class="btn btn-success">{{ "button.contact.create"|trans }}</button>
             </div>
-
-        {{ form_end(form) }}
-    </div>
-</main>
+        </div>
+    {{ form_end(form) }}
 {% endblock %}

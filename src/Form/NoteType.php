@@ -18,6 +18,7 @@ class NoteType extends AbstractType
             ->add('category', HiddenType::class)
             ->add('text', CKEditorType::class, [
                 'config_name' => 'snippets',
+                'empty_data' => '',
             ]);
     }
 
