@@ -20,7 +20,7 @@ final class Version20200924101347 extends AbstractMigration
     public function up(Schema $schema) : void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('DROP TABLE migration_versions IF EXISTS');
+        $this->addSql('DROP TABLE IF EXISTS migration_versions');
     }
 
     public function down(Schema $schema) : void
