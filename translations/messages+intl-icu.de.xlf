@@ -770,12 +770,16 @@
         <source>label.contact.category</source>
         <target>Kategorie</target>
       </trans-unit>
-      <trans-unit id="0FeA850" resname="button.contact.showall">
+      <trans-unit id="gtnRD0O" resname="button.contact.showall">
         <source>button.contact.showall</source>
         <target>Alle Kategorien anzeigen</target>
       </trans-unit>
-      <trans-unit id="3223d50" resname="title.contact.categories">
+      <trans-unit id="VMbuyP7" resname="title.contact.categories">
         <source>title.contact.categories</source>
+        <target>Kontakt Kategorien</target>
+      </trans-unit>
+      <trans-unit id="whynlF_" resname="link.contact.categories">
+        <source>link.contact.categories</source>
         <target>Kontakt Kategorien</target>
       </trans-unit>
     </body>

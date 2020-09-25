@@ -745,16 +745,20 @@
         <source>msg.contact.deleted</source>
         <target>Successfully deleted the contact.</target>
       </trans-unit>
-      <trans-unit id="0Fe33A0" resname="label.contact.category">
+      <trans-unit id="0FeA8A0" resname="label.contact.category">
         <source>label.contact.category</source>
         <target>Category</target>
       </trans-unit>
-      <trans-unit id="0F23850" resname="button.contact.showall">
+      <trans-unit id="gtnRD0O" resname="button.contact.showall">
         <source>button.contact.showall</source>
         <target>Show all categories</target>
       </trans-unit>
-      <trans-unit id="3223850" resname="title.contact.categories">
+      <trans-unit id="VMbuyP7" resname="title.contact.categories">
         <source>title.contact.categories</source>
+        <target>Contact categories</target>
+      </trans-unit>
+      <trans-unit id="whynlF_" resname="link.contact.categories">
+        <source>link.contact.categories</source>
         <target>Contact categories</target>
       </trans-unit>
     </body>

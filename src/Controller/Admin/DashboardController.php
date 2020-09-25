@@ -3,12 +3,14 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Contact;
+use App\Entity\ContactCategory;
 use App\Entity\Info;
 use App\Entity\Note;
 use App\Entity\Snippet;
 use App\Entity\SnippetCategory;
 use App\Entity\SOP;
 use App\Entity\User;
+use App\Factory\ContactCategoryFactory;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -43,6 +45,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('link.users', 'fas fa-users', User::class);
         yield MenuItem::section('Inhalte');
         yield MenuItem::linkToCrud('link.contacts', 'fa fa-address-book', Contact::class);
+        yield MenuItem::linkToCrud('link.contact.categories', 'fa fa-tags', ContactCategory::class);
         yield MenuItem::linkToCrud('link.info', 'fa fa-info-circle', Info::class);
         yield MenuItem::linkToCrud('link.notes', 'fa fa-sticky-note', Note::class);
         yield MenuItem::linkToCrud('link.sop', 'fa fa-clinic-medical', SOP::class);
