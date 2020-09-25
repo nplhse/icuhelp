@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Contact;
+use App\Form\ContactSearchType;
 use App\Form\ContactType;
 use App\Repository\ContactCategoryRepository;
 use App\Repository\ContactRepository;
@@ -21,24 +22,30 @@ class ContactController extends AbstractController
     /**
      * @Route("/", name="contact_index", methods={"GET"})
      */
-    public function index(ContactRepository $contactRepository, ContactCategoryRepository $contactCategoryRepository): Response
+    public function index(ContactRepository $contactRepository, ContactCategoryRepository $contactCategoryRepository, Request $request): Response
     {
+        $q = $request->query->get('q');
+
         return $this->render('contact/index.html.twig', [
-            'contacts' => $contactRepository->findAllByName(),
+            'contacts' => $contactRepository->findAllByName($q),
             'category' => null,
             'categories' => $contactCategoryRepository->findByNameAlphabetically(),
+            'q' => $q,
         ]);
     }
 
     /**
      * @Route("/category:{category}", name="contact_filteredbycat", methods={"GET"})
      */
-    public function filteredIndex(ContactRepository $contactRepository, ContactCategoryRepository $contactCategoryRepository, $category): Response
+    public function filteredIndex(ContactRepository $contactRepository, ContactCategoryRepository $contactCategoryRepository, Request $request, $category): Response
     {
+        $q = $request->query->get('q');
+
         return $this->render('contact/index.html.twig', [
-            'contacts' => $contactRepository->findAllByCategory($category),
+            'contacts' => $contactRepository->findAllByCategory($category, $q),
             'category' => $category,
             'categories' => $contactCategoryRepository->findByNameAlphabetically(),
+            'q' => $q,
         ]);
     }
 

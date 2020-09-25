@@ -776,11 +776,19 @@
       </trans-unit>
       <trans-unit id="VMbuyP7" resname="title.contact.categories">
         <source>title.contact.categories</source>
-        <target>Kontakt Kategorien</target>
+        <target>Kategoriefilter</target>
       </trans-unit>
       <trans-unit id="whynlF_" resname="link.contact.categories">
         <source>link.contact.categories</source>
         <target>Kontakt Kategorien</target>
+      </trans-unit>
+      <trans-unit id="wh32lF_" resname="title.contact.search">
+        <source>title.contact.search</source>
+        <target>Suche</target>
+      </trans-unit>
+      <trans-unit id="w232lF_" resname="msg.contact.searchingfor">
+        <source>msg.contact.searchingfor</source>
+        <target>Suche nach:</target>
       </trans-unit>
     </body>
   </file>

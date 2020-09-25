@@ -761,6 +761,18 @@
         <source>link.contact.categories</source>
         <target>Contact categories</target>
       </trans-unit>
+      <trans-unit id="w43ynlF_" resname="link.contact.categories">
+        <source>link.contact.categories</source>
+        <target>Filter by category</target>
+      </trans-unit>
+      <trans-unit id="wh12lF_" resname="title.contact.search">
+        <source>title.contact.search</source>
+        <target>Search</target>
+      </trans-unit>
+      <trans-unit id="w236lF_" resname="msg.contact.searchingfor">
+        <source>msg.contact.searchingfor</source>
+        <target>Searching for:</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

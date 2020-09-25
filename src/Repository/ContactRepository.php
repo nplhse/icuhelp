@@ -22,9 +22,17 @@ class ContactRepository extends ServiceEntityRepository
     /**
      * @return Contact[] Returns an array of Note objects
      */
-    public function findAllByName()
+    public function findAllByName(?string $q)
     {
-        return $this->createQueryBuilder('c')
+        $qb = $this->createQueryBuilder('c');
+
+        if ($q) {
+            $qb->andWhere('c.name LIKE :q')
+                ->setParameter('q', '%'.$q.'%')
+            ;
+        }
+
+        return $qb
             ->orderBy('c.name', 'ASC')
             ->getQuery()
             ->getResult()
@@ -34,9 +42,17 @@ class ContactRepository extends ServiceEntityRepository
     /**
      * @return Contact[] Returns an array of Note objects
      */
-    public function findAllByCategory($category)
+    public function findAllByCategory($category, ?string $q)
     {
-        return $this->createQueryBuilder('c')
+        $qb = $this->createQueryBuilder('c');
+
+        if ($q) {
+            $qb->andWhere('c.name LIKE :q')
+                ->setParameter('q', '%'.$q.'%')
+            ;
+        }
+
+        return $qb
             ->andWhere('c.category = :category')
             ->setParameter('category', $category)
             ->orderBy('c.name', 'ASC')
