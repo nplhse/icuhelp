@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Factory\ContactCategoryFactory;
 use App\Factory\ContactFactory;
 use App\Factory\InfoFactory;
 use App\Factory\NoteFactory;
@@ -32,7 +33,12 @@ class AppFixtures extends Fixture
         }
 
         // Adding new contents for the whole app
-        ContactFactory::new()->createMany(rand(10, 20));
+        ContactCategoryFactory::new()->createMany(rand(1, 3));
+        ContactFactory::new()->createMany(rand(10, 20), function () {
+            return [
+                'category' => ContactCategoryFactory::random(),
+            ];
+        });
         InfoFactory::new()->createMany(rand(1, 5));
         SOPFactory::new()->createMany(rand(1, 10));
         NoteFactory::new()->createMany(rand(1, 5));

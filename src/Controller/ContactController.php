@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Contact;
 use App\Form\ContactType;
+use App\Repository\ContactCategoryRepository;
 use App\Repository\ContactRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -20,10 +21,24 @@ class ContactController extends AbstractController
     /**
      * @Route("/", name="contact_index", methods={"GET"})
      */
-    public function index(ContactRepository $contactRepository): Response
+    public function index(ContactRepository $contactRepository, ContactCategoryRepository $contactCategoryRepository): Response
     {
         return $this->render('contact/index.html.twig', [
             'contacts' => $contactRepository->findAllByName(),
+            'category' => null,
+            'categories' => $contactCategoryRepository->findByNameAlphabetically(),
+        ]);
+    }
+
+    /**
+     * @Route("/category:{category}", name="contact_filteredbycat", methods={"GET"})
+     */
+    public function filteredIndex(ContactRepository $contactRepository, ContactCategoryRepository $contactCategoryRepository, $category): Response
+    {
+        return $this->render('contact/index.html.twig', [
+            'contacts' => $contactRepository->findAllByCategory($category),
+            'category' => $category,
+            'categories' => $contactCategoryRepository->findByNameAlphabetically(),
         ]);
     }
 
