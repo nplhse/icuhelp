@@ -9,6 +9,7 @@ use App\Entity\Note;
 use App\Entity\Snippet;
 use App\Entity\SnippetCategory;
 use App\Entity\SOP;
+use App\Entity\SOPTag;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -48,7 +49,8 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('link.info', 'fa fa-info-circle', Info::class);
         yield MenuItem::linkToCrud('link.notes', 'fa fa-sticky-note', Note::class);
         yield MenuItem::linkToCrud('link.sop', 'fa fa-clinic-medical', SOP::class);
+        yield MenuItem::linkToCrud('link.sop.tags', 'fa fa-tags', SOPTag::class);
         yield MenuItem::linkToCrud('link.snippets', 'far fa-clipboard', Snippet::class);
-        yield MenuItem::linkToCrud('link.snippet.category', 'fas fa-folder-open', SnippetCategory::class);
+        yield MenuItem::linkToCrud('link.snippet.category', 'fas fa-tags', SnippetCategory::class);
     }
 }

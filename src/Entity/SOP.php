@@ -37,7 +37,7 @@ class SOP
     private $SOPFilename;
 
     /**
-     * @ORM\ManyToMany(targetEntity=SOPTag::class, inversedBy="SOPs")
+     * @ORM\ManyToMany(targetEntity=SOPTag::class, inversedBy="SOPs", cascade={"persist"})
      */
     private $tag;
 

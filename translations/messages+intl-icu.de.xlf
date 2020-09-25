@@ -794,6 +794,10 @@
         <source>msg.contact.endsearch</source>
         <target>Hier klicken, um die Suche zu beenden.</target>
       </trans-unit>
+      <trans-unit id="wh4nlF_" resname="link.sop.tags">
+        <source>link.sop.tags</source>
+        <target>SOP Tags</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

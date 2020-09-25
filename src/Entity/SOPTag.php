@@ -25,7 +25,7 @@ class SOPTag
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity=SOP::class, mappedBy="tag")
+     * @ORM\ManyToMany(targetEntity=SOP::class, mappedBy="tag", cascade={"persist"})
      */
     private $SOPs;
 
