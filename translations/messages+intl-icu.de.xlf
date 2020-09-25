@@ -766,6 +766,18 @@
         <source>msg.contact.deleted</source>
         <target>Der Kontakt wurde erfolgreich gelöscht.</target>
       </trans-unit>
+      <trans-unit id="0FeA8A0" resname="label.contact.category">
+        <source>label.contact.category</source>
+        <target>Kategorie</target>
+      </trans-unit>
+      <trans-unit id="0FeA850" resname="button.contact.showall">
+        <source>button.contact.showall</source>
+        <target>Alle Kategorien anzeigen</target>
+      </trans-unit>
+      <trans-unit id="3223d50" resname="title.contact.categories">
+        <source>title.contact.categories</source>
+        <target>Kontakt Kategorien</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

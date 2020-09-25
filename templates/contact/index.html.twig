@@ -15,30 +15,43 @@
         {% endfor %}
     {% endfor %}
 
-    {% if contacts %}
-        <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-3">
-            {% for contact in contacts %}
-                <div class="col mb-4">
-                    <div class="card mx-auto w-100">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ contact.name }}</h5>
-                            <a class="btn btn-outline-primary" href="{{ path('contact_show', {'id': contact.id}) }}">{{ "button.contact.view"|trans }}</a>
+    <div class="row">
+        <div class="col-9">
+            {% if contacts %}
+                <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-3">
+                    {% for contact in contacts %}
+                        <div class="col mb-4">
+                            <div class="card mx-auto w-100">
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="{{ path('contact_show', {'id': contact.id}) }}">{{ contact.name }}</a></h5>
+                                    <a class="badge badge-primary" href="{{ path('contact_filteredbycat', {'category': contact.category.id}) }}"><i class="fa fa-tags"></i> {{ contact.category }}</a>
+                                </div>
+                            </div>
                         </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="row">
+                    {{ "msg.no.contacts.found"|trans }}
+                </div>
+            {% endif %}
+        </div>
+        <div class="col-3">
+            {% if is_granted('ROLE_EDITOR') %}
+                <div class="clearfix mb-3">
+                    <div class="btn-group" role="group" aria-label="">
+                        <a class="btn btn-primary" href="{{ path('contact_new') }}" role="button">{{ "button.contact.new"|trans }}</a>
                     </div>
                 </div>
-            {% endfor %}
-        </div>
-    {% else %}
-        <div class="row">
-            {{ "msg.no.contacts.found"|trans }}
-        </div>
-    {% endif %}
+            {% endif %}
 
-    {% if is_granted('ROLE_EDITOR') %}
-        <div class="clearfix mt-3">
-            <div class="btn-group float-right" role="group" aria-label="">
-                <a class="btn btn-primary" href="{{ path('contact_new') }}" role="button">{{ "button.contact.new"|trans }}</a>
-            </div>
+            <h4>{{ "title.contact.categories"|trans }}</h4>
+            <ul class="list-group list-group">
+                {% for cat in categories %}
+                    <li class="list-group-item{% if cat.id == category %} active{% endif %}"><a href="{{ path('contact_filteredbycat', {'category': cat.id}) }}">{{ cat.name }}</a></li>
+                {% endfor %}
+                <li class="list-group-item"><a href="{{ path('contact_index') }}">{{ "button.contact.showall"|trans }}</a></li>
+            </ul>
         </div>
-    {% endif %}
+    </div>
 {% endblock %}

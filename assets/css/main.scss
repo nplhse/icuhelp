@@ -1,2 +1,6 @@
 // Import bootstrap
 @import "~bootstrap";
+
+.list-group-item.active > a {
+  color: white ;
+}

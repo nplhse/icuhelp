@@ -30,4 +30,18 @@ class ContactRepository extends ServiceEntityRepository
             ->getResult()
             ;
     }
+
+    /**
+     * @return Contact[] Returns an array of Note objects
+     */
+    public function findAllByCategory($category)
+    {
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.category = :category')
+            ->setParameter('category', $category)
+            ->orderBy('c.name', 'ASC')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 }
