@@ -51,7 +51,7 @@
         {% endif %}
         <tr>
             <th><i class="fa fa-tag"></i> {{ "label.contact.category"|trans }}</th>
-            <td><a href="{{ path('contact_index', {'category': contact.category.id}) }}" class="btn btn-outline-primary">{{ contact.category }}</a></td>
+            <td><a href="{{ path('contact_filteredbycat', {'category': contact.category.id}) }}" class="btn btn-outline-primary">{{ contact.category }}</a></td>
         </tr>
         </tbody>
     </table>
