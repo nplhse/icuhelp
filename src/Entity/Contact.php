@@ -47,7 +47,7 @@ class Contact
 
     /**
      * @ORM\ManyToOne(targetEntity=ContactCategory::class, inversedBy="category")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $category;
 
