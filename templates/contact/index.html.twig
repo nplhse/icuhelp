@@ -45,12 +45,12 @@
                 </div>
             {% endif %}
 
-            <h4>{{ "title.contact.categories" }}</h4>
+            <h4>{{ "title.contact.categories"|trans }}</h4>
             <ul class="list-group list-group">
                 {% for cat in categories %}
                     <li class="list-group-item{% if cat.id == category %} active{% endif %}"><a href="{{ path('contact_filteredbycat', {'category': cat.id}) }}">{{ cat.name }}</a></li>
                 {% endfor %}
-                <li class="list-group-item"><a href="{{ path('contact_index') }}">{{ "button.contact.showall" }}</a></li>
+                <li class="list-group-item"><a href="{{ path('contact_index') }}">{{ "button.contact.showall"|trans }}</a></li>
             </ul>
         </div>
     </div>
