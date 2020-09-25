@@ -17,8 +17,10 @@
 
     <div class="row">
         <div class="col-9">
-            {% if q %}
-                <div class="alert alert-info" role="alert">{{ "msg.contact.searchingfor"|trans }} {{ q }}</div>
+            {% if q and category %}
+                <div class="alert alert-info" role="alert">{{ "msg.contact.searchingfor"|trans }} "<i>{{ q }}</i>" | <a href="{{ path('contact_filteredbycat', {'category': category}) }}">{{ "msg.contact.endsearch"|trans }}</a></div>
+            {% elseif q %}
+                <div class="alert alert-info" role="alert">{{ "msg.contact.searchingfor"|trans }} "<i>{{ q }}</i>" | <a href="{{ path('contact_index') }}">{{ "msg.contact.endsearch"|trans }}</a></div>
             {% endif %}
 
             {% if contacts %}

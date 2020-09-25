@@ -773,6 +773,10 @@
         <source>msg.contact.searchingfor</source>
         <target>Searching for:</target>
       </trans-unit>
+      <trans-unit id="w23jlF_" resname="msg.contact.endsearch">
+        <source>msg.contact.endsearch</source>
+        <target>Click here to end search.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
