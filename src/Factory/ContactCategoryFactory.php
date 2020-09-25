@@ -4,17 +4,17 @@ namespace App\Factory;
 
 use App\Entity\ContactCategory;
 use App\Repository\ContactCategoryRepository;
-use Zenstruck\Foundry\RepositoryProxy;
 use Zenstruck\Foundry\ModelFactory;
 use Zenstruck\Foundry\Proxy;
+use Zenstruck\Foundry\RepositoryProxy;
 
 /**
- * @method static ContactCategory|Proxy findOrCreate(array $attributes)
- * @method static ContactCategory|Proxy random()
- * @method static ContactCategory[]|Proxy[] randomSet(int $number)
- * @method static ContactCategory[]|Proxy[] randomRange(int $min, int $max)
- * @method static ContactCategoryRepository|RepositoryProxy repository()
- * @method ContactCategory|Proxy create($attributes = [])
+ * @method static                    ContactCategory|Proxy findOrCreate(array $attributes)
+ * @method static                    ContactCategory|Proxy random()
+ * @method static                    ContactCategory[]|Proxy[] randomSet(int $number)
+ * @method static                    ContactCategory[]|Proxy[] randomRange(int $min, int $max)
+ * @method static                    ContactCategoryRepository|RepositoryProxy repository()
+ * @method ContactCategory|Proxy     create($attributes = [])
  * @method ContactCategory[]|Proxy[] createMany(int $number, $attributes = [])
  */
 final class ContactCategoryFactory extends ModelFactory
