@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Contact;
-use App\Form\ContactSearchType;
 use App\Form\ContactType;
 use App\Repository\ContactCategoryRepository;
 use App\Repository\ContactRepository;

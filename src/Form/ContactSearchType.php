@@ -14,7 +14,7 @@ class ContactSearchType extends AbstractType
     {
         $builder
             ->add('q', TextType::class, [
-                'label' => false
+                'label' => false,
             ])
             ->add('submit', SubmitType::class)
         ;

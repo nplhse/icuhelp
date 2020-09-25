@@ -10,7 +10,6 @@ use App\Entity\Snippet;
 use App\Entity\SnippetCategory;
 use App\Entity\SOP;
 use App\Entity\User;
-use App\Factory\ContactCategoryFactory;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
