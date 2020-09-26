@@ -12,6 +12,7 @@
     {{ form_row(form.name) }}
     {{ form_row(form.description) }}
     {{ form_row(form.sopFile) }}
+    {{ form_row(form.tag) }}
 
     <div class="clearfix">
         <div class="btn-group float-right" role="group" aria-label="">
@@ -25,4 +26,10 @@
             {{ include('sop/_delete_form.html.twig') }}
         {% endif %}
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {{ encore_entry_script_tags('a2lixSfCollection') }}
 {% endblock %}

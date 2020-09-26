@@ -36,6 +36,11 @@ services:
         tags:
             - { name: 'doctrine.event_subscriber' }
 
+    App\EventListener\UniqueSOPTagListener:
+        tags:
+            - { name: doctrine.event_listener, event: 'prePersist' }
+            - { name: doctrine.event_listener, event: 'preUpdate' }
+
     App\EventListener\UserActivationListener:
         tags:
             - { name: kernel.event_listener, event: kernel.request }
@@ -45,3 +50,8 @@ services:
             $targetDirectory: '%upload_directory%'
 
     Symfony\Bridge\Doctrine\Security\RememberMe\DoctrineTokenProvider: ~
+
+    App\Form\SOPType:
+        arguments: [ "@doctrine.orm.entity_manager" ]
+        tags:
+            - { name: form.type }
