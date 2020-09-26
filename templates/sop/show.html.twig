@@ -27,12 +27,22 @@
         </tr>
         <tr>
             <th>{{ "label.sop.description"|trans }}</th>
-            <td>{{ sop.description }}</td>
+            <td>{{ sop.description|raw }}</td>
         </tr>
         <tr>
             <th>{{ "label.sop.attachment"|trans }}</th>
             <td>
                 <a href="{{ asset('uploads/' ~ sop.SOPFilename) }}" target="_blank">View Attachment (Opens in new window or tab)</a>
+            </td>
+        </tr>
+        <tr>
+            <th>{{ "label.sop.tags"|trans }}</th>
+            <td>
+                {% for tag in sop.tag %}
+                    <a class="btn btn-outline-primary" href="{{ path('sop_filteredbytag', {'tag': tag.id}) }}">{{ tag.name }}</a>
+                {% else %}
+                    {{ "label.sop.notagsfound"|trans }}
+                {% endfor %}
             </td>
         </tr>
         </tbody>

@@ -794,6 +794,34 @@
         <source>msg.contact.endsearch</source>
         <target>Hier klicken, um die Suche zu beenden.</target>
       </trans-unit>
+      <trans-unit id="wh4nlF_" resname="link.sop.tags">
+        <source>link.sop.tags</source>
+        <target>SOP Tags</target>
+      </trans-unit>
+      <trans-unit id="0Fe43A0" resname="label.sop.tags">
+        <source>label.sop.tags</source>
+        <target>Tags</target>
+      </trans-unit>
+      <trans-unit id="gtn340O" resname="button.sop.showall">
+        <source>button.sop.showall</source>
+        <target>Alle Tags anzeigen</target>
+      </trans-unit>
+      <trans-unit id="V3334P7" resname="title.sop.tags">
+        <source>title.tags.categories</source>
+        <target>Tagfilter</target>
+      </trans-unit>
+      <trans-unit id="wh52lF_" resname="title.sop.search">
+        <source>title.sop.search</source>
+        <target>Suche</target>
+      </trans-unit>
+      <trans-unit id="w2334F_" resname="msg.sop.searchingfor">
+        <source>msg.sop.searchingfor</source>
+        <target>Suche nach:</target>
+      </trans-unit>
+      <trans-unit id="w34jlF_" resname="msg.sop.endsearch">
+        <source>msg.sop.endsearch</source>
+        <target>Hier klicken, um die Suche zu beenden.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

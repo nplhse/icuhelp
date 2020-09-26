@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\SOP;
 use App\Form\SOPType;
 use App\Repository\SOPRepository;
+use App\Repository\SOPTagRepository;
 use App\Service\FileUploader;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -21,10 +22,30 @@ class SOPController extends AbstractController
     /**
      * @Route("/sop", name="sop_index", methods={"GET"})
      */
-    public function index(SOPRepository $SOPRepository): Response
+    public function index(SOPRepository $SOPRepository, SOPTagRepository $SOPTagRepository, Request $request): Response
     {
+        $q = $request->query->get('q');
+
         return $this->render('sop/index.html.twig', [
-            'sops' => $SOPRepository->findAllByName(),
+            'sops' => $SOPRepository->findAllByName($q),
+            'tag' => null,
+            'tags' => $SOPTagRepository->findByNameAlphabetically(),
+            'q' => $q,
+        ]);
+    }
+
+    /**
+     * @Route("/sop/tag:{tag}", name="sop_filteredbytag", methods={"GET"})
+     */
+    public function filteredIndex(SOPRepository $SOPRepository, SOPTagRepository $SOPTagRepository, Request $request, $tag): Response
+    {
+        $q = $request->query->get('q');
+
+        return $this->render('sop/index.html.twig', [
+            'sops' => $SOPRepository->findAllByTag($tag, $q),
+            'tag' => $tag,
+            'tags' => $SOPTagRepository->findByNameAlphabetically(),
+            'q' => $q,
         ]);
     }
 

@@ -777,6 +777,34 @@
         <source>msg.contact.endsearch</source>
         <target>Click here to end search.</target>
       </trans-unit>
+      <trans-unit id="wz4nlF_" resname="link.sop.tags">
+        <source>link.sop.tags</source>
+        <target>SOP tags</target>
+      </trans-unit>
+      <trans-unit id="0Fe55A0" resname="label.sop.tags">
+        <source>label.sop.tags</source>
+        <target>Tags</target>
+      </trans-unit>
+      <trans-unit id="gtn230O" resname="button.sop.showall">
+        <source>button.sop.showall</source>
+        <target>Show all tags</target>
+      </trans-unit>
+      <trans-unit id="V333gs7" resname="title.sop.tags">
+        <source>title.tags.categories</source>
+        <target>Filter by tags</target>
+      </trans-unit>
+      <trans-unit id="whgdlF_" resname="title.sop.search">
+        <source>title.sop.search</source>
+        <target>Search</target>
+      </trans-unit>
+      <trans-unit id="w2gd4F_" resname="msg.sop.searchingfor">
+        <source>msg.sop.searchingfor</source>
+        <target>Searching for:</target>
+      </trans-unit>
+      <trans-unit id="w37jlF_" resname="msg.sop.endsearch">
+        <source>msg.sop.endsearch</source>
+        <target>Click here to end search.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

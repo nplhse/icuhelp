@@ -15,32 +15,66 @@
         {% endfor %}
     {% endfor %}
 
-    {% if sops %}
-        <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-3">
-            {% for sop in sops %}
-                <div class="col mb-4">
-                    <div class="card">
-                        <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_174ad927ca4%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_174ad927ca4%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1875%22%20y%3D%2296.6%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="{{ path('sop_show', {'id': sop.id}) }}">{{ sop.name }}</a></h5>
-                            <p class="card-text">{{ sop.description }}</p>
-                            <a class="btn btn-outline-primary" href="{{ asset('uploads/' ~ sop.SOPFilename) }}" target="_blank">{{ "button.sop.view_attachment"|trans }}</a>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-    {% else %}
-        <div class="row">
-            {{ "msg.no.sop.found"|trans }}
-        </div>
+    {% if q and tag %}
+        <div class="alert alert-info" role="alert">{{ "msg.sop.searchingfor"|trans }} "<i>{{ q }}</i>" | <a href="{{ path('sop_filteredbytag', {'tag': tag}) }}">{{ "msg.sop.endsearch"|trans }}</a></div>
+    {% elseif q %}
+        <div class="alert alert-info" role="alert">{{ "msg.sop.searchingfor"|trans }} "<i>{{ q }}</i>" | <a href="{{ path('sop_index') }}">{{ "msg.sop.endsearch"|trans }}</a></div>
     {% endif %}
 
-    {% if is_granted('ROLE_EDITOR') %}
-        <div class="clearfix mt-3">
-            <div class="btn-group float-right" role="group" aria-label="">
-                <a class="btn btn-primary" href="{{ path('sop_new') }}" role="button">{{ "button.sop.new"|trans }}</a>
+    <div class="row">
+        <div class="col-9">
+        {% if sops %}
+            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-2">
+                {% for sop in sops %}
+                    <div class="col mb-4">
+                        <div class="card">
+                            <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_174ad927ca4%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_174ad927ca4%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1875%22%20y%3D%2296.6%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="{{ path('sop_show', {'id': sop.id}) }}">{{ sop.name }}</a></h5>
+                                <p class="card-text">{{ sop.description|raw }}</p>
+                                <p>
+                                    <a class="btn btn-outline-primary" href="{{ asset('uploads/' ~ sop.SOPFilename) }}" target="_blank">{{ "button.sop.view_attachment"|trans }}</a><br />
+                                    {% for tag in sop.tag %}
+                                        <a class="badge badge-primary" href="{{ path('sop_filteredbytag', {'tag': tag.id}) }}"><i class="fa fa-tags"></i> {{ tag.name }}</a>
+                                    {% endfor %}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
+        {% else %}
+            <div class="row">
+                {{ "msg.no.sop.found"|trans }}
+            </div>
+        {% endif %}
         </div>
-    {% endif %}
+        <div class="col-3">
+            {% if is_granted('ROLE_EDITOR') %}
+                <div class="clearfix mb-3">
+                    <div class="btn-group float-right" role="group" aria-label="">
+                        <a class="btn btn-primary" href="{{ path('sop_new') }}" role="button">{{ "button.sop.new"|trans }}</a>
+                    </div>
+                </div>
+            {% endif %}
+
+            <h4>{{ "title.sop.search"|trans }}</h4>
+            <form>
+                <div class="input-group mb-3">
+                    <input type="text" name="q" class="form-control" placeholder="{% if q %}{{ q }}{% else %}Search...{% endif %}">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-outline-secondary"><span class="fa fa-search"></span></button>
+                    </div>
+                </div>
+            </form>
+
+            <h4>{{ "title.sop.tags"|trans }}</h4>
+            <ul class="list-group list-group">
+                {% for tag_e in tags %}
+                    <li class="list-group-item{% if tag_e.id == tag %} active{% endif %}"><a href="{{ path('sop_filteredbytag', {'tag': tag_e.id}) }}">{{ tag_e.name }}</a></li>
+                {% endfor %}
+                <li class="list-group-item"><a href="{{ path('sop_index') }}">{{ "button.sop.showall"|trans }}</a></li>
+            </ul>
+        </div>
+    </div>
 {% endblock %}

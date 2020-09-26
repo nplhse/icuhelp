@@ -25,7 +25,7 @@ Encore
      */
     .addEntry('app', './assets/js/main.js')
     .addEntry('letter', './assets/js/letter.js')
-    //.addEntry('page2', './assets/js/page2.js')
+    .addEntry('a2lixSfCollection', './assets/js/a2lixSfCollection.js')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()

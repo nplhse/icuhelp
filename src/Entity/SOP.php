@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\SOPRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -33,6 +35,16 @@ class SOP
      * @ORM\Column(type="string")
      */
     private $SOPFilename;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=SOPTag::class, inversedBy="SOPs", cascade={"persist"})
+     */
+    private $tag;
+
+    public function __construct()
+    {
+        $this->tag = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -71,6 +83,32 @@ class SOP
     public function setSOPFilename($SOPFilename)
     {
         $this->SOPFilename = $SOPFilename;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|SOPTag[]
+     */
+    public function getTag(): Collection
+    {
+        return $this->tag;
+    }
+
+    public function addTag(SOPTag $tag): self
+    {
+        if (!$this->tag->contains($tag)) {
+            $this->tag[] = $tag;
+        }
+
+        return $this;
+    }
+
+    public function removeTag(SOPTag $tag): self
+    {
+        if ($this->tag->contains($tag)) {
+            $this->tag->removeElement($tag);
+        }
 
         return $this;
     }
