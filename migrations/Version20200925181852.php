@@ -24,7 +24,6 @@ final class Version20200925181852 extends AbstractMigration
         $this->addSql('CREATE TABLE soptag (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('ALTER TABLE sop_soptag ADD CONSTRAINT FK_5C041A8D52982EE FOREIGN KEY (sop_id) REFERENCES sop (id) ON DELETE CASCADE');
         $this->addSql('ALTER TABLE sop_soptag ADD CONSTRAINT FK_5C041A8C1944B30 FOREIGN KEY (soptag_id) REFERENCES soptag (id) ON DELETE CASCADE');
-        $this->addSql('ALTER TABLE contact CHANGE category_id category_id INT DEFAULT NULL');
     }
 
     public function down(Schema $schema) : void
