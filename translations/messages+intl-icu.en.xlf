@@ -805,6 +805,10 @@
         <source>msg.sop.endsearch</source>
         <target>Click here to end search.</target>
       </trans-unit>
+      <trans-unit id="w333lF_" resname="label.sop.notagsfound">
+        <source>label.sop.notagsfound</source>
+        <target>No tags found.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
