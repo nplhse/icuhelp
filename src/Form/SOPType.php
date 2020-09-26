@@ -3,7 +3,6 @@
 namespace App\Form;
 
 use App\Entity\SOP;
-use App\Form\DataTransformer\SOPTagToCollectionTransformer;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
