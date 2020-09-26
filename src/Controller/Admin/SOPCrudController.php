@@ -7,6 +7,7 @@ use App\Entity\SOPTag;
 use App\Form\SOPTagType;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
@@ -31,10 +32,7 @@ class SOPCrudController extends AbstractCrudController
         $id = IntegerField::new('id', 'label.id');
         $name = TextField::new('name', 'label.description');
         $description = TextEditorField::new('description', 'label.description');
-        $tags = CollectionField::new('tag', 'label.tags')
-            ->allowAdd(true)
-            ->allowDelete(true)
-            ->setEntryType(SOPTagType::class);
+        $tags = AssociationField::new('tag', 'label.tags');
 
         if (Crud::PAGE_INDEX === $pageName) {
             return [$id, $name];
