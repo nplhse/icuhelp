@@ -19,32 +19,15 @@ class SOPTagRepository extends ServiceEntityRepository
         parent::__construct($registry, SOPTag::class);
     }
 
-    // /**
-    //  * @return SOPTag[] Returns an array of SOPTag objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return SOPTag[] Returns an array of ContactCategory objects
+     */
+    public function findByNameAlphabetically()
     {
-        return $this->createQueryBuilder('s')
-            ->andWhere('s.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('s.id', 'ASC')
-            ->setMaxResults(10)
+        return $this->createQueryBuilder('t')
+            ->orderBy('t.name', 'ASC')
             ->getQuery()
             ->getResult()
-        ;
+            ;
     }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?SOPTag
-    {
-        return $this->createQueryBuilder('s')
-            ->andWhere('s.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

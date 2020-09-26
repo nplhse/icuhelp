@@ -22,12 +22,41 @@ class SOPRepository extends ServiceEntityRepository
     /**
      * @return SOP[] Returns an array of Note objects
      */
-    public function findAllByName()
+    public function findAllByName(?string $q)
     {
-        return $this->createQueryBuilder('s')
+        $qb = $this->createQueryBuilder('s');
+
+        if ($q) {
+            $qb->andWhere('s.name LIKE :q OR s.description LIKE :q')
+                ->setParameter('q', '%'.$q.'%')
+            ;
+        }
+
+        return $qb
             ->orderBy('s.name', 'ASC')
             ->getQuery()
-            ->getResult()
+            ->getResult();
+    }
+
+    /**
+     * @return SOP[] Returns an array of Note objects
+     */
+    public function findAllByTag($tag, ?string $q)
+    {
+        $qb = $this->createQueryBuilder('s');
+
+        if ($q) {
+            $qb->andWhere('s.name LIKE :q OR s.description LIKE :q')
+                ->setParameter('q', '%'.$q.'%')
             ;
+        }
+
+        return $qb
+            ->andWhere('t.id = :tag')
+            ->setParameter('tag', $tag)
+            ->leftJoin('s.tag', 't')
+            ->orderBy('s.name', 'ASC')
+            ->getQuery()
+            ->getResult();
     }
 }

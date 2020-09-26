@@ -39,7 +39,7 @@
             <th>{{ "label.sop.tags"|trans }}</th>
             <td>
                 {% for tag in sop.tag %}
-                    <span class="badge badge-primary">{{ tag.name }}</span>
+                    <a class="btn btn-outline-primary" href="{{ path('sop_filteredbytag', {'tag': tag.id}) }}">{{ tag.name }}</a>
                 {% else %}
                     {{ "label.sop.notagsfound"|trans }}
                 {% endfor %}
