@@ -16,7 +16,7 @@
     {% endfor %}
 
     <div class="row">
-        <div class="col-9">
+        <div class="col-md-9">
             {% if q and category %}
                 <div class="alert alert-info" role="alert">{{ "msg.contact.searchingfor"|trans }} "<i>{{ q }}</i>" | <a href="{{ path('contact_filteredbycat', {'category': category}) }}">{{ "msg.contact.endsearch"|trans }}</a></div>
             {% elseif q %}
@@ -42,7 +42,7 @@
                 </div>
             {% endif %}
         </div>
-        <div class="col-3">
+        <div class="col-md-3 order-sm-last">
             {% if is_granted('ROLE_EDITOR') %}
                 <div class="clearfix mb-3">
                     <div class="btn-group" role="group" aria-label="">

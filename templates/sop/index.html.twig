@@ -22,7 +22,7 @@
     {% endif %}
 
     <div class="row">
-        <div class="col-9">
+        <div class="col-md-9">
         {% if sops %}
             <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-2">
                 {% for sop in sops %}
@@ -49,10 +49,10 @@
             </div>
         {% endif %}
         </div>
-        <div class="col-3">
+        <div class="col-md-3 order-sm-last">
             {% if is_granted('ROLE_EDITOR') %}
                 <div class="clearfix mb-3">
-                    <div class="btn-group float-right" role="group" aria-label="">
+                    <div class="btn-group" role="group" aria-label="">
                         <a class="btn btn-primary" href="{{ path('sop_new') }}" role="button">{{ "button.sop.new"|trans }}</a>
                     </div>
                 </div>
