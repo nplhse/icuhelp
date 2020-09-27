@@ -103,7 +103,7 @@
       </trans-unit>
       <trans-unit id="qyK0pid" resname="homepage_teaser_text">
         <source>homepage_teaser_text</source>
-        <target>Dieses Projekt soll den Arbeitsalltag auf der Intensivstation vereinfachen und als Informationsquelle für allgemeine Mitteilungen, sowie die Einarbeitung neuer Mitarbeiter sein. Außerdem können mit Hilfe von durch das System vorgegebenen Textbausteinen und ein paar Angaben schnell und einfach individualisierte Arztbriefe erstellt werden.</target>
+        <target>Dieses Projekt soll den Arbeitsalltag auf der Intensivstation vereinfachen, als Informationsquelle für allgemeine Mitteilungen dienen sowie die Einarbeitung neuer Mitarbeiter erleichtern. Es ermöglicht darüber hinaus die Verwaltung von Kontakten und SOPs. Außerdem können mit Hilfe von Textbausteinen und ein paar Angaben schnell und einfach individualisierte Arztbriefe erstellt werden.</target>
       </trans-unit>
       <trans-unit id=".zQWhJe" resname="homepage_teaser_link">
         <source>homepage_teaser_link</source>
@@ -825,6 +825,14 @@
       <trans-unit id="w333lF_" resname="label.sop.notagsfound">
         <source>label.sop.notagsfound</source>
         <target>Keine Tags gefunden.</target>
+      </trans-unit>
+      <trans-unit id="w344lF_" resname="msg.choose.contact.category">
+        <source>msg.choose.contact.category</source>
+        <target>Bitte eine Kategorie auswählen.</target>
+      </trans-unit>
+      <trans-unit id="w346lF_" resname="sop.add.tag">
+        <source>sop.add.tag</source>
+        <target>Tag hinzufügen</target>
       </trans-unit>
     </body>
   </file>

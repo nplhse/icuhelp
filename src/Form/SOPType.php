@@ -57,6 +57,9 @@ class SOPType extends AbstractType
                 'by_reference' => false,
                 'required' => false,
                 'label' => false,
+                'entry_options' => [
+                    'label' => false,
+                ],
             ]);
     }
 

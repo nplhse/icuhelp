@@ -22,7 +22,11 @@
                     <div class="card-body">
                         <h5 class="card-title"><a href="{{ path('info_show', {'id': info.id}) }}">{{ info.name }}</a></h5>
                         <div class="card-text">{{ info.text|raw }}</div>
-                        <small style="color:dimgrey">{{ "updatedAt"|trans }} {{ info.updatedAt|timeago }}</small>
+                        {% if  info.updatedAt|timeago %}
+                            <small style="color:dimgrey">{{ "updatedAt"|trans }} {{ info.updatedAt|timeago }}</small>
+                        {% else %}
+                            <small style="color:dimgrey">{{ "updatedAt"|trans }} {{ "date.seconds.ago"|trans }}</small>
+                        {% endif %}
                     </div>
                 </div>
             </div>

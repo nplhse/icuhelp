@@ -33,7 +33,11 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ note.name }}</h5>
                     <div class="card-text">{{ note.text|raw }}</div>
-                    <small style="color:dimgrey">{{ "updatedAt"|trans }} {{ note.updatedAt|timeago }}</small>
+                    {% if note.updatedAt|timeago %}
+                        <small style="color:dimgrey">{{ "updatedAt"|trans }} {{ note.updatedAt|timeago }}</small>
+                    {% else %}
+                        <small style="color:dimgrey">{{ "updatedAt"|trans }} {{ "date.seconds.ago"|trans }}</small>
+                    {% endif %}
                 </div>
             </div>
 

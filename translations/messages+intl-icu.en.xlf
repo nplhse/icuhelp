@@ -809,6 +809,14 @@
         <source>label.sop.notagsfound</source>
         <target>No tags found.</target>
       </trans-unit>
+      <trans-unit id="w354lF_" resname="msg.choose.contact.category">
+        <source>msg.choose.contact.category</source>
+        <target>Please choose a category.</target>
+      </trans-unit>
+      <trans-unit id="w4g6lF_" resname="sop.add.tag">
+        <source>sop.add.tag</source>
+        <target>Add tag</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
