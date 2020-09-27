@@ -31,7 +31,7 @@ class SOPType extends AbstractType
                 'required' => false,
                 'constraints' => [
                     new File([
-                        'maxSize' => '1024k',
+                        'maxSize' => '2048k',
                         'mimeTypes' => [
                             'application/pdf',
                             'application/x-pdf',
