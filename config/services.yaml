@@ -32,10 +32,6 @@ services:
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
 
-    App\EventListener\HashPasswordListener:
-        tags:
-            - { name: 'doctrine.event_subscriber' }
-
     App\EventListener\UniqueSOPTagListener:
         tags:
             - { name: doctrine.event_listener, event: 'prePersist' }
@@ -45,13 +41,17 @@ services:
         tags:
             - { name: kernel.event_listener, event: kernel.request }
 
-    App\Service\FileUploader:
-        arguments:
-            $targetDirectory: '%upload_directory%'
-
-    Symfony\Bridge\Doctrine\Security\RememberMe\DoctrineTokenProvider: ~
+    App\EventSubscriber\HashPasswordSubsciber:
+        tags:
+            - { name: 'doctrine.event_subscriber' }
 
     App\Form\SOPType:
         arguments: [ "@doctrine.orm.entity_manager" ]
         tags:
             - { name: form.type }
+
+    App\Service\FileUploader:
+        arguments:
+            $targetDirectory: '%upload_directory%'
+
+    Symfony\Bridge\Doctrine\Security\RememberMe\DoctrineTokenProvider: ~

@@ -4,9 +4,7 @@ namespace App\EventListener;
 
 use App\Entity\SOP;
 use App\Entity\SOPTag;
-use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\LifecycleEventArgs;
-use Doctrine\ORM\Events;
 
 class UniqueSOPTagListener
 {
