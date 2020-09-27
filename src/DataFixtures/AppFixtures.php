@@ -9,6 +9,7 @@ use App\Factory\NoteFactory;
 use App\Factory\SnippetCategoryFactory;
 use App\Factory\SnippetFactory;
 use App\Factory\SOPFactory;
+use App\Factory\SOPTagFactory;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
@@ -40,7 +41,12 @@ class AppFixtures extends Fixture
             ];
         });
         InfoFactory::new()->createMany(rand(1, 5));
-        SOPFactory::new()->createMany(rand(1, 10));
+        SOPTagFactory::new()->createMany(2);
+        SOPFactory::new()->createMany(rand(5, 10), function () {
+            return [
+                'tag' => SOPTagFactory::randomRange(1, 2),
+            ];
+        });
         NoteFactory::new()->createMany(rand(1, 5));
         NoteFactory::new()->asOnboarding()->createMany(rand(1, 5));
         SnippetCategoryFactory::new()->createMany(rand(1, 5));
