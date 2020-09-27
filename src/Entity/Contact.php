@@ -46,7 +46,7 @@ class Contact
     private $address;
 
     /**
-     * @ORM\ManyToOne(targetEntity=ContactCategory::class, inversedBy="category")
+     * @ORM\ManyToOne(targetEntity=ContactCategory::class, inversedBy="category", orphanRemoval=true)
      */
     private $category;
 
