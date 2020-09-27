@@ -28,7 +28,7 @@ class SOPType extends AbstractType
             ->add('sopFile', FileType::class, [
                 'label' => 'Attachment',
                 'mapped' => false,
-                'required' => false,
+                'required' => true,
                 'constraints' => [
                     new File([
                         'maxSize' => '2048k',
