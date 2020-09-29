@@ -17,6 +17,11 @@ class Upload extends AbstractFileModel
      */
     private $uuid;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Note::class, inversedBy="uploads")
+     */
+    private $note;
+
     public function __construct()
     {
         parent::__construct(true);
@@ -79,6 +84,18 @@ class Upload extends AbstractFileModel
     public function setFile(?File $file): self
     {
         $this->file = $file;
+
+        return $this;
+    }
+
+    public function getNote(): ?Note
+    {
+        return $this->note;
+    }
+
+    public function setNote(?Note $note): self
+    {
+        $this->note = $note;
 
         return $this;
     }

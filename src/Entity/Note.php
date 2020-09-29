@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Entity\Traits\TimestampableTrait;
 use App\Repository\NoteRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -37,6 +39,16 @@ class Note
      * @ORM\Column(type="text")
      */
     private $text = '';
+
+    /**
+     * @ORM\OneToMany(targetEntity=Upload::class, mappedBy="note")
+     */
+    private $uploads;
+
+    public function __construct()
+    {
+        $this->uploads = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -75,6 +87,37 @@ class Note
     public function setText(string $text): self
     {
         $this->text = $text;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Upload[]
+     */
+    public function getUploads(): Collection
+    {
+        return $this->uploads;
+    }
+
+    public function addUpload(Upload $upload): self
+    {
+        if (!$this->uploads->contains($upload)) {
+            $this->uploads[] = $upload;
+            $upload->setNote($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUpload(Upload $upload): self
+    {
+        if ($this->uploads->contains($upload)) {
+            $this->uploads->removeElement($upload);
+            // set the owning side to null (unless already changed)
+            if ($upload->getNote() === $this) {
+                $upload->setNote(null);
+            }
+        }
 
         return $this;
     }
