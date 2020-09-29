@@ -3,7 +3,7 @@
 {% block title %}{{ parent() }} - {{ "title.homepage"|trans }}{% endblock %}
 
 {% block body %}
-    {{ include('_components/project_tabs.html.twig') }}
+    {{ include('components/project_tabs.html.twig') }}
 
     {% for label, messages in app.flashes(['warning', 'error', 'success', 'notice']) %}
         {% for message in messages %}
