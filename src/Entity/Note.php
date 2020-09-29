@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-use App\Entity\Traits\TimestampableTrait;
+use App\Entity\Traits\EntityTimestampableTrait;
 use App\Repository\NoteRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -13,7 +13,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Note
 {
-    use TimestampableTrait;
+    use EntityTimestampableTrait;
 
     /**
      * @ORM\Id
