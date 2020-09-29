@@ -1,8 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ parent() }} - {{ "title.letter_create"|trans }}{% endblock %}
+{% form_theme form.snippets 'letter/_form_choicetype_widget.html.twig' %}
 
-{% form_theme form.snippets '_forms/choicetype_widget.html.twig' %}
+{% block title %}{{ parent() }} - {{ "title.letter_create"|trans }}{% endblock %}
 
 {% block body %}
     {{ include('_components/project_tabs.html.twig') }}
