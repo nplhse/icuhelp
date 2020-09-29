@@ -41,7 +41,7 @@ class Note
     private $text = '';
 
     /**
-     * @ORM\OneToMany(targetEntity=Upload::class, mappedBy="note")
+     * @ORM\OneToMany(targetEntity=Upload::class, mappedBy="note", cascade={"persist"})
      */
     private $uploads;
 

@@ -13,17 +13,11 @@
         </div>
     {% endfor %}
 
-    {{ form_start(form) }}
+    {{ include('note/_form.html.twig', {'action': 'create'}) }}
+{% endblock %}
 
-    {{ form_row(form.name) }}
-    {{ form_row(form.category) }}
-    {{ form_row(form.text) }}
+{% block javascripts %}
+    {{ parent() }}
 
-        <div class="clearfix">
-            <div class="btn-group float-right" role="group" aria-label="">
-                <a class="btn btn-secondary" href="{{ path('note_index') }}" role="button">{{ "link.note.back_list"|trans }}</a>
-                <button type="submit" class="btn btn-success">{{ "button.note.create"|trans }}</button>
-            </div>
-        </div>
-    {{ form_end(form) }}
+    {{ encore_entry_script_tags('form-tag') }}
 {% endblock %}

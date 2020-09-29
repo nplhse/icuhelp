@@ -3,10 +3,13 @@
 namespace App\Controller;
 
 use App\Entity\Note;
+use App\Entity\Upload;
 use App\Form\NoteType;
 use App\Repository\NoteRepository;
+use App\Service\FileUploader;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -30,7 +33,7 @@ class NoteController extends AbstractController
      * @Route({"de": "/notizen/erstellen", "en": "/notes/new"}, name="note_new", methods={"GET","POST"})
      * @IsGranted("ROLE_EDITOR")
      */
-    public function new(Request $request, NoteRepository $noteRepository): Response
+    public function new(Request $request, NoteRepository $noteRepository, FileUploader $fileUploader): Response
     {
         $note = new Note();
         $form = $this->createForm(NoteType::class, $note);
@@ -38,6 +41,25 @@ class NoteController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $note->setCategory('note');
+
+            dd($note);
+
+            /** @var UploadedFile $SOPFile */
+            $uploads = $form->get('uploads')->getData();
+
+            dd($uploads);
+
+            if ($uploads) {
+                $uploads = new Upload();
+                $uploads->setFile($file);
+
+                dd($uploads);
+
+                $SOPFileName = $fileUploader->upload($SOPFile);
+                $SOP->setSOPFilename($SOPFileName);
+            }
+
+            $upload = new Upload();
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($note);
