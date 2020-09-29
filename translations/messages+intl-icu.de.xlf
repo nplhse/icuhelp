@@ -782,57 +782,73 @@
         <source>link.contact.categories</source>
         <target>Kontakt Kategorien</target>
       </trans-unit>
-      <trans-unit id="wh32lF_" resname="title.contact.search">
+      <trans-unit id="IwnF_ks" resname="title.contact.search">
         <source>title.contact.search</source>
         <target>Suche</target>
       </trans-unit>
-      <trans-unit id="w232lF_" resname="msg.contact.searchingfor">
+      <trans-unit id="mwaTBRW" resname="msg.contact.searchingfor">
         <source>msg.contact.searchingfor</source>
         <target>Suche nach:</target>
       </trans-unit>
-      <trans-unit id="w23jlF_" resname="msg.contact.endsearch">
+      <trans-unit id=".8bysHt" resname="msg.contact.endsearch">
         <source>msg.contact.endsearch</source>
         <target>Hier klicken, um die Suche zu beenden.</target>
       </trans-unit>
-      <trans-unit id="wh4nlF_" resname="link.sop.tags">
+      <trans-unit id="PWpcgWN" resname="link.sop.tags">
         <source>link.sop.tags</source>
         <target>SOP Tags</target>
       </trans-unit>
-      <trans-unit id="0Fe43A0" resname="label.sop.tags">
+      <trans-unit id="4u9.ZiG" resname="label.sop.tags">
         <source>label.sop.tags</source>
         <target>Tags</target>
       </trans-unit>
-      <trans-unit id="gtn340O" resname="button.sop.showall">
+      <trans-unit id="Hour8RP" resname="button.sop.showall">
         <source>button.sop.showall</source>
         <target>Alle Tags anzeigen</target>
       </trans-unit>
-      <trans-unit id="V3334P7" resname="title.sop.tags">
-        <source>title.tags.categories</source>
+      <trans-unit id="dBK_1Vx" resname="title.sop.tags">
+        <source>title.sop.tags</source>
         <target>Tagfilter</target>
       </trans-unit>
-      <trans-unit id="wh52lF_" resname="title.sop.search">
+      <trans-unit id="tJBNmU7" resname="title.sop.search">
         <source>title.sop.search</source>
         <target>Suche</target>
       </trans-unit>
-      <trans-unit id="w2334F_" resname="msg.sop.searchingfor">
+      <trans-unit id="spkxDPg" resname="msg.sop.searchingfor">
         <source>msg.sop.searchingfor</source>
         <target>Suche nach:</target>
       </trans-unit>
-      <trans-unit id="w34jlF_" resname="msg.sop.endsearch">
+      <trans-unit id="UUX7Fbd" resname="msg.sop.endsearch">
         <source>msg.sop.endsearch</source>
         <target>Hier klicken, um die Suche zu beenden.</target>
       </trans-unit>
-      <trans-unit id="w333lF_" resname="label.sop.notagsfound">
+      <trans-unit id="vQj2gVd" resname="label.sop.notagsfound">
         <source>label.sop.notagsfound</source>
         <target>Keine Tags gefunden.</target>
       </trans-unit>
-      <trans-unit id="w344lF_" resname="msg.choose.contact.category">
+      <trans-unit id="qfXxj_d" resname="msg.choose.contact.category">
         <source>msg.choose.contact.category</source>
         <target>Bitte eine Kategorie auswählen.</target>
       </trans-unit>
-      <trans-unit id="w346lF_" resname="sop.add.tag">
+      <trans-unit id="90izNNH" resname="sop.add.tag">
         <source>sop.add.tag</source>
         <target>Tag hinzufügen</target>
+      </trans-unit>
+      <trans-unit id="zfvnNXp" resname="title.note_modal.delete">
+        <source>title.note_modal.delete</source>
+        <target>Notiz wirklich löschen?</target>
+      </trans-unit>
+      <trans-unit id="xYUap6O" resname="msg.note_modal.delete">
+        <source>msg.note_modal.delete</source>
+        <target>Soll diese Notiz wirklich gelöscht werden?</target>
+      </trans-unit>
+      <trans-unit id="8yeGT7d" resname="label.cancel">
+        <source>label.cancel</source>
+        <target>Abbrechen</target>
+      </trans-unit>
+      <trans-unit id="MTVC8id" resname="label.delete_note">
+        <source>label.delete_note</source>
+        <target>Notiz löschen</target>
       </trans-unit>
     </body>
   </file>
