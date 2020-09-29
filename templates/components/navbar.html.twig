@@ -28,6 +28,12 @@
                         <a class="nav-link" href="{{ path('security_register') }}">{{ "link.register"|trans }}</a>
                     </li>
                 {% endif %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="language_switcher" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-globe"></i></a>
+                    <div class="dropdown-menu" aria-labelledby="language_switcher">
+                        <a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), app.request.query.all|merge({'_locale': 'de'})) }}"><span class="flag flag-de"> </span> Deutsch</a>
+                        <a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), app.request.query.all|merge({'_locale': 'en'})) }}"><span class="flag flag-us"> </span> English</a>
+                    </div>
                 </li>
             </ul>
         </div>
