@@ -87,8 +87,7 @@ jobs:
           DATABASE_URL: mysql://root:symfony@127.0.0.1:${{ job.services.mysql.ports['3306'] }}/symfony
 
       - name: Report test coverage to Codecov
-        - uses: actions/checkout@master
-        - uses: codecov/codecov-action@v1
-          with:
-            token: ${{ secrets.CODECOV_TOKEN }}
-            directory: ./build/coverage/logs/
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          directory: ./build/coverage/logs/
