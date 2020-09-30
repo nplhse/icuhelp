@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-md-3">
+        <ul class="list-group">
+            Steps:
+            {% include '@CraueFormFlow/FormFlow/stepList.html.twig' %}
+        </ul>
+    </div>
+    <div class="col-md-9 order-first order-md-last my-auto">
+        <div>
+            {{ form_start(form) }}
+            {{ form_errors(form) }}
+
+            {% if flow.getCurrentStepNumber() == 1 %}
+                <div>
+                    Id angeben:<br />
+                    {{ form_row(form.id) }}
+                </div>
+            {% endif %}
+
+            {{ form_rest(form) }}
+
+            {% include '@CraueFormFlow/FormFlow/buttons.html.twig' %}
+            {{ form_end(form) }}
+    </div>
+</div>

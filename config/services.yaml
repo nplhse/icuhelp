@@ -45,6 +45,9 @@ services:
         tags:
             - { name: 'doctrine.event_subscriber' }
 
+    App\Form\PhysicalExaminationFlow:
+        parent: craue.form.flow
+
     App\Form\SOPType:
         arguments: [ "@doctrine.orm.entity_manager" ]
         tags:
