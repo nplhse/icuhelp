@@ -67,7 +67,7 @@ jobs:
           mysql --version
           php --version
           php ./bin/console --version
-          php ./vendor/bin/phpunit --version
+          php ./bin/phpunit --version
           composer --version
 
       - name: Check that environment is configured correctly
