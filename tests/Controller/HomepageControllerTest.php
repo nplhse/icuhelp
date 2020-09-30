@@ -11,7 +11,7 @@ class HomepageControllerTest extends AbstractWebTest
         $client = $this->getAuthenticatedClient();
         $client->followRedirects();
 
-        $crawler = $client->request('GET', '/');
+        $client->request('GET', '/');
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('html h1', 'Welcome to ICUhelp');

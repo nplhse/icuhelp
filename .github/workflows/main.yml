@@ -38,7 +38,7 @@ jobs:
         with:
           php-version: '7.4'
           tools: php-cs-fixer, phpunit
-          coverage: xdebug
+          coverage: pcov
 
       - name: Set Node version to 12
         uses: actions/setup-node@v1
