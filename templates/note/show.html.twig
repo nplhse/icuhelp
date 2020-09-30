@@ -47,7 +47,7 @@
                         <a class="btn btn-secondary" href="{{ path('note_edit', {'id': note.id}) }}" role="button"><i class="fa fa-edit"></i> {{ "button.note.edit"|trans }}</a>
                     </div>
 
-                    {{ include('note/_delete_form.html.twig') }}
+                    {{ include('note/_delete_form.html.twig', {'show_confirmation': 'true'}) }}
                 </div>
             {% endif %}
         </div>

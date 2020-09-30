@@ -1,5 +1,8 @@
-{{ include('note/_delete_confirmation.html.twig') }}
-<form action="{{ path('note_delete', {'id': note.id}) }}" method="post" data-confirmation="true" id="delete-form">
+{% if show_confirmation|default(false) %}
+    {{ include('note/_delete_confirmation.html.twig') }}
+{% endif %}
+
+<form action="{{ path('note_delete', {'id': note.id}) }}" method="post" data-confirmation="{% if show_confirmation|default(false) %}true{% else %}false{% endif %}" id="delete-form">
     <input type="hidden" name="_method" value="DELETE">
     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ note.id) }}">
     <button type="submit" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> {{ "button.note.delete"|trans }}</button>

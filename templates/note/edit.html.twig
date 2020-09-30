@@ -15,7 +15,7 @@
         {% endfor %}
     {% endfor %}
 
-    {{ include('note/_form.html.twig', {'action': 'update'}) }}
+    {{ include('note/_form.html.twig', {'action': 'update', 'show_confirmation': 'true'}) }}
 {% endblock %}
 
 {% block javascripts %}

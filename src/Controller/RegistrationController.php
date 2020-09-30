@@ -76,7 +76,7 @@ class RegistrationController extends AbstractController
     }
 
     /**
-     * @Route({"de": "/security/email-bestaetigen", "en": "/security/verify-email"}, name="security_verify_email")
+     * @Route({"de": "/email-bestaetigen", "en": "/verify-email"}, name="security_verify_email")
      */
     public function verifyUserEmail(Request $request): Response
     {

@@ -1,9 +1,4 @@
 {% block form %}
-    {% if show_confirmation|default(false) %}
-        {% set attr = {'data-confirmation': 'true'} %}
-        {{ include('note/_delete_confirmation.html.twig') }}
-    {% endif %}
-
     {{ form_start(form) }}
 
     {{ form_row(form.name) }}
