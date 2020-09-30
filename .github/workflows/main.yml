@@ -38,11 +38,23 @@ jobs:
         with:
           php-version: '7.4'
           tools: php-cs-fixer, phpunit
+          coverage: xdebug
 
       - name: Set Node version to 12
         uses: actions/setup-node@v1
         with:
           node-version: 12
+
+      - name: Check which versions we're using
+          run: |
+            mysql --version
+            php --version
+            php ./bin/console --version
+            php ./vendor/bin/phpunit --version
+            composer --version
+
+      - name: Check that environment is configured correctly
+          run: php ./vendor/bin/requirements-checker
 
       - name: Run yarn install
         run: yarn install
@@ -73,3 +85,8 @@ jobs:
         run: bin/phpunit
         env:
           DATABASE_URL: mysql://root:symfony@127.0.0.1:${{ job.services.mysql.ports['3306'] }}/symfony
+
+      - name: Coveralls
+          uses: coverallsapp/github-action@master
+          with:
+            github-token: ${{ secrets.GITHUB_TOKEN }}
