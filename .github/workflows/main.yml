@@ -54,7 +54,7 @@ jobs:
           composer --version
 
       - name: Check that environment is configured correctly
-          run: php ./vendor/bin/requirements-checker
+        run: php ./vendor/bin/requirements-checker
 
       - name: Run yarn install
         run: yarn install
@@ -87,6 +87,6 @@ jobs:
           DATABASE_URL: mysql://root:symfony@127.0.0.1:${{ job.services.mysql.ports['3306'] }}/symfony
 
       - name: Coveralls
-          uses: coverallsapp/github-action@master
-          with:
-            github-token: ${{ secrets.GITHUB_TOKEN }}
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
