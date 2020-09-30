@@ -1,27 +1,27 @@
 <?php
 
-namespace App\Form;
+namespace App\Form\Steps;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 
-class PhysicalExaminationStep7Form extends AbstractType
+class PhysicalExaminationStep2Form extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('sensomotorischedefizite', ChoiceType::class, [
+        $builder->add('ansprechbarkeit', ChoiceType::class, [
             'choices' => [
-                'nicht vorhanden' => 'nicht vorhanden',
-                'vorhanden' => 'vorhanden',
+                'ansprechbar' => 'ansprechbar',
+                'nicht ansprechbar' => 'nicht ansprechbar',
             ],
             'required' => false,
-            'data' => 'nicht_vorhanden',
+            'data' => 'ansprechbar',
         ]);
     }
 
     public function getBlockPrefix()
     {
-        return 'PhysicalExaminationStep7';
+        return 'PhysicalExaminationStep2';
     }
 }

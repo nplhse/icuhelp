@@ -22,6 +22,22 @@ class PhysicalExaminationModel
 
     public $sensomotorischedefizite_detail;
 
+    public $atmung;
+
+    public $o2_flow;
+
+    public $peep;
+
+    public $asb;
+
+    public $fio2;
+
+    public $pinsp;
+
+    public $beatmung_modus;
+
+    public $atemfrequenz;
+
     public function canHaveAnsprechbarkeit()
     {
         if ('analgosediert' == $this->vigilanz) {
@@ -61,6 +77,51 @@ class PhysicalExaminationModel
     public function canHaveSensomotorischesDefizitDetail()
     {
         if ('vorhanden' == $this->sensomotorischedefizite) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function canHaveO2Gabe()
+    {
+        if ('spontan atmend' == $this->atmung) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function canHaveNIV()
+    {
+        if ('CPAP' == $this->atmung) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function canHaveBeatmung()
+    {
+        if ('intubiert' == $this->atmung) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function canHaveCPAP()
+    {
+        if ($this->canHaveBeatmung() && 'CPAP' == $this->beatmung_modus) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function canHaveBiPAP()
+    {
+        if ($this->canHaveBeatmung() && 'BiPAP' == $this->beatmung_modus) {
             return true;
         }
 
