@@ -5,6 +5,9 @@
     "composer/xdebug-handler": {
         "version": "1.4.1"
     },
+    "craue/formflow-bundle": {
+        "version": "3.3.2"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
