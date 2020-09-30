@@ -69,22 +69,27 @@ class PhysicalExaminationModel
 
     public function generate()
     {
-        $output = '';
-        $output .= ucfirst($this->vigilanz);
+        $output = ucfirst($this->vigilanz);
+
         if ($this->canHaveAnsprechbarkeit()) {
             $output .= ', '.$this->ansprechbarkeit;
         }
+
         if ($this->canHaveOrientierung()) {
             $output .= ', '.$this->orientierung;
         }
+
         if ($this->canHaveRASS()) {
             $output .= ', RAAS: '.$this->rass_index.'.';
         }
+
         if ($this->canHaveCAM()) {
             $output .= ', CAM-ICU: '.$this->cam_index.'.';
         }
+
         $output .= ' Pupillen '.$this->pupillen_isokorie.', '.$this->pupillen_lichtreagibilitaet.' lichtreagibel.';
         $output .= ' Sensomotorische Defizite '.$this->sensomotorischedefizite;
+
         if ($this->canHaveSensomotorischesDefizitDetail()) {
             $output .= ': '.$this->sensomotorischedefizite_detail.'.';
         } else {
