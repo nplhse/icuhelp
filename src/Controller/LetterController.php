@@ -27,12 +27,12 @@ class LetterController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $letterDTO = $form->getData();
 
-            return $this->render('letter/letter.html.twig', [
+            return $this->render('letter/display.html.twig', [
                 'snippets' => $letter = $letterBuilder->build($letterDTO, $snippetHelper),
             ]);
         }
 
-        return $this->render('letter/form.html.twig', [
+        return $this->render('letter/builder.html.twig', [
             'form' => $form->createView(),
             'errors' => $form->getErrors(true, false),
         ]);

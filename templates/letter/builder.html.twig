@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
+{% form_theme form.snippets 'letter/_form_choicetype_widget.html.twig' %}
+
 {% block title %}{{ parent() }} - {{ "title.letter_create"|trans }}{% endblock %}
 
-{% form_theme form.snippets '_forms/choicetype_widget.html.twig' %}
-
 {% block body %}
-    {{ include('_components/project_tabs.html.twig') }}
+    {{ include('components/project_tabs.html.twig') }}
 
     <div class="clearfix">
         <h1 class="mt-2">{{ "title.letter_create"|trans }}</h1>
@@ -33,10 +33,13 @@
 
         {{ form_row(form.snippets) }}
 
-        <div class="btn-group float-right" role="group" aria-label="">
-            {{ form_widget(form.reset) }}
-            {{ form_widget(form.submit) }}
+        <div class="clearfix">
+            <div class="btn-group float-right" role="group" aria-label="">
+                {{ form_widget(form.reset) }}
+                {{ form_widget(form.submit) }}
+
+                {{ form_end(form) }}
+            </div>
         </div>
-        {{ form_end(form) }}
     </div>
 {% endblock %}

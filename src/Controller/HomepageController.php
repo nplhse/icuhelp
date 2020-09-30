@@ -12,10 +12,18 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomepageController extends AbstractController
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route({"de": "/startseite", "en": "/homepage"}, name="homepage")
      */
     public function index()
     {
         return $this->render('homepage/index.html.twig');
+    }
+
+    /**
+     * @Route("/", name="app_homepage")
+     */
+    public function start()
+    {
+        return $this->redirectToRoute('homepage');
     }
 }
