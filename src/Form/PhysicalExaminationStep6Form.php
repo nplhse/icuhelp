@@ -21,7 +21,7 @@ class PhysicalExaminationStep6Form extends AbstractType
         $builder->add('pupillen_lichtreagibilitaet', ChoiceType::class, [
             'choices' => [
                 'seitengleich' => 'seitengleich',
-                'nicht seitengleich' => 'nicht_seitengleich',
+                'nicht seitengleich' => 'nicht seitengleich',
             ],
             'required' => false,
             'data' => 'seitengleich',

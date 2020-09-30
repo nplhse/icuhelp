@@ -13,7 +13,7 @@ class PhysicalExaminationStep2Form extends AbstractType
         $builder->add('ansprechbarkeit', ChoiceType::class, [
             'choices' => [
                 'ansprechbar' => 'ansprechbar',
-                'nicht ansprechbar' => 'nicht_ansprechbar',
+                'nicht ansprechbar' => 'nicht ansprechbar',
             ],
             'required' => false,
             'data' => 'ansprechbar',

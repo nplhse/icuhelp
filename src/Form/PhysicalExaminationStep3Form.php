@@ -14,7 +14,7 @@ class PhysicalExaminationStep3Form extends AbstractType
             'choices' => [
                 'orientiert' => 'orientiert',
                 'teilweise orientiert' => 'teilweise orientiert',
-                'nicht orientiert' => 'nicht_orientiert',
+                'nicht orientiert' => 'nicht orientiert',
             ],
             'required' => false,
             'data' => 'orientiert',
