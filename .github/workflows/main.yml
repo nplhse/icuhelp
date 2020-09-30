@@ -46,12 +46,12 @@ jobs:
           node-version: 12
 
       - name: Check which versions we're using
-          run: |
-            mysql --version
-            php --version
-            php ./bin/console --version
-            php ./vendor/bin/phpunit --version
-            composer --version
+        run: |
+          mysql --version
+          php --version
+          php ./bin/console --version
+          php ./vendor/bin/phpunit --version
+          composer --version
 
       - name: Check that environment is configured correctly
           run: php ./vendor/bin/requirements-checker
