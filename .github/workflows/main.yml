@@ -68,3 +68,8 @@ jobs:
 
       - name: Check coding styles
         run: composer run-checks
+
+      - name: Run Tests
+        run: bin/phpunit
+        env:
+          DATABASE_URL: mysql://root:symfony@127.0.0.1:${{ job.services.mysql.ports['3306'] }}/symfony
