@@ -45,14 +45,6 @@ jobs:
         with:
           node-version: 12
 
-      - name: Check which versions we're using
-        run: |
-          mysql --version
-          php --version
-          php ./bin/console --version
-          php ./vendor/bin/phpunit --version
-          composer --version
-
       - name: Check that environment is configured correctly
         run: php ./vendor/bin/requirements-checker
 
@@ -72,6 +64,14 @@ jobs:
 
       - name: Install Composer dependencies
         run: composer install --no-progress --no-suggest --prefer-dist --optimize-autoloader
+
+      - name: Check which versions we're using
+        run: |
+          mysql --version
+          php --version
+          php ./bin/console --version
+          php ./vendor/bin/phpunit --version
+          composer --version
 
       - name: Run Setup scripts
         run: composer setup
