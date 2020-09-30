@@ -95,7 +95,7 @@
       </trans-unit>
       <trans-unit id="jgnXgPh" resname="homepage_teaser_h1">
         <source>homepage_teaser_h1</source>
-        <target>Medical letters</target>
+        <target>Welcome to ICUhelp</target>
       </trans-unit>
       <trans-unit id="qyK0pid" resname="homepage_teaser_text">
         <source>homepage_teaser_text</source>
