@@ -16,6 +16,9 @@
             <a class="nav-link{% if app.request.attributes.get( '_route' ) starts with 'letter' %} active{% endif %}" href="{{ path('letter') }}"><i class="fa fa-file-alt"></i> {{ "link.letter"|trans }}</a>
         </li>
         <li class="nav-item">
+            <a class="nav-link{% if app.request.attributes.get( '_route' ) starts with 'finding' %} active{% endif %}" href="{{ path('finding_generator') }}"><i class="fa fa-book-medical"></i> {{ "link.findings"|trans }}</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link{% if app.request.attributes.get( '_route' ) starts with 'note' %} active{% endif %}" href="{{ path('note_index') }}"><i class="fa fa-sticky-note"></i> {{ "link.notes"|trans }}</a>
         </li>
         <li class="nav-item">
