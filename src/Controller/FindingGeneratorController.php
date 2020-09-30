@@ -14,9 +14,8 @@ class FindingGeneratorController extends AbstractController
      */
     public function index(PhysicalExaminationFlow $flow)
     {
-        $formData = new PhysicalExaminationModel();
-
-        $flow->bind($formData);
+        $exam = new PhysicalExaminationModel();
+        $flow->bind($exam);
 
         // form of the current step
         $form = $flow->createForm();
@@ -27,10 +26,12 @@ class FindingGeneratorController extends AbstractController
                 // form for the next step
                 $form = $flow->createForm();
             } else {
-                dump($formData);
+                $exam = $exam->generate();
                 $flow->reset(); // remove step data from the session
 
-                return $this->redirect($this->generateUrl('homepage'));
+                return $this->render('finding_generator/display.html.twig', [
+                    'exam' => $exam,
+                ]);
             }
         }
 

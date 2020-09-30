@@ -6,21 +6,22 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 
-class PhysicalExaminationStep1Form extends AbstractType
+class PhysicalExaminationStep5Form extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('vigilanz', ChoiceType::class, [
+        $builder->add('cam_index', ChoiceType::class, [
             'choices' => [
-                'wach' => 'wach',
-                'somnolent' => 'somnolent',
-                'analgosediert' => 'analgosediert',
+                'negativ' => 'negativ',
+                'positiv' => 'positiv',
             ],
+            'required' => false,
+            'data' => 'negativ',
         ]);
     }
 
     public function getBlockPrefix()
     {
-        return 'PhysicalExaminationStep1';
+        return 'PhysicalExaminationStep5';
     }
 }
