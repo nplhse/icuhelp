@@ -45,9 +45,6 @@ jobs:
         with:
           node-version: 12
 
-      - name: Check that environment is configured correctly
-        run: php ./vendor/bin/requirements-checker
-
       - name: Run yarn install
         run: yarn install
 
@@ -72,6 +69,9 @@ jobs:
           php ./bin/console --version
           php ./vendor/bin/phpunit --version
           composer --version
+
+      - name: Check that environment is configured correctly
+        run: php ./vendor/bin/requirements-checker
 
       - name: Run Setup scripts
         run: composer setup
