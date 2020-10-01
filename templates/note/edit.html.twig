@@ -13,11 +13,16 @@
         </div>
     {% endfor %}
 
-    {{ include('note/_form.html.twig', {'action': 'update'}) }}
+
+        {{ include('note/_form.html.twig', {
+            'action': 'update',
+            'attachments': attachments,
+        }) }}
+
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
 
-    {{ encore_entry_script_tags('form-tag') }}
+    {{ encore_entry_script_tags('editor') }}
 {% endblock %}

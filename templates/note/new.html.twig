@@ -13,11 +13,13 @@
         </div>
     {% endfor %}
 
-    {{ include('note/_form.html.twig', {'action': 'create'}) }}
+    {{ include('note/_form.html.twig', {
+        'action': 'create'
+    }) }}
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
 
-    {{ encore_entry_script_tags('form-tag') }}
+    {{ encore_entry_script_tags('editor') }}
 {% endblock %}

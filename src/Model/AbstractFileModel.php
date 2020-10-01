@@ -60,7 +60,7 @@ abstract class AbstractFileModel
     /**
      * @var string|null
      *
-     * @ORM\Column(type="string", length=255, unique=true)
+     * @ORM\Column(type="string", length=255, unique=false)
      */
     protected $path;
 

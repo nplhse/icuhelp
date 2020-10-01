@@ -67,6 +67,7 @@ class NoteController extends AbstractController
             'notes' => $noteRepository->findByCategory('note'),
             'form' => $form->createView(),
             'errors' => $form->getErrors(true, false),
+            'attachments' => null,
         ]);
     }
 
@@ -88,7 +89,7 @@ class NoteController extends AbstractController
      * @Route({"de": "/notizen/{id}/bearbeiten", "en": "/notes/{id}/edit"}, name="note_edit", methods={"GET","POST"})
      * @IsGranted("ROLE_EDITOR")
      */
-    public function edit(Request $request, Note $note, NoteRepository $noteRepository, FileUploader $fileUploader): Response
+    public function edit(Request $request, Note $note, NoteRepository $noteRepository, UploadRepository $uploadRepository, FileUploader $fileUploader): Response
     {
         $form = $this->createForm(NoteType::class, $note);
         $form->handleRequest($request);
@@ -102,8 +103,10 @@ class NoteController extends AbstractController
                 foreach ($arrayCollection as $i => $file) {
                     $file->setPath('notes');
 
-                    $upload = $fileUploader->upload($file);
-                    $entityManager->persist($upload);
+                    if ($file->getFile()) {
+                        $upload = $fileUploader->upload($file);
+                        $entityManager->persist($upload);
+                    }
                 }
             }
 
@@ -120,6 +123,9 @@ class NoteController extends AbstractController
             'notes' => $noteRepository->findByCategory('note'),
             'form' => $form->createView(),
             'errors' => $form->getErrors(true, false),
+            'attachments' => $uploadRepository->findBy([
+                'note' => $note,
+            ]),
         ]);
     }
 
