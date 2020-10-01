@@ -1,7 +1,7 @@
 ICUhelp
 =======
 
-[![Actions Status](https://github.com/nplhse/icuhelp/workflows/Continuous%20integration/badge.svg)](https://github.com/nplhse/icuhelp/actions)
+[![Actions Status](https://github.com/nplhse/icuhelp/workflows/Continuous%20integration/badge.svg)](https://github.com/nplhse/icuhelp/actions) [![codecov](https://codecov.io/gh/nplhse/icuhelp/branch/master/graph/badge.svg)](https://codecov.io/gh/nplhse/icuhelp)
 
 This project is intended to provide some useful things to the daily work of physicians on the intensive care unit.
 

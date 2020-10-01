@@ -1,5 +1,0 @@
-<form method="post" action="{{ path('note_delete', {'id': note.id}) }}" onsubmit="return confirm({{ "msg.note.delete"|trans }});">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ note.id) }}">
-    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> {{ "button.note.delete"|trans }}</button>
-</form>

@@ -11,7 +11,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class SecurityController extends AbstractController
 {
     /**
-     * @Route("/login", name="security_login")
+     * @Route({"de": "/anmelden", "en": "/login"}, name="security_login")
      */
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
@@ -49,7 +49,7 @@ class SecurityController extends AbstractController
     }
 
     /**
-     * @Route("/security/inactive_user", name="security_inactive_user")
+     * @Route({"de": "/security/inaktiv", "en": "/security/inactive"}, name="security_inactive_user")
      */
     public function inactiveUser()
     {

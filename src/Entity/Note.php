@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-use App\Entity\Traits\TimestampableTrait;
+use App\Entity\Traits\EntityTimestampableTrait;
 use App\Repository\NoteRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -15,7 +15,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Note
 {
-    use TimestampableTrait;
+    use EntityTimestampableTrait;
 
     /**
      * @ORM\Id

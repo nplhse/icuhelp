@@ -58,7 +58,15 @@
 
             {{ form_end(form) }}
 
-            {{ include('note/_delete_form.html.twig') }}
+            {{ include('form/_delete_entity_form.html.twig', {
+                'entity': note,
+                'btn_delete': 'button.note.delete',
+                'title_modal_delete': 'title.note_modal.delete',
+                'msg_modal_delete': 'msg.note_modal.delete',
+                'label_delete': 'label.delete_note',
+                'entity_deletepath': 'note_delete',
+                'show_confirmation': 'true'
+            }) }}
         </div>
     {% endif %}
 {% endblock %}

@@ -20,7 +20,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class SOPController extends AbstractController
 {
     /**
-     * @Route("/sop", name="sop_index", methods={"GET"})
+     * @Route({"de": "/standards", "en": "/sop"}, name="sop_index", methods={"GET"})
      */
     public function index(SOPRepository $SOPRepository, SOPTagRepository $SOPTagRepository, Request $request): Response
     {
@@ -35,7 +35,7 @@ class SOPController extends AbstractController
     }
 
     /**
-     * @Route("/sop/tag:{tag}", name="sop_filteredbytag", methods={"GET"})
+     * @Route({"de": "/standards/tag:{tag}", "en": "/sop/tag:{tag}"}, name="sop_filteredbytag", methods={"GET"})
      */
     public function filteredIndex(SOPRepository $SOPRepository, SOPTagRepository $SOPTagRepository, Request $request, $tag): Response
     {
@@ -50,7 +50,7 @@ class SOPController extends AbstractController
     }
 
     /**
-     * @Route("/sop/new", name="sop_new", methods={"GET","POST"})
+     * @Route({"de": "/standards/neu", "en": "/sop/new"}, name="sop_new", methods={"GET","POST"})
      * @IsGranted("ROLE_EDITOR")
      */
     public function new(Request $request, FileUploader $fileUploader): Response
@@ -84,7 +84,7 @@ class SOPController extends AbstractController
     }
 
     /**
-     * @Route("/sop/{id}", name="sop_show", methods={"GET"})
+     * @Route({"de": "/standards/{id}", "en": "/sop/{id}"}, name="sop_show", methods={"GET"})
      */
     public function show(SOP $SOP): Response
     {
@@ -94,7 +94,7 @@ class SOPController extends AbstractController
     }
 
     /**
-     * @Route("/sop/{id}/edit", name="sop_edit", methods={"GET","POST"})
+     * @Route({"de": "/standards/{id}/bearbeiten", "en": "/sop/{id}/edit"}, name="sop_edit", methods={"GET","POST"})
      * @IsGranted("ROLE_EDITOR")
      */
     public function edit(Request $request, SOP $SOP): Response
@@ -117,7 +117,7 @@ class SOPController extends AbstractController
     }
 
     /**
-     * @Route("/sop/{id}", name="sop_delete", methods={"DELETE"})
+     * @Route({"de": "/standards/{id}", "en": "/sop/{id}"}, name="sop_delete", methods={"DELETE"})
      * @IsGranted("ROLE_EDITOR")
      */
     public function delete(Request $request, SOP $SOP): Response

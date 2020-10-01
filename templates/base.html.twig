@@ -11,13 +11,15 @@
         {% endblock %}
     </head>
     <body>
-        {% include('_components/navbar.html.twig') %}
+        {% block header %}
+            {% include('components/navbar.html.twig') %}
+        {% endblock %}
 
-        <main role="main" class="content container">
+        <main role="main" class="container content pb-2">
             {% block body %}{% endblock %}
         </main>
 
-        {% include('_components/footer.html.twig') %}
+        {% include('components/footer.html.twig') %}
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
