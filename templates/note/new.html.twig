@@ -22,7 +22,7 @@
     {% endfor %}
 
     {{ include('note/_form.html.twig', {
-        'action': 'create'
+        'action': 'create',
         'attachments': attachments,
         'show_confirmation': 'true',
     }) }}
