@@ -21,13 +21,11 @@
         {% endfor %}
     {% endfor %}
 
-
         {{ include('note/_form.html.twig', {
             'action': 'update',
             'attachments': attachments,
             'show_confirmation': 'true',
         }) }}
-
 {% endblock %}
 
 {% block javascripts %}

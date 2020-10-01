@@ -5,6 +5,8 @@ namespace App\Controller;
 use App\Entity\Note;
 use App\Form\NoteType;
 use App\Repository\NoteRepository;
+use App\Repository\UploadRepository;
+use App\Service\FileUploader;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -30,7 +32,7 @@ class OnboardingController extends AbstractController
      * @Route({"de": "/einarbeitung/erstellen", "en": "/onboarding/new"}, name="onboarding_new", methods={"GET","POST"})
      * @IsGranted("ROLE_EDITOR")
      */
-    public function new(Request $request, NoteRepository $noteRepository): Response
+    public function new(Request $request, NoteRepository $noteRepository, FileUploader $fileUploader): Response
     {
         $note = new Note();
         $form = $this->createForm(NoteType::class, $note);
@@ -40,6 +42,18 @@ class OnboardingController extends AbstractController
             $note->setCategory('onboarding');
 
             $entityManager = $this->getDoctrine()->getManager();
+
+            if (!$note->getUploads()->isEmpty()) {
+                $arrayCollection = $note->getUploads();
+
+                foreach ($arrayCollection as $i => $file) {
+                    $file->setPath('notes');
+
+                    $upload = $fileUploader->upload($file);
+                    $entityManager->persist($upload);
+                }
+            }
+
             $entityManager->persist($note);
             $entityManager->flush();
 
@@ -53,6 +67,7 @@ class OnboardingController extends AbstractController
             'notes' => $noteRepository->findByCategory('onboarding'),
             'form' => $form->createView(),
             'errors' => $form->getErrors(true, false),
+            'attachments' => null,
         ]);
     }
 
@@ -60,11 +75,14 @@ class OnboardingController extends AbstractController
      * @Route({"de": "/einarbeitung/{id}", "en": "/onboarding/{id}"}, name="onboarding_show", methods={"GET"})
      * @IsGranted("ROLE_EDITOR")
      */
-    public function show(Note $note, NoteRepository $noteRepository): Response
+    public function show(Note $note, NoteRepository $noteRepository, UploadRepository $uploadRepository): Response
     {
         return $this->render('onboarding/show.html.twig', [
             'note' => $note,
             'notes' => $noteRepository->findByCategory('onboarding'),
+            'attachments' => $uploadRepository->findBy([
+                'note' => $note,
+            ]),
         ]);
     }
 
@@ -72,13 +90,29 @@ class OnboardingController extends AbstractController
      * @Route({"de": "/einarbeitung/{id}/bearbeiten", "en": "/onboarding/{id}/edit"}, name="onboarding_edit", methods={"GET","POST"})
      * @IsGranted("ROLE_EDITOR")
      */
-    public function edit(Request $request, Note $note, NoteRepository $noteRepository): Response
+    public function edit(Request $request, Note $note, NoteRepository $noteRepository, UploadRepository $uploadRepository, FileUploader $fileUploader): Response
     {
         $form = $this->createForm(NoteType::class, $note);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $entityManager = $this->getDoctrine()->getManager();
+
+            if (!$note->getUploads()->isEmpty()) {
+                $arrayCollection = $note->getUploads();
+
+                foreach ($arrayCollection as $i => $file) {
+                    $file->setPath('notes');
+
+                    if ($file->getFile()) {
+                        $upload = $fileUploader->upload($file);
+                        $entityManager->persist($upload);
+                    }
+                }
+            }
+
+            $entityManager->persist($note);
+            $entityManager->flush();
 
             $this->addFlash('success', 'msg.onboarding.edited');
 
@@ -90,6 +124,9 @@ class OnboardingController extends AbstractController
             'notes' => $noteRepository->findByCategory('onboarding'),
             'form' => $form->createView(),
             'errors' => $form->getErrors(true, false),
+            'attachments' => $uploadRepository->findBy([
+                'note' => $note,
+            ]),
         ]);
     }
 
