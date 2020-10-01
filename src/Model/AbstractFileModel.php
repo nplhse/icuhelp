@@ -226,7 +226,7 @@ abstract class AbstractFileModel
         return $this;
     }
 
-    public function getFile(): ?File
+    public function getFile()
     {
         return $this->file;
     }

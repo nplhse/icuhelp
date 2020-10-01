@@ -19,32 +19,31 @@ class UploadRepository extends ServiceEntityRepository
         parent::__construct($registry, Upload::class);
     }
 
-    // /**
-    //  * @return Upload[] Returns an array of Upload objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return Upload[] Returns an array of Upload objects
+     */
+    public function findByNote($id)
     {
         return $this->createQueryBuilder('u')
-            ->andWhere('u.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('u.id', 'ASC')
-            ->setMaxResults(10)
+            ->andWhere('u.note_id = :val')
+            ->setParameter('val', $id)
+            ->orderBy('u.originalName', 'ASC')
             ->getQuery()
             ->getResult()
         ;
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?Upload
+    /**
+     * @return Upload[] Returns an array of Upload objects
+     */
+    public function findOneByPath($path)
     {
         return $this->createQueryBuilder('u')
-            ->andWhere('u.exampleField = :val')
-            ->setParameter('val', $value)
+            ->andWhere('u.name = :val')
+            ->setParameter('val', $path)
+            ->setMaxResults(1)
             ->getQuery()
-            ->getOneOrNullResult()
-        ;
+            ->getResult()
+            ;
     }
-    */
 }

@@ -20,7 +20,6 @@ class FileUploader
         $uniqueName = $this->generateRandomName($file);
 
         $file->setName($uniqueName);
-        $file->setPath('test');
         $file->setSize($file->getFile()->getSize());
 
         // Sets common metadata depending how the file has been created on the server (uploaded or not).
@@ -34,10 +33,13 @@ class FileUploader
             $file->setMimeType($file->getFile()->getMimeType());
         }
 
+        $item = $file->getFile();
+
         try {
-            $stream = fopen($file->getPath(), 'r');
+            $stream = fopen($item->getPathname(), 'r');
             $result = $this->filesystem->writeStream($uniqueName, $stream);
         } catch (\Exception $e) {
+            dump($e);
             throw new \Exception(sprintf('Could not write uploaded file "%s"', $uniqueName));
         }
 
@@ -45,7 +47,21 @@ class FileUploader
             fclose($stream);
         }
 
-        return $uniqueName;
+        return $file;
+    }
+
+    /**
+     * @return resource
+     */
+    public function readStream(string $filename)
+    {
+        $resource = $this->filesystem->readStream($filename);
+
+        if (false === $resource) {
+            throw new \Exception(sprintf('Error opening stream for "%s"', $filename));
+        }
+
+        return $resource;
     }
 
     private function generateRandomName(AbstractFileModel $file): string

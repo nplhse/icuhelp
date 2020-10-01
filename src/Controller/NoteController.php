@@ -3,13 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Note;
-use App\Entity\Upload;
 use App\Form\NoteType;
 use App\Repository\NoteRepository;
+use App\Repository\UploadRepository;
 use App\Service\FileUploader;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -42,26 +41,19 @@ class NoteController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $note->setCategory('note');
 
-            dd($note);
+            $entityManager = $this->getDoctrine()->getManager();
 
-            /** @var UploadedFile $SOPFile */
-            $uploads = $form->get('uploads')->getData();
+            if (!$note->getUploads()->isEmpty()) {
+                $arrayCollection = $note->getUploads();
 
-            dd($uploads);
+                foreach ($arrayCollection as $i => $file) {
+                    $file->setPath('notes');
 
-            if ($uploads) {
-                $uploads = new Upload();
-                $uploads->setFile($file);
-
-                dd($uploads);
-
-                $SOPFileName = $fileUploader->upload($SOPFile);
-                $SOP->setSOPFilename($SOPFileName);
+                    $upload = $fileUploader->upload($file);
+                    $entityManager->persist($upload);
+                }
             }
 
-            $upload = new Upload();
-
-            $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($note);
             $entityManager->flush();
 
@@ -81,11 +73,14 @@ class NoteController extends AbstractController
     /**
      * @Route({"de": "/notizen/{id}", "en": "/notes/{id}"}, name="note_show", methods={"GET"})
      */
-    public function show(Note $note, NoteRepository $noteRepository): Response
+    public function show(Note $note, NoteRepository $noteRepository, UploadRepository $uploadRepository): Response
     {
         return $this->render('note/show.html.twig', [
             'note' => $note,
             'notes' => $noteRepository->findByCategory('note'),
+            'attachments' => $uploadRepository->findBy([
+                'note' => $note,
+            ]),
         ]);
     }
 

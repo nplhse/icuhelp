@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Model\AbstractFileModel;
 use App\Repository\UploadRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Ramsey\Uuid\Uuid;
 use Symfony\Component\HttpFoundation\File\File;
 
 /**
@@ -25,6 +26,8 @@ class Upload extends AbstractFileModel
     public function __construct()
     {
         parent::__construct(true);
+
+        $this->uuid = Uuid::uuid4();
     }
 
     public function getUuid()
@@ -86,6 +89,11 @@ class Upload extends AbstractFileModel
         $this->file = $file;
 
         return $this;
+    }
+
+    public function getFile()
+    {
+        return $this->file;
     }
 
     public function getNote(): ?Note
