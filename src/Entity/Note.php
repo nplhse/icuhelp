@@ -45,6 +45,11 @@ class Note
      */
     private $uploads;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $position;
+
     public function __construct()
     {
         $this->uploads = new ArrayCollection();
@@ -118,6 +123,18 @@ class Note
                 $upload->setNote(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPosition(): ?int
+    {
+        return $this->position;
+    }
+
+    public function setPosition(int $position): self
+    {
+        $this->position = $position;
 
         return $this;
     }
