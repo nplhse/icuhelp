@@ -1,6 +1,7 @@
 import $ from "jquery";
 import bsCustomFileInput from "bs-custom-file-input";
 
+// Handling CollectionType fields
 $(document).ready(function() {
     var $wrapper = $('.js-tag-wrapper');
 
@@ -33,6 +34,7 @@ $(document).ready(function() {
     });
 });
 
+// Handling filenames for Bootstrap forms
 $(document).ready(function () {
     bsCustomFileInput.init()
 })
