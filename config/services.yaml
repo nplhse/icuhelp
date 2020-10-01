@@ -50,8 +50,4 @@ services:
         tags:
             - { name: form.type }
 
-    App\Service\FileUploader:
-        arguments:
-            $targetDirectory: '%upload_directory%'
-
     Symfony\Bridge\Doctrine\Security\RememberMe\DoctrineTokenProvider: ~

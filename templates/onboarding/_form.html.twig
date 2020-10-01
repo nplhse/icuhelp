@@ -43,8 +43,8 @@
     {% if action == 'create' %}
         <div class="clearfix">
             <div class="btn-group float-right" role="group" aria-label="">
-                <a class="btn btn-secondary" href="{{ path('note_index') }}" role="button">{{ "link.note.back_list"|trans }}</a>
-                <button type="submit" class="btn btn-success">{{ "button.note.create"|trans }}</button>
+                <a class="btn btn-secondary" href="{{ path('note_index') }}" role="button">{{ "link.onboarding.back_list"|trans }}</a>
+                <button type="submit" class="btn btn-success">{{ "button.onboarding.create"|trans }}</button>
             </div>
 
             {{ form_end(form) }}
@@ -52,19 +52,19 @@
     {% elseif action == 'update' %}
         <div class="clearfix">
             <div class="btn-group float-right" role="group" aria-label="">
-                <a class="btn btn-secondary" href="{{ path('note_show', {'id': note.id}) }}" role="button">{{ "link.note.back"|trans }}</a>
-                <button type="submit" class="btn btn-success">{{ "button.note.save"|trans }}</button>
+                <a class="btn btn-secondary" href="{{ path('note_show', {'id': note.id}) }}" role="button">{{ "link.onboarding.back"|trans }}</a>
+                <button type="submit" class="btn btn-success">{{ "button.onboarding.save"|trans }}</button>
             </div>
 
             {{ form_end(form) }}
 
             {{ include('form/_delete_entity_form.html.twig', {
                 'entity': note,
-                'btn_delete': 'button.note.delete',
-                'title_modal_delete': 'title.note_modal.delete',
-                'msg_modal_delete': 'msg.note_modal.delete',
-                'label_delete': 'label.delete_note',
-                'entity_deletepath': 'note_delete',
+                'btn_delete': 'button.onboarding.delete',
+                'title_modal_delete': 'title.onboarding_modal.delete',
+                'msg_modal_delete': 'msg.onboarding_modal.delete',
+                'label_delete': 'label.delete_onboarding',
+                'entity_deletepath': 'onboarding_delete',
                 'show_confirmation': 'true'
             }) }}
         </div>

@@ -39,6 +39,16 @@
                         <small style="color:dimgrey">{{ "updatedAt"|trans }} {{ "date.seconds.ago"|trans }}</small>
                     {% endif %}
                 </div>
+                {% if attachments %}
+                    <div class="card-footer text-muted">
+                        <p>{{ "label.attachments"|trans }}</p>
+                        <ul>
+                            {% for attachment in attachments %}
+                                <li id="attachment{{ loop.index }}"><a href="{{ path('uploads_showprivatefile', {'path': attachment.name}) }}"><i class="fa fa-paperclip"></i> {{ attachment.originalname }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
             </div>
 
             {% if is_granted('ROLE_EDITOR') %}
@@ -47,7 +57,15 @@
                         <a class="btn btn-secondary" href="{{ path('onboarding_edit', {'id': note.id}) }}" role="button">{{ "button.onboarding.edit"|trans }}</a>
                     </div>
 
-                    {{ include('onboarding/_delete_form.html.twig') }}
+                    {{ include('form/_delete_entity_form.html.twig', {
+                        'entity': note,
+                        'btn_delete': 'button.onboarding.delete',
+                        'title_modal_delete': 'title.onboarding_modal.delete',
+                        'msg_modal_delete': 'msg.onboarding_modal.delete',
+                        'label_delete': 'label.delete_onboarding',
+                        'entity_deletepath': 'onboarding_delete',
+                        'show_confirmation': 'true'
+                    }) }}
                 </div>
             {% endif %}
         </div>

@@ -2,38 +2,86 @@
 
 namespace App\Service;
 
-use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use App\Model\AbstractFileModel;
+use League\Flysystem\FilesystemInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Symfony\Component\String\Slugger\SluggerInterface;
 
 class FileUploader
 {
-    private $targetDirectory;
-    private $slugger;
+    private $filesystem;
 
-    public function __construct($targetDirectory, SluggerInterface $slugger)
+    public function __construct(FilesystemInterface $uploadsStorage)
     {
-        $this->targetDirectory = $targetDirectory;
-        $this->slugger = $slugger;
+        $this->filesystem = $uploadsStorage;
     }
 
-    public function upload(UploadedFile $file)
+    public function upload(AbstractFileModel $file)
     {
-        $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
-        $safeFilename = $this->slugger->slug($originalFilename);
-        $fileName = $safeFilename.'-'.uniqid().'.'.$file->guessExtension();
+        $uniqueName = $this->generateRandomName($file);
 
-        try {
-            $file->move($this->getTargetDirectory(), $fileName);
-        } catch (FileException $e) {
-            // ... handle exception if something happens during file upload
+        $file->setName($uniqueName);
+        $file->setSize($file->getFile()->getSize());
+
+        // Sets common metadata depending how the file has been created on the server (uploaded or not).
+        if ($file->getFile() instanceof UploadedFile) {
+            $file->setOriginalName($file->getFile()->getClientOriginalName());
+            $file->setExtension($file->getFile()->getClientOriginalName());
+            $file->setMimeType($file->getFile()->getClientMimeType());
+        } else {
+            $file->setOriginalName($uniqueName);
+            $file->setExtension($file->getFile()->getExtension());
+            $file->setMimeType($file->getFile()->getMimeType());
         }
 
-        return $fileName;
+        $item = $file->getFile();
+
+        try {
+            $stream = fopen($item->getPathname(), 'r');
+            $result = $this->filesystem->writeStream($uniqueName, $stream);
+        } catch (\Exception $e) {
+            dump($e);
+            throw new \Exception(sprintf('Could not write uploaded file "%s"', $uniqueName));
+        }
+
+        if (is_resource($stream)) {
+            fclose($stream);
+        }
+
+        return $file;
     }
 
-    public function getTargetDirectory()
+    /**
+     * @return resource
+     */
+    public function readStream(string $filename)
     {
-        return $this->targetDirectory;
+        $resource = $this->filesystem->readStream($filename);
+
+        if (false === $resource) {
+            throw new \Exception(sprintf('Error opening stream for "%s"', $filename));
+        }
+
+        return $resource;
+    }
+
+    private function generateRandomName(AbstractFileModel $file): string
+    {
+        $randomName = bin2hex(random_bytes(24));
+        $extension = '';
+
+        if ($file->getFile() instanceof UploadedFile) {
+            $extension = $file->getFile()->getClientOriginalExtension();
+        } else {
+            $extension = $file->getFile()->getExtension();
+        }
+
+        // Sanitizes extension.
+        $extension = preg_replace('/[^\w-]/', '', $extension);
+
+        if (!empty($extension)) {
+            $extension = '.'.$extension;
+        }
+
+        return $randomName.$extension;
     }
 }

@@ -39,6 +39,16 @@
                         <small style="color:dimgrey">{{ "updatedAt"|trans }} {{ "date.seconds.ago"|trans }}</small>
                     {% endif %}
                 </div>
+                {% if attachments %}
+                    <div class="card-footer text-muted">
+                        <p>{{ "label.attachments"|trans }}</p>
+                        <ul>
+                            {% for attachment in attachments %}
+                                <li id="attachment{{ loop.index }}"><a href="{{ path('uploads_showprivatefile', {'path': attachment.name}) }}"><i class="fa fa-paperclip"></i> {{ attachment.originalname }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
             </div>
 
             {% if is_granted('ROLE_EDITOR') %}
