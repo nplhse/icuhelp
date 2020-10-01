@@ -17,9 +17,13 @@
 
     <div class="row">
         <div class="col-md-3">
-            <ul class="list-group">
+            <ul class="list-group js-notes-list">
                 {% for note in notes %}
-                    <li class="list-group-item"><a href="{{ path('onboarding_show', {'id': note.id}) }}">{{ note.name }}</a></li>
+                    {% if is_granted('ROLE_EDITOR') %}
+                        <li class="list-group-item" data-id={{ note.id }}><span class="drag-handle fa fa-bars" style="color:dimgrey"></span> <a href="{{ path('onboarding_show', {'id': note.id}) }}">{{ note.name }}</a></li>
+                    {% else %}
+                        <li class="list-group-item" data-id={{ note.id }}><a href="{{ path('onboarding_show', {'id': note.id}) }}">{{ note.name }}</a></li>
+                    {% endif %}
                 {% else %}
                     <li class="list-group-item disabled">{{ "msg.no.onboarding"|trans }}</li>
                 {% endfor %}
@@ -44,7 +48,7 @@
                         <p>{{ "label.attachments"|trans }}</p>
                         <ul>
                             {% for attachment in attachments %}
-                                <li id="attachment{{ loop.index }}"><a href="{{ path('uploads_showprivatefile', {'path': attachment.name}) }}"><i class="fa fa-paperclip"></i> {{ attachment.originalname }}</a></li>
+                                <li id="attachment{{ loop.index }}"><a href="{{ path('uploads_showprivatefile', {'path': attachment.name}) }}" target="_blank"><i class="fa fa-paperclip"></i> {{ attachment.originalname }}</a></li>
                             {% endfor %}
                         </ul>
                     </div>
@@ -70,4 +74,10 @@
             {% endif %}
         </div>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {{ encore_entry_script_tags('sortable-notes') }}
 {% endblock %}

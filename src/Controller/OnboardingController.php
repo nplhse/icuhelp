@@ -40,6 +40,7 @@ class OnboardingController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $note->setCategory('onboarding');
+            $note->setPosition(0);
 
             $entityManager = $this->getDoctrine()->getManager();
 
@@ -128,6 +129,38 @@ class OnboardingController extends AbstractController
                 'note' => $note,
             ]),
         ]);
+    }
+
+    /**
+     * @Route("/_onboarding/reorder/notes", name="onboarding_reorder_notes", methods="POST")
+     */
+    public function reorderNotes(Request $request, NoteRepository $noteRepository)
+    {
+        $orderedIds = json_decode($request->getContent(), true);
+
+        if (null === $orderedIds) {
+            return $this->json(['detail' => 'Invalid body'], 400);
+        }
+
+        $notes = $noteRepository->findByCategory('onboarding');
+
+        // from (position)=>(id) to (id)=>(position)
+        $orderedIds = array_flip($orderedIds);
+
+        foreach ($notes as $note) {
+            $note->setPosition($orderedIds[$note->getId()]);
+        }
+
+        $this->getDoctrine()->getManager()->flush();
+
+        return $this->json(
+            null,
+            200,
+            [],
+            [
+                'groups' => ['main'],
+            ]
+        );
     }
 
     /**

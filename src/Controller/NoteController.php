@@ -40,6 +40,7 @@ class NoteController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $note->setCategory('note');
+            $note->setPosition(0);
 
             $entityManager = $this->getDoctrine()->getManager();
 
