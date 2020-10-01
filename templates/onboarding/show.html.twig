@@ -48,7 +48,7 @@
                         <p>{{ "label.attachments"|trans }}</p>
                         <ul>
                             {% for attachment in attachments %}
-                                <li id="attachment{{ loop.index }}"><a href="{{ path('uploads_showprivatefile', {'path': attachment.name}) }}"><i class="fa fa-paperclip"></i> {{ attachment.originalname }}</a></li>
+                                <li id="attachment{{ loop.index }}"><a href="{{ path('uploads_showprivatefile', {'path': attachment.name}) }}" target="_blank"><i class="fa fa-paperclip"></i> {{ attachment.originalname }}</a></li>
                             {% endfor %}
                         </ul>
                     </div>
