@@ -88,13 +88,27 @@ class NoteController extends AbstractController
      * @Route({"de": "/notizen/{id}/bearbeiten", "en": "/notes/{id}/edit"}, name="note_edit", methods={"GET","POST"})
      * @IsGranted("ROLE_EDITOR")
      */
-    public function edit(Request $request, Note $note, NoteRepository $noteRepository): Response
+    public function edit(Request $request, Note $note, NoteRepository $noteRepository, FileUploader $fileUploader): Response
     {
         $form = $this->createForm(NoteType::class, $note);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $entityManager = $this->getDoctrine()->getManager();
+
+            if (!$note->getUploads()->isEmpty()) {
+                $arrayCollection = $note->getUploads();
+
+                foreach ($arrayCollection as $i => $file) {
+                    $file->setPath('notes');
+
+                    $upload = $fileUploader->upload($file);
+                    $entityManager->persist($upload);
+                }
+            }
+
+            $entityManager->persist($note);
+            $entityManager->flush();
 
             $this->addFlash('success', 'msg.note.edited');
 

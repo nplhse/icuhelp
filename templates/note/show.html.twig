@@ -33,20 +33,22 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ note.name }}</h5>
                     <div class="card-text">{{ note.text|raw }}</div>
-                    {% if attachments %}
-                        <p>Attachments:</p>
-                        <ul>
-                            {% for attachment in attachments %}
-                                <li><a href="{{ path('uploads_showprivatefile', {'path': attachment.name}) }}"><i class="fa fa-paperclip"></i> {{ attachment.originalname }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
                     {% if note.updatedAt|timeago %}
                         <small style="color:dimgrey">{{ "updatedAt"|trans }} {{ note.updatedAt|timeago }}</small>
                     {% else %}
                         <small style="color:dimgrey">{{ "updatedAt"|trans }} {{ "date.seconds.ago"|trans }}</small>
                     {% endif %}
                 </div>
+                {% if attachments %}
+                    <div class="card-footer text-muted">
+                        <p>Attachments:</p>
+                        <ul>
+                            {% for attachment in attachments %}
+                                <li id="attachment{{ loop.index }}"><a href="{{ path('uploads_showprivatefile', {'path': attachment.name}) }}"><i class="fa fa-paperclip"></i> {{ attachment.originalname }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
             </div>
 
             {% if is_granted('ROLE_EDITOR') %}

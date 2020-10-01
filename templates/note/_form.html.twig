@@ -30,22 +30,25 @@
         </div>
     </div>
 
-    {% if action == 'update' %}
-        <div class="clearfix">
-            <div class="btn-group float-right" role="group" aria-label="">
-                <a class="btn btn-secondary" href="{{ path('note_show', {'id': note.id}) }}" role="button">{{ "link.note.back_list"|trans }}</a>
-                <button type="submit" class="btn btn-success">{{ "button.note.create"|trans }}</button>
-            </div>
-
-            {{ include('note/_delete_form.html.twig') }}
-        </div>
-    {% elseif action == 'create' %}
+    {% if action == 'create' %}
         <div class="clearfix">
             <div class="btn-group float-right" role="group" aria-label="">
                 <a class="btn btn-secondary" href="{{ path('note_index') }}" role="button">{{ "link.note.back_list"|trans }}</a>
                 <button type="submit" class="btn btn-success">{{ "button.note.create"|trans }}</button>
             </div>
+
+            {{ form_end(form) }}
+        </div>
+    {% elseif action == 'update' %}
+        <div class="clearfix">
+            <div class="btn-group float-right" role="group" aria-label="">
+                <a class="btn btn-secondary" href="{{ path('note_show', {'id': note.id}) }}" role="button">{{ "link.note.back"|trans }}</a>
+                <button type="submit" class="btn btn-success">{{ "button.note.save"|trans }}</button>
+            </div>
+
+            {{ form_end(form) }}
+
+            {{ include('note/_delete_form.html.twig') }}
         </div>
     {% endif %}
-    {{ form_end(form) }}
 {% endblock %}
