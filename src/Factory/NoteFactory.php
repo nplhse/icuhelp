@@ -25,6 +25,7 @@ final class NoteFactory extends ModelFactory
             'name' => self::faker()->sentence,
             'text' => self::faker()->paragraph,
             'category' => 'note',
+            'position' => self::faker()->randomNumber(),
             'createdAt' => self::faker()->dateTimeBetween('-100 days', '-20 days'),
             'updatedAt' => self::faker()->dateTimeBetween('-20 days', '-1 days'),
         ];
