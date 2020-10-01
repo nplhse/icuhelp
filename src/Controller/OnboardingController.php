@@ -138,7 +138,7 @@ class OnboardingController extends AbstractController
     {
         $orderedIds = json_decode($request->getContent(), true);
 
-        if ($orderedIds === null) {
+        if (null === $orderedIds) {
             return $this->json(['detail' => 'Invalid body'], 400);
         }
 
@@ -158,7 +158,7 @@ class OnboardingController extends AbstractController
             200,
             [],
             [
-                'groups' => ['main']
+                'groups' => ['main'],
             ]
         );
     }
