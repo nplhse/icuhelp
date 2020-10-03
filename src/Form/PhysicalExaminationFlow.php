@@ -8,7 +8,13 @@ use App\Form\Steps\PhysicalExaminationStep12Form;
 use App\Form\Steps\PhysicalExaminationStep13Form;
 use App\Form\Steps\PhysicalExaminationStep14Form;
 use App\Form\Steps\PhysicalExaminationStep15Form;
+use App\Form\Steps\PhysicalExaminationStep16Form;
+use App\Form\Steps\PhysicalExaminationStep17Form;
+use App\Form\Steps\PhysicalExaminationStep18Form;
+use App\Form\Steps\PhysicalExaminationStep19Form;
 use App\Form\Steps\PhysicalExaminationStep1Form;
+use App\Form\Steps\PhysicalExaminationStep20Form;
+use App\Form\Steps\PhysicalExaminationStep21Form;
 use App\Form\Steps\PhysicalExaminationStep2Form;
 use App\Form\Steps\PhysicalExaminationStep3Form;
 use App\Form\Steps\PhysicalExaminationStep4Form;
@@ -94,11 +100,11 @@ class PhysicalExaminationFlow extends FormFlow
                 'label' => 'High flow',
                 'form_type' => PhysicalExaminationStep12Form::class,
                 'skip' => function ($estimatedCurrentStepNumber, FormFlowInterface $flow) {
-                    return $estimatedCurrentStepNumber > 1 && !$flow->getFormData()->canHaveNIV();
+                    return $estimatedCurrentStepNumber > 1 && !$flow->getFormData()->canHaveHighflow();
                 },
             ],
             13 => [
-                'label' => 'High flow',
+                'label' => 'Beatmungsmodus',
                 'form_type' => PhysicalExaminationStep13Form::class,
                 'skip' => function ($estimatedCurrentStepNumber, FormFlowInterface $flow) {
                     return $estimatedCurrentStepNumber > 1 && !$flow->getFormData()->canHaveBeatmung();
@@ -119,6 +125,42 @@ class PhysicalExaminationFlow extends FormFlow
                 },
             ],
             16 => [
+                'label' => 'Gasaustausch',
+                'form_type' => PhysicalExaminationStep16Form::class,
+            ],
+            17 => [
+                'label' => 'Gasaustausch eingeschränkt',
+                'form_type' => PhysicalExaminationStep17Form::class,
+                'skip' => function ($estimatedCurrentStepNumber, FormFlowInterface $flow) {
+                    return $estimatedCurrentStepNumber > 16 && !$flow->getFormData()->canHaveGasaustauschDetail();
+                },
+            ],
+            18 => [
+                'label' => 'Atemgeräusch',
+                'form_type' => PhysicalExaminationStep18Form::class,
+            ],
+            19 => [
+                'label' => 'Atemgeräusch Lokalisation',
+                'form_type' => PhysicalExaminationStep19Form::class,
+                'skip' => function ($estimatedCurrentStepNumber, FormFlowInterface $flow) {
+                    return $estimatedCurrentStepNumber > 18 && !$flow->getFormData()->canHaveAtemgeraeuschLokalisation();
+                },
+            ],
+            20 => [
+                'label' => 'Rasselgeräusch Charakter',
+                'form_type' => PhysicalExaminationStep20Form::class,
+                'skip' => function ($estimatedCurrentStepNumber, FormFlowInterface $flow) {
+                    return $estimatedCurrentStepNumber > 18 && !$flow->getFormData()->canHaveRasselgeraeuschCharakter();
+                },
+            ],
+            21 => [
+                'label' => 'Atemgeräusch Lokalisation',
+                'form_type' => PhysicalExaminationStep21Form::class,
+                'skip' => function ($estimatedCurrentStepNumber, FormFlowInterface $flow) {
+                    return $estimatedCurrentStepNumber > 18 && !$flow->getFormData()->canHaveHustenstoss();
+                },
+            ],
+            22 => [
                 'label' => 'Bestätigung',
             ],
         ];

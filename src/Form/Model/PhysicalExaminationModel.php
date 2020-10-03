@@ -38,6 +38,18 @@ class PhysicalExaminationModel
 
     public $atemfrequenz;
 
+    public $gasaustausch;
+
+    public $gasaustausch_detail;
+
+    public $atemgeraeusch;
+
+    public $atemgeraeusch_lokalisation;
+
+    public $rasselgeraeusch_charakter;
+
+    public $hustenstoss;
+
     public function canHaveAnsprechbarkeit()
     {
         if ('analgosediert' == $this->vigilanz) {
@@ -101,6 +113,15 @@ class PhysicalExaminationModel
         return false;
     }
 
+    public function canHaveHighflow()
+    {
+        if ('high flow' == $this->atmung) {
+            return true;
+        }
+
+        return false;
+    }
+
     public function canHaveBeatmung()
     {
         if ('intubiert' == $this->atmung) {
@@ -126,6 +147,42 @@ class PhysicalExaminationModel
         }
 
         return false;
+    }
+
+    public function canHaveGasaustauschDetail()
+    {
+        if ('eingeschränkt' == $this->gasaustausch) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function canHaveAtemgeraeuschLokalisation()
+    {
+        if ('vesikulär beidseits' == $this->atemgeraeusch) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public function canHaveRasselgeraeuschCharakter()
+    {
+        if ('Rasselgeräusche' == $this->atemgeraeusch) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function canHaveHustenstoss()
+    {
+        if ('intubiert' == $this->atmung) {
+            return false;
+        }
+
+        return true;
     }
 
     public function generate()
