@@ -68,6 +68,20 @@ class PhysicalExaminationModel
 
     public $kreislauf_sonstiges;
 
+    public $kreislauf_stabil;
+
+    public $legraise_test;
+
+    public $abdomen;
+
+    public $darmgeraeusche;
+
+    public $druckschmerz;
+
+    public $druckschmerz_lokalisation;
+
+    public $stuhlgang;
+
     public function canHaveAnsprechbarkeit()
     {
         if ('analgosediert' == $this->vigilanz) {
@@ -260,6 +274,24 @@ class PhysicalExaminationModel
     public function canHaveKreislaufSonstiges()
     {
         if (in_array('Sonstiges', $this->kreislauf)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function canHaveLegRaiseTest()
+    {
+        if ('instabil' == $this->kreislauf_stabil) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function canHaveDruckschmerzLokalisation()
+    {
+        if ('vorhanden' == $this->druckschmerz) {
             return true;
         }
 

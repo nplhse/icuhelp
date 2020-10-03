@@ -25,6 +25,13 @@ use App\Form\Steps\PhysicalExaminationStep28Form;
 use App\Form\Steps\PhysicalExaminationStep29Form;
 use App\Form\Steps\PhysicalExaminationStep2Form;
 use App\Form\Steps\PhysicalExaminationStep30Form;
+use App\Form\Steps\PhysicalExaminationStep31Form;
+use App\Form\Steps\PhysicalExaminationStep32Form;
+use App\Form\Steps\PhysicalExaminationStep33Form;
+use App\Form\Steps\PhysicalExaminationStep34Form;
+use App\Form\Steps\PhysicalExaminationStep35Form;
+use App\Form\Steps\PhysicalExaminationStep36Form;
+use App\Form\Steps\PhysicalExaminationStep37Form;
 use App\Form\Steps\PhysicalExaminationStep3Form;
 use App\Form\Steps\PhysicalExaminationStep4Form;
 use App\Form\Steps\PhysicalExaminationStep5Form;
@@ -227,6 +234,40 @@ class PhysicalExaminationFlow extends FormFlow
                 },
             ],
             31 => [
+                'label' => 'Kreislaufstabilität',
+                'form_type' => PhysicalExaminationStep31Form::class,
+            ],
+            32 => [
+                'label' => 'Leg raise Test',
+                'form_type' => PhysicalExaminationStep32Form::class,
+                'skip' => function ($estimatedCurrentStepNumber, FormFlowInterface $flow) {
+                    return $estimatedCurrentStepNumber > 31 && !$flow->getFormData()->canHaveLegRaiseTest();
+                },
+            ],
+            33 => [
+                'label' => 'Abdomen',
+                'form_type' => PhysicalExaminationStep33Form::class,
+            ],
+            34 => [
+                'label' => 'Darmgeräusche',
+                'form_type' => PhysicalExaminationStep34Form::class,
+            ],
+            35 => [
+                'label' => 'Druckschmerz',
+                'form_type' => PhysicalExaminationStep35Form::class,
+            ],
+            36 => [
+                'label' => 'Druckschmerz Lokalisation',
+                'form_type' => PhysicalExaminationStep36Form::class,
+                'skip' => function ($estimatedCurrentStepNumber, FormFlowInterface $flow) {
+                    return $estimatedCurrentStepNumber > 35 && !$flow->getFormData()->canHaveDruckschmerzLokalisation();
+                },
+            ],
+            37 => [
+                'label' => 'Stuhlgang',
+                'form_type' => PhysicalExaminationStep37Form::class,
+            ],
+            38 => [
                 'label' => 'Bestätigung',
             ],
         ];
