@@ -50,6 +50,24 @@ class PhysicalExaminationModel
 
     public $hustenstoss;
 
+    public $rhythmus;
+
+    public $herzfrequenz;
+
+    public $rhythmus_sonstiges;
+
+    public $vorhofflimmern_detail;
+
+    public $kreislauf = [];
+
+    public $noradrenalin;
+
+    public $epinephrin;
+
+    public $milrinon;
+
+    public $kreislauf_sonstiges;
+
     public function canHaveAnsprechbarkeit()
     {
         if ('analgosediert' == $this->vigilanz) {
@@ -183,6 +201,69 @@ class PhysicalExaminationModel
         }
 
         return true;
+    }
+
+    public function canHaveHerzfrequenz()
+    {
+        if ('Sinusbradykardie' == $this->rhythmus or 'Sinustachykardie' == $this->rhythmus or 'Absolute arrhythmie' == $this->rhythmus) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function canHaveRhythmusSonstiges()
+    {
+        if ('Sonstiges' == $this->rhythmus) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function canHaveVorhofflimmernDetail()
+    {
+        if ('Absolute arrhythmie' == $this->rhythmus) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function canHaveNoradrenalin()
+    {
+        if (in_array('Noradrenalin', $this->kreislauf)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function canHaveEpinephrin()
+    {
+        if (in_array('Epinephrin', $this->kreislauf)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function canHaveMilrinon()
+    {
+        if (in_array('Milrinon', $this->kreislauf)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function canHaveKreislaufSonstiges()
+    {
+        if (in_array('Sonstiges', $this->kreislauf)) {
+            return true;
+        }
+
+        return false;
     }
 
     public function generate()

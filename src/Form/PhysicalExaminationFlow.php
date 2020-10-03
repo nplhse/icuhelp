@@ -15,7 +15,16 @@ use App\Form\Steps\PhysicalExaminationStep19Form;
 use App\Form\Steps\PhysicalExaminationStep1Form;
 use App\Form\Steps\PhysicalExaminationStep20Form;
 use App\Form\Steps\PhysicalExaminationStep21Form;
+use App\Form\Steps\PhysicalExaminationStep22Form;
+use App\Form\Steps\PhysicalExaminationStep23Form;
+use App\Form\Steps\PhysicalExaminationStep24Form;
+use App\Form\Steps\PhysicalExaminationStep25Form;
+use App\Form\Steps\PhysicalExaminationStep26Form;
+use App\Form\Steps\PhysicalExaminationStep27Form;
+use App\Form\Steps\PhysicalExaminationStep28Form;
+use App\Form\Steps\PhysicalExaminationStep29Form;
 use App\Form\Steps\PhysicalExaminationStep2Form;
+use App\Form\Steps\PhysicalExaminationStep30Form;
 use App\Form\Steps\PhysicalExaminationStep3Form;
 use App\Form\Steps\PhysicalExaminationStep4Form;
 use App\Form\Steps\PhysicalExaminationStep5Form;
@@ -161,6 +170,63 @@ class PhysicalExaminationFlow extends FormFlow
                 },
             ],
             22 => [
+                'label' => 'Rhythmus',
+                'form_type' => PhysicalExaminationStep22Form::class,
+            ],
+            23 => [
+                'label' => 'Herzfrequenz',
+                'form_type' => PhysicalExaminationStep23Form::class,
+                'skip' => function ($estimatedCurrentStepNumber, FormFlowInterface $flow) {
+                    return $estimatedCurrentStepNumber > 22 && !$flow->getFormData()->canHaveHerzfrequenz();
+                },
+            ],
+            24 => [
+                'label' => 'Rhythmus Sonstiges',
+                'form_type' => PhysicalExaminationStep24Form::class,
+                'skip' => function ($estimatedCurrentStepNumber, FormFlowInterface $flow) {
+                    return $estimatedCurrentStepNumber > 22 && !$flow->getFormData()->canHaveRhythmusSonstiges();
+                },
+            ],
+            25 => [
+                'label' => 'Vorhofflimmern Detail',
+                'form_type' => PhysicalExaminationStep25Form::class,
+                'skip' => function ($estimatedCurrentStepNumber, FormFlowInterface $flow) {
+                    return $estimatedCurrentStepNumber > 22 && !$flow->getFormData()->canHaveVorhofflimmernDetail();
+                },
+            ],
+            26 => [
+                'label' => 'Kreislaufwirksame Medikamente',
+                'form_type' => PhysicalExaminationStep26Form::class,
+            ],
+            27 => [
+                'label' => 'Noradrenalin',
+                'form_type' => PhysicalExaminationStep27Form::class,
+                'skip' => function ($estimatedCurrentStepNumber, FormFlowInterface $flow) {
+                    return $estimatedCurrentStepNumber > 26 && !$flow->getFormData()->canHaveNoradrenalin();
+                },
+            ],
+            28 => [
+                'label' => 'Epinephrin',
+                'form_type' => PhysicalExaminationStep28Form::class,
+                'skip' => function ($estimatedCurrentStepNumber, FormFlowInterface $flow) {
+                    return $estimatedCurrentStepNumber > 26 && !$flow->getFormData()->canHaveEpinephrin();
+                },
+            ],
+            29 => [
+                'label' => 'Milrinon',
+                'form_type' => PhysicalExaminationStep29Form::class,
+                'skip' => function ($estimatedCurrentStepNumber, FormFlowInterface $flow) {
+                    return $estimatedCurrentStepNumber > 26 && !$flow->getFormData()->canHaveMilrinon();
+                },
+            ],
+            30 => [
+                'label' => 'Sonstiges',
+                'form_type' => PhysicalExaminationStep30Form::class,
+                'skip' => function ($estimatedCurrentStepNumber, FormFlowInterface $flow) {
+                    return $estimatedCurrentStepNumber > 26 && !$flow->getFormData()->canHaveKreislaufSonstiges();
+                },
+            ],
+            31 => [
                 'label' => 'Bestätigung',
             ],
         ];
