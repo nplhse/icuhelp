@@ -16,9 +16,9 @@ class PhysicalExaminationStep26Form extends AbstractType
                 'Epinephrin' => 'Epinephrin',
                 'Milrinon' => 'Milrinon',
                 'Sonstiges' => 'Sonstiges',
+                'Keine' => 'Keine',
             ],
             'multiple' => true,
-            'required' => true,
         ]);
     }
 

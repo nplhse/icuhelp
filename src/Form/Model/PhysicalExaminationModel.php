@@ -82,6 +82,18 @@ class PhysicalExaminationModel
 
     public $stuhlgang;
 
+    public $nierenfunktion;
+
+    public $diuretika;
+
+    public $bilanz;
+
+    public $oedeme;
+
+    public $extremitaeten;
+
+    public $extremitaeten_seite;
+
     public function canHaveAnsprechbarkeit()
     {
         if ('analgosediert' == $this->vigilanz) {
@@ -292,6 +304,24 @@ class PhysicalExaminationModel
     public function canHaveDruckschmerzLokalisation()
     {
         if ('vorhanden' == $this->druckschmerz) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function canHaveDiuretika()
+    {
+        if ('Gute Ausscheidung' == $this->nierenfunktion or 'Eingeschränkte Ausscheidung' == $this->nierenfunktion) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function canHaveRestausscheidung()
+    {
+        if ('Dialyse' == $this->nierenfunktion) {
             return true;
         }
 

@@ -32,7 +32,13 @@ use App\Form\Steps\PhysicalExaminationStep34Form;
 use App\Form\Steps\PhysicalExaminationStep35Form;
 use App\Form\Steps\PhysicalExaminationStep36Form;
 use App\Form\Steps\PhysicalExaminationStep37Form;
+use App\Form\Steps\PhysicalExaminationStep38Form;
+use App\Form\Steps\PhysicalExaminationStep39Form;
 use App\Form\Steps\PhysicalExaminationStep3Form;
+use App\Form\Steps\PhysicalExaminationStep40Form;
+use App\Form\Steps\PhysicalExaminationStep41Form;
+use App\Form\Steps\PhysicalExaminationStep42Form;
+use App\Form\Steps\PhysicalExaminationStep43Form;
 use App\Form\Steps\PhysicalExaminationStep4Form;
 use App\Form\Steps\PhysicalExaminationStep5Form;
 use App\Form\Steps\PhysicalExaminationStep6Form;
@@ -268,6 +274,36 @@ class PhysicalExaminationFlow extends FormFlow
                 'form_type' => PhysicalExaminationStep37Form::class,
             ],
             38 => [
+                'label' => 'Nierenfuntkion',
+                'form_type' => PhysicalExaminationStep38Form::class,
+            ],
+            39 => [
+                'label' => 'Diuretikagabe',
+                'form_type' => PhysicalExaminationStep39Form::class,
+                'skip' => function ($estimatedCurrentStepNumber, FormFlowInterface $flow) {
+                    return $estimatedCurrentStepNumber > 38 && !$flow->getFormData()->canHaveDiuretika();
+                },
+            ],
+            40 => [
+                'label' => 'Restausscheidung',
+                'form_type' => PhysicalExaminationStep40Form::class,
+                'skip' => function ($estimatedCurrentStepNumber, FormFlowInterface $flow) {
+                    return $estimatedCurrentStepNumber > 35 && !$flow->getFormData()->canHaveRestausscheidung();
+                },
+            ],
+            41 => [
+                'label' => 'Bilanz',
+                'form_type' => PhysicalExaminationStep41Form::class,
+            ],
+            42 => [
+                'label' => 'Ödeme',
+                'form_type' => PhysicalExaminationStep42Form::class,
+            ],
+            43 => [
+                'label' => 'Extremitäten',
+                'form_type' => PhysicalExaminationStep43Form::class,
+            ],
+            44 => [
                 'label' => 'Bestätigung',
             ],
         ];
