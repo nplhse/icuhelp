@@ -39,7 +39,16 @@ use App\Form\Steps\PhysicalExaminationStep40Form;
 use App\Form\Steps\PhysicalExaminationStep41Form;
 use App\Form\Steps\PhysicalExaminationStep42Form;
 use App\Form\Steps\PhysicalExaminationStep43Form;
+use App\Form\Steps\PhysicalExaminationStep44Form;
+use App\Form\Steps\PhysicalExaminationStep45Form;
+use App\Form\Steps\PhysicalExaminationStep46Form;
+use App\Form\Steps\PhysicalExaminationStep47Form;
+use App\Form\Steps\PhysicalExaminationStep48Form;
+use App\Form\Steps\PhysicalExaminationStep49Form;
 use App\Form\Steps\PhysicalExaminationStep4Form;
+use App\Form\Steps\PhysicalExaminationStep50Form;
+use App\Form\Steps\PhysicalExaminationStep51Form;
+use App\Form\Steps\PhysicalExaminationStep52Form;
 use App\Form\Steps\PhysicalExaminationStep5Form;
 use App\Form\Steps\PhysicalExaminationStep6Form;
 use App\Form\Steps\PhysicalExaminationStep7Form;
@@ -304,6 +313,51 @@ class PhysicalExaminationFlow extends FormFlow
                 'form_type' => PhysicalExaminationStep43Form::class,
             ],
             44 => [
+                'label' => 'Fußpulse',
+                'form_type' => PhysicalExaminationStep44Form::class,
+            ],
+            45 => [
+                'label' => 'Ernährung',
+                'form_type' => PhysicalExaminationStep45Form::class,
+            ],
+            46 => [
+                'label' => 'Ernährungsform',
+                'form_type' => PhysicalExaminationStep46Form::class,
+            ],
+            47 => [
+                'label' => 'Punktionsstellen',
+                'form_type' => PhysicalExaminationStep47Form::class,
+            ],
+            48 => [
+                'label' => 'Restausscheidung',
+                'form_type' => PhysicalExaminationStep48Form::class,
+                'skip' => function ($estimatedCurrentStepNumber, FormFlowInterface $flow) {
+                    return $estimatedCurrentStepNumber > 47 && !$flow->getFormData()->canHavePunktionsstellen();
+                },
+            ],
+            49 => [
+                'label' => 'ECMO',
+                'form_type' => PhysicalExaminationStep49Form::class,
+            ],
+            50 => [
+                'label' => 'ECMO Details',
+                'form_type' => PhysicalExaminationStep50Form::class,
+                'skip' => function ($estimatedCurrentStepNumber, FormFlowInterface $flow) {
+                    return $estimatedCurrentStepNumber > 47 && !$flow->getFormData()->canHaveECMO();
+                },
+            ],
+            51 => [
+                'label' => 'Impella',
+                'form_type' => PhysicalExaminationStep51Form::class,
+                'skip' => function ($estimatedCurrentStepNumber, FormFlowInterface $flow) {
+                    return $estimatedCurrentStepNumber > 47 && !$flow->getFormData()->canHaveImpella();
+                },
+            ],
+            52 => [
+                'label' => 'Sonstiges',
+                'form_type' => PhysicalExaminationStep52Form::class,
+            ],
+            53 => [
                 'label' => 'Bestätigung',
             ],
         ];

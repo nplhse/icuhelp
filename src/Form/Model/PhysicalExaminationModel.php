@@ -94,6 +94,26 @@ class PhysicalExaminationModel
 
     public $extremitaeten_seite;
 
+    public $fusspulse;
+
+    public $ernaehrung;
+
+    public $ernaehrungsform;
+
+    public $punktionsstellen;
+
+    public $punktionsstellen_details;
+
+    public $ecmo;
+
+    public $blutfluss;
+
+    public $sweepgasfluss;
+
+    public $impella;
+
+    public $sonstiges;
+
     public function canHaveAnsprechbarkeit()
     {
         if ('analgosediert' == $this->vigilanz) {
@@ -328,6 +348,42 @@ class PhysicalExaminationModel
         return false;
     }
 
+    public function canHaveErnaehrungsform()
+    {
+        if ('Ja' == $this->ernaehrung) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function canHavePunktionsstellen()
+    {
+        if ('auffällig' == $this->punktionsstellen) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function canHaveECMO()
+    {
+        if ('veno-arteriell' == $this->ecmo) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function canHaveImpella()
+    {
+        if ('keine' == $this->ecmo) {
+            return false;
+        }
+
+        return true;
+    }
+
     public function generate()
     {
         $output = ucfirst($this->vigilanz);
@@ -355,6 +411,27 @@ class PhysicalExaminationModel
             $output .= ': '.$this->sensomotorischedefizite_detail.'.';
         } else {
             $output .= '.';
+        }
+
+        $output .= ' '.ucfirst($this->atmung);
+        if ($this->canHaveO2Gabe() && isset($this->o2_flow)) {
+            $output .= ' ('.$this->o2_flow.'l O2/min)';
+        }
+
+        if ('CPAP' == $this->atmung && isset($this->o2_flow)) {
+            $output .= ' (PEEP '.$this->peep.'mmHg, ASB '.$this->asb.'mmHg, FiO2 '.$this->fio2.'%)';
+        } elseif ('high flow' == $this->atmung) {
+            $output .= ' ('.$this->o2_flow.'l O2/min, FiO2 '.$this->fio2.'%)';
+        } elseif ('intubiert' == $this->atmung && 'CPAP' == $this->beatmung_modus) {
+            $output .= ' ('.$this->beatmung_modus.', PEEP '.$this->peep.'mmHg, ASB '.$this->asb.'mmHg, AF '.$this->atemfrequenz.'/min, FiO2 '.$this->fio2.'%)';
+        } elseif ('intubiert' == $this->atmung && 'BiPAP' == $this->beatmung_modus) {
+            $output .= ' ('.$this->beatmung_modus.', PEEP '.$this->peep.'mmHg, ASB '.$this->asb.'mmHg, Pinsp '.$this->atemfrequenz.', AF '.$this->atemfrequenz.'/min, FiO2 '.$this->fio2.'%)';
+        }
+
+        $output .= ' Gasaustausch '.$this->gasaustausch;
+
+        if ('eingeschränkt' == $this->gasaustausch) {
+            $output .= ' ('.$this->gasaustausch_detail.')';
         }
 
         return $output;
