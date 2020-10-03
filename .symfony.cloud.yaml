@@ -23,12 +23,20 @@ web:
             root: "public"
             expires: 1h
             passthru: "/index.php"
+        '/uploads':
+            root: 'public/uploads'
+            scripts: false
+            allow: false
+            rules:
+                # Only allow some static files.
+                '\.(jpe?g|png|gif|svgz?|pdf|doc|docx|ppt|pptx)$':
+                    allow: true
 
 disk: 1024
 
 mounts:
     "/var": { source: local, source_path: var }
-    '/var/storage/uploads': { source: local, source_path: uploads }
+    '/public/uploads': { source: local, source_path: uploads }
 
 hooks:
     build: |
