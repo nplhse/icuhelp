@@ -26,6 +26,8 @@ Encore
     .addEntry('app', './assets/js/main.js')
     .addEntry('letter', './assets/js/letter.js')
     .addEntry('form-tag', './assets/js/form-tag.js')
+    .addEntry('editor', './assets/js/editor.js')
+    .addEntry('sortable-notes', './assets/js/sortable-notes.js')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()

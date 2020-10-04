@@ -13,3 +13,16 @@ flysystem:
             adapter: 'lazy'
             options:
                 source: '%env(APP_UPLOADS_SOURCE)%'
+
+        public.storage.local:
+            adapter: 'local'
+            options:
+                directory: '%kernel.project_dir%/public/'
+
+        public.storage.memory:
+            adapter: 'memory'
+
+        public.storage:
+            adapter: 'lazy'
+            options:
+                source: '%env(APP_PUBLIC_SOURCE)%'

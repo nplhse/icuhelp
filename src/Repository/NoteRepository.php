@@ -27,7 +27,7 @@ class NoteRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('n')
             ->andWhere('n.category = :category')
             ->setParameter('category', $category)
-            ->orderBy('n.name', 'ASC')
+            ->orderBy('n.position', 'ASC')
             ->getQuery()
             ->getResult()
         ;

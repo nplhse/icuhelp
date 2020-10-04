@@ -95,7 +95,7 @@
       </trans-unit>
       <trans-unit id="jgnXgPh" resname="homepage_teaser_h1">
         <source>homepage_teaser_h1</source>
-        <target>Medical letters</target>
+        <target>Welcome to ICUhelp</target>
       </trans-unit>
       <trans-unit id="qyK0pid" resname="homepage_teaser_text">
         <source>homepage_teaser_text</source>
@@ -824,6 +824,46 @@
       <trans-unit id="L9GICIt" resname="title.finding_generator">
         <source>title.finding_generator</source>
         <target>Finding generator</target>
+      </trans-unit>
+      <trans-unit id="zfvnNXp" resname="title.note_modal.delete">
+        <source>title.note_modal.delete</source>
+        <target>Are you sure?</target>
+      </trans-unit>
+      <trans-unit id="xYUap6O" resname="msg.note_modal.delete">
+        <source>msg.note_modal.delete</source>
+        <target>Do you really want to delete this note?</target>
+      </trans-unit>
+      <trans-unit id="8yeGT7d" resname="label.cancel">
+        <source>label.cancel</source>
+        <target>Cancel</target>
+      </trans-unit>
+      <trans-unit id="MTVC8id" resname="label.delete_note">
+        <source>label.delete_note</source>
+        <target>Delete note</target>
+      </trans-unit>
+      <trans-unit id="UcqttPs" resname="button.note.create">
+        <source>button.note.create</source>
+        <target>Create note</target>
+      </trans-unit>
+      <trans-unit id="8Jt02wG" resname="label.attachments">
+        <source>label.attachments</source>
+        <target>Attachments</target>
+      </trans-unit>
+      <trans-unit id="SQqecqE" resname="label.attachments.add">
+        <source>label.attachments.add</source>
+        <target>Add attachment</target>
+      </trans-unit>
+      <trans-unit id="5VvCc22" resname="title.onboarding_modal.delete">
+        <source>title.onboarding_modal.delete</source>
+        <target>Are you sure?</target>
+      </trans-unit>
+      <trans-unit id="fj4HZji" resname="msg.onboarding_modal.delete">
+        <source>msg.onboarding_modal.delete</source>
+        <target>Do you really want to delete this entry?</target>
+      </trans-unit>
+      <trans-unit id="3duqaPy" resname="label.delete_onboarding">
+        <source>label.delete_onboarding</source>
+        <target>Delete entry</target>
       </trans-unit>
     </body>
   </file>

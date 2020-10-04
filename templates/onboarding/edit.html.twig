@@ -3,7 +3,7 @@
 {% block title %}{{ parent() }} - {{ "title.onboarding.edit"|trans }} - {{ note.name }}{% endblock %}
 
 {% block body %}
-    {{ include('_components/project_tabs.html.twig') }}
+    {{ include('components/project_tabs.html.twig') }}
 
     <h1 class="mt-2">{{ "title.onboarding.edit"|trans }}</h1>
 
@@ -13,19 +13,23 @@
         </div>
     {% endfor %}
 
-    {{ form_start(form) }}
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }}" role="alert">
+                {{ message|trans }}
+            </div>
+        {% endfor %}
+    {% endfor %}
 
-    {{ form_row(form.name) }}
-    {{ form_row(form.category) }}
-    {{ form_row(form.text) }}
+    {{ include('note/_form.html.twig', {
+        'action': 'update',
+        'attachments': attachments,
+        'show_confirmation': 'true',
+    }) }}
+{% endblock %}
 
-    <div class="clearfix">
-        <div class="btn-group float-right" role="group" aria-label="">
-            <a class="btn btn-secondary" href="{{ path('onboarding_show', {'id':note.id}) }}" role="button">{{ "link.onboarding.back"|trans }}</a>
-            <button type="submit" class="btn btn-success">{{ "button.onboarding.save"|trans }}</button>
-        </div>
-        {{ form_end(form) }}
+{% block javascripts %}
+    {{ parent() }}
 
-        {{ include('onboarding/_delete_form.html.twig') }}
-    </div>
+    {{ encore_entry_script_tags('editor') }}
 {% endblock %}

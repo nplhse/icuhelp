@@ -1,6 +1,13 @@
 // Import bootstrap
 @import "~bootstrap";
 
-.list-group-item.active > a {
-  color: white ;
+// Import custom styles
+@import "fixes.css";
+
+/* Sortable */
+.sortable-ghost {
+  background-color: lightgray;
+}
+.drag-handle {
+  cursor: grab;
 }

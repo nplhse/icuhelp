@@ -9,7 +9,7 @@ use Exception;
 /**
  * Trait TimeStampableTrait.
  */
-trait TimestampableTrait
+trait EntityTimestampableTrait
 {
     /**
      * @ORM\Column(type="datetime")

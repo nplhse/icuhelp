@@ -17,7 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class InfoController extends AbstractController
 {
     /**
-     * @Route({"de": "/info", "en": "/info"}, name="info_index", methods={"GET"})
+     * @Route({"de": "/mitteilungen", "en": "/info"}, name="info_index", methods={"GET"})
      */
     public function index(InfoRepository $infoRepository): Response
     {
@@ -27,7 +27,7 @@ class InfoController extends AbstractController
     }
 
     /**
-     * @Route({"de": "/info/erstellen", "en": "/info/new"}, name="info_new", methods={"GET","POST"})
+     * @Route({"de": "/mitteilungen/erstellen", "en": "/info/new"}, name="info_new", methods={"GET","POST"})
      * @IsGranted("ROLE_EDITOR")
      */
     public function new(Request $request, InfoRepository $infoRepository): Response
@@ -54,7 +54,7 @@ class InfoController extends AbstractController
     }
 
     /**
-     * @Route({"de": "/info/{id}", "en": "/info/{id}"}, name="info_show", methods={"GET"})
+     * @Route({"de": "/mitteilungen/{id}", "en": "/info/{id}"}, name="info_show", methods={"GET"})
      */
     public function show(Info $info, InfoRepository $infoRepository): Response
     {
@@ -64,7 +64,7 @@ class InfoController extends AbstractController
     }
 
     /**
-     * @Route({"de": "/info/{id}/bearbeiten", "en": "/info/{id}/edit"}, name="info_edit", methods={"GET","POST"})
+     * @Route({"de": "/mitteilungen/{id}/bearbeiten", "en": "/info/{id}/edit"}, name="info_edit", methods={"GET","POST"})
      * @IsGranted("ROLE_EDITOR")
      */
     public function edit(Request $request, Info $info, InfoRepository $infoRepository): Response
@@ -88,7 +88,7 @@ class InfoController extends AbstractController
     }
 
     /**
-     * @Route({"de": "/info/{id}", "en": "/info/{id}"}, name="info_delete", methods={"DELETE"})
+     * @Route({"de": "/mitteilungen/{id}", "en": "/info/{id}"}, name="info_delete", methods={"DELETE"})
      * @IsGranted("ROLE_EDITOR")
      */
     public function delete(Request $request, Info $info): Response

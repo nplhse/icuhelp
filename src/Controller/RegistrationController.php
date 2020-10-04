@@ -26,7 +26,7 @@ class RegistrationController extends AbstractController
     }
 
     /**
-     * @Route("/register", name="security_register")
+     * @Route({"de": "/registrieren", "en": "/register"}, name="security_register")
      */
     public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder, GuardAuthenticatorHandler $guardHandler, LoginFormAuthenticator $authenticator, string $adminEmail, string $adminEmailName): Response
     {
@@ -76,7 +76,7 @@ class RegistrationController extends AbstractController
     }
 
     /**
-     * @Route("/verify/email", name="security_verify_email")
+     * @Route({"de": "/email-bestaetigen", "en": "/verify-email"}, name="security_verify_email")
      */
     public function verifyUserEmail(Request $request): Response
     {

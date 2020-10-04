@@ -3,7 +3,7 @@
 {% block title %}{{ parent() }} - {{ "title.note.show"|trans }}: {{ note.name }}{% endblock %}
 
 {% block body %}
-    {{ include('_components/project_tabs.html.twig') }}
+    {{ include('components/project_tabs.html.twig') }}
 
     <h1 class="mt-2">{{ "title.note.show"|trans }}</h1>
 
@@ -39,17 +39,41 @@
                         <small style="color:dimgrey">{{ "updatedAt"|trans }} {{ "date.seconds.ago"|trans }}</small>
                     {% endif %}
                 </div>
+                {% if attachments %}
+                    <div class="card-footer text-muted">
+                        <p>{{ "label.attachments"|trans }}</p>
+                        <ul>
+                            {% for attachment in attachments %}
+                                <li id="attachment{{ loop.index }}"><a href="{{ path('uploads_showprivatefile', {'path': attachment.name}) }}" target="_blank"><i class="fa fa-paperclip"></i> {{ attachment.originalname }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
             </div>
 
             {% if is_granted('ROLE_EDITOR') %}
                 <div class="clearfix mt-3 mb-sm-3">
                     <div class="btn-group float-right" role="group" aria-label="">
-                        <a class="btn btn-secondary" href="{{ path('note_edit', {'id': note.id}) }}" role="button">{{ "button.note.edit"|trans }}</a>
+                        <a class="btn btn-secondary" href="{{ path('note_edit', {'id': note.id}) }}" role="button"><i class="fa fa-edit"></i> {{ "button.note.edit"|trans }}</a>
                     </div>
 
-                    {{ include('note/_delete_form.html.twig') }}
+                    {{ include('form/_delete_entity_form.html.twig', {
+                        'entity': note,
+                        'btn_delete': 'button.note.delete',
+                        'title_modal_delete': 'title.note_modal.delete',
+                        'msg_modal_delete': 'msg.note_modal.delete',
+                        'label_delete': 'label.delete_note',
+                        'entity_deletepath': 'note_delete',
+                        'show_confirmation': 'true'
+                    }) }}
                 </div>
             {% endif %}
         </div>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {{ encore_entry_script_tags('editor') }}
 {% endblock %}

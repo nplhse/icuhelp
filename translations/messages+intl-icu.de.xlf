@@ -842,6 +842,42 @@
         <source>title.finding_generator</source>
         <target>Befundgenerator</target>
       </trans-unit>
+      <trans-unit id="zfvnNXp" resname="title.note_modal.delete">
+        <source>title.note_modal.delete</source>
+        <target>Notiz wirklich löschen?</target>
+      </trans-unit>
+      <trans-unit id="xYUap6O" resname="msg.note_modal.delete">
+        <source>msg.note_modal.delete</source>
+        <target>Soll diese Notiz wirklich gelöscht werden?</target>
+      </trans-unit>
+      <trans-unit id="8yeGT7d" resname="label.cancel">
+        <source>label.cancel</source>
+        <target>Abbrechen</target>
+      </trans-unit>
+      <trans-unit id="MTVC8id" resname="label.delete_note">
+        <source>label.delete_note</source>
+        <target>Notiz löschen</target>
+      </trans-unit>
+      <trans-unit id="8Jt02wG" resname="label.attachments">
+        <source>label.attachments</source>
+        <target>Anhänge</target>
+      </trans-unit>
+      <trans-unit id="SQqecqE" resname="label.attachments.add">
+        <source>label.attachments.add</source>
+        <target>Anhang hinzufügen</target>
+      </trans-unit>
+      <trans-unit id="5VvCc22" resname="title.onboarding_modal.delete">
+        <source>title.onboarding_modal.delete</source>
+        <target>Eintrag wirklich löschen?</target>
+      </trans-unit>
+      <trans-unit id="fj4HZji" resname="msg.onboarding_modal.delete">
+        <source>msg.onboarding_modal.delete</source>
+        <target>Soll dieser Eintrag wirklich gelöscht werden?</target>
+      </trans-unit>
+      <trans-unit id="3duqaPy" resname="label.delete_onboarding">
+        <source>label.delete_onboarding</source>
+        <target>Eintrag löschen</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
