@@ -26,9 +26,6 @@ class FindingGeneratorController extends AbstractController
                 // form for the next step
                 $form = $flow->createForm();
             } else {
-                $exam = $exam->generate();
-                $flow->reset(); // remove step data from the session
-
                 return $this->render('finding_generator/display.html.twig', [
                     'exam' => $exam,
                 ]);

@@ -1,0 +1,15 @@
+<p>
+    {{ exam.vigilanz|capitalize }}{% if exam.canHaveAnsprechbarkeit %}, {{ exam.ansprechbarkeit }}{% endif %}{% if exam.canHaveOrientierung %}, {{ exam.orientierung }}{% endif %}{% if exam.canHaveRASS %}, {{ exam.rass_index }}{% endif %}{% if exam.canHaveCAM %}, CAM-ICU: {{ exam.cam_index }}{% endif %}.
+
+    Pupillen {{ exam.pupillen_isokorie }}, {{ exam.pupillen_lichtreagibilitaet }} lichtreagibel.
+    Sensomotorische Defizite {{ exam.sensomotorischedefizite }}. {% if exam.canHaveSensomotorischesDefizitDetail %}{{ exam.sensomotorischedefizite_detail }}{% endif %}
+
+    {{ exam.atmung|capitalize }}{% if exam.canHaveO2Gabe and exam.o2_flow %} ({{ exam.o2_flow }}l O2/min).{% else %}.{% endif %}
+    {% if exam.atmung == 'CPAP' %} (PEEP {{ exam.peep }}mmHg, ASB {{ exam.asb }}mmHg, FiO2 {{ exam.fio2 }}%{% endif %}
+    {% if exam.atmung == 'intubiert' and exam.beatmung_modus == 'CPAP' %} (PEEP {{ exam.peep }}mmHg, ASB {{ exam.asb }}mmHg, AF {{ exam.atemfrequenz }}/min, FiO2 {{ exam.fio2 }}%{% endif %}
+    {% if exam.atmung == 'intubiert' and exam.beatmung_modus == 'BiPAP' %} (PEEP {{ exam.peep }}mmHg, ASB {{ exam.asb }}mmHg, Pinsp {{ exam.pinsp }}mmHg, AF {{ exam.atemfrequenz }}/min, FiO2 {{ exam.fio2 }}%{% endif %}
+
+    Gasaustausch {{ exam.gasaustausch }}{% if exam.gasaustausch == 'eingeschränkt' %} ({{ exam.gasaustausch_detail }}).{% else %}.{% endif %}
+</p>
+
+{{ dump(exam) }}

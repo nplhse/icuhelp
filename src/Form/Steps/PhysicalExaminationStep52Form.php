@@ -11,7 +11,7 @@ class PhysicalExaminationStep52Form extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('sonstiges', TextareaType::class, [
-            'required' => true,
+            'required' => false,
         ]);
     }
 
