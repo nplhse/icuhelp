@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-md-3">
+        <ul class="list-group">
+            <li class="list-group-item active">Körperliche Untersuchung</li>
+        </ul>
+    </div>
+    <div class="col-md-9 order-first order-md-last my-auto">
+        {{ form_start(form) }}
+        <div class="card w-100">
+            <div class="card-body">
+                {{ form_widget(form) }}
+
+                {% include '@CraueFormFlow/FormFlow/buttons.html.twig' %}
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+</div>

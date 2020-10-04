@@ -813,6 +813,18 @@
         <source>sop.add.tag</source>
         <target>Add tag</target>
       </trans-unit>
+      <trans-unit id="UcqtcPs" resname="button.note.create">
+        <source>button.note.create</source>
+        <target>Create note</target>
+      </trans-unit>
+      <trans-unit id="Su.GrxR" resname="link.findings">
+        <source>link.findings</source>
+        <target>Finding generator</target>
+      </trans-unit>
+      <trans-unit id="L9GICIt" resname="title.finding_generator">
+        <source>title.finding_generator</source>
+        <target>Finding generator</target>
+      </trans-unit>
       <trans-unit id="zfvnNXp" resname="title.note_modal.delete">
         <source>title.note_modal.delete</source>
         <target>Are you sure?</target>
