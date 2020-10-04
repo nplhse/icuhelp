@@ -15,7 +15,7 @@ class PhysicalExaminationStep1Form extends AbstractType
                 'wach' => 'wach',
                 'somnolent' => 'somnolent',
                 'flach analgosediert' => 'flach analgosediert',
-                'tief analgosediert' => 'tief analgosediert'
+                'tief analgosediert' => 'tief analgosediert',
             ],
         ]);
     }
