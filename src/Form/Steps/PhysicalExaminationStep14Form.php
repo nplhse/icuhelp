@@ -12,12 +12,15 @@ class PhysicalExaminationStep14Form extends AbstractType
     {
         $builder->add('peep', NumberType::class, [
                 'required' => true,
+                'help' => 'Angabe in mmHg',
             ])
             ->add('asb', NumberType::class, [
                 'required' => true,
+                'help' => 'Angabe in mmHg',
             ])
             ->add('fio2', NumberType::class, [
                 'required' => true,
+                'help' => 'Angabe in %',
             ])
             ->add('atemfrequenz', NumberType::class, [
                 'required' => true,

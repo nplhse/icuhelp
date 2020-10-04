@@ -12,6 +12,7 @@ class PhysicalExaminationStep10Form extends AbstractType
     {
         $builder->add('o2_flow', NumberType::class, [
             'required' => false,
+            'help' => 'Angabe in Liter pro Minute.'
         ]);
     }
 

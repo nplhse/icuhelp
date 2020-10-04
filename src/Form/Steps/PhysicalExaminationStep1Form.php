@@ -14,7 +14,8 @@ class PhysicalExaminationStep1Form extends AbstractType
             'choices' => [
                 'wach' => 'wach',
                 'somnolent' => 'somnolent',
-                'analgosediert' => 'analgosediert',
+                'flach analgosediert' => 'flach analgosediert',
+                'tief analgosediert' => 'tief analgosediert'
             ],
         ]);
     }

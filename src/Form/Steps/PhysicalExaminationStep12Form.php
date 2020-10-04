@@ -11,10 +11,11 @@ class PhysicalExaminationStep12Form extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('o2_flow', NumberType::class, [
-                'required' => true,
-            ])
-                ->add('fio2', NumberType::class, [
                     'required' => true,
+                    'help' => 'Angabe in Liter pro Minute',
+                ])->add('fio2', NumberType::class, [
+                    'required' => true,
+                    'help' => 'Angabe in %',
                 ]);
     }
 

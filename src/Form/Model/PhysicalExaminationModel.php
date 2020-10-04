@@ -86,6 +86,8 @@ class PhysicalExaminationModel
 
     public $diuretika;
 
+    public $restausscheidung;
+
     public $bilanz;
 
     public $oedeme;
@@ -110,13 +112,15 @@ class PhysicalExaminationModel
 
     public $sweepgasfluss;
 
+    public $ecmo_fio2;
+
     public $impella;
 
     public $sonstiges;
 
     public function canHaveAnsprechbarkeit()
     {
-        if ('analgosediert' == $this->vigilanz) {
+        if ('flach analgosediert' == $this->vigilanz or 'tief analgosediert' == $this->vigilanz) {
             return false;
         }
 
@@ -125,7 +129,7 @@ class PhysicalExaminationModel
 
     public function canHaveOrientierung()
     {
-        if ('analgosediert' == $this->vigilanz) {
+        if ('flach analgosediert' == $this->vigilanz or 'tief analgosediert' == $this->vigilanz) {
             return false;
         }
 
@@ -134,7 +138,7 @@ class PhysicalExaminationModel
 
     public function canHaveRASS()
     {
-        if ('analgosediert' == $this->vigilanz) {
+        if ('flach analgosediert' == $this->vigilanz or 'tief analgosediert' == $this->vigilanz) {
             return true;
         }
 
@@ -143,7 +147,7 @@ class PhysicalExaminationModel
 
     public function canHaveCAM()
     {
-        if ('analgosediert' == $this->vigilanz or 'desorientiert' == $this->orientierung) {
+        if ('flach analgosediert' == $this->vigilanz or 'tief analgosediert' == $this->vigilanz or 'desorientiert' == $this->orientierung) {
             return false;
         }
 

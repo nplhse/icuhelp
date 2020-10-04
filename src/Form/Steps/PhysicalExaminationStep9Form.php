@@ -13,7 +13,7 @@ class PhysicalExaminationStep9Form extends AbstractType
         $builder->add('atmung', ChoiceType::class, [
             'choices' => [
                 'spontan atmend' => 'spontan atmend',
-                'CPAP' => 'CPAP',
+                'NIV-Therapie' => 'CPAP',
                 'high flow' => 'high flow',
                 'intubiert' => 'intubiert',
             ],

@@ -14,6 +14,8 @@ class PhysicalExaminationStep50Form extends AbstractType
             'required' => true,
             ])->add('sweepgasfluss', NumberType::class, [
                 'required' => true,
+            ])->add('ecmo_fio2', NumberType::class, [
+                'required' => true,
         ]);
     }
 
