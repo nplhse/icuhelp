@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - {{ "title.finding_generator"|trans }}{% endblock %}
+
+{% block body %}
+    {{ include('_components/project_tabs.html.twig') }}
+
+    <h1 class="mt-2">{{ "title.finding_generator"|trans }}</h1>
+
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }}" role="alert">
+                {{ message|trans }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+    <div class="container">
+        {% include 'finding_generator/_form.html.twig' %}
+    </div>
+{% endblock %}

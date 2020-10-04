@@ -834,6 +834,14 @@
         <source>sop.add.tag</source>
         <target>Tag hinzufügen</target>
       </trans-unit>
+      <trans-unit id="Su.GrxR" resname="link.findings">
+        <source>link.findings</source>
+        <target>Befunde</target>
+      </trans-unit>
+      <trans-unit id="L9GICIt" resname="title.finding_generator">
+        <source>title.finding_generator</source>
+        <target>Befundgenerator</target>
+      </trans-unit>
       <trans-unit id="zfvnNXp" resname="title.note_modal.delete">
         <source>title.note_modal.delete</source>
         <target>Notiz wirklich löschen?</target>
