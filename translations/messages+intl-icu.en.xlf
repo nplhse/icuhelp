@@ -813,9 +813,9 @@
         <source>sop.add.tag</source>
         <target>Add tag</target>
       </trans-unit>
-      <trans-unit id="UcqttPs" resname="button.note.create">
+      <trans-unit id="UcqtcPs" resname="button.note.create">
         <source>button.note.create</source>
-        <target>__button.note.create</target>
+        <target>Create note</target>
       </trans-unit>
       <trans-unit id="Su.GrxR" resname="link.findings">
         <source>link.findings</source>
