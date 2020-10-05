@@ -323,6 +323,9 @@ class PhysicalExaminationFlow extends FormFlow
             46 => [
                 'label' => 'Ernährungsform',
                 'form_type' => PhysicalExaminationStep46Form::class,
+                'skip' => function ($estimatedCurrentStepNumber, FormFlowInterface $flow) {
+                    return $estimatedCurrentStepNumber > 45 && !$flow->getFormData()->canHaveErnaehrungsform();
+                },
             ],
             47 => [
                 'label' => 'Punktionsstellen',

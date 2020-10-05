@@ -12,6 +12,7 @@ class PhysicalExaminationStep27Form extends AbstractType
     {
         $builder->add('noradrenalin', NumberType::class, [
             'required' => true,
+            'help' => 'Angabe in mg/h',
         ]);
     }
 

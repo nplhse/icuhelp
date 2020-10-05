@@ -13,6 +13,7 @@ class PhysicalExaminationStep7Form extends AbstractType
         $builder->add('sensomotorischedefizite', ChoiceType::class, [
             'choices' => [
                 'nicht vorhanden' => 'nicht vorhanden',
+                'nicht beurteilbar' => 'nicht beurteilbar',
                 'vorhanden' => 'vorhanden',
             ],
             'required' => false,

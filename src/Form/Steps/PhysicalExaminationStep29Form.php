@@ -12,6 +12,7 @@ class PhysicalExaminationStep29Form extends AbstractType
     {
         $builder->add('milrinon', NumberType::class, [
             'required' => true,
+            'help' => 'Angabe in mg/h',
         ]);
     }
 

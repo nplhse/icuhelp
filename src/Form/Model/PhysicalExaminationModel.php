@@ -372,16 +372,16 @@ class PhysicalExaminationModel
 
     public function canHaveECMO()
     {
-        if ('veno-arteriell' == $this->ecmo) {
-            return true;
+        if ('keine' == $this->ecmo) {
+            return false;
         }
 
-        return false;
+        return true;
     }
 
     public function canHaveImpella()
     {
-        if ('keine' == $this->ecmo) {
+        if ('keine' == $this->ecmo or 'veno-venös' == $this->ecmo) {
             return false;
         }
 

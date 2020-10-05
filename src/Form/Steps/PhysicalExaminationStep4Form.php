@@ -11,7 +11,7 @@ class PhysicalExaminationStep4Form extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('rass_index', NumberType::class, [
-            'required' => false,
+            'required' => true,
         ]);
     }
 

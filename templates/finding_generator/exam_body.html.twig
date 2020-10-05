@@ -2,7 +2,7 @@
     {{ exam.vigilanz|capitalize }}{% if exam.canHaveAnsprechbarkeit %}, {{ exam.ansprechbarkeit }}{% endif %}{% if exam.canHaveOrientierung %}, {{ exam.orientierung }}{% endif %}{% if exam.canHaveRASS %}, RAAS: {{ exam.rass_index }}{% endif %}{% if exam.canHaveCAM %}, CAM-ICU: {{ exam.cam_index }}{% endif %}.
 
     Pupillen {{ exam.pupillen_isokorie }}, {{ exam.pupillen_lichtreagibilitaet }} lichtreagibel.
-    {% if exam.vigilanz == 'tief analgosediert' or exam.vigilanz == 'flach analgosediert' %}Sensomotorik eingeschränt beurteilbar.{% else %}Sensomotorische Defizite {{ exam.sensomotorischedefizite }}. {% endif %}{% if exam.canHaveSensomotorischesDefizitDetail %}{{ exam.sensomotorischedefizite_detail }}{% endif %}
+    Sensomotorische Defizite {{ exam.sensomotorischedefizite }}. {% if exam.canHaveSensomotorischesDefizitDetail %}{{ exam.sensomotorischedefizite_detail }}{% endif %}
 
     {% if exam.atmung == 'CPAP' %}NIV-Therapie{% else %}{{ exam.atmung|capitalize }}{% endif %}
     {% if exam.canHaveO2Gabe and exam.o2_flow %} ({{ exam.o2_flow }}l O2/min).{% endif %}
@@ -17,7 +17,7 @@
 
     {{ exam.rhythmus }}{% if exam.canHaveHerzfrequenz %} ({{ exam.herzfrequenz }}){% endif %}{% if exam.canHaveVorhofflimmernDetail %}, {{ exam.vorhofflimmern_detail }}{% endif %}{% if exam.canHaveRhythmusSonstiges %}, {{ exam.rhythmus_sonstiges}}{% endif %}.
 
-    {% if 'Keine' in exam.kreislauf %}Keine medikamentöse Kreislaufunterstützung.{% else %}Kreislaufunterstützung mit: {% for key in exam.kreislauf %}{{ key }} ({% if key == 'Noradrenalin' %}{{ exam.noradrenalin|number_format(1) }}{% elseif key == 'Epinephrin' %}{{ exam.epinephrin|number_format(1) }}{% elseif key == 'Milrinon' %}{{ exam.milrinon|number_format(1) }}{% endif %} mg/h){% if loop.last %}.{% else %}, {% endif %}{% endfor %} Unter dieser Therapie {{ exam.kreislauf_stabil }}e Kreislaufverhältnisse.{% endif %}
+    {% if 'Keine' in exam.kreislauf %}Keine medikamentöse Kreislaufunterstützung.{% else %}Kreislaufunterstützung mit: {% for key in exam.kreislauf %}{{ key }} ({% if key == 'Noradrenalin' %}{{ exam.noradrenalin|number_format(2) }}{% elseif key == 'Epinephrin' %}{{ exam.epinephrin|number_format(1) }}{% elseif key == 'Milrinon' %}{{ exam.milrinon|number_format(1) }}{% endif %} mg/h){% if loop.last %}.{% else %}, {% endif %}{% endfor %} Unter dieser Therapie {{ exam.kreislauf_stabil }}e Kreislaufverhältnisse.{% endif %}
     {% if exam.canHaveKreislaufSonstiges %}{{ exam.kreislauf_sonstiges }}{% endif %}
     {% if exam.canHaveLegRaiseTest %}Leg raise Test {{ exam.legraise_test }}.{% endif %}
 

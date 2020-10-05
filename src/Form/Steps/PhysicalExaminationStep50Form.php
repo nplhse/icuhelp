@@ -11,11 +11,14 @@ class PhysicalExaminationStep50Form extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('blutfluss', NumberType::class, [
-            'required' => true,
+                'required' => true,
+                'help' => 'Angabe in l/min',
             ])->add('sweepgasfluss', NumberType::class, [
                 'required' => true,
+                'help' => 'Angabe in l/min',
             ])->add('ecmo_fio2', NumberType::class, [
                 'required' => true,
+                'help' => 'Angabe in %',
         ]);
     }
 
