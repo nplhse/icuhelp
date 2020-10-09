@@ -12,12 +12,12 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version20200925181852 extends AbstractMigration
 {
-    public function getDescription() : string
+    public function getDescription(): string
     {
         return '';
     }
 
-    public function up(Schema $schema) : void
+    public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql('CREATE TABLE sop_soptag (sop_id INT NOT NULL, soptag_id INT NOT NULL, INDEX IDX_5C041A8D52982EE (sop_id), INDEX IDX_5C041A8C1944B30 (soptag_id), PRIMARY KEY(sop_id, soptag_id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
@@ -26,7 +26,7 @@ final class Version20200925181852 extends AbstractMigration
         $this->addSql('ALTER TABLE sop_soptag ADD CONSTRAINT FK_5C041A8C1944B30 FOREIGN KEY (soptag_id) REFERENCES soptag (id) ON DELETE CASCADE');
     }
 
-    public function down(Schema $schema) : void
+    public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql('ALTER TABLE sop_soptag DROP FOREIGN KEY FK_5C041A8C1944B30');

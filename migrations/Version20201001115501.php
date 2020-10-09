@@ -12,18 +12,18 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version20201001115501 extends AbstractMigration
 {
-    public function getDescription() : string
+    public function getDescription(): string
     {
         return '';
     }
 
-    public function up(Schema $schema) : void
+    public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql('DROP INDEX UNIQ_17BDE61FB548B0F ON upload');
     }
 
-    public function down(Schema $schema) : void
+    public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql('CREATE UNIQUE INDEX UNIQ_17BDE61FB548B0F ON upload (path)');

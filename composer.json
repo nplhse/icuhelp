@@ -89,8 +89,11 @@
             "yarn encore dev"
         ],
         "run-checks": [
-            "vendor/bin/php-cs-fixer fix src",
-            "vendor/bin/phpstan analyse src tests"
+            "vendor/bin/php-cs-fixer fix",
+            "vendor/bin/phpstan analyse"
+        ],
+        "run-tests": [
+            "vendor/bin/simple-phpunit"
         ],
         "setup": [
             "@setup-db",

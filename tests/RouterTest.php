@@ -2,8 +2,6 @@
 
 namespace App\Tests;
 
-use Exception;
-
 class RouterTest extends AbstractWebTest
 {
     /**
