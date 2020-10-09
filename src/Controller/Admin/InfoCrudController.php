@@ -41,5 +41,7 @@ class InfoCrudController extends AbstractCrudController
         } elseif (Crud::PAGE_EDIT === $pageName) {
             return [$name, $text, $createdAt, $updatedAt];
         }
+
+        return null;
     }
 }

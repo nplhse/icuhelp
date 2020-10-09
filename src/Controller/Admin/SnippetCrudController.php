@@ -40,5 +40,7 @@ class SnippetCrudController extends AbstractCrudController
         } elseif (Crud::PAGE_EDIT === $pageName) {
             return [$name, $category, $text];
         }
+
+        return null;
     }
 }

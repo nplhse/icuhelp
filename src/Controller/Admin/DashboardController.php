@@ -52,5 +52,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('link.sop.tags', 'fa fa-tags', SOPTag::class);
         yield MenuItem::linkToCrud('link.snippets', 'far fa-clipboard', Snippet::class);
         yield MenuItem::linkToCrud('link.snippet.category', 'fas fa-tags', SnippetCategory::class);
+
+        return null;
     }
 }
