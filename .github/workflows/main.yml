@@ -76,7 +76,7 @@ jobs:
       - name: Run Setup scripts
         run: composer setup
         env:
-          DATABASE_URL: mysql://root:symfony@127.0.0.1:${{ job.services.mysql.ports['3306'] }}/symfonys
+          DATABASE_URL: mysql://root:symfony@127.0.0.1:${{ job.services.mysql.ports['3306'] }}/symfony
 
       - name: Run Tests
         run: composer run-tests
