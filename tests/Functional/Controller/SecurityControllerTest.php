@@ -1,12 +1,36 @@
 <?php
 
-namespace App\Tests\Controller;
+namespace App\Tests\Functional\Controller;
 
-use App\Tests\AbstractWebTest;
+use App\Tests\Functional\AbstractWebTest;
 use Faker\Factory;
 
 class SecurityControllerTest extends AbstractWebTest
 {
+    public function testLoginLogout(): void
+    {
+        $client = $this->getAnonymousClient();
+        $client->followRedirects();
+
+        $client->request('GET', '/login');
+
+        $this->assertResponseIsSuccessful();
+        $this->assertSelectorTextContains('html h1', 'Login');
+
+        $crawler = $client->submitForm('Login', [
+            'security_login[username]' => 'foo',
+            'security_login[password]' => 'bar',
+        ]);
+
+        $this->assertResponseIsSuccessful();
+        $this->assertSelectorTextContains('html body', 'Logged in as: foo');
+
+        $client->request('GET', '/logout');
+
+        $this->assertResponseIsSuccessful();
+        $this->assertSelectorTextContains('html body', 'Login');
+    }
+
     public function testUserLifecycle()
     {
         $faker = Factory::create();

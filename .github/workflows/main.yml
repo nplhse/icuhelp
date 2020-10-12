@@ -78,11 +78,8 @@ jobs:
         env:
           DATABASE_URL: mysql://root:symfony@127.0.0.1:${{ job.services.mysql.ports['3306'] }}/symfony
 
-      - name: Check coding styles
-        run: composer run-checks
-
       - name: Run Tests
-        run: bin/phpunit
+        run: composer run-tests
         env:
           DATABASE_URL: mysql://root:symfony@127.0.0.1:${{ job.services.mysql.ports['3306'] }}/symfony
 
@@ -91,3 +88,6 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           directory: ./build/coverage/logs/
+
+      - name: Check coding styles
+        run: composer run-check

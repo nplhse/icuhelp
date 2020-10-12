@@ -40,5 +40,7 @@ class SOPCrudController extends AbstractCrudController
         } elseif (Crud::PAGE_EDIT === $pageName) {
             return [$name, $description, $tags];
         }
+
+        return null;
     }
 }

@@ -1,8 +1,6 @@
 <?php
 
-namespace App\Tests;
-
-use Exception;
+namespace App\Tests\Functional;
 
 class RouterTest extends AbstractWebTest
 {

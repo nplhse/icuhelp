@@ -40,6 +40,7 @@
         "doctrine/doctrine-fixtures-bundle": "^3.3",
         "friendsofphp/php-cs-fixer": "^2.16",
         "php-coveralls/php-coveralls": "^2.3",
+        "phpstan/phpstan": "^0.12.48",
         "symfony/browser-kit": "5.1.*",
         "symfony/css-selector": "5.1.*",
         "symfony/phpunit-bridge": "^5.1",
@@ -87,8 +88,22 @@
         "build": [
             "yarn encore dev"
         ],
+        "ci": [
+            "@run-checks",
+            "@run-tests"
+        ],
+        "reset": [
+            "@composer install",
+            "bin/console doctrine:database:drop --force",
+            "bin/console doctrine:database:create",
+            "@setup"
+        ],
         "run-checks": [
-            "vendor/bin/php-cs-fixer fix src"
+            "vendor/bin/php-cs-fixer fix",
+            "vendor/bin/phpstan analyse"
+        ],
+        "run-tests": [
+            "vendor/bin/simple-phpunit"
         ],
         "setup": [
             "@setup-db",

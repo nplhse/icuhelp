@@ -42,5 +42,7 @@ class NoteCrudController extends AbstractCrudController
         } elseif (Crud::PAGE_EDIT === $pageName) {
             return [$name, $category, $text, $createdAt, $updatedAt];
         }
+
+        return null;
     }
 }

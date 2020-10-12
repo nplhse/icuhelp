@@ -46,8 +46,8 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 
         if ('ROLE_USER' !== $role) {
             $qb
-                ->andWhere('user.roles = :role')
-                ->setParameter('role', $role);
+                ->andWhere('user.roles LIKE :role')
+                ->setParameter('role', '%'.$role.'%');
         }
 
         $qb->setMaxResults(1);
