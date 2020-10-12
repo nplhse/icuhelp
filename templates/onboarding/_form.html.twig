@@ -43,7 +43,7 @@
     {% if action == 'create' %}
         <div class="clearfix">
             <div class="btn-group float-right" role="group" aria-label="">
-                <a class="btn btn-secondary" href="{{ path('note_index') }}" role="button">{{ "link.onboarding.back_list"|trans }}</a>
+                <a class="btn btn-secondary" href="{{ path('onboarding_index') }}" role="button">{{ "link.onboarding.back_list"|trans }}</a>
                 <button type="submit" class="btn btn-success">{{ "button.onboarding.create"|trans }}</button>
             </div>
 
@@ -52,7 +52,7 @@
     {% elseif action == 'update' %}
         <div class="clearfix">
             <div class="btn-group float-right" role="group" aria-label="">
-                <a class="btn btn-secondary" href="{{ path('note_show', {'id': note.id}) }}" role="button">{{ "link.onboarding.back"|trans }}</a>
+                <a class="btn btn-secondary" href="{{ path('onboarding_show', {'id': note.id}) }}" role="button">{{ "link.onboarding.back"|trans }}</a>
                 <button type="submit" class="btn btn-success">{{ "button.onboarding.save"|trans }}</button>
             </div>
 

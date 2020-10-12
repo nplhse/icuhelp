@@ -74,7 +74,6 @@ class OnboardingController extends AbstractController
 
     /**
      * @Route({"de": "/einarbeitung/{id}", "en": "/onboarding/{id}"}, name="onboarding_show", methods={"GET"})
-     * @IsGranted("ROLE_EDITOR")
      */
     public function show(Note $note, NoteRepository $noteRepository, UploadRepository $uploadRepository): Response
     {
