@@ -88,6 +88,16 @@
         "build": [
             "yarn encore dev"
         ],
+        "ci": [
+            "@run-checks",
+            "@run-tests"
+        ],
+        "reset": [
+            "@composer install",
+            "bin/console doctrine:database:drop --force",
+            "bin/console doctrine:database:create",
+            "@setup"
+        ],
         "run-checks": [
             "vendor/bin/php-cs-fixer fix",
             "vendor/bin/phpstan analyse"
