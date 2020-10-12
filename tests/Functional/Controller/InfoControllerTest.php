@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Tests\Controller;
+namespace App\Tests\Functional\Controller;
 
-use App\Tests\AbstractWebTest;
+use App\Tests\Functional\AbstractWebTest;
 use Faker\Factory;
 
 class InfoControllerTest extends AbstractWebTest

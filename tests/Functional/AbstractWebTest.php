@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Tests;
+namespace App\Tests\Functional;
 
 use Exception;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
