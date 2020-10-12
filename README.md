@@ -7,7 +7,8 @@ This project is intended to provide some useful things to the daily work of phys
 
 # Requirements
 
-- Webserver (Apache, Nginx, LiteSpeed, IIS, etc.) with PHP 7.4 or higher, mySQL 5.7 and Swiftmail compatible mailer
+- Webserver (Apache, Nginx, LiteSpeed, IIS, etc.) with PHP 7.4 or higher and mySQL 5.7 as database 
+- Swiftmail compatible mailer
 
 # Installation
 ## From GitHub
