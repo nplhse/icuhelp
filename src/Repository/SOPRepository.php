@@ -24,10 +24,11 @@ class SOPRepository extends ServiceEntityRepository
      */
     public function findAllByName(?string $q)
     {
-        $qb = $this->createQueryBuilder('s');
+        $qb = $this->createQueryBuilder('s')
+            ->innerJoin('s.tag', 'tag');
 
         if ($q) {
-            $qb->andWhere('s.name LIKE :q OR s.description LIKE :q')
+            $qb->andWhere('s.name LIKE :q OR s.description LIKE :q OR tag.name LIKE :q')
                 ->setParameter('q', '%'.$q.'%')
             ;
         }

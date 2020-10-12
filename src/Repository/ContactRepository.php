@@ -24,10 +24,11 @@ class ContactRepository extends ServiceEntityRepository
      */
     public function findAllByName(?string $q)
     {
-        $qb = $this->createQueryBuilder('c');
+        $qb = $this->createQueryBuilder('c')
+            ->innerJoin('c.category', 'cat');
 
         if ($q) {
-            $qb->andWhere('c.name LIKE :q')
+            $qb->where('c.name LIKE :q OR cat.name LIKE :q')
                 ->setParameter('q', '%'.$q.'%')
             ;
         }
