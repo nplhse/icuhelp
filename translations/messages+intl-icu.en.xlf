@@ -813,7 +813,7 @@
         <source>sop.add.tag</source>
         <target>Add tag</target>
       </trans-unit>
-      <trans-unit id="UcqtcPs" resname="button.note.create">
+      <trans-unit id="UcqttPs" resname="button.note.create">
         <source>button.note.create</source>
         <target>Create note</target>
       </trans-unit>
@@ -841,10 +841,6 @@
         <source>label.delete_note</source>
         <target>Delete note</target>
       </trans-unit>
-      <trans-unit id="UcqttPs" resname="button.note.create">
-        <source>button.note.create</source>
-        <target>Create note</target>
-      </trans-unit>
       <trans-unit id="8Jt02wG" resname="label.attachments">
         <source>label.attachments</source>
         <target>Attachments</target>
@@ -864,6 +860,34 @@
       <trans-unit id="3duqaPy" resname="label.delete_onboarding">
         <source>label.delete_onboarding</source>
         <target>Delete entry</target>
+      </trans-unit>
+      <trans-unit id="tsSKnvr" resname="title.account">
+        <source>title.account</source>
+        <target>Account</target>
+      </trans-unit>
+      <trans-unit id="ySPQKPx" resname="link.account">
+        <source>link.account</source>
+        <target>Account</target>
+      </trans-unit>
+      <trans-unit id="uhMZGlE" resname="link.account.change_password">
+        <source>link.account.change_password</source>
+        <target>Change password</target>
+      </trans-unit>
+      <trans-unit id="Ftn6l2c" resname="msg.account.choose">
+        <source>msg.account.choose</source>
+        <target>Choose...</target>
+      </trans-unit>
+      <trans-unit id="R9a_ppk" resname="button.account.change_password">
+        <source>button.account.change_password</source>
+        <target>Change password</target>
+      </trans-unit>
+      <trans-unit id="PbF8aXj" resname="button.copy">
+        <source>button.copy</source>
+        <target>Copy</target>
+      </trans-unit>
+      <trans-unit id="DlEnFgd" resname="link.findings.back">
+        <source>link.findings.back</source>
+        <target>Back to finding generator</target>
       </trans-unit>
     </body>
   </file>

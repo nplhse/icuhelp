@@ -878,6 +878,34 @@
         <source>label.delete_onboarding</source>
         <target>Eintrag löschen</target>
       </trans-unit>
+      <trans-unit id="tsSKnvr" resname="title.account">
+        <source>title.account</source>
+        <target>Benutzerkonto</target>
+      </trans-unit>
+      <trans-unit id="ySPQKPx" resname="link.account">
+        <source>link.account</source>
+        <target>Einstellungen</target>
+      </trans-unit>
+      <trans-unit id="uhMZGlE" resname="link.account.change_password">
+        <source>link.account.change_password</source>
+        <target>Password ändern</target>
+      </trans-unit>
+      <trans-unit id="Ftn6l2c" resname="msg.account.choose">
+        <source>msg.account.choose</source>
+        <target>Option auswählen</target>
+      </trans-unit>
+      <trans-unit id="R9a_ppk" resname="button.account.change_password">
+        <source>button.account.change_password</source>
+        <target>Password ändern</target>
+      </trans-unit>
+      <trans-unit id="PbF8aXj" resname="button.copy">
+        <source>button.copy</source>
+        <target>Kopieren</target>
+      </trans-unit>
+      <trans-unit id="DlEnFgd" resname="link.findings.back">
+        <source>link.findings.back</source>
+        <target>Zurück zu Befunden</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
