@@ -889,6 +889,18 @@
         <source>link.findings.back</source>
         <target>Back to finding generator</target>
       </trans-unit>
+      <trans-unit id="l_gsLcf" resname="user.current_password">
+        <source>user.current_password</source>
+        <target>Current password</target>
+      </trans-unit>
+      <trans-unit id="CM4cJQ0" resname="user.new_password">
+        <source>user.new_password</source>
+        <target>New password</target>
+      </trans-unit>
+      <trans-unit id="hcvDNV7" resname="user.new_password_repeat">
+        <source>user.new_password_repeat</source>
+        <target>Repeat new password</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

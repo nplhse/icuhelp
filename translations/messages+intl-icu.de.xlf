@@ -896,7 +896,7 @@
       </trans-unit>
       <trans-unit id="R9a_ppk" resname="button.account.change_password">
         <source>button.account.change_password</source>
-        <target>Password ändern</target>
+        <target>Passwort ändern</target>
       </trans-unit>
       <trans-unit id="PbF8aXj" resname="button.copy">
         <source>button.copy</source>
@@ -905,6 +905,18 @@
       <trans-unit id="DlEnFgd" resname="link.findings.back">
         <source>link.findings.back</source>
         <target>Zurück zu Befunden</target>
+      </trans-unit>
+      <trans-unit id="l_gsLcf" resname="user.current_password">
+        <source>user.current_password</source>
+        <target>Aktuelles Passwort</target>
+      </trans-unit>
+      <trans-unit id="CM4cJQ0" resname="user.new_password">
+        <source>user.new_password</source>
+        <target>Neues Passwort</target>
+      </trans-unit>
+      <trans-unit id="hcvDNV7" resname="user.new_password_repeat">
+        <source>user.new_password_repeat</source>
+        <target>Neues Passwort wiederholen</target>
       </trans-unit>
     </body>
   </file>
