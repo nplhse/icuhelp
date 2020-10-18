@@ -14,7 +14,7 @@ class InfoControllerTest extends AbstractWebTest
         $text = $faker->paragraph(5);
 
         $client = $this->getAuthenticatedClient('ROLE_ADMIN');
-        $client->followRedirects();
+        $client->followRedirects(true);
 
         $client->request('GET', '/info');
 
@@ -42,7 +42,6 @@ class InfoControllerTest extends AbstractWebTest
         $this->assertSelectorTextContains('html body', 'Edit info');
 
         $crawler = $client->clickLink('Edit info');
-        $client->followRedirects(true);
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('html h1', 'Edit info');
@@ -52,9 +51,7 @@ class InfoControllerTest extends AbstractWebTest
             'info[text]' => $text.'edited',
         ]);
 
-        dump($client->getResponse()->getContent());
-
-        //$this->assertResponseIsSuccessful();
+        $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('html h5', $title.'edited');
         $this->assertSelectorTextContains('html body', 'Successfully edited the info.');
         $this->assertSelectorTextContains('html body', 'Updated at a few seconds ago');
