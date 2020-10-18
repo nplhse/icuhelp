@@ -64,7 +64,7 @@ class InfoController extends AbstractController
     }
 
     /**
-     * @Route({"de": "/mitteilungen/{id}/bearbeiten", "en": "/info/{id}/edit"}, name="info_edit", methods={"GET","POST"})
+     * @Route({"de": "/mitteilungen/{id}/bearbeiten", "en": "/info/{id}/edit"}, name="info_edit", methods={"GET","POST","DELETE"})
      * @IsGranted("ROLE_EDITOR")
      */
     public function edit(Request $request, Info $info, InfoRepository $infoRepository): Response
@@ -75,7 +75,7 @@ class InfoController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            $this->addFlash('success', 'msg.info.added');
+            $this->addFlash('success', 'msg.info.edited');
 
             return $this->redirectToRoute('info_index');
         }
