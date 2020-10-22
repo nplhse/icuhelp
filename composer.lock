@@ -9947,16 +9947,16 @@
         },
         {
             "name": "zenstruck/foundry",
-            "version": "v1.1.2",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zenstruck/foundry.git",
-                "reference": "fb5b4ff7e2c224ba6b34069dbc6b459c88f5f806"
+                "reference": "fd433b1ad192acab8e2007d4eb6bac47d1c424a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zenstruck/foundry/zipball/fb5b4ff7e2c224ba6b34069dbc6b459c88f5f806",
-                "reference": "fb5b4ff7e2c224ba6b34069dbc6b459c88f5f806",
+                "url": "https://api.github.com/repos/zenstruck/foundry/zipball/fd433b1ad192acab8e2007d4eb6bac47d1c424a7",
+                "reference": "fd433b1ad192acab8e2007d4eb6bac47d1c424a7",
                 "shasum": ""
             },
             "require": {
@@ -10008,7 +10008,7 @@
                 "symfony",
                 "test"
             ],
-            "time": "2020-09-08T17:37:34+00:00"
+            "time": "2020-10-14T19:28:09+00:00"
         }
     ],
     "aliases": [],
