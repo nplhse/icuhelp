@@ -1,3 +1,15 @@
+{% import _self as formMacros %}
+
+{% macro printTagRow(tag) %}
+    <div class="col-xs-4 js-tag-item">
+        <div class="input-group m-2">
+            {{ form_errors(tag) }}
+            {{ form_widget(tag) }}
+            &nbsp<a href="#" class="js-remove-tag pull-right"><span class="fa fa-2x fa-times-circle"></span></a>
+        </div>
+    </div>
+{% endmacro %}
+
 {% extends 'base.html.twig' %}
 
 {% block title %}{{ parent() }} - {{ "title.sop.new"|trans }}{% endblock %}
@@ -13,6 +25,19 @@
     {{ form_row(form.description) }}
     {{ form_row(form.sopFile) }}
 
+    <p>Tags</p>
+    <div class="container">
+        <div class="row js-tag-wrapper mb-2"
+             data-prototype="{{ formMacros.printTagRow(form.tag.vars.prototype)|e('html_attr') }}"
+             data-index="{{ form.tag|length }}"
+        >
+            {% for tag in form.tag %}
+                {{ formMacros.printTagRow(tag) }}
+            {% endfor %}
+            <a href="#" class="js-tag-add"><span class="fa fa-plus-circle"></span> {{ "sop.add.tag"|trans }}</a>
+        </div>
+    </div>
+
     <div class="clearfix">
         <div class="btn-group float-right" role="group" aria-label="">
             <a class="btn btn-secondary" href="{{ path('sop_index') }}" role="button">{{ "link.sop.back_list"|trans }}</a>
@@ -20,4 +45,10 @@
         </div>
     </div>
     {{ form_end(form) }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {{ encore_entry_script_tags('form-tag') }}
 {% endblock %}
