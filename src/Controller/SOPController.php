@@ -6,7 +6,7 @@ use App\Entity\SOP;
 use App\Form\SOPType;
 use App\Repository\SOPRepository;
 use App\Repository\SOPTagRepository;
-use App\Service\FileUploader;
+use App\Service\LegacyFileUploader;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -53,7 +53,7 @@ class SOPController extends AbstractController
      * @Route({"de": "/standards/neu", "en": "/sop/new"}, name="sop_new", methods={"GET","POST"})
      * @IsGranted("ROLE_EDITOR")
      */
-    public function new(Request $request, FileUploader $fileUploader): Response
+    public function new(Request $request, LegacyFileUploader $fileUploader): Response
     {
         $SOP = new SOP();
         $form = $this->createForm(SOPType::class, $SOP);

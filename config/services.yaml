@@ -6,7 +6,7 @@
 parameters:
     default_admin_email: noreply@icuhelp.com
     default_admin_email_name: 'ICUhelp Mail Bot'
-    upload_directory: '%kernel.project_dir%/public/uploads/'
+    upload_directory: '%kernel.project_dir%/public/files/'
 
 services:
     # default configuration for services in *this* file
@@ -44,6 +44,10 @@ services:
     App\EventSubscriber\HashPasswordSubsciber:
         tags:
             - { name: 'doctrine.event_subscriber' }
+
+    App\Service\LegacyFileUploader:
+        arguments:
+            $targetDirectory: '%upload_directory%'
 
     App\Form\PhysicalExaminationFlow:
         parent: craue.form.flow
