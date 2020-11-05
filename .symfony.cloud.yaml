@@ -31,12 +31,21 @@ web:
                 # Only allow some static files.
                 '\.(jpe?g|png|gif|svgz?|pdf|doc|docx|ppt|pptx)$':
                     allow: true
+        '/files':
+            root: 'public/uploads'
+            scripts: false
+            allow: false
+            rules:
+                # Only allow some static files.
+                '\.(jpe?g|png|gif|svgz?|pdf|doc|docx|ppt|pptx)$':
+                    allow: true
 
 disk: 1024
 
 mounts:
     "/var": { source: local, source_path: var }
     '/public/uploads': { source: local, source_path: uploads }
+    '/public/files': { source: local, source_path: files }
 
 hooks:
     build: |
