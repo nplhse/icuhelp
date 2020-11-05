@@ -6,7 +6,6 @@ use App\Entity\SOP;
 use App\Form\SOPType;
 use App\Repository\SOPRepository;
 use App\Repository\SOPTagRepository;
-use App\Service\FileUploader;
 use App\Service\LegacyFileUploader;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
