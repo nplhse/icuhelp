@@ -32,7 +32,7 @@
                                 <h5 class="card-title"><a href="{{ path('sop_show', {'id': sop.id}) }}">{{ sop.name }}</a></h5>
                                 <p class="card-text">{{ sop.description|raw }}</p>
                                 <p>
-                                    <a class="btn btn-outline-primary" href="{{ asset('uploads/' ~ sop.SOPFilename) }}" target="_blank">{{ "button.sop.view_attachment"|trans }}</a><br />
+                                    <a class="btn btn-outline-primary" href="{{ asset('files/' ~ sop.SOPFilename) }}" target="_blank">{{ "button.sop.view_attachment"|trans }}</a><br />
                                     {% for tag in sop.tag %}
                                         <a class="badge badge-primary" href="{{ path('sop_filteredbytag', {'tag': tag.id}) }}"><i class="fa fa-tags"></i> {{ tag.name }}</a>
                                     {% endfor %}
