@@ -20,6 +20,8 @@ class UploadController extends AbstractController
         $result = $uploadRepository->findOneByPath($path);
         $reference = $result[0];
 
+        dd($reference);
+
         $response = new StreamedResponse(function () use ($reference, $fileUploader) {
             $outputStream = fopen('php://output', 'wb');
             $fileStream = $fileUploader->readStream($reference->getName(), true);
