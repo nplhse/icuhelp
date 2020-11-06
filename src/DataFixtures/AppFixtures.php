@@ -21,7 +21,7 @@ class AppFixtures extends Fixture
     {
         // Before adding any content clear up the /public/uploads directory
         $filesystem = new Filesystem();
-        $dir = getcwd().'/public/uploads';
+        $dir = getcwd().'/public/files';
 
         try {
             if ($filesystem->exists($dir)) {

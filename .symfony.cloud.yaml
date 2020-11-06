@@ -32,7 +32,7 @@ web:
                 '\.(jpe?g|png|gif|svgz?|pdf|doc|docx|ppt|pptx)$':
                     allow: true
         '/files':
-            root: 'public/uploads'
+            root: 'public/files'
             scripts: false
             allow: false
             rules:
