@@ -22,7 +22,7 @@ class UploadController extends AbstractController
 
         $response = new StreamedResponse(function () use ($reference, $fileUploader) {
             $outputStream = fopen('php://output', 'wb');
-            $fileStream = $fileUploader->readStream($reference->getName(), false);
+            $fileStream = $fileUploader->readStream($reference->getName(), true);
             stream_copy_to_stream($fileStream, $outputStream);
         });
 
