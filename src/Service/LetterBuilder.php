@@ -34,19 +34,45 @@ class LetterBuilder
     private function renderGender($text, $gender)
     {
         if ('label.choice.male' === $gender) {
-            preg_match('#\^(.*)\^#', $text, $match, PREG_UNMATCHED_AS_NULL);
+            $text = preg_replace_callback(
+                '/\^(.*?)\^/si',
+                function ($match) {
+                    dump($match);
 
-            if (!empty($match)) {
-                $text = preg_replace('#\^(.*)\^#', $match[1], $text);
-                $text = preg_replace('#\~(.*)\~#', '', $text);
-            }
+                    return str_replace('/\^(.*?)\^/si', $match[0], $match[1]);
+                },
+                $text
+            );
+
+            $text = preg_replace_callback(
+                '/~(.*?)~/si',
+                function ($match) {
+                    dump($match);
+
+                    return str_replace('/~(.*?)~/si', $match[1], '');
+                },
+                $text
+            );
         } elseif ('label.choice.female' === $gender) {
-            preg_match('#\~(.*)\~#', $text, $match, PREG_UNMATCHED_AS_NULL);
+            $text = preg_replace_callback(
+                '/\^(.*?)\^/si',
+                function ($match) {
+                    dump($match);
 
-            if (!empty($match)) {
-                $text = preg_replace('#\^(.*)\^#', '', $text);
-                $text = preg_replace('#\~(.*)\~#', $match[1], $text);
-            }
+                    return str_replace('/\^(.*?)\^/si', $match[1], '');
+                },
+                $text
+            );
+
+            $text = preg_replace_callback(
+                '/~(.*?)~/si',
+                function ($match) {
+                    dump($match);
+
+                    return str_replace('/~(.*?)~/si', $match[0], $match[1]);
+                },
+                $text
+            );
         } else {
             return false;
         }
