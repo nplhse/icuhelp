@@ -28,7 +28,7 @@ class LetterBuilder
 
     private function renderName($text, $name)
     {
-        return preg_replace('#\#(.*)\##', $name, $text);
+        return preg_replace('/\#Name\#/', $name, $text);
     }
 
     private function renderGender($text, $gender)
@@ -37,8 +37,6 @@ class LetterBuilder
             $text = preg_replace_callback(
                 '/\^(.*?)\^/si',
                 function ($match) {
-                    dump($match);
-
                     return str_replace('/\^(.*?)\^/si', $match[0], $match[1]);
                 },
                 $text
@@ -47,8 +45,6 @@ class LetterBuilder
             $text = preg_replace_callback(
                 '/~(.*?)~/si',
                 function ($match) {
-                    dump($match);
-
                     return str_replace('/~(.*?)~/si', $match[1], '');
                 },
                 $text
@@ -57,8 +53,6 @@ class LetterBuilder
             $text = preg_replace_callback(
                 '/\^(.*?)\^/si',
                 function ($match) {
-                    dump($match);
-
                     return str_replace('/\^(.*?)\^/si', $match[1], '');
                 },
                 $text
@@ -67,8 +61,6 @@ class LetterBuilder
             $text = preg_replace_callback(
                 '/~(.*?)~/si',
                 function ($match) {
-                    dump($match);
-
                     return str_replace('/~(.*?)~/si', $match[0], $match[1]);
                 },
                 $text
