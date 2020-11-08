@@ -17,7 +17,7 @@ flysystem:
         public.storage.local:
             adapter: 'local'
             options:
-                directory: '%kernel.project_dir%/public/'
+                directory: '%kernel.project_dir%/public/files'
 
         public.storage.memory:
             adapter: 'memory'

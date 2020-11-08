@@ -24,7 +24,7 @@ final class SOPFactory extends ModelFactory
         return [
             'name' => self::faker()->sentence(rand(1, 3)),
             'description' => self::faker()->sentence(),
-            'sopFilename' => self::faker()->file('assets/fixtures', 'public/uploads'),
+            'sopFilename' => self::faker()->file('assets/fixtures', 'public/files', false),
         ];
     }
 
