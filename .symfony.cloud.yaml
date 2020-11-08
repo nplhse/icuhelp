@@ -48,5 +48,5 @@ hooks:
     deploy: |
         set -x -e
 
-        mkdir -p public/uploads
+        mkdir -p public/files
         (>&2 symfony-deploy)
