@@ -14,7 +14,7 @@ fos_ck_editor:
 
     toolbars:
         configs:
-            snippets: [ "@standard.basic_styles", "@basic.paragraph", "@tables", "@undo", "@standard.tools", "/", '@full.styles' ]
+            snippets: [ "@standard.basic_styles", "@basic.paragraph", "@standard.links", "@tables", "@undo", "@standard.tools", "/", '@full.styles' ]
         items:
             undo: [ 'Undo', 'Redo' ]
             tables: [ "Table" ]
