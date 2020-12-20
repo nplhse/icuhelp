@@ -6,7 +6,7 @@
  */
 
 // Custom CSS
-import '../css/main.scss';
+import '../styles/app.scss';
 
 // Add jQuery
 import $ from 'jquery';
