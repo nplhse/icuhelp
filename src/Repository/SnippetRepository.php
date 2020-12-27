@@ -24,7 +24,7 @@ class SnippetRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('s')
             ->leftJoin('s.category', 'c')
             ->addSelect('c')
-            ->orderBy('s.name', 'ASC')
+            ->orderBy('s.priority', 'ASC')
             ->getQuery()
             ->getResult()
         ;
