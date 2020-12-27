@@ -30,6 +30,19 @@ class SnippetRepository extends ServiceEntityRepository
         ;
     }
 
+    public function findWithCategoryOrderedByPriority($c)
+    {
+        return $this->createQueryBuilder('s')
+            ->where('s.category = :c')
+            ->setParameter('c', $c)
+            ->leftJoin('s.category', 'c')
+            ->addSelect('c')
+            ->orderBy('s.priority', 'ASC')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
     /*
     public function findOneBySomeField($value): ?Snippet
     {

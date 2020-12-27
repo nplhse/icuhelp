@@ -22,11 +22,19 @@ class SnippetController extends AbstractController
      */
     public function index(Request $request, SnippetRepository $snippetRepository, SnippetHelper $snippetHelper)
     {
-        $snippets = $snippetRepository->findOrderedByPriority();
+        $c = (int) $request->query->get('c');
+
+        if ($c) {
+            $snippets = $snippetRepository->findWithCategoryOrderedByPriority($c);
+        } else {
+            $snippets = $snippetRepository->findOrderedByPriority();
+        }
+
         $snippets = $snippetHelper->sortSnippets($snippets);
 
         return $this->render('snippets/index.html.twig', [
             'snippets' => $snippets,
+            'c' => $c,
         ]);
     }
 

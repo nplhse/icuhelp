@@ -918,6 +918,18 @@
         <source>user.new_password_repeat</source>
         <target>Neues Passwort wiederholen</target>
       </trans-unit>
+      <trans-unit id="icHonbo" resname="msg.snippet.filterbycategory">
+        <source>msg.snippet.filterbycategory</source>
+        <target>Textbausteine werden gefiltert nach Kategorie angezeigt.</target>
+      </trans-unit>
+      <trans-unit id="DSLZBuo" resname="msg.snippet.endfilter">
+        <source>msg.snippet.endfilter</source>
+        <target>Filter beenden.</target>
+      </trans-unit>
+      <trans-unit id="80fUOki" resname="label.snippet.priority">
+        <source>label.snippet.priority</source>
+        <target>Priorität</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
