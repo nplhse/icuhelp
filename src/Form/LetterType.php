@@ -33,7 +33,8 @@ class LetterType extends AbstractType
                     return $er->createQueryBuilder('s')
                         ->leftJoin('s.category', 'c')
                         ->addSelect('c')
-                        ->orderBy('c.priority', 'ASC');
+                        ->addOrderBy('s.priority', 'ASC')
+                        ->addOrderBy('c.priority', 'ASC');
                 },
                 'expanded' => true,
                 'multiple' => true,

@@ -34,6 +34,11 @@ class Snippet
      */
     private $text = '';
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $priority;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -78,5 +83,17 @@ class Snippet
     public function __toString()
     {
         return $this->getName();
+    }
+
+    public function getPriority(): ?int
+    {
+        return $this->priority;
+    }
+
+    public function setPriority(?int $priority): self
+    {
+        $this->priority = $priority;
+
+        return $this;
     }
 }

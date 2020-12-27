@@ -901,6 +901,18 @@
         <source>user.new_password_repeat</source>
         <target>Repeat new password</target>
       </trans-unit>
+      <trans-unit id="icHonbo" resname="msg.snippet.filterbycategory">
+        <source>msg.snippet.filterbycategory</source>
+        <target>Showing snippets filtered by category.</target>
+      </trans-unit>
+      <trans-unit id="DSLZBuo" resname="msg.snippet.endfilter">
+        <source>msg.snippet.endfilter</source>
+        <target>End filter</target>
+      </trans-unit>
+      <trans-unit id="80fUOki" resname="label.snippet.priority">
+        <source>label.snippet.priority</source>
+        <target>Priority</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

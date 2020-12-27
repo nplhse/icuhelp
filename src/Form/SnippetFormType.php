@@ -24,6 +24,7 @@ class SnippetFormType extends AbstractType
                         ->orderBy('c.priority', 'ASC');
                 },
             ])
+            ->add('priority')
             ->add('text', CKEditorType::class, [
                 'config_name' => 'snippets',
             ]);
