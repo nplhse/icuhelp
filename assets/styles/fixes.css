@@ -1,4 +1,0 @@
-/* Need to change color of active link in list-groups */
-.list-group-item.active > a {
-    color: white ;
-}
