@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% trans_default_domain "errors" %}
+
+{% block body %}
+    <div class="page-wrap d-flex flex-row align-items-center h-100">
+        <div class="content container">
+            <div class="row justify-content-center">
+                <div class="col-md-12 text-center">
+                    <span class="display-1 d-block">{{ ("messages." ~ exception.getStatusCode ~ ".title")|trans({}) }} ({{ exception.getStatusCode }})</span>
+                    <div class="mb-4 lead">{{ ("messages." ~ exception.getStatusCode ~ ".description")|trans({})|nl2br }}</div>
+                    <a href="javascript:history.back()">{{ "link.to.lastpage"|trans }}</a>, <a href="{{ path("homepage") }}" class="btn btn-link">{{ "link.to.homepage"|trans }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+

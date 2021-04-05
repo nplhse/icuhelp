@@ -1,0 +1,28 @@
+# Read the documentation at https://github.com/thephpleague/flysystem-bundle/blob/master/docs/1-getting-started.md
+flysystem:
+    storages:
+        uploads.storage.local:
+            adapter: 'local'
+            options:
+                directory: '%kernel.project_dir%/var/storage/uploads'
+
+        uploads.storage.memory:
+            adapter: 'memory'
+
+        uploads.storage:
+            adapter: 'lazy'
+            options:
+                source: '%env(APP_UPLOADS_SOURCE)%'
+
+        public.storage.local:
+            adapter: 'local'
+            options:
+                directory: '%kernel.project_dir%/public/files'
+
+        public.storage.memory:
+            adapter: 'memory'
+
+        public.storage:
+            adapter: 'lazy'
+            options:
+                source: '%env(APP_PUBLIC_SOURCE)%'

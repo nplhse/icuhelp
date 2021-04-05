@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - {{ "title.contacts"|trans }}{% endblock %}
+
+{% block body %}
+    {{ include('components/project_tabs.html.twig') }}
+
+    <h1 class="mt-2">{{ "title.contacts"|trans }}</h1>
+
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }}" role="alert">
+                {{ message|trans }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+    <div class="row">
+        <div class="col-md-9">
+            {% if q and category %}
+                <div class="alert alert-info" role="alert">{{ "msg.contact.searchingfor"|trans }} "<i>{{ q }}</i>" | <a href="{{ path('contact_filteredbycat', {'category': category}) }}">{{ "msg.contact.endsearch"|trans }}</a></div>
+            {% elseif q %}
+                <div class="alert alert-info" role="alert">{{ "msg.contact.searchingfor"|trans }} "<i>{{ q }}</i>" | <a href="{{ path('contact_index') }}">{{ "msg.contact.endsearch"|trans }}</a></div>
+            {% endif %}
+
+            {% if contacts %}
+                <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-3">
+                    {% for contact in contacts %}
+                        <div class="col mb-4">
+                            <div class="card mx-auto w-100">
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="{{ path('contact_show', {'id': contact.id}) }}">{{ contact.name }}</a></h5>
+                                    <a class="badge badge-primary" href="{{ path('contact_filteredbycat', {'category': contact.category.id}) }}"><i class="fa fa-tags"></i> {{ contact.category }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="row">
+                    {{ "msg.no.contacts.found"|trans }}
+                </div>
+            {% endif %}
+        </div>
+        <div class="col-md-3 order-sm-last">
+            {% if is_granted('ROLE_EDITOR') %}
+                <div class="clearfix mb-3">
+                    <div class="btn-group" role="group" aria-label="">
+                        <a class="btn btn-primary" href="{{ path('contact_new') }}" role="button">{{ "button.contact.new"|trans }}</a>
+                    </div>
+                </div>
+            {% endif %}
+
+            <h4>{{ "title.contact.search"|trans }}</h4>
+            <form>
+                <div class="input-group mb-3">
+                    <input type="text" name="q" class="form-control" placeholder="{% if q %}{{ q }}{% else %}Search...{% endif %}">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-outline-secondary"><span class="fa fa-search"></span></button>
+                    </div>
+                </div>
+            </form>
+
+            <h4>{{ "title.contact.categories"|trans }}</h4>
+            <ul class="list-group list-group">
+                {% for cat in categories %}
+                    <li class="list-group-item{% if cat.id == category %} active{% endif %}"><a href="{{ path('contact_filteredbycat', {'category': cat.id}) }}">{{ cat.name }}</a></li>
+                {% endfor %}
+                <li class="list-group-item"><a href="{{ path('contact_index') }}">{{ "button.contact.showall"|trans }}</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

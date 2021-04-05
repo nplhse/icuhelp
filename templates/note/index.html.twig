@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - {{ "title.note"|trans }}{% endblock %}
+
+{% block body %}
+    {{ include('components/project_tabs.html.twig') }}
+
+    <h1 class="mt-2">{{ "title.note"|trans }}</h1>
+
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }}" role="alert">
+                {{ message|trans }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="list-group">
+                {% for note in notes %}
+                    <li class="list-group-item"><a href="{{ path('note_show', {'id': note.id}) }}">{{ note.name }}</a></li>
+                {% else %}
+                    <li class="list-group-item disabled">{{ "msg.no.notes"|trans }}</li>
+                {% endfor %}
+                {% if is_granted('ROLE_EDITOR') %}
+                    <li class="list-group-item"><a class="btn btn-primary" href="{{ path('note_new') }}" role="button">{{ "button.note.new"|trans }}</a></li>
+                {% endif %}
+            </ul>
+        </div>
+        <div class="col-md-9 order-first order-md-last my-auto">
+            <p class="text-center" style="color:darkgrey">
+                <i class="fa fa-tasks fa-10x"></i><br />
+                {{ "msg.choose.note"|trans }}
+            </p>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{{ form_start(form) }}
+
+    {{ form_row(form.name) }}
+    {{ form_row(form.category) }}
+    {{ form_row(form.priority) }}
+    {{ form_row(form.text) }}
+
+    <div class="clearfix">
+        <div class="btn-group float-right" role="group" aria-label="">
+            <a class="btn btn-danger" href="{{ path('snippet_index') }}" role="button">{{ "link.snippet.back_list"|trans }}</a>
+            <button type="submit" class="btn btn-success">{{ button_text|trans }}</button>
+        </div>
+    </div>
+{{ form_end(form) }}

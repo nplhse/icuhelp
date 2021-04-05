@@ -1,0 +1,14 @@
+{% if show_confirmation|default(false) %}
+    {{ include('form/_delete_confirmation.html.twig', {
+        'title_modal.delete': title_modal_delete,
+        'msg.modal.delete': msg_modal_delete,
+        'label.delete': label_delete
+        })
+    }}
+{% endif %}
+
+<form action="{{ path(entity_deletepath, {'id': entity.id}) }}" method="post" data-confirmation="{% if show_confirmation|default(false) %}true{% else %}false{% endif %}" id="delete-form">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ entity.id) }}">
+    <button type="submit" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> {{ btn_delete|default("btn.entity.delete")|trans }}</button>
+</form>

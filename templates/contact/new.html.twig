@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - {{ "title.contact.new"|trans }}{% endblock %}
+
+{% block body %}
+    {{ include('components/project_tabs.html.twig') }}
+
+    <h1 class="mt-2">{{ "title.contact.new"|trans }}</h1>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+
+        <div class="clearfix">
+            <div class="btn-group float-right" role="group" aria-label="">
+                <a class="btn btn-secondary" href="{{ path('contact_index') }}" role="button">{{ "link.contact.back_list"|trans }}</a>
+                <button type="submit" class="btn btn-success">{{ "button.contact.create"|trans }}</button>
+            </div>
+        </div>
+    {{ form_end(form) }}
+{% endblock %}

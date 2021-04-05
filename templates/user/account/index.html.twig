@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - {{ "title.account"|trans }}{% endblock %}
+
+{% block body %}
+    {{ include('components/project_tabs.html.twig') }}
+
+    <h1 class="mt-2">{{ "title.account"|trans }}</h1>
+
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }}" role="alert">
+                {{ message|trans }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="list-group">
+                <li class="list-group-item active"><a href="{{ path('account') }}">{{ "link.account"|trans }}</a></li>
+                <li class="list-group-item"><a href="{{ path('account_change_password') }}">{{ "link.account.change_password"|trans }}</a></li>
+            </ul>
+        </div>
+        <div class="col-md-9 order-first order-md-last my-auto">
+            <p class="text-center" style="color:darkgrey">
+                <i class="fa fa-tasks fa-10x"></i><br />
+                {{ "msg.account.choose"|trans }}
+            </p>
+        </div>
+    </div>
+{% endblock %}

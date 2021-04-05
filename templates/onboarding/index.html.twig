@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - {{ "title.onboarding"|trans }}{% endblock %}
+
+{% block body %}
+    {{ include('components/project_tabs.html.twig') }}
+
+    <h1 class="mt-2">{{ "title.onboarding"|trans }}</h1>
+
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }}" role="alert">
+                {{ message|trans }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="list-group js-notes-list">
+                {% for note in notes %}
+                    {% if is_granted('ROLE_EDITOR') %}
+                        <li class="list-group-item" data-id={{ note.id }}><span class="drag-handle fa fa-bars" style="color:dimgrey"></span> <a href="{{ path('onboarding_show', {'id': note.id}) }}">{{ note.name }}</a></li>
+                    {% else %}
+                        <li class="list-group-item" data-id={{ note.id }}><a href="{{ path('onboarding_show', {'id': note.id}) }}">{{ note.name }}</a></li>
+                    {% endif %}
+                {% else %}
+                    <li class="list-group-item disabled">{{ "msg.no.onboarding"|trans }}</li>
+                {% endfor %}
+                {% if is_granted('ROLE_EDITOR') %}
+                    <li class="list-group-item"><a class="btn btn-primary" href="{{ path('onboarding_new') }}" role="button">{{ "button.onboarding.new"|trans }}</a></li>
+                {% endif %}
+            </ul>
+        </div>
+        <div class="col-md-9 order-first order-md-last my-auto">
+            <p class="text-center" style="color:darkgrey">
+                <i class="fa fa-tasks fa-10x"></i><br />
+                {{ "msg.choose.onboarding"|trans }}
+            </p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {{ encore_entry_script_tags('sortable-notes') }}
+{% endblock %}

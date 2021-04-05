@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - {{ "title.snippet.show"|trans }}: {{ snippet.name }}{% endblock %}
+
+{% block body %}
+    {{ include('components/project_tabs.html.twig') }}
+
+    <h1 class="mt-2">{{ "title.snippet.show"|trans }}</h1>
+
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }}" role="alert">
+                {{ message|trans }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+    <table class="table table-hover">
+        <tbody>
+        <tr>
+            <th class="w-25">Id</th>
+            <td class="w-75">{{ snippet.id }}</td>
+        </tr>
+        <tr>
+            <th>{{ "label.snippet.name"|trans }}</th>
+            <td>{{ snippet.name }}</td>
+        </tr>
+        <tr>
+            <th>{{ "label.snippet.category"|trans }}</th>
+            <td>{{ snippet.category }}</td>
+        </tr>
+        <tr>
+            <th>{{ "label.snippet.priority"|trans }}</th>
+            <td>{{ snippet.priority }}</td>
+        </tr>
+        <tr>
+            <th>{{ "label.snippet.text"|trans }}</th>
+            <td>{{ snippet.text|raw }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="clearfix">
+        <div class="btn-group float-right" role="group" aria-label="">
+            <a class="btn btn-secondary" href="{{ path('snippet_index') }}" role="button">{{ "link.snippet.back_list"|trans }}</a>
+            {% if is_granted('ROLE_EDITOR') %}
+                <a class="btn btn-primary" href="{{ path('snippet_edit', {'id': snippet.id}) }}">{{ "button.snippet.edit"|trans }}</a>
+            {% endif %}
+        </div>
+
+        {% if is_granted('ROLE_EDITOR') %}
+            {{ include('snippets/_delete_form.html.twig') }}
+        {% endif %}
+    </div>
+{% endblock %}

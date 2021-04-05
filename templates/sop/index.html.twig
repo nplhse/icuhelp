@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - {{ "title.sop"|trans }}{% endblock %}
+
+{% block body %}
+    {{ include('components/project_tabs.html.twig') }}
+
+    <h1 class="mt-2">{{ "title.sop"|trans }}</h1>
+
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }}" role="alert">
+                {{ message|trans }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+    {% if q and tag %}
+        <div class="alert alert-info" role="alert">{{ "msg.sop.searchingfor"|trans }} "<i>{{ q }}</i>" | <a href="{{ path('sop_filteredbytag', {'tag': tag}) }}">{{ "msg.sop.endsearch"|trans }}</a></div>
+    {% elseif q %}
+        <div class="alert alert-info" role="alert">{{ "msg.sop.searchingfor"|trans }} "<i>{{ q }}</i>" | <a href="{{ path('sop_index') }}">{{ "msg.sop.endsearch"|trans }}</a></div>
+    {% endif %}
+
+    <div class="row">
+        <div class="col-md-9">
+        {% if sops %}
+            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-2">
+                {% for sop in sops %}
+                    <div class="col mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="{{ path('sop_show', {'id': sop.id}) }}">{{ sop.name }}</a></h5>
+                                <p class="card-text">{{ sop.description|raw }}</p>
+                                <p>
+                                    <a class="btn btn-outline-primary" href="{{ asset('files/' ~ sop.SOPFilename) }}" target="_blank">{{ "button.sop.view_attachment"|trans }}</a><br />
+                                    {% for tag in sop.tag %}
+                                        <a class="badge badge-primary" href="{{ path('sop_filteredbytag', {'tag': tag.id}) }}"><i class="fa fa-tags"></i> {{ tag.name }}</a>
+                                    {% endfor %}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="row">
+                {{ "msg.no.sop.found"|trans }}
+            </div>
+        {% endif %}
+        </div>
+        <div class="col-md-3 order-sm-last">
+            {% if is_granted('ROLE_EDITOR') %}
+                <div class="clearfix mb-3">
+                    <div class="btn-group" role="group" aria-label="">
+                        <a class="btn btn-primary" href="{{ path('sop_new') }}" role="button">{{ "button.sop.new"|trans }}</a>
+                    </div>
+                </div>
+            {% endif %}
+
+            <h4>{{ "title.sop.search"|trans }}</h4>
+            <form>
+                <div class="input-group mb-3">
+                    <input type="text" name="q" class="form-control" placeholder="{% if q %}{{ q }}{% else %}Search...{% endif %}">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-outline-secondary"><span class="fa fa-search"></span></button>
+                    </div>
+                </div>
+            </form>
+
+            <h4>{{ "title.sop.tags"|trans }}</h4>
+            <ul class="list-group list-group">
+                {% for tag_e in tags %}
+                    <li class="list-group-item{% if tag_e.id == tag %} active{% endif %}"><a href="{{ path('sop_filteredbytag', {'tag': tag_e.id}) }}">{{ tag_e.name }}</a></li>
+                {% endfor %}
+                <li class="list-group-item"><a href="{{ path('sop_index') }}">{{ "button.sop.showall"|trans }}</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
